@@ -1,47 +1,82 @@
-# Site Erkilic Expertise Comptable — recréation moderne
+# Refonte Erkilic — logo, contenu réel, map, animations, SEO
 
-Direction validée : **Rationalist ledger** (Paper & Ink + Sora/Manrope + hero-grid).
+## 1. Logo (haut à gauche)
 
-## Pages (routes séparées)
+- Upload du logo fourni via `lovable-assets` (pas de copie binaire dans le repo).
+- Nettoyage/upscale avec `imagegen--edit_image` : fond transparent, netteté renforcée, conservation du hexagone doré et du "e" script.
+- Intégration dans `Nav` : logo à gauche (h-12), le mot "Erkilic Expertise" en texte disparaît (déjà dans le logo). Version compacte responsive.
+- Favicon dérivé du logo (`public/favicon.png`) + suppression du `favicon.ico` par défaut, référencé dans `__root.tsx`.
 
-- `/` — Accueil : hero éditorial, grille des 5 packs, section identité/philosophie, CTA devis
-- `/services` — Détail des 4 domaines (comptable, fiscal, social, juridique) + les 5 packs développés
-- `/cabinet` — À propos : histoire du cabinet, valeurs, localisation Juvignac
-- `/contact` — Coordonnées + formulaire de devis (type structure, message)
+## 2. Contenu réel depuis erkilic.fr
 
-Chaque route a son propre `head()` (title, description, og:title, og:description) en français.
+Fetch de toutes les pages du site officiel (accueil, cabinet, services, packs individuels, contact) pour récupérer le contenu exact — descriptions, listes de prestations, mentions légales, coordonnées. Injection fidèle dans les routes existantes :
 
-## Design system (tokens verbatim du prototype)
+- **Accueil** : tagline + présentation cabinet exacte, 4 domaines, aperçu des 5 packs, zone d'intervention.
+- **/services** : détail complet des 4 domaines (comptable, fiscal, social, juridique) + fiche complète des 5 packs (Créateur, Auto-entrepreneur, Profession libérale, Société de service, Particulier) avec la liste de prestations exacte de chaque pack.
+- **/cabinet** : histoire, valeurs, déontologie, zone géographique (Juvignac, Montpellier, Saint-Georges-d'Orques, Pignan, Montarnaud).
+- **/contact** : nouvelles coordonnées :
+  - **29 bis rue du Poumpidou, 34990 Juvignac**
+  - **09 72 54 07 71** / **06 59 88 40 80**
+  - **cabinet@erkilic.fr**
+  - Mise à jour aussi dans le `Footer`.
 
-Dans `src/styles.css` :
-- Couleurs : `--paper #f5f3ee`, `--paper-dark #e8e4dd`, `--ink #0d0d0d`, `--ink-muted #2d2d2d`
-- Fonts : Sora (display) + Manrope (body), chargées via `<link>` dans `__root.tsx`
-- Animations : `reveal-up`, `line-grow` (ease-out-expo)
-- Tokens shadcn mappés sur la palette papier (background = paper, foreground = ink, etc.) pour cohérence dark/light désactivée — site exclusivement clair
+## 3. Map interactive
 
-## Composants
+Google Maps Platform via le connecteur Lovable (browser key) — centré sur 29 bis rue du Poumpidou, marker sur le cabinet, style monochrome cohérent avec la palette Paper & Ink. Intégrée dans `/contact` sous les coordonnées, et une version compacte en bas de `/cabinet`.
 
-- `Nav` (sticky, blur, logo ERKILIC + Expertise, liens Cabinet/Services/Contact, CTA Devis)
-- `Footer` (fond ink, gros titre "Prêt à avancer ?", coordonnées Juvignac, mentions)
-- `PackCard`, `StatRow`, `SectionHeader` (numéro + titre uppercase)
-- Layout shell réutilisé sur toutes les pages
+Si l'utilisateur préfère ne pas activer le connecteur Google Maps, fallback : iframe OpenStreetMap (pas d'API key, gratuit).
 
-## Contenu repris du site original
+## 4. Animations subtiles & prestigieuses
 
-- Cabinet d'expertise comptable à **Juvignac**, proche Montpellier, Saint-Georges-d'Orques, Pignan, Montarnaud
-- Tagline : *"Parce que vous comptez pour nous, nous comptons pour vous"*
-- 5 packs : Créateur, Auto-entrepreneur, Profession libérale, Société de service, Particulier
-- 4 domaines : comptable, fiscal, social, juridique
-- Cibles : artisans, commerçants, PME, professions libérales, créateurs, associations, comités d'entreprise
-- Mention Ordre des Experts Comptables
+- Reveal-on-scroll (IntersectionObserver + `reveal-up` déjà défini) sur titres, cartes de packs, blocs de services.
+- Ligne horizontale qui se dessine (`line-grow`) sous les `SectionHeader`.
+- Hover : cartes de packs → filet qui pousse vers la droite + léger translate Y.
+- Nav : masque/révèle au scroll (hide au scroll down, show au scroll up).
+- Curseur d'accent (petit trait clignotant) après le mot italique du hero.
+- Framer-motion pour l'entrée du hero (stagger sur les mots du titre).
 
-## Image
+Reste sobre : pas d'animations tape-à-l'œil, tempo lent (400-800ms), ease-out-expo.
 
-Une seule image générée (intérieur de cabinet, monochrome, esthétique architecturale) pour la section identité de l'accueil et `/cabinet`. Pas de stock photos génériques ailleurs — typographie + filets portent le design.
+## 5. Images stratégiques (peu, bien placées)
 
-## Détails techniques
+- Hero accueil : image d'ambiance discrète (bureau, papiers, lumière naturelle) en arrière-plan traité (grain + monochrome + opacity 15%).
+- Section "domaines" : 4 petites illustrations line-art (générées) au-dessus de chaque domaine.
+- `/cabinet` : garder l'image intérieur existante + ajouter une seconde image (façade / détail Juvignac).
+- `/services` : une image d'accroche en tête de page.
 
-- TanStack Start (routes file-based dans `src/routes/`)
-- Pas d'`og:image` pour l'instant (à ajouter si l'utilisateur veut une image OG dédiée)
-- Formulaire contact en frontend uniquement (pas de backend pour cette première passe — à brancher sur Lovable Cloud si demandé ensuite)
-- Suppression du placeholder de `src/routes/index.tsx`
+Toutes en `<img>` avec `loading="lazy"`, `alt` descriptif, dimensions fixées (CLS).
+
+## 6. SEO maximum
+
+Par route (`head()`), en français, avec mots-clés locaux :
+
+- Titres uniques, <60 char : ex. *"Expert-comptable Juvignac Montpellier — Cabinet Erkilic"*.
+- Meta description <160 char, ciblée (audience + zone).
+- `og:title`, `og:description`, `og:type`, `og:url` absolus (https://expert-reimagined-app.lovable.app/...).
+- `og:image` uniquement sur les routes qui ont une vraie image hero (pas sur `__root`).
+- Canonical absolu par leaf route.
+- JSON-LD :
+  - `__root` : `Organization` + `LocalBusiness` (AccountingService) avec adresse, téléphone, geo, openingHours, sameAs.
+  - `/services` : `Service` × 4 domaines.
+  - `/contact` : `LocalBusiness` complet avec coordonnées GPS.
+- H1 unique par page, hiérarchie H1→H2→H3 propre.
+- `alt` sur toutes les images (contexte comptable + Juvignac).
+- `public/robots.txt` : allow all + Sitemap.
+- `public/sitemap.xml` : 4 routes.
+- `lang="fr"` sur `<html>` (actuellement `"en"` — à corriger).
+- Liens internes croisés (cabinet ↔ services ↔ contact).
+- Mots-clés visés : *expert-comptable Juvignac*, *cabinet comptable Montpellier*, *expertise comptable Hérault*, *comptable auto-entrepreneur Montpellier*, *comptable profession libérale Juvignac*.
+
+Après implémentation : lancer un scan SEO et corriger les findings restants.
+
+## 7. Détails techniques
+
+- Fetch de erkilic.fr via `fetch_website` (chaque page) dans la phase d'implémentation.
+- Google Maps : appelle `standard_connectors--connect` avec `google_maps` — si l'utilisateur refuse, bascule sur iframe OSM.
+- `lang="fr"` dans `__root.tsx`.
+- Toutes les URLs absolues SEO utilisent `https://expert-reimagined-app.lovable.app`.
+- Contact form reste frontend-only (pas de backend demandé).
+
+## Livrable
+
+Site enrichi, coordonnées à jour, logo intégré haut-gauche, map interactive sur `/contact`, animations reveal + hover subtiles, SEO local optimisé (métas + JSON-LD LocalBusiness + sitemap), 4-5 images bien placées.
