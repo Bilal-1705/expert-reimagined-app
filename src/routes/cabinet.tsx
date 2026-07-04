@@ -1,28 +1,35 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
+import { CabinetMap } from "@/components/site/CabinetMap";
+import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
+import heroOffice from "@/assets/hero-office.jpg";
+
+const SITE = "https://expert-reimagined-app.lovable.app";
 
 export const Route = createFileRoute("/cabinet")({
   head: () => ({
     meta: [
-      { title: "Le cabinet — Erkilic Expertise Comptable, Juvignac" },
+      { title: "Le cabinet Erkilic — Expert-Comptable à Juvignac (34990)" },
       {
         name: "description",
         content:
-          "Le cabinet Erkilic, expert-comptable à Juvignac près de Montpellier, accompagne entreprises, professions libérales et particuliers dans la durée.",
+          "Fondé par Nazifé Erkilic, le cabinet Erkilic est inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité à Juvignac.",
       },
-      { property: "og:title", content: "Le cabinet — Erkilic Expertise Comptable" },
+      { name: "keywords", content: "cabinet expert-comptable Juvignac, Nazifé Erkilic, Ordre Experts-Comptables Montpellier, comptable Hérault" },
+      { property: "og:title", content: "Le cabinet Erkilic — Expert-Comptable à Juvignac" },
       {
         property: "og:description",
         content:
-          "Un cabinet de proximité à Juvignac, au service des entrepreneurs de l'Hérault.",
+          "Un cabinet de proximité à Juvignac, au service des entrepreneurs de l'Hérault depuis plus de 20 ans.",
       },
-      { property: "og:url", content: "/cabinet" },
-      { property: "og:image", content: cabinetImg },
+      { property: "og:url", content: `${SITE}/cabinet` },
+      { property: "og:image", content: `${SITE}${cabinetImg}` },
+      { name: "twitter:image", content: `${SITE}${cabinetImg}` },
     ],
-    links: [{ rel: "canonical", href: "/cabinet" }],
+    links: [{ rel: "canonical", href: `${SITE}/cabinet` }],
   }),
   component: Cabinet,
 });
@@ -30,7 +37,7 @@ export const Route = createFileRoute("/cabinet")({
 const audiences = [
   "Artisans",
   "Commerçants",
-  "Petites et moyennes entreprises",
+  "PME",
   "Professions libérales",
   "Créateurs d'entreprise",
   "Associations",
@@ -38,55 +45,85 @@ const audiences = [
   "Particuliers",
 ];
 
+const values = [
+  ["Compétence", "Une équipe formée en continu, en veille permanente sur la réglementation."],
+  ["Indépendance", "Un conseil objectif, libre de tout conflit d'intérêts."],
+  ["Intégrité", "Une conduite irréprochable dans chaque dossier."],
+  ["Secret professionnel", "Vos informations restent strictement confidentielles."],
+];
+
+const brings = [
+  ["Gain de temps", "Nous nous occupons de vos comptes, vous vous concentrez sur votre activité."],
+  ["Tranquillité", "Un accompagnement de proximité, personnalisé, à chaque demande."],
+  ["Écoute et conseils", "Un interlocuteur unique, disponible, qui connaît votre projet."],
+  ["Tarifs justes", "Une facturation transparente, adaptée à votre structure."],
+];
+
 function Cabinet() {
+  const introRef = useReveal<HTMLDivElement>();
+  const valuesRef = useReveal<HTMLDivElement>();
+  const audiencesRef = useReveal<HTMLDivElement>();
+  const bringsRef = useReveal<HTMLDivElement>();
+
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
       <Nav />
       <main>
-        <section className="pt-24 pb-20 px-6 border-b border-ink/5">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-end">
+        {/* Hero */}
+        <section className="pt-20 pb-20 px-6 border-b border-ink/5">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-end reveal-stagger" data-reveal>
             <div className="md:col-span-8">
               <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-8">
                 Le cabinet
               </span>
               <h1 className="font-sora text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] text-balance">
                 Un cabinet de proximité,{" "}
-                <span className="text-ink/20 italic font-normal">
+                <span className="text-ink/25 italic font-normal">
                   à Juvignac.
                 </span>
               </h1>
             </div>
             <div className="md:col-span-4">
               <p className="text-lg text-ink/70 leading-relaxed border-l-2 border-ink pl-6 py-2">
-                Proche de Montpellier, Saint-Georges-d'Orques, Pignan et
-                Montarnaud.
+                Proche de <strong className="text-ink font-semibold">Montpellier</strong>,
+                Saint-Georges-d'Orques, Pignan et Montarnaud.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-24 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24">
+        {/* Intro / Vision */}
+        <section ref={introRef} className="py-24 px-6">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
             <img
               src={cabinetImg}
-              alt="Le cabinet Erkilic"
+              alt="Vue intérieure du cabinet Erkilic à Juvignac"
               className="w-full aspect-[4/5] object-cover grayscale outline outline-1 -outline-offset-1 outline-ink/5"
+              loading="lazy"
             />
             <div className="flex flex-col justify-center">
-              <SectionHeader index="01 / Vision" title="Notre approche" />
+              <SectionHeader index="01 / Qui sommes-nous ?" title="Notre approche" />
               <div className="space-y-6 text-ink/70 leading-relaxed">
                 <p>
-                  Ensemble, construisons une relation pérenne pour le pilotage
-                  de votre entreprise. Notre objectif est d'être à vos côtés à
-                  chaque étape de la vie de votre projet — de la création au
-                  développement, jusqu'à la transmission.
+                  Situé sur <strong className="text-ink font-semibold">Juvignac</strong>,
+                  en périphérie de Montpellier, le cabinet{" "}
+                  <strong className="text-ink font-semibold">Erkilic Expertise Comptable</strong>,
+                  inscrit à l'Ordre des Experts-Comptables de Montpellier, vous
+                  accompagne dans tous vos projets.
                 </p>
                 <p>
-                  Nous nous occupons de vos comptes, vous vous occupez de votre
-                  entreprise. Faites-nous confiance, laissez-vous guider et
-                  gagnez du temps.
+                  Fondé par Mme <strong className="text-ink font-semibold">Nazifé Erkilic</strong>,
+                  il rassemble aujourd'hui une clientèle très diversifiée.
+                  Disposant d'une expérience de{" "}
+                  <strong className="text-ink font-semibold">23 ans</strong> dans le
+                  métier, le cabinet met au profit de ses clients toute sa
+                  compétence en tant que partenaire privilégié de l'entrepreneur.
                 </p>
-                <p className="font-sora font-bold text-ink text-xl">
+                <p>
+                  Nous proposons un accompagnement de proximité afin de pouvoir
+                  répondre à chaque demande de façon personnalisée.
+                </p>
+                <p className="font-sora font-bold text-ink text-xl pt-4">
                   Parce que vous comptez pour nous, nous comptons pour vous.
                 </p>
               </div>
@@ -94,23 +131,65 @@ function Cabinet() {
           </div>
         </section>
 
-        <section className="py-24 px-6 bg-paper-dark/30">
+        {/* Values */}
+        <section ref={valuesRef} className="py-24 px-6 bg-paper-dark/40">
+          <div className="max-w-7xl mx-auto">
+            <SectionHeader index="02 / Nos valeurs" title="Ce qui nous guide" />
+            <div className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+              {values.map(([t, d]) => (
+                <div key={t} className="bg-paper p-8 min-h-56 flex flex-col">
+                  <h3 className="font-sora text-2xl font-extrabold tracking-tighter mb-4">
+                    {t}
+                  </h3>
+                  <p className="text-sm text-ink/70 leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What we bring */}
+        <section ref={bringsRef} className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <SectionHeader
-              index="02 / Clients"
+              index="03 / Ce que nous vous apportons"
+              title="Ce que nous vous apportons"
+              aside="Un partenaire, pas un simple prestataire."
+            />
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 reveal-stagger" data-reveal>
+              {brings.map(([t, d], i) => (
+                <div key={t} className="flex gap-6 pb-8 border-b border-ink/10">
+                  <span className="font-sora text-4xl font-extrabold tracking-tighter text-ink/20 w-16 shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-sora text-xl font-bold mb-2">{t}</h3>
+                    <p className="text-sm text-ink/70 leading-relaxed">{d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Audiences */}
+        <section ref={audiencesRef} className="py-24 px-6 bg-paper-dark/40">
+          <div className="max-w-7xl mx-auto">
+            <SectionHeader
+              index="04 / Clients"
               title="Vous êtes ?"
               aside="Nous mettons en œuvre notre savoir-faire dans le respect de la déontologie de l'Ordre des Experts-Comptables."
             />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
               {audiences.map((a, i) => (
                 <div
                   key={a}
-                  className="bg-paper p-8 flex items-start gap-4 min-h-32"
+                  className="bg-paper p-8 flex items-start gap-4 min-h-32 group hover:bg-ink transition-colors duration-500"
                 >
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-ink/30">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-ink/30 group-hover:text-paper/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-sora font-bold text-lg leading-tight">
+                  <span className="font-sora font-bold text-lg leading-tight group-hover:text-paper">
                     {a}
                   </span>
                 </div>
@@ -119,23 +198,64 @@ function Cabinet() {
           </div>
         </section>
 
+        {/* Location + map */}
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
-            <SectionHeader index="03 / Déontologie" title="Notre engagement" />
-            <div className="grid md:grid-cols-3 gap-12">
-              {[
-                ["Indépendance", "Conseil objectif, libre de tout conflit d'intérêts."],
-                ["Confidentialité", "Vos informations restent strictement confidentielles."],
-                ["Compétence", "Formation continue et veille réglementaire permanente."],
-              ].map(([t, d]) => (
-                <div key={t}>
-                  <h3 className="font-sora text-2xl font-extrabold tracking-tighter mb-4">
-                    {t}
-                  </h3>
-                  <p className="text-sm text-ink/70 leading-relaxed">{d}</p>
-                </div>
-              ))}
+            <SectionHeader
+              index="05 / Localisation"
+              title="À Juvignac, à 10 min de Montpellier"
+            />
+            <div className="grid md:grid-cols-12 gap-8 reveal" data-reveal>
+              <div className="md:col-span-4 flex flex-col justify-center gap-6">
+                <address className="not-italic">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 mb-2">
+                    Adresse
+                  </p>
+                  <p className="font-sora text-xl font-bold leading-tight">
+                    29 bis rue du Poumpidou<br />
+                    34990 Juvignac
+                  </p>
+                </address>
+                <p className="text-sm text-ink/60 leading-relaxed">
+                  Expert-comptable à Juvignac, proche de Saint-Georges-d'Orques,
+                  Pignan, Montarnaud et Montpellier.
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 self-start px-6 py-3 bg-ink text-paper text-[11px] font-bold uppercase tracking-widest rounded-full hover:bg-ink-muted transition-colors"
+                >
+                  Prendre rendez-vous →
+                </Link>
+              </div>
+              <div className="md:col-span-8">
+                <CabinetMap height={400} />
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="relative py-32 px-6 overflow-hidden bg-ink text-paper">
+          <img
+            src={heroOffice}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-15"
+          />
+          <div className="relative max-w-4xl mx-auto text-center">
+            <h2 className="font-sora text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
+              Demandez un devis gratuit.
+            </h2>
+            <p className="text-paper/60 mb-10 max-w-xl mx-auto">
+              Nous mettons à votre disposition liens utiles, conseils et
+              accompagnement personnalisé. Un premier échange, sans engagement.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-paper text-ink font-bold uppercase tracking-widest text-sm hover:bg-paper-dark transition-colors"
+            >
+              Contactez le cabinet →
+            </Link>
           </div>
         </section>
       </main>
