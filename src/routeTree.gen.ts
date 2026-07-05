@@ -14,6 +14,11 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PackProfessionLiberaleRouteImport } from './routes/pack.profession-liberale'
+import { Route as PackProRouteImport } from './routes/pack.pro'
+import { Route as PackParticulierRouteImport } from './routes/pack.particulier'
+import { Route as PackCreateurRouteImport } from './routes/pack.createur'
+import { Route as PackAutoEntrepreneurRouteImport } from './routes/pack.auto-entrepreneur'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -40,6 +45,31 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackProfessionLiberaleRoute = PackProfessionLiberaleRouteImport.update({
+  id: '/pack/profession-liberale',
+  path: '/pack/profession-liberale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackProRoute = PackProRouteImport.update({
+  id: '/pack/pro',
+  path: '/pack/pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackParticulierRoute = PackParticulierRouteImport.update({
+  id: '/pack/particulier',
+  path: '/pack/particulier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackCreateurRoute = PackCreateurRouteImport.update({
+  id: '/pack/createur',
+  path: '/pack/createur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
+  id: '/pack/auto-entrepreneur',
+  path: '/pack/auto-entrepreneur',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +77,11 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
+  '/pack/createur': typeof PackCreateurRoute
+  '/pack/particulier': typeof PackParticulierRoute
+  '/pack/pro': typeof PackProRoute
+  '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +89,11 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
+  '/pack/createur': typeof PackCreateurRoute
+  '/pack/particulier': typeof PackParticulierRoute
+  '/pack/pro': typeof PackProRoute
+  '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +102,49 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
+  '/pack/createur': typeof PackCreateurRoute
+  '/pack/particulier': typeof PackParticulierRoute
+  '/pack/pro': typeof PackProRoute
+  '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cabinet' | '/contact' | '/services' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/cabinet'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/pack/auto-entrepreneur'
+    | '/pack/createur'
+    | '/pack/particulier'
+    | '/pack/pro'
+    | '/pack/profession-liberale'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cabinet' | '/contact' | '/services' | '/sitemap.xml'
-  id: '__root__' | '/' | '/cabinet' | '/contact' | '/services' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/cabinet'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/pack/auto-entrepreneur'
+    | '/pack/createur'
+    | '/pack/particulier'
+    | '/pack/pro'
+    | '/pack/profession-liberale'
+  id:
+    | '__root__'
+    | '/'
+    | '/cabinet'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/pack/auto-entrepreneur'
+    | '/pack/createur'
+    | '/pack/particulier'
+    | '/pack/pro'
+    | '/pack/profession-liberale'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +153,11 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  PackAutoEntrepreneurRoute: typeof PackAutoEntrepreneurRoute
+  PackCreateurRoute: typeof PackCreateurRoute
+  PackParticulierRoute: typeof PackParticulierRoute
+  PackProRoute: typeof PackProRoute
+  PackProfessionLiberaleRoute: typeof PackProfessionLiberaleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +197,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pack/profession-liberale': {
+      id: '/pack/profession-liberale'
+      path: '/pack/profession-liberale'
+      fullPath: '/pack/profession-liberale'
+      preLoaderRoute: typeof PackProfessionLiberaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/pro': {
+      id: '/pack/pro'
+      path: '/pack/pro'
+      fullPath: '/pack/pro'
+      preLoaderRoute: typeof PackProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/particulier': {
+      id: '/pack/particulier'
+      path: '/pack/particulier'
+      fullPath: '/pack/particulier'
+      preLoaderRoute: typeof PackParticulierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/createur': {
+      id: '/pack/createur'
+      path: '/pack/createur'
+      fullPath: '/pack/createur'
+      preLoaderRoute: typeof PackCreateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/auto-entrepreneur': {
+      id: '/pack/auto-entrepreneur'
+      path: '/pack/auto-entrepreneur'
+      fullPath: '/pack/auto-entrepreneur'
+      preLoaderRoute: typeof PackAutoEntrepreneurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +241,11 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  PackAutoEntrepreneurRoute: PackAutoEntrepreneurRoute,
+  PackCreateurRoute: PackCreateurRoute,
+  PackParticulierRoute: PackParticulierRoute,
+  PackProRoute: PackProRoute,
+  PackProfessionLiberaleRoute: PackProfessionLiberaleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

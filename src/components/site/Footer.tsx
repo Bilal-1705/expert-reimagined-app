@@ -1,4 +1,13 @@
 import { Link } from "@tanstack/react-router";
+import ordreAsset from "@/assets/ordre-experts-comptables.png.asset.json";
+
+const packLinks = [
+  { to: "/pack/createur", label: "Créateur d'entreprise" },
+  { to: "/pack/auto-entrepreneur", label: "Auto-entrepreneur" },
+  { to: "/pack/profession-liberale", label: "Profession libérale" },
+  { to: "/pack/pro", label: "Artisans / Commerçants / PME" },
+  { to: "/pack/particulier", label: "Particulier" },
+] as const;
 
 export function Footer() {
   return (
@@ -23,44 +32,83 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        <div className="pt-12 border-t border-paper/10 grid gap-10 md:grid-cols-4 text-[10px] font-bold uppercase tracking-[0.2em] text-paper/40">
+
+        {/* Pack links */}
+        <div className="pt-12 border-t border-paper/10 grid gap-10 md:grid-cols-3 mb-16">
           <div>
-            <p className="text-paper/80 mb-3">Adresse</p>
-            <address className="not-italic normal-case tracking-normal text-paper/60 font-normal text-sm leading-relaxed">
-              29 bis rue du Poumpidou<br />
-              34990 Juvignac, Hérault
-            </address>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
+              Nos packs
+            </p>
+            <ul className="space-y-2">
+              {packLinks.map((p) => (
+                <li key={p.to}>
+                  <Link
+                    
+                    to={p.to}
+                    className="text-sm text-paper/60 hover:text-paper transition-colors"
+                  >
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
-            <p className="text-paper/80 mb-3">Téléphone</p>
-            <p className="normal-case tracking-normal text-paper/60 font-normal text-sm leading-relaxed">
-              <a href="tel:+33972540771" className="hover:text-paper transition-colors block">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
+              Navigation
+            </p>
+            <ul className="space-y-2 text-sm text-paper/60">
+              <li><Link to="/" className="hover:text-paper transition-colors">Accueil</Link></li>
+              <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
+              <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
+              <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
+              Contact
+            </p>
+            <address className="not-italic text-sm text-paper/60 leading-relaxed">
+              29 bis rue du Poumpidou<br />
+              34990 Juvignac, Hérault<br />
+              <a href="tel:+33972540771" className="hover:text-paper transition-colors block mt-3">
                 09 72 54 07 71
               </a>
               <a href="tel:+33659884080" className="hover:text-paper transition-colors block">
                 06 59 88 40 80
               </a>
-            </p>
-          </div>
-          <div>
-            <p className="text-paper/80 mb-3">Email</p>
-            <a
-              href="mailto:cabinet@erkilic.fr"
-              className="normal-case tracking-normal text-paper/60 hover:text-paper transition-colors font-normal text-sm break-all"
-            >
-              cabinet@erkilic.fr
-            </a>
-          </div>
-          <div>
-            <p className="text-paper/80 mb-3">Ordre</p>
-            <p className="normal-case tracking-normal text-paper/60 font-normal text-sm leading-relaxed">
-              Inscrit à l'Ordre des Experts-Comptables de Montpellier
-            </p>
+              <a href="mailto:cabinet@erkilic.fr" className="hover:text-paper transition-colors block mt-1 break-all">
+                cabinet@erkilic.fr
+              </a>
+            </address>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30">
-          <span>© {new Date().getFullYear()} Erkilic Expertise Comptable</span>
-          <span>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</span>
+
+        {/* Baseline + Ordre badge */}
+        <div className="pt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30 space-y-2">
+            <p>© {new Date().getFullYear()} Erkilic Expertise Comptable</p>
+            <p>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</p>
+          </div>
+          <a
+            href="https://www.experts-comptables.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Cabinet inscrit à l'Ordre des Experts-Comptables"
+            className="flex items-center gap-3 bg-paper/5 hover:bg-paper/10 transition-colors px-4 py-3 rounded"
+          >
+            <img
+              src={ordreAsset.url}
+              alt="Ordre des Experts-Comptables — cabinet inscrit"
+              width={120}
+              height={44}
+              className="h-11 w-auto object-contain"
+              loading="lazy"
+            />
+            <span className="hidden sm:block text-[10px] font-bold uppercase tracking-[0.2em] text-paper/50 max-w-[8rem] leading-tight">
+              Cabinet inscrit à l'Ordre
+            </span>
+          </a>
         </div>
       </div>
     </footer>
