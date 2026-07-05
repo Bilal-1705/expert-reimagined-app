@@ -212,7 +212,7 @@ function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
               {packs.map((p) => (
                 <Link
-                  // @ts-expect-error dynamic pack route
+                  
                   to={p.to}
                   key={p.n}
                   className="bg-paper p-7 group hover:bg-ink transition-colors duration-500 flex flex-col min-h-60"
@@ -304,7 +304,7 @@ function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper/10">
               {audiences.map((a, i) => (
                 <Link
-                  // @ts-expect-error dynamic pack route
+                  
                   to={a.to}
                   key={a.label + i}
                   className="bg-ink p-7 flex items-start gap-4 group hover:bg-paper hover:text-ink transition-colors duration-300"

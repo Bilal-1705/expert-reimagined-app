@@ -43,7 +43,7 @@ export function Footer() {
               {packLinks.map((p) => (
                 <li key={p.to}>
                   <Link
-                    // @ts-expect-error pack routes are typed dynamically
+                    
                     to={p.to}
                     className="text-sm text-paper/60 hover:text-paper transition-colors"
                   >

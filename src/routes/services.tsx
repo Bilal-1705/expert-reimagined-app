@@ -234,7 +234,7 @@ function Services() {
             <div className="flex flex-col reveal-stagger" data-reveal>
               {packs.map((p, i) => (
                 <Link
-                  // @ts-expect-error dynamic pack route
+                  
                   to={p.to}
                   key={p.n}
                   className={`group grid md:grid-cols-12 gap-8 py-10 md:py-12 transition-all hover:bg-paper hover:px-8 rounded ${i !== 0 ? "border-t border-ink/10" : ""}`}

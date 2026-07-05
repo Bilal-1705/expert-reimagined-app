@@ -147,7 +147,7 @@ export function PackPage({
                 </h2>
               </div>
               <Link
-                // @ts-expect-error dynamic pack route
+                
                 to={next.to}
                 params={next.params}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-ink text-paper text-[11px] font-bold uppercase tracking-widest rounded-full hover:bg-ink-muted transition-colors"

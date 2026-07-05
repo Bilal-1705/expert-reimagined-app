@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoAsset from "@/assets/erkilic-logo-clean.png.asset.json";
 
-const navLinks = [
+const navLinks: { to: "/" | "/cabinet" | "/services" | "/contact"; label: string; exact?: boolean }[] = [
   { to: "/", label: "Accueil", exact: true },
   { to: "/cabinet", label: "Cabinet" },
   { to: "/services", label: "Prestations" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
