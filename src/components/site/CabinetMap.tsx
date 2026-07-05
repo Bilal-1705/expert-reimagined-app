@@ -2,7 +2,15 @@
  * Interactive map centered on the cabinet at 29 bis rue du Poumpidou, Juvignac.
  * Uses OpenStreetMap embed — no API key required.
  */
-export function CabinetMap({ className = "", height = 460 }: { className?: string; height?: number }) {
+export function CabinetMap({
+  className = "",
+  height = 460,
+  color = false,
+}: {
+  className?: string;
+  height?: number;
+  color?: boolean;
+}) {
   // Approx coords for 29 rue du Poumpidou, Juvignac (34990)
   const lat = 43.6191;
   const lon = 3.8022;
@@ -17,7 +25,12 @@ export function CabinetMap({ className = "", height = 460 }: { className?: strin
         title="Localisation du cabinet Erkilic à Juvignac"
         src={src}
         loading="lazy"
-        style={{ height, filter: "grayscale(1) contrast(1.05)", width: "100%", border: 0 }}
+        style={{
+          height,
+          filter: color ? "none" : "grayscale(1) contrast(1.05)",
+          width: "100%",
+          border: 0,
+        }}
       />
       <figcaption className="absolute bottom-3 right-3 bg-paper/95 backdrop-blur px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg">
         <span className="block text-ink">Cabinet Erkilic</span>
