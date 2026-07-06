@@ -183,19 +183,26 @@ function Cabinet() {
             />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
               {audiences.map((a, i) => (
-                <div
-                  key={a}
+                <Link
+                  key={a.label}
+                  to={a.to}
                   className="bg-paper p-8 flex items-start gap-4 min-h-32 group hover:bg-ink transition-colors duration-500"
                 >
                   <span className="text-[10px] font-bold tracking-[0.2em] text-ink/30 group-hover:text-paper/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-sora font-bold text-lg leading-tight group-hover:text-paper">
-                    {a}
-                  </span>
-                </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-sora font-bold text-lg leading-tight group-hover:text-paper">
+                      {a.label}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-paper transition-opacity">
+                      Voir le pack →
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
+
           </div>
         </section>
 
