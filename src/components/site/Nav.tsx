@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/erkilic-logo-clean.png.asset.json";
+import logoUrl from "@/assets/erkilic-logo.png";
 
 const navLinks: { to: "/" | "/cabinet" | "/services" | "/contact"; label: string; exact?: boolean }[] = [
   { to: "/", label: "Accueil", exact: true },
@@ -33,11 +33,11 @@ export function Nav() {
           aria-label="Erkilic Expertise Comptable — accueil"
         >
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Logo Erkilic Expertise Comptable"
             width={72}
             height={72}
-            className="h-16 w-16 object-contain transition-transform duration-500 group-hover:rotate-3"
+            className="h-14 w-14 md:h-16 md:w-16 object-contain transition-transform duration-500 group-hover:rotate-3"
           />
           <span className="hidden sm:flex flex-col leading-none">
             <span className="font-sora font-extrabold text-lg tracking-tight uppercase">Erkilic</span>
@@ -46,6 +46,7 @@ export function Nav() {
             </span>
           </span>
         </Link>
+
         <div className="hidden md:flex items-center gap-9 text-[11px] font-bold uppercase tracking-widest">
           {navLinks.map((l) => (
             <Link

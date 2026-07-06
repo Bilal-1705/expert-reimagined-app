@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import ordreAsset from "@/assets/ordre-experts-comptables.png.asset.json";
+import ordreLogo from "@/assets/ordre-experts-comptables.png";
 
 const packLinks = [
   { to: "/pack/createur", label: "Créateur d'entreprise" },
@@ -8,6 +8,12 @@ const packLinks = [
   { to: "/pack/pro", label: "Artisans / Commerçants / PME" },
   { to: "/pack/particulier", label: "Particulier" },
 ] as const;
+
+const editorialLinks = [
+  { to: "/a-propos", label: "À propos" },
+  { to: "/guide", label: "Guide de l'expertise comptable" },
+] as const;
+
 
 export function Footer() {
   return (
@@ -62,8 +68,14 @@ export function Footer() {
               <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
               <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
               <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
+              {editorialLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="hover:text-paper transition-colors">{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
+
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
               Contact
@@ -98,7 +110,7 @@ export function Footer() {
             className="flex items-center gap-3 bg-paper/5 hover:bg-paper/10 transition-colors px-4 py-3 rounded"
           >
             <img
-              src={ordreAsset.url}
+              src={ordreLogo}
               alt="Ordre des Experts-Comptables — cabinet inscrit"
               width={120}
               height={44}

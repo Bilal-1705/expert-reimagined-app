@@ -8,11 +8,11 @@ const PATH = "/pack/auto-entrepreneur";
 export const Route = createFileRoute("/pack/auto-entrepreneur")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Auto-Entrepreneur Montpellier | Cabinet Erkilic Juvignac" },
+      { title: "Comptable Auto-Entrepreneur Montpellier | Erkilic" },
       {
         name: "description",
         content:
-          "Comptable pour auto-entrepreneur / micro-entrepreneur à Juvignac et Montpellier. Déclaration URSSAF, suivi CA, seuils TVA, passage en société. Devis gratuit.",
+          "Comptable auto-entrepreneur à Juvignac / Montpellier : URSSAF, suivi CA, seuils TVA, passage en société. Devis gratuit.",
       },
       {
         name: "keywords",

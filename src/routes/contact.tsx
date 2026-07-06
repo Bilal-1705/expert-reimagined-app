@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CabinetMap } from "@/components/site/CabinetMap";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contactez le cabinet Erkilic à Juvignac : 29 bis rue du Poumpidou. Tél. 09 72 54 07 71 / 06 59 88 40 80. Devis gratuit sous 24h, prise de rendez-vous en ligne.",
+          "Cabinet Erkilic à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
       },
       {
         name: "keywords",
@@ -60,7 +60,6 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
-  const [sent, setSent] = useState(false);
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
 
@@ -72,32 +71,6 @@ function Contact() {
     s.async = true;
     document.body.appendChild(s);
   }, []);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const structure = String(data.get("structure") ?? "");
-    const message = String(data.get("message") ?? "");
-
-    const subject = `Demande de devis — ${name}`;
-    const body = [
-      `Nom : ${name}`,
-      `Email : ${email}`,
-      `Téléphone : ${phone}`,
-      `Type de structure : ${structure}`,
-      "",
-      "Message :",
-      message,
-    ].join("\n");
-
-    // Open user's email client with a pre-filled message to the cabinet.
-    window.location.href = `mailto:${CABINET_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-  };
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
@@ -119,7 +92,7 @@ function Contact() {
           </div>
         </section>
 
-        {/* Coordinates + form */}
+        {/* Coordinates + Calendly */}
         <section ref={bodyRef} className="py-16 md:py-20 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-14 reveal" data-reveal>
             <aside className="md:col-span-4 space-y-10">
@@ -168,162 +141,62 @@ function Contact() {
                   09h00 — 12h30 · 14h00 — 18h00
                 </p>
               </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-3">
+                  Explorer
+                </span>
+                <ul className="text-sm space-y-2">
+                  <li>
+                    <Link to="/services" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                      Toutes nos prestations
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/cabinet" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                      Découvrir le cabinet
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/guide" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                      Guide de l'expertise comptable
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </aside>
 
             <div className="md:col-span-8">
-              {sent ? (
-                <div className="border border-ink/10 bg-paper-dark/40 p-10 animate-reveal">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-4">
-                    Message prêt à être envoyé
-                  </span>
-                  <h2 className="font-sora text-3xl font-extrabold tracking-tighter mb-4">
-                    Votre email s'ouvre — vérifiez et cliquez sur « Envoyer ».
-                  </h2>
-                  <p className="text-ink/70 mb-4">
-                    Si rien ne s'est ouvert, écrivez-nous directement à{" "}
-                    <a href={`mailto:${CABINET_EMAIL}`} className="underline font-semibold">
-                      {CABINET_EMAIL}
-                    </a>
-                    .
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSent(false)}
-                    className="text-[11px] font-bold uppercase tracking-widest border-b border-ink pb-1"
-                  >
-                    Envoyer un nouveau message
-                  </button>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8"
-                >
-                  <Field label="Nom complet" name="name" required />
-                  <Field label="Email" name="email" type="email" required />
-                  <Field label="Téléphone" name="phone" type="tel" />
-                  <div className="flex flex-col gap-3">
-                    <label
-                      htmlFor="structure"
-                      className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40"
-                    >
-                      Type de structure
-                    </label>
-                    <select
-                      id="structure"
-                      name="structure"
-                      className="bg-transparent border-b border-ink/20 py-3 text-ink focus:border-ink outline-none transition-colors font-manrope"
-                    >
-                      <option>Créateur d'entreprise</option>
-                      <option>Auto-entrepreneur</option>
-                      <option>Profession libérale</option>
-                      <option>Artisan / Commerçant / PME</option>
-                      <option>Association</option>
-                      <option>Particulier</option>
-                    </select>
-                  </div>
-                  <div className="sm:col-span-2 flex flex-col gap-3">
-                    <label
-                      htmlFor="message"
-                      className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40"
-                    >
-                      Votre projet
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="bg-transparent border-b border-ink/20 py-3 text-ink focus:border-ink outline-none transition-colors resize-none"
-                    />
-                  </div>
-                  <div className="sm:col-span-2 flex justify-between items-center gap-4 pt-4">
-                    <p className="text-xs text-ink/50 max-w-sm leading-relaxed">
-                      En envoyant ce formulaire, votre email s'ouvre avec un
-                      message pré-rempli adressé à {CABINET_EMAIL}.
-                    </p>
-                    <button
-                      type="submit"
-                      className="group px-10 py-5 bg-ink text-paper font-bold uppercase tracking-widest text-sm hover:bg-ink-muted transition-colors inline-flex items-center gap-3 shrink-0"
-                    >
-                      Envoyer
-                      <span className="transition-transform group-hover:translate-x-1">→</span>
-                    </button>
-                  </div>
-                </form>
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* Calendly */}
-        <section className="py-16 md:py-20 px-6 bg-paper-dark/40 border-y border-ink/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-12 gap-8 md:gap-14 mb-10 items-end">
-              <div className="md:col-span-8">
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-4">
-                  Prise de rendez-vous en ligne
-                </span>
-                <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95]">
-                  Réservez un créneau,{" "}
-                  <span className="text-ink/25 italic font-normal">directement.</span>
-                </h2>
-              </div>
-              <p className="md:col-span-4 text-sm text-ink/70 leading-relaxed">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-4">
+                Prise de rendez-vous en ligne
+              </span>
+              <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-4">
+                Réservez un créneau,{" "}
+                <span className="text-ink/25 italic font-normal">directement.</span>
+              </h2>
+              <p className="text-sm text-ink/70 leading-relaxed mb-8 max-w-xl">
                 Choisissez un créneau qui vous convient pour un premier échange
-                de 30 minutes, en visio ou en cabinet.
+                de 30 minutes, en visio ou en cabinet — sans engagement.
               </p>
+              <div
+                className="calendly-inline-widget bg-paper border border-ink/10 rounded-sm"
+                data-url="https://calendly.com/contact-astral-paris/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                style={{ minWidth: 320, height: 700 }}
+              />
             </div>
-            <div
-              className="calendly-inline-widget bg-paper border border-ink/10"
-              data-url="https://calendly.com/contact-astral-paris/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-              style={{ minWidth: 320, height: 700 }}
-            />
           </div>
         </section>
 
         {/* Map */}
-        <section className="py-16 md:py-20 px-6">
+        <section className="py-16 md:py-20 px-6 bg-paper-dark/30 border-t border-ink/5">
           <div className="max-w-7xl mx-auto">
             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-6">
               Nous trouver
             </span>
-            <CabinetMap height={520} color />
+            <CabinetMap height={520} />
           </div>
         </section>
       </main>
       <Footer />
-    </div>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <div className="flex flex-col gap-3">
-      <label
-        htmlFor={name}
-        className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40"
-      >
-        {label}
-        {required ? " *" : ""}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        className="bg-transparent border-b border-ink/20 py-3 text-ink focus:border-ink outline-none transition-colors"
-      />
     </div>
   );
 }

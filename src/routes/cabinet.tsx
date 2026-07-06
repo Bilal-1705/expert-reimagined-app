@@ -16,7 +16,7 @@ export const Route = createFileRoute("/cabinet")({
       {
         name: "description",
         content:
-          "Fondé par Nazifé Erkilic, le cabinet Erkilic est inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité à Juvignac.",
+          "Cabinet Erkilic à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
       },
       { name: "keywords", content: "cabinet expert-comptable Juvignac, Nazifé Erkilic, Ordre Experts-Comptables Montpellier, comptable Hérault" },
       { property: "og:title", content: "Le cabinet Erkilic — Expert-Comptable à Juvignac" },
@@ -34,16 +34,17 @@ export const Route = createFileRoute("/cabinet")({
   component: Cabinet,
 });
 
-const audiences = [
-  "Artisans",
-  "Commerçants",
-  "PME",
-  "Professions libérales",
-  "Créateurs d'entreprise",
-  "Associations",
-  "Comités d'entreprise",
-  "Particuliers",
+const audiences: { label: string; to: "/pack/pro" | "/pack/profession-liberale" | "/pack/createur" | "/pack/auto-entrepreneur" | "/pack/particulier" }[] = [
+  { label: "Artisans", to: "/pack/pro" },
+  { label: "Commerçants", to: "/pack/pro" },
+  { label: "PME", to: "/pack/pro" },
+  { label: "Professions libérales", to: "/pack/profession-liberale" },
+  { label: "Créateurs d'entreprise", to: "/pack/createur" },
+  { label: "Associations", to: "/pack/pro" },
+  { label: "Auto-entrepreneurs", to: "/pack/auto-entrepreneur" },
+  { label: "Particuliers", to: "/pack/particulier" },
 ];
+
 
 const values = [
   ["Compétence", "Une équipe formée en continu, en veille permanente sur la réglementation."],
@@ -182,19 +183,26 @@ function Cabinet() {
             />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
               {audiences.map((a, i) => (
-                <div
-                  key={a}
+                <Link
+                  key={a.label}
+                  to={a.to}
                   className="bg-paper p-8 flex items-start gap-4 min-h-32 group hover:bg-ink transition-colors duration-500"
                 >
                   <span className="text-[10px] font-bold tracking-[0.2em] text-ink/30 group-hover:text-paper/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-sora font-bold text-lg leading-tight group-hover:text-paper">
-                    {a}
-                  </span>
-                </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-sora font-bold text-lg leading-tight group-hover:text-paper">
+                      {a.label}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-paper transition-opacity">
+                      Voir le pack →
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
+
           </div>
         </section>
 

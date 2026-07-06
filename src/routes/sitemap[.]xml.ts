@@ -7,6 +7,8 @@ const entries = [
   { path: "/", priority: "1.0", changefreq: "weekly" as const },
   { path: "/services", priority: "0.9", changefreq: "monthly" as const },
   { path: "/cabinet", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/a-propos", priority: "0.7", changefreq: "monthly" as const },
+  { path: "/guide", priority: "0.8", changefreq: "monthly" as const },
   { path: "/contact", priority: "0.8", changefreq: "yearly" as const },
   { path: "/pack/createur", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/auto-entrepreneur", priority: "0.9", changefreq: "monthly" as const },
@@ -14,6 +16,7 @@ const entries = [
   { path: "/pack/pro", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/particulier", priority: "0.9", changefreq: "monthly" as const },
 ];
+
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
