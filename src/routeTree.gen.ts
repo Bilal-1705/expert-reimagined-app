@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as GuideRouteImport } from './routes/guide'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CabinetRouteImport } from './routes/cabinet'
+import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PackProfessionLiberaleRouteImport } from './routes/pack.profession-liberale'
 import { Route as PackProRouteImport } from './routes/pack.pro'
@@ -30,6 +32,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuideRoute = GuideRouteImport.update({
+  id: '/guide',
+  path: '/guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -38,6 +45,11 @@ const ContactRoute = ContactRouteImport.update({
 const CabinetRoute = CabinetRouteImport.update({
   id: '/cabinet',
   path: '/cabinet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -73,8 +85,10 @@ const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
@@ -85,8 +99,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
@@ -98,8 +114,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/contact': typeof ContactRoute
+  '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
@@ -112,8 +130,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/a-propos'
     | '/cabinet'
     | '/contact'
+    | '/guide'
     | '/services'
     | '/sitemap.xml'
     | '/pack/auto-entrepreneur'
@@ -124,8 +144,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/a-propos'
     | '/cabinet'
     | '/contact'
+    | '/guide'
     | '/services'
     | '/sitemap.xml'
     | '/pack/auto-entrepreneur'
@@ -136,8 +158,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/a-propos'
     | '/cabinet'
     | '/contact'
+    | '/guide'
     | '/services'
     | '/sitemap.xml'
     | '/pack/auto-entrepreneur'
@@ -149,8 +173,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
   CabinetRoute: typeof CabinetRoute
   ContactRoute: typeof ContactRoute
+  GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   PackAutoEntrepreneurRoute: typeof PackAutoEntrepreneurRoute
@@ -176,6 +202,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guide': {
+      id: '/guide'
+      path: '/guide'
+      fullPath: '/guide'
+      preLoaderRoute: typeof GuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -188,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/cabinet'
       fullPath: '/cabinet'
       preLoaderRoute: typeof CabinetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -237,8 +277,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
   CabinetRoute: CabinetRoute,
   ContactRoute: ContactRoute,
+  GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   PackAutoEntrepreneurRoute: PackAutoEntrepreneurRoute,
