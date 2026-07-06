@@ -138,7 +138,7 @@ function Contact() {
                 </span>
                 <p className="text-sm text-ink/70 leading-relaxed">
                   Lundi — Vendredi<br />
-                  09h00 — 12h30 · 14h00 — 18h00
+                  09h00 — 12h00 · 14h00 — 18h00
                 </p>
               </div>
               <div>
