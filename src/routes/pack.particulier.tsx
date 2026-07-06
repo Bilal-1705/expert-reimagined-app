@@ -8,11 +8,11 @@ const PATH = "/pack/particulier";
 export const Route = createFileRoute("/pack/particulier")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Particulier Montpellier | Déclaration Impôts — Erkilic Juvignac" },
+      { title: "Déclaration Impôts Particulier Montpellier | Erkilic" },
       {
         name: "description",
         content:
-          "Déclaration d'impôts sur le revenu, IFI, revenus fonciers, LMNP, optimisation fiscale et gestion patrimoniale pour particuliers à Juvignac / Montpellier.",
+          "Déclaration IR, IFI, revenus fonciers, LMNP et optimisation fiscale pour particuliers à Juvignac / Montpellier.",
       },
       {
         name: "keywords",

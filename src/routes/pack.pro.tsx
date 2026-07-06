@@ -8,11 +8,11 @@ const PATH = "/pack/pro";
 export const Route = createFileRoute("/pack/pro")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Artisans Commerçants PME Montpellier | Erkilic Juvignac" },
+      { title: "Comptable Artisans, Commerçants, PME Montpellier | Erkilic" },
       {
         name: "description",
         content:
-          "Cabinet comptable pour artisans, commerçants, PME et sociétés de service à Juvignac / Montpellier : tenue, bilan, TVA, paie, DSN, juridique, tableaux de bord mensuels.",
+          "Cabinet comptable pour artisans, commerçants et PME à Juvignac : bilan, TVA, paie DSN, juridique, tableaux de bord.",
       },
       {
         name: "keywords",

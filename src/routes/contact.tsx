@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contactez le cabinet Erkilic à Juvignac : 29 bis rue du Poumpidou. Tél. 09 72 54 07 71 / 06 59 88 40 80. Devis gratuit sous 24h, prise de rendez-vous en ligne.",
+          "Cabinet Erkilic à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
       },
       {
         name: "keywords",

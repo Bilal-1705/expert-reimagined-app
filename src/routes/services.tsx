@@ -10,11 +10,11 @@ const SITE = "https://expert-reimagined-app.lovable.app";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Prestations Expert-Comptable Juvignac Montpellier | Cabinet Erkilic" },
+      { title: "Prestations Expert-Comptable Juvignac | Erkilic" },
       {
         name: "description",
         content:
-          "Comptabilité, fiscalité, social, juridique, gestion, audit, organisation. Packs Créateur, Auto-entrepreneur, Profession libérale, Artisans & PME, Particulier.",
+          "Comptabilité, fiscalité, social, juridique. Packs Créateur, Auto-entrepreneur, Profession libérale, Artisans & PME, Particulier à Juvignac.",
       },
       {
         name: "keywords",

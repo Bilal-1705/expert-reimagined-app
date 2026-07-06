@@ -8,11 +8,11 @@ const PATH = "/pack/profession-liberale";
 export const Route = createFileRoute("/pack/profession-liberale")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Profession Libérale Montpellier | BNC 2035 AGA — Erkilic" },
+      { title: "Comptable Profession Libérale Montpellier | BNC 2035" },
       {
         name: "description",
         content:
-          "Cabinet spécialisé BNC, déclaration 2035 et AGA à Juvignac / Montpellier : médecins, infirmiers, kinés, avocats, architectes, consultants. Gestion, social, conseil patrimonial.",
+          "Cabinet spécialisé BNC, 2035, AGA à Juvignac / Montpellier : médecins, kinés, avocats, architectes, consultants.",
       },
       {
         name: "keywords",

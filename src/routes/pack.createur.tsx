@@ -8,11 +8,11 @@ const PATH = "/pack/createur";
 export const Route = createFileRoute("/pack/createur")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Création Entreprise Montpellier | Cabinet Erkilic" },
+      { title: "Création Entreprise Montpellier | Erkilic Comptable" },
       {
         name: "description",
         content:
-          "Créer votre entreprise à Montpellier / Juvignac : étude de faisabilité, prévisionnel, choix du statut (SASU, EURL, SARL), aides et subventions. Accompagnement de la 1ère année.",
+          "Création d'entreprise à Montpellier / Juvignac : prévisionnel, choix du statut (SASU, EURL, SARL), aides, 1ère année.",
       },
       {
         name: "keywords",

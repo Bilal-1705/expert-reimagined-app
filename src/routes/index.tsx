@@ -12,11 +12,11 @@ const SITE = "https://expert-reimagined-app.lovable.app";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic" },
+      { title: "Expert-Comptable Juvignac Montpellier — Erkilic" },
       {
         name: "description",
         content:
-          "Cabinet d'expertise comptable à Juvignac, près de Montpellier. 23 ans d'expérience au service des créateurs, professions libérales, artisans, PME et particuliers. Devis gratuit sous 24h.",
+          "Cabinet d'expertise comptable à Juvignac, près de Montpellier. Comptabilité, fiscal, social, juridique pour pros et particuliers. Devis gratuit 24h.",
       },
       {
         name: "keywords",

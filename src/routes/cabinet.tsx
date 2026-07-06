@@ -16,7 +16,7 @@ export const Route = createFileRoute("/cabinet")({
       {
         name: "description",
         content:
-          "Fondé par Nazifé Erkilic, le cabinet Erkilic est inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité à Juvignac.",
+          "Cabinet Erkilic à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
       },
       { name: "keywords", content: "cabinet expert-comptable Juvignac, Nazifé Erkilic, Ordre Experts-Comptables Montpellier, comptable Hérault" },
       { property: "og:title", content: "Le cabinet Erkilic — Expert-Comptable à Juvignac" },
