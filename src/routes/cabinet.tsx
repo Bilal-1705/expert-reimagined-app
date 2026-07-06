@@ -34,16 +34,17 @@ export const Route = createFileRoute("/cabinet")({
   component: Cabinet,
 });
 
-const audiences = [
-  "Artisans",
-  "Commerçants",
-  "PME",
-  "Professions libérales",
-  "Créateurs d'entreprise",
-  "Associations",
-  "Comités d'entreprise",
-  "Particuliers",
+const audiences: { label: string; to: "/pack/pro" | "/pack/profession-liberale" | "/pack/createur" | "/pack/auto-entrepreneur" | "/pack/particulier" }[] = [
+  { label: "Artisans", to: "/pack/pro" },
+  { label: "Commerçants", to: "/pack/pro" },
+  { label: "PME", to: "/pack/pro" },
+  { label: "Professions libérales", to: "/pack/profession-liberale" },
+  { label: "Créateurs d'entreprise", to: "/pack/createur" },
+  { label: "Associations", to: "/pack/pro" },
+  { label: "Auto-entrepreneurs", to: "/pack/auto-entrepreneur" },
+  { label: "Particuliers", to: "/pack/particulier" },
 ];
+
 
 const values = [
   ["Compétence", "Une équipe formée en continu, en veille permanente sur la réglementation."],
