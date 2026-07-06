@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import ordreAsset from "@/assets/ordre-experts-comptables.png.asset.json";
+import ordreLogo from "@/assets/ordre-experts-comptables.png";
 
 const packLinks = [
   { to: "/pack/createur", label: "Créateur d'entreprise" },
@@ -8,6 +8,12 @@ const packLinks = [
   { to: "/pack/pro", label: "Artisans / Commerçants / PME" },
   { to: "/pack/particulier", label: "Particulier" },
 ] as const;
+
+const editorialLinks = [
+  { to: "/a-propos", label: "À propos" },
+  { to: "/guide", label: "Guide de l'expertise comptable" },
+] as const;
+
 
 export function Footer() {
   return (
