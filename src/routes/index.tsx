@@ -113,14 +113,20 @@ function Home() {
                 <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-6">
                   Juvignac · Montpellier · Hérault
                 </span>
-                <h1 className="font-sora text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-8">
-                  Parce que vous comptez pour nous,
+                <h1 className="font-sora text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-6">
+                  Expert-comptable à Juvignac,
                   <br />
                   <span className="text-ink/25 italic font-normal">
-                    nous comptons pour vous
+                    au service de l'Hérault.
                   </span>
                   <span className="inline-block ml-1 w-[0.08em] h-[0.85em] align-[-0.1em] bg-ink animate-blink" />
                 </h1>
+                <p className="text-lg text-ink/70 max-w-2xl mb-8 leading-relaxed">
+                  Comptabilité, fiscalité, social et juridique. Un
+                  accompagnement rigoureux pour créateurs, professions
+                  libérales, PME et particuliers — porté par 23 ans
+                  d'expérience.
+                </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
                     to="/services"
@@ -138,12 +144,11 @@ function Home() {
                 </div>
               </div>
               <div className="md:col-span-4 reveal" data-reveal>
-                <p className="text-lg leading-relaxed text-ink/80 mb-0 border-l-2 border-ink pl-6 py-2 bg-paper/60 backdrop-blur-sm">
-                  Accompagnement rigoureux de la création à la transmission —
-                  une expertise comptable, fiscale, sociale et juridique de
-                  précision, portée par 23 ans d'expérience.
+                <p className="text-lg leading-relaxed text-ink/80 mb-0 border-l-2 border-ink pl-6 py-2 bg-paper/60 backdrop-blur-sm italic font-sora">
+                  « Parce que vous comptez pour nous, nous comptons pour vous. »
                 </p>
               </div>
+
             </div>
           </div>
         </section>
