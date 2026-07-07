@@ -7,16 +7,28 @@ const entries = [
   { path: "/", priority: "1.0", changefreq: "weekly" as const },
   { path: "/services", priority: "0.9", changefreq: "monthly" as const },
   { path: "/cabinet", priority: "0.8", changefreq: "monthly" as const },
-  { path: "/a-propos", priority: "0.7", changefreq: "monthly" as const },
+  { path: "/a-propos", priority: "0.6", changefreq: "yearly" as const },
   { path: "/guide", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/conseils", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/faq", priority: "0.8", changefreq: "monthly" as const },
   { path: "/contact", priority: "0.8", changefreq: "yearly" as const },
   { path: "/pack/createur", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/auto-entrepreneur", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/profession-liberale", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/pro", priority: "0.9", changefreq: "monthly" as const },
   { path: "/pack/particulier", priority: "0.9", changefreq: "monthly" as const },
+  { path: "/comparatif/indy-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/comparatif/pennylane-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/comparatif/keobiz-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/secteur/artisans-commercants", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/secteur/professions-liberales-medicales", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/secteur/immobilier-lmnp-sci", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/zone/saint-georges-dorques", priority: "0.7", changefreq: "monthly" as const },
+  { path: "/zone/grabels", priority: "0.7", changefreq: "monthly" as const },
+  { path: "/zone/celleneuve-mosson", priority: "0.7", changefreq: "monthly" as const },
+  { path: "/creation-entreprise/aides-locales-montpellier", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/creation-entreprise/sasu-eurl-ei", priority: "0.8", changefreq: "monthly" as const },
 ];
-
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

@@ -170,11 +170,11 @@ function Contact() {
                 Choisissez un créneau qui vous convient pour un premier échange
                 de 30 minutes, en visio ou en cabinet — sans engagement.
               </p>
-              <div
-                className="calendly-inline-widget bg-paper border border-ink/10 rounded-sm"
-                data-url="https://calendly.com/contact-astral-paris/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                style={{ minWidth: 320, height: 700 }}
+              <CalendlyInline
+                url="https://calendly.com/cabinet-erkilic/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                height={720}
               />
+
             </div>
           </div>
         </section>
