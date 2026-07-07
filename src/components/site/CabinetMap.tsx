@@ -1,7 +1,6 @@
 /**
  * Interactive map centered on the cabinet at 29 bis rue du Poumpidou, Juvignac.
- * Uses OpenStreetMap embed — no API key required. A subtle color treatment
- * aligns the map with the site palette (paper + ink) while remaining readable.
+ * Uses the Google Maps embed (no API key required for the public /maps embed).
  */
 export function CabinetMap({
   className = "",
@@ -10,26 +9,19 @@ export function CabinetMap({
   className?: string;
   height?: number;
 }) {
-  const lat = 43.6191;
-  const lon = 3.8022;
-  const d = 0.006;
-  const bbox = `${lon - d}%2C${lat - d}%2C${lon + d}%2C${lat + d}`;
-  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lon}`;
-  const link = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
+  const query = encodeURIComponent("Cabinet Erkilic, 29 bis rue du Poumpidou, 34990 Juvignac");
+  const src = `https://www.google.com/maps?q=${query}&hl=fr&z=16&output=embed`;
+  const link = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   return (
     <figure className={`relative overflow-hidden border border-ink/10 bg-paper-dark rounded-sm ${className}`}>
       <iframe
-        title="Localisation du cabinet Erkilic à Juvignac"
+        title="Cabinet Erkilic — 29 bis rue du Poumpidou, Juvignac (Google Maps)"
         src={src}
         loading="lazy"
-        style={{
-          height,
-          width: "100%",
-          border: 0,
-          // Warm sepia tint + muted saturation to align with the paper/ink palette.
-          filter: "sepia(0.35) saturate(0.75) hue-rotate(-8deg) brightness(1.02) contrast(0.96)",
-        }}
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+        style={{ height, width: "100%", border: 0 }}
       />
       <figcaption className="absolute bottom-3 right-3 bg-paper/95 backdrop-blur px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg rounded-sm">
         <span className="block text-ink">Cabinet Erkilic</span>
@@ -42,7 +34,7 @@ export function CabinetMap({
           rel="noopener noreferrer"
           className="inline-block mt-2 text-ink underline"
         >
-          Itinéraire →
+          Ouvrir dans Google Maps →
         </a>
       </figcaption>
     </figure>

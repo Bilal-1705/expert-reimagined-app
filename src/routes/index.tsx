@@ -12,7 +12,7 @@ const SITE = "https://expert-reimagined-app.lovable.app";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Juvignac Montpellier — Erkilic" },
+      { title: "Expert-Comptable à Juvignac près de Montpellier — Cabinet Erkilic" },
       {
         name: "description",
         content:
@@ -117,7 +117,7 @@ function Home() {
                   Expert-comptable à Juvignac,
                   <br />
                   <span className="text-ink/25 italic font-normal">
-                    au service de l'Hérault.
+                    près de Montpellier.
                   </span>
                   <span className="inline-block ml-1 w-[0.08em] h-[0.85em] align-[-0.1em] bg-ink animate-blink" />
                 </h1>

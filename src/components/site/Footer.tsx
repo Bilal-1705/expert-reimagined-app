@@ -9,11 +9,68 @@ const packLinks = [
   { to: "/pack/particulier", label: "Particulier" },
 ] as const;
 
+const sectorLinks = [
+  { to: "/secteur/artisans-commercants", label: "Artisans & commerçants" },
+  { to: "/secteur/professions-liberales-medicales", label: "Professions libérales & médicales" },
+  { to: "/secteur/immobilier-lmnp-sci", label: "Immobilier — LMNP & SCI" },
+] as const;
+
+const comparatorLinks = [
+  { to: "/comparatif/indy-vs-erkilic", label: "Indy vs Erkilic" },
+  { to: "/comparatif/pennylane-vs-erkilic", label: "Pennylane vs Erkilic" },
+  { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz vs Erkilic" },
+] as const;
+
+const zoneLinks = [
+  { to: "/zone/saint-georges-dorques", label: "Saint-Georges-d'Orques" },
+  { to: "/zone/grabels", label: "Grabels" },
+  { to: "/zone/celleneuve-mosson", label: "Celleneuve / La Mosson" },
+] as const;
+
+const creationLinks = [
+  { to: "/creation-entreprise/aides-locales-montpellier", label: "Aides locales Montpellier" },
+  { to: "/creation-entreprise/sasu-eurl-ei", label: "SASU, EURL, EI : quel statut ?" },
+] as const;
+
 const editorialLinks = [
   { to: "/a-propos", label: "À propos" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
+  { to: "/conseils", label: "Conseils & analyses" },
+  { to: "/faq", label: "FAQ" },
 ] as const;
 
+function Column({
+  title,
+  links,
+}: {
+  title: string;
+  links: readonly { to: string; label: string }[];
+}) {
+  return (
+    <details className="md:open:block group" open>
+      <summary className="list-none flex items-center justify-between md:cursor-default md:pointer-events-none">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
+          {title}
+        </p>
+        <span className="md:hidden text-paper/50 text-lg group-open:rotate-45 transition-transform">
+          +
+        </span>
+      </summary>
+      <ul className="space-y-2">
+        {links.map((l) => (
+          <li key={l.to}>
+            <Link
+              to={l.to}
+              className="text-sm text-paper/60 hover:text-paper transition-colors"
+            >
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
 
 export function Footer() {
   return (
@@ -26,8 +83,8 @@ export function Footer() {
           <div className="flex flex-col justify-end items-start">
             <p className="text-paper/60 mb-8 max-w-sm leading-relaxed">
               Basé à Juvignac, le cabinet Erkilic intervient sur toute la région
-              de Montpellier — Saint-Georges-d'Orques, Pignan, Montarnaud — et en
-              distanciel partout en France.
+              de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La
+              Mosson, Pignan, Montarnaud — et en distanciel partout en France.
             </p>
             <Link
               to="/contact"
@@ -39,43 +96,29 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Pack links */}
-        <div className="pt-12 border-t border-paper/10 grid gap-10 md:grid-cols-3 mb-16">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
-              Nos packs
-            </p>
-            <ul className="space-y-2">
-              {packLinks.map((p) => (
-                <li key={p.to}>
-                  <Link
-                    
-                    to={p.to}
-                    className="text-sm text-paper/60 hover:text-paper transition-colors"
-                  >
-                    {p.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="pt-12 border-t border-paper/10 grid gap-10 md:grid-cols-3 lg:grid-cols-6 mb-16">
+          <Column title="Packs" links={packLinks} />
+          <Column title="Secteurs" links={sectorLinks} />
+          <Column title="Création d'entreprise" links={creationLinks} />
+          <Column title="Comparatifs" links={comparatorLinks} />
+          <Column title="Zones d'intervention" links={zoneLinks} />
+          <div className="space-y-8">
+            <Column title="Ressources" links={editorialLinks} />
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
+                Navigation
+              </p>
+              <ul className="space-y-2 text-sm text-paper/60">
+                <li><Link to="/" className="hover:text-paper transition-colors">Accueil</Link></li>
+                <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
+                <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
+                <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
-              Navigation
-            </p>
-            <ul className="space-y-2 text-sm text-paper/60">
-              <li><Link to="/" className="hover:text-paper transition-colors">Accueil</Link></li>
-              <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
-              <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
-              <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
-              {editorialLinks.map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="hover:text-paper transition-colors">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        </div>
 
+        <div className="grid md:grid-cols-2 gap-10 pt-10 border-t border-paper/10">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/80 mb-4">
               Contact
@@ -94,10 +137,15 @@ export function Footer() {
               </a>
             </address>
           </div>
+          <p className="text-xs text-paper/50 leading-relaxed md:text-right">
+            Cabinet inscrit à l'Ordre des Experts-Comptables de Montpellier.
+            Nous engageons notre responsabilité civile professionnelle sur
+            chaque mission — une garantie que les logiciels de comptabilité
+            en ligne ne peuvent pas offrir.
+          </p>
         </div>
 
-        {/* Baseline + Ordre badge */}
-        <div className="pt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+        <div className="pt-8 mt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30 space-y-2">
             <p>© {new Date().getFullYear()} Erkilic Expertise Comptable</p>
             <p>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</p>

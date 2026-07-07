@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CabinetMap } from "@/components/site/CabinetMap";
+import { CalendlyInline } from "@/components/site/CalendlyInline";
 import { useReveal } from "@/hooks/use-reveal";
+
 
 const SITE = "https://expert-reimagined-app.lovable.app";
 const CABINET_EMAIL = "cabinet@erkilic.fr";
@@ -63,14 +64,6 @@ function Contact() {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
 
-  // Load Calendly widget script once
-  useEffect(() => {
-    if (document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]')) return;
-    const s = document.createElement("script");
-    s.src = "https://assets.calendly.com/assets/external/widget.js";
-    s.async = true;
-    document.body.appendChild(s);
-  }, []);
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
@@ -177,11 +170,11 @@ function Contact() {
                 Choisissez un créneau qui vous convient pour un premier échange
                 de 30 minutes, en visio ou en cabinet — sans engagement.
               </p>
-              <div
-                className="calendly-inline-widget bg-paper border border-ink/10 rounded-sm"
-                data-url="https://calendly.com/contact-astral-paris/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                style={{ minWidth: 320, height: 700 }}
+              <CalendlyInline
+                url="https://calendly.com/cabinet-erkilic/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                height={720}
               />
+
             </div>
           </div>
         </section>
