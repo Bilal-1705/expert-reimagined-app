@@ -7,7 +7,7 @@ import cabinetImg from "@/assets/cabinet.jpg";
 import heroOffice from "@/assets/hero-office.jpg";
 import handsLedger from "@/assets/hands-ledger.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 
 export const Route = createFileRoute("/")({
   head: () => ({
