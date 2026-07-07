@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GuideRouteImport } from './routes/guide'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConseilsRouteImport } from './routes/conseils'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,9 +39,19 @@ const GuideRoute = GuideRouteImport.update({
   path: '/guide',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConseilsRoute = ConseilsRouteImport.update({
+  id: '/conseils',
+  path: '/conseils',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CabinetRoute = CabinetRouteImport.update({
@@ -87,7 +99,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -101,7 +115,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -116,7 +132,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -132,7 +150,9 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/conseils'
     | '/contact'
+    | '/faq'
     | '/guide'
     | '/services'
     | '/sitemap.xml'
@@ -146,7 +166,9 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/conseils'
     | '/contact'
+    | '/faq'
     | '/guide'
     | '/services'
     | '/sitemap.xml'
@@ -160,7 +182,9 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/conseils'
     | '/contact'
+    | '/faq'
     | '/guide'
     | '/services'
     | '/sitemap.xml'
@@ -175,7 +199,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
   CabinetRoute: typeof CabinetRoute
+  ConseilsRoute: typeof ConseilsRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -209,11 +235,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuideRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conseils': {
+      id: '/conseils'
+      path: '/conseils'
+      fullPath: '/conseils'
+      preLoaderRoute: typeof ConseilsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cabinet': {
@@ -279,7 +319,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
   CabinetRoute: CabinetRoute,
+  ConseilsRoute: ConseilsRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
