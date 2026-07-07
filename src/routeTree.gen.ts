@@ -18,11 +18,17 @@ import { Route as ConseilsRouteImport } from './routes/conseils'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SecteurProfessionsLiberalesMedicalesRouteImport } from './routes/secteur.professions-liberales-medicales'
+import { Route as SecteurImmobilierLmnpSciRouteImport } from './routes/secteur.immobilier-lmnp-sci'
+import { Route as SecteurArtisansCommercantsRouteImport } from './routes/secteur.artisans-commercants'
 import { Route as PackProfessionLiberaleRouteImport } from './routes/pack.profession-liberale'
 import { Route as PackProRouteImport } from './routes/pack.pro'
 import { Route as PackParticulierRouteImport } from './routes/pack.particulier'
 import { Route as PackCreateurRouteImport } from './routes/pack.createur'
 import { Route as PackAutoEntrepreneurRouteImport } from './routes/pack.auto-entrepreneur'
+import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
+import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
+import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -69,6 +75,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SecteurProfessionsLiberalesMedicalesRoute =
+  SecteurProfessionsLiberalesMedicalesRouteImport.update({
+    id: '/secteur/professions-liberales-medicales',
+    path: '/secteur/professions-liberales-medicales',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SecteurImmobilierLmnpSciRoute =
+  SecteurImmobilierLmnpSciRouteImport.update({
+    id: '/secteur/immobilier-lmnp-sci',
+    path: '/secteur/immobilier-lmnp-sci',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SecteurArtisansCommercantsRoute =
+  SecteurArtisansCommercantsRouteImport.update({
+    id: '/secteur/artisans-commercants',
+    path: '/secteur/artisans-commercants',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PackProfessionLiberaleRoute = PackProfessionLiberaleRouteImport.update({
   id: '/pack/profession-liberale',
   path: '/pack/profession-liberale',
@@ -94,6 +118,23 @@ const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
   path: '/pack/auto-entrepreneur',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComparatifPennylaneVsErkilicRoute =
+  ComparatifPennylaneVsErkilicRouteImport.update({
+    id: '/comparatif/pennylane-vs-erkilic',
+    path: '/comparatif/pennylane-vs-erkilic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifKeobizVsErkilicRoute =
+  ComparatifKeobizVsErkilicRouteImport.update({
+    id: '/comparatif/keobiz-vs-erkilic',
+    path: '/comparatif/keobiz-vs-erkilic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
+  id: '/comparatif/indy-vs-erkilic',
+  path: '/comparatif/indy-vs-erkilic',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -105,11 +146,17 @@ export interface FileRoutesByFullPath {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
+  '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
+  '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
   '/pack/pro': typeof PackProRoute
   '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
+  '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
+  '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
+  '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -121,11 +168,17 @@ export interface FileRoutesByTo {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
+  '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
+  '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
   '/pack/pro': typeof PackProRoute
   '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
+  '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
+  '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
+  '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -138,11 +191,17 @@ export interface FileRoutesById {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
+  '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
+  '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
   '/pack/pro': typeof PackProRoute
   '/pack/profession-liberale': typeof PackProfessionLiberaleRoute
+  '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
+  '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
+  '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -156,11 +215,17 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/comparatif/indy-vs-erkilic'
+    | '/comparatif/keobiz-vs-erkilic'
+    | '/comparatif/pennylane-vs-erkilic'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
     | '/pack/pro'
     | '/pack/profession-liberale'
+    | '/secteur/artisans-commercants'
+    | '/secteur/immobilier-lmnp-sci'
+    | '/secteur/professions-liberales-medicales'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -172,11 +237,17 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/comparatif/indy-vs-erkilic'
+    | '/comparatif/keobiz-vs-erkilic'
+    | '/comparatif/pennylane-vs-erkilic'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
     | '/pack/pro'
     | '/pack/profession-liberale'
+    | '/secteur/artisans-commercants'
+    | '/secteur/immobilier-lmnp-sci'
+    | '/secteur/professions-liberales-medicales'
   id:
     | '__root__'
     | '/'
@@ -188,11 +259,17 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/comparatif/indy-vs-erkilic'
+    | '/comparatif/keobiz-vs-erkilic'
+    | '/comparatif/pennylane-vs-erkilic'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
     | '/pack/pro'
     | '/pack/profession-liberale'
+    | '/secteur/artisans-commercants'
+    | '/secteur/immobilier-lmnp-sci'
+    | '/secteur/professions-liberales-medicales'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -205,11 +282,17 @@ export interface RootRouteChildren {
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
+  ComparatifKeobizVsErkilicRoute: typeof ComparatifKeobizVsErkilicRoute
+  ComparatifPennylaneVsErkilicRoute: typeof ComparatifPennylaneVsErkilicRoute
   PackAutoEntrepreneurRoute: typeof PackAutoEntrepreneurRoute
   PackCreateurRoute: typeof PackCreateurRoute
   PackParticulierRoute: typeof PackParticulierRoute
   PackProRoute: typeof PackProRoute
   PackProfessionLiberaleRoute: typeof PackProfessionLiberaleRoute
+  SecteurArtisansCommercantsRoute: typeof SecteurArtisansCommercantsRoute
+  SecteurImmobilierLmnpSciRoute: typeof SecteurImmobilierLmnpSciRoute
+  SecteurProfessionsLiberalesMedicalesRoute: typeof SecteurProfessionsLiberalesMedicalesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -277,6 +360,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/secteur/professions-liberales-medicales': {
+      id: '/secteur/professions-liberales-medicales'
+      path: '/secteur/professions-liberales-medicales'
+      fullPath: '/secteur/professions-liberales-medicales'
+      preLoaderRoute: typeof SecteurProfessionsLiberalesMedicalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/immobilier-lmnp-sci': {
+      id: '/secteur/immobilier-lmnp-sci'
+      path: '/secteur/immobilier-lmnp-sci'
+      fullPath: '/secteur/immobilier-lmnp-sci'
+      preLoaderRoute: typeof SecteurImmobilierLmnpSciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/artisans-commercants': {
+      id: '/secteur/artisans-commercants'
+      path: '/secteur/artisans-commercants'
+      fullPath: '/secteur/artisans-commercants'
+      preLoaderRoute: typeof SecteurArtisansCommercantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pack/profession-liberale': {
       id: '/pack/profession-liberale'
       path: '/pack/profession-liberale'
@@ -312,6 +416,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackAutoEntrepreneurRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comparatif/pennylane-vs-erkilic': {
+      id: '/comparatif/pennylane-vs-erkilic'
+      path: '/comparatif/pennylane-vs-erkilic'
+      fullPath: '/comparatif/pennylane-vs-erkilic'
+      preLoaderRoute: typeof ComparatifPennylaneVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/keobiz-vs-erkilic': {
+      id: '/comparatif/keobiz-vs-erkilic'
+      path: '/comparatif/keobiz-vs-erkilic'
+      fullPath: '/comparatif/keobiz-vs-erkilic'
+      preLoaderRoute: typeof ComparatifKeobizVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/indy-vs-erkilic': {
+      id: '/comparatif/indy-vs-erkilic'
+      path: '/comparatif/indy-vs-erkilic'
+      fullPath: '/comparatif/indy-vs-erkilic'
+      preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -325,11 +450,18 @@ const rootRouteChildren: RootRouteChildren = {
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ComparatifIndyVsErkilicRoute: ComparatifIndyVsErkilicRoute,
+  ComparatifKeobizVsErkilicRoute: ComparatifKeobizVsErkilicRoute,
+  ComparatifPennylaneVsErkilicRoute: ComparatifPennylaneVsErkilicRoute,
   PackAutoEntrepreneurRoute: PackAutoEntrepreneurRoute,
   PackCreateurRoute: PackCreateurRoute,
   PackParticulierRoute: PackParticulierRoute,
   PackProRoute: PackProRoute,
   PackProfessionLiberaleRoute: PackProfessionLiberaleRoute,
+  SecteurArtisansCommercantsRoute: SecteurArtisansCommercantsRoute,
+  SecteurImmobilierLmnpSciRoute: SecteurImmobilierLmnpSciRoute,
+  SecteurProfessionsLiberalesMedicalesRoute:
+    SecteurProfessionsLiberalesMedicalesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
