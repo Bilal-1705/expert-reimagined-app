@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CabinetMap } from "@/components/site/CabinetMap";
+import { CalendlyInline } from "@/components/site/CalendlyInline";
 import { useReveal } from "@/hooks/use-reveal";
+
 
 const SITE = "https://expert-reimagined-app.lovable.app";
 const CABINET_EMAIL = "cabinet@erkilic.fr";
@@ -63,14 +64,6 @@ function Contact() {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
 
-  // Load Calendly widget script once
-  useEffect(() => {
-    if (document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]')) return;
-    const s = document.createElement("script");
-    s.src = "https://assets.calendly.com/assets/external/widget.js";
-    s.async = true;
-    document.body.appendChild(s);
-  }, []);
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
