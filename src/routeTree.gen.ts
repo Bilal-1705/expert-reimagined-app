@@ -18,6 +18,9 @@ import { Route as ConseilsRouteImport } from './routes/conseils'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ZoneSaintGeorgesDorquesRouteImport } from './routes/zone.saint-georges-dorques'
+import { Route as ZoneGrabelsRouteImport } from './routes/zone.grabels'
+import { Route as ZoneCelleneuveMossonRouteImport } from './routes/zone.celleneuve-mosson'
 import { Route as SecteurProfessionsLiberalesMedicalesRouteImport } from './routes/secteur.professions-liberales-medicales'
 import { Route as SecteurImmobilierLmnpSciRouteImport } from './routes/secteur.immobilier-lmnp-sci'
 import { Route as SecteurArtisansCommercantsRouteImport } from './routes/secteur.artisans-commercants'
@@ -26,6 +29,8 @@ import { Route as PackProRouteImport } from './routes/pack.pro'
 import { Route as PackParticulierRouteImport } from './routes/pack.particulier'
 import { Route as PackCreateurRouteImport } from './routes/pack.createur'
 import { Route as PackAutoEntrepreneurRouteImport } from './routes/pack.auto-entrepreneur'
+import { Route as CreationEntrepriseSasuEurlEiRouteImport } from './routes/creation-entreprise.sasu-eurl-ei'
+import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from './routes/creation-entreprise.aides-locales-montpellier'
 import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
 import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
 import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
@@ -75,6 +80,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZoneSaintGeorgesDorquesRoute = ZoneSaintGeorgesDorquesRouteImport.update({
+  id: '/zone/saint-georges-dorques',
+  path: '/zone/saint-georges-dorques',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZoneGrabelsRoute = ZoneGrabelsRouteImport.update({
+  id: '/zone/grabels',
+  path: '/zone/grabels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZoneCelleneuveMossonRoute = ZoneCelleneuveMossonRouteImport.update({
+  id: '/zone/celleneuve-mosson',
+  path: '/zone/celleneuve-mosson',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SecteurProfessionsLiberalesMedicalesRoute =
   SecteurProfessionsLiberalesMedicalesRouteImport.update({
     id: '/secteur/professions-liberales-medicales',
@@ -118,6 +138,18 @@ const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
   path: '/pack/auto-entrepreneur',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreationEntrepriseSasuEurlEiRoute =
+  CreationEntrepriseSasuEurlEiRouteImport.update({
+    id: '/creation-entreprise/sasu-eurl-ei',
+    path: '/creation-entreprise/sasu-eurl-ei',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreationEntrepriseAidesLocalesMontpellierRoute =
+  CreationEntrepriseAidesLocalesMontpellierRouteImport.update({
+    id: '/creation-entreprise/aides-locales-montpellier',
+    path: '/creation-entreprise/aides-locales-montpellier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ComparatifPennylaneVsErkilicRoute =
   ComparatifPennylaneVsErkilicRouteImport.update({
     id: '/comparatif/pennylane-vs-erkilic',
@@ -149,6 +181,8 @@ export interface FileRoutesByFullPath {
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
+  '/creation-entreprise/aides-locales-montpellier': typeof CreationEntrepriseAidesLocalesMontpellierRoute
+  '/creation-entreprise/sasu-eurl-ei': typeof CreationEntrepriseSasuEurlEiRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
@@ -157,6 +191,9 @@ export interface FileRoutesByFullPath {
   '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
   '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
   '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
+  '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
+  '/zone/grabels': typeof ZoneGrabelsRoute
+  '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -171,6 +208,8 @@ export interface FileRoutesByTo {
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
+  '/creation-entreprise/aides-locales-montpellier': typeof CreationEntrepriseAidesLocalesMontpellierRoute
+  '/creation-entreprise/sasu-eurl-ei': typeof CreationEntrepriseSasuEurlEiRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
@@ -179,6 +218,9 @@ export interface FileRoutesByTo {
   '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
   '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
   '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
+  '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
+  '/zone/grabels': typeof ZoneGrabelsRoute
+  '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -194,6 +236,8 @@ export interface FileRoutesById {
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
+  '/creation-entreprise/aides-locales-montpellier': typeof CreationEntrepriseAidesLocalesMontpellierRoute
+  '/creation-entreprise/sasu-eurl-ei': typeof CreationEntrepriseSasuEurlEiRoute
   '/pack/auto-entrepreneur': typeof PackAutoEntrepreneurRoute
   '/pack/createur': typeof PackCreateurRoute
   '/pack/particulier': typeof PackParticulierRoute
@@ -202,6 +246,9 @@ export interface FileRoutesById {
   '/secteur/artisans-commercants': typeof SecteurArtisansCommercantsRoute
   '/secteur/immobilier-lmnp-sci': typeof SecteurImmobilierLmnpSciRoute
   '/secteur/professions-liberales-medicales': typeof SecteurProfessionsLiberalesMedicalesRoute
+  '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
+  '/zone/grabels': typeof ZoneGrabelsRoute
+  '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -218,6 +265,8 @@ export interface FileRouteTypes {
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
+    | '/creation-entreprise/aides-locales-montpellier'
+    | '/creation-entreprise/sasu-eurl-ei'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
@@ -226,6 +275,9 @@ export interface FileRouteTypes {
     | '/secteur/artisans-commercants'
     | '/secteur/immobilier-lmnp-sci'
     | '/secteur/professions-liberales-medicales'
+    | '/zone/celleneuve-mosson'
+    | '/zone/grabels'
+    | '/zone/saint-georges-dorques'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -240,6 +292,8 @@ export interface FileRouteTypes {
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
+    | '/creation-entreprise/aides-locales-montpellier'
+    | '/creation-entreprise/sasu-eurl-ei'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
@@ -248,6 +302,9 @@ export interface FileRouteTypes {
     | '/secteur/artisans-commercants'
     | '/secteur/immobilier-lmnp-sci'
     | '/secteur/professions-liberales-medicales'
+    | '/zone/celleneuve-mosson'
+    | '/zone/grabels'
+    | '/zone/saint-georges-dorques'
   id:
     | '__root__'
     | '/'
@@ -262,6 +319,8 @@ export interface FileRouteTypes {
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
+    | '/creation-entreprise/aides-locales-montpellier'
+    | '/creation-entreprise/sasu-eurl-ei'
     | '/pack/auto-entrepreneur'
     | '/pack/createur'
     | '/pack/particulier'
@@ -270,6 +329,9 @@ export interface FileRouteTypes {
     | '/secteur/artisans-commercants'
     | '/secteur/immobilier-lmnp-sci'
     | '/secteur/professions-liberales-medicales'
+    | '/zone/celleneuve-mosson'
+    | '/zone/grabels'
+    | '/zone/saint-georges-dorques'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -285,6 +347,8 @@ export interface RootRouteChildren {
   ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
   ComparatifKeobizVsErkilicRoute: typeof ComparatifKeobizVsErkilicRoute
   ComparatifPennylaneVsErkilicRoute: typeof ComparatifPennylaneVsErkilicRoute
+  CreationEntrepriseAidesLocalesMontpellierRoute: typeof CreationEntrepriseAidesLocalesMontpellierRoute
+  CreationEntrepriseSasuEurlEiRoute: typeof CreationEntrepriseSasuEurlEiRoute
   PackAutoEntrepreneurRoute: typeof PackAutoEntrepreneurRoute
   PackCreateurRoute: typeof PackCreateurRoute
   PackParticulierRoute: typeof PackParticulierRoute
@@ -293,6 +357,9 @@ export interface RootRouteChildren {
   SecteurArtisansCommercantsRoute: typeof SecteurArtisansCommercantsRoute
   SecteurImmobilierLmnpSciRoute: typeof SecteurImmobilierLmnpSciRoute
   SecteurProfessionsLiberalesMedicalesRoute: typeof SecteurProfessionsLiberalesMedicalesRoute
+  ZoneCelleneuveMossonRoute: typeof ZoneCelleneuveMossonRoute
+  ZoneGrabelsRoute: typeof ZoneGrabelsRoute
+  ZoneSaintGeorgesDorquesRoute: typeof ZoneSaintGeorgesDorquesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -360,6 +427,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zone/saint-georges-dorques': {
+      id: '/zone/saint-georges-dorques'
+      path: '/zone/saint-georges-dorques'
+      fullPath: '/zone/saint-georges-dorques'
+      preLoaderRoute: typeof ZoneSaintGeorgesDorquesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zone/grabels': {
+      id: '/zone/grabels'
+      path: '/zone/grabels'
+      fullPath: '/zone/grabels'
+      preLoaderRoute: typeof ZoneGrabelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zone/celleneuve-mosson': {
+      id: '/zone/celleneuve-mosson'
+      path: '/zone/celleneuve-mosson'
+      fullPath: '/zone/celleneuve-mosson'
+      preLoaderRoute: typeof ZoneCelleneuveMossonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/secteur/professions-liberales-medicales': {
       id: '/secteur/professions-liberales-medicales'
       path: '/secteur/professions-liberales-medicales'
@@ -416,6 +504,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackAutoEntrepreneurRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/creation-entreprise/sasu-eurl-ei': {
+      id: '/creation-entreprise/sasu-eurl-ei'
+      path: '/creation-entreprise/sasu-eurl-ei'
+      fullPath: '/creation-entreprise/sasu-eurl-ei'
+      preLoaderRoute: typeof CreationEntrepriseSasuEurlEiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-entreprise/aides-locales-montpellier': {
+      id: '/creation-entreprise/aides-locales-montpellier'
+      path: '/creation-entreprise/aides-locales-montpellier'
+      fullPath: '/creation-entreprise/aides-locales-montpellier'
+      preLoaderRoute: typeof CreationEntrepriseAidesLocalesMontpellierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparatif/pennylane-vs-erkilic': {
       id: '/comparatif/pennylane-vs-erkilic'
       path: '/comparatif/pennylane-vs-erkilic'
@@ -453,6 +555,9 @@ const rootRouteChildren: RootRouteChildren = {
   ComparatifIndyVsErkilicRoute: ComparatifIndyVsErkilicRoute,
   ComparatifKeobizVsErkilicRoute: ComparatifKeobizVsErkilicRoute,
   ComparatifPennylaneVsErkilicRoute: ComparatifPennylaneVsErkilicRoute,
+  CreationEntrepriseAidesLocalesMontpellierRoute:
+    CreationEntrepriseAidesLocalesMontpellierRoute,
+  CreationEntrepriseSasuEurlEiRoute: CreationEntrepriseSasuEurlEiRoute,
   PackAutoEntrepreneurRoute: PackAutoEntrepreneurRoute,
   PackCreateurRoute: PackCreateurRoute,
   PackParticulierRoute: PackParticulierRoute,
@@ -462,6 +567,9 @@ const rootRouteChildren: RootRouteChildren = {
   SecteurImmobilierLmnpSciRoute: SecteurImmobilierLmnpSciRoute,
   SecteurProfessionsLiberalesMedicalesRoute:
     SecteurProfessionsLiberalesMedicalesRoute,
+  ZoneCelleneuveMossonRoute: ZoneCelleneuveMossonRoute,
+  ZoneGrabelsRoute: ZoneGrabelsRoute,
+  ZoneSaintGeorgesDorquesRoute: ZoneSaintGeorgesDorquesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
