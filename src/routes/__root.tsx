@@ -56,7 +56,20 @@ const localBusinessJsonLd = {
     name: "Ordre des Experts-Comptables de Montpellier",
     url: "https://www.experts-comptables.fr/",
   },
+  knowsAbout: [
+    "Expertise comptable",
+    "Création d'entreprise",
+    "Optimisation fiscale TPE",
+    "Comptabilité auto-entrepreneur",
+    "Déclaration 2035 profession libérale",
+    "Bilan comptable PME",
+    "LMNP et SCI",
+    "Choix de statut juridique SASU EURL SARL",
+    "Paie et DSN",
+  ],
+  slogan: "Parce que vous comptez pour nous, nous comptons pour vous.",
 };
+
 
 function NotFoundComponent() {
   return (
