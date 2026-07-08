@@ -41,9 +41,24 @@ export function ContentPage({
   faq = [],
   cta,
   breadcrumbs = [],
+  datePublished,
+  dateModified,
 }: ContentPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
+
+  const fmt = (iso?: string) => {
+    if (!iso) return null;
+    try {
+      return new Date(iso).toLocaleDateString("fr-FR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+    } catch {
+      return iso;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
