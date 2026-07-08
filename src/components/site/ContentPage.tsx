@@ -103,6 +103,26 @@ export function ContentPage({
                 </>
               )}
             </h1>
+            {(datePublished || dateModified) && (
+              <div className="mb-6 flex flex-wrap gap-x-6 gap-y-1 text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">
+                {datePublished && (
+                  <span>
+                    Publié le{" "}
+                    <time dateTime={datePublished} className="text-ink/75">
+                      {fmt(datePublished)}
+                    </time>
+                  </span>
+                )}
+                {dateModified && (
+                  <span>
+                    Mis à jour le{" "}
+                    <time dateTime={dateModified} className="text-ink/75">
+                      {fmt(dateModified)}
+                    </time>
+                  </span>
+                )}
+              </div>
+            )}
             <div className="prose-lg text-lg text-ink/75 leading-relaxed max-w-3xl reveal" data-reveal>
               {intro}
             </div>
