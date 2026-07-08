@@ -21,6 +21,10 @@ export type ContentPageProps = {
   faq?: QA[];
   cta?: { label: string; to: string; sub?: string };
   breadcrumbs?: { label: string; to?: string }[];
+  /** ISO date, e.g. "2026-01-15". Displayed under the H1 and used for schema.org. */
+  datePublished?: string;
+  /** ISO date, e.g. "2026-07-08". Displayed and used for schema.org dateModified. */
+  dateModified?: string;
 };
 
 /**
