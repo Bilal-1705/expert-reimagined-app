@@ -36,6 +36,7 @@ import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparat
 import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
 import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
 import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
+import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -181,6 +182,11 @@ const ActualitesFacturationElectronique2026Route =
     path: '/actualites/facturation-electronique-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
+  id: '/actualites/baremes-2026',
+  path: '/actualites/baremes-2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
@@ -251,6 +259,7 @@ export interface FileRoutesById {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
@@ -282,6 +291,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
@@ -311,6 +321,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
@@ -340,6 +351,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
@@ -370,6 +382,7 @@ export interface RootRouteChildren {
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
   ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
   ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
   ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
@@ -581,6 +594,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/baremes-2026': {
+      id: '/actualites/baremes-2026'
+      path: '/actualites/baremes-2026'
+      fullPath: '/actualites/baremes-2026'
+      preLoaderRoute: typeof ActualitesBaremes2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -594,6 +614,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ActualitesBaremes2026Route: ActualitesBaremes2026Route,
   ActualitesFacturationElectronique2026Route:
     ActualitesFacturationElectronique2026Route,
   ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
