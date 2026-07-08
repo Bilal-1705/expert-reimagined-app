@@ -20,4 +20,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://expert-reimagined-app.lovable.app/sitemap.xml
+Sitemap: https://erkilic.fr/sitemap.xml

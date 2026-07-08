@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import handsLedger from "@/assets/hands-ledger.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

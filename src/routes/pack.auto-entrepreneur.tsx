@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import handsLedger from "@/assets/hands-ledger.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 const PATH = "/pack/auto-entrepreneur";
 
 export const Route = createFileRoute("/pack/auto-entrepreneur")({
