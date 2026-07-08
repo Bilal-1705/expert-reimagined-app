@@ -34,6 +34,7 @@ import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from '.
 import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
 import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
 import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
+import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
 import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -168,6 +169,12 @@ const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
   path: '/comparatif/indy-vs-erkilic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActualitesLoiFinances2026Route =
+  ActualitesLoiFinances2026RouteImport.update({
+    id: '/actualites/loi-finances-2026',
+    path: '/actualites/loi-finances-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ActualitesFacturationElectronique2026Route =
   ActualitesFacturationElectronique2026RouteImport.update({
     id: '/actualites/facturation-electronique-2026',
@@ -186,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -214,6 +222,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -243,6 +252,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -273,6 +283,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -301,6 +312,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -329,6 +341,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -358,6 +371,7 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
+  ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
   ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
   ComparatifKeobizVsErkilicRoute: typeof ComparatifKeobizVsErkilicRoute
   ComparatifPennylaneVsErkilicRoute: typeof ComparatifPennylaneVsErkilicRoute
@@ -553,6 +567,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/loi-finances-2026': {
+      id: '/actualites/loi-finances-2026'
+      path: '/actualites/loi-finances-2026'
+      fullPath: '/actualites/loi-finances-2026'
+      preLoaderRoute: typeof ActualitesLoiFinances2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/actualites/facturation-electronique-2026': {
       id: '/actualites/facturation-electronique-2026'
       path: '/actualites/facturation-electronique-2026'
@@ -575,6 +596,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ActualitesFacturationElectronique2026Route:
     ActualitesFacturationElectronique2026Route,
+  ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
   ComparatifIndyVsErkilicRoute: ComparatifIndyVsErkilicRoute,
   ComparatifKeobizVsErkilicRoute: ComparatifKeobizVsErkilicRoute,
   ComparatifPennylaneVsErkilicRoute: ComparatifPennylaneVsErkilicRoute,
