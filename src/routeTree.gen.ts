@@ -34,6 +34,7 @@ import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from '.
 import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
 import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
 import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
+import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -167,6 +168,12 @@ const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
   path: '/comparatif/indy-vs-erkilic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActualitesFacturationElectronique2026Route =
+  ActualitesFacturationElectronique2026RouteImport.update({
+    id: '/actualites/facturation-electronique-2026',
+    path: '/actualites/facturation-electronique-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -178,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -205,6 +213,7 @@ export interface FileRoutesByTo {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -233,6 +242,7 @@ export interface FileRoutesById {
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -262,6 +272,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/facturation-electronique-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -289,6 +300,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/facturation-electronique-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -316,6 +328,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/services'
     | '/sitemap.xml'
+    | '/actualites/facturation-electronique-2026'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -344,6 +357,7 @@ export interface RootRouteChildren {
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
   ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
   ComparatifKeobizVsErkilicRoute: typeof ComparatifKeobizVsErkilicRoute
   ComparatifPennylaneVsErkilicRoute: typeof ComparatifPennylaneVsErkilicRoute
@@ -539,6 +553,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/facturation-electronique-2026': {
+      id: '/actualites/facturation-electronique-2026'
+      path: '/actualites/facturation-electronique-2026'
+      fullPath: '/actualites/facturation-electronique-2026'
+      preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -552,6 +573,8 @@ const rootRouteChildren: RootRouteChildren = {
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ActualitesFacturationElectronique2026Route:
+    ActualitesFacturationElectronique2026Route,
   ComparatifIndyVsErkilicRoute: ComparatifIndyVsErkilicRoute,
   ComparatifKeobizVsErkilicRoute: ComparatifKeobizVsErkilicRoute,
   ComparatifPennylaneVsErkilicRoute: ComparatifPennylaneVsErkilicRoute,
