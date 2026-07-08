@@ -222,3 +222,30 @@ export function faqJsonLd(faq: { q: string; plainAnswer: string }[]) {
     })),
   });
 }
+
+/** Serialize an Article (dated content) into schema.org JSON-LD. */
+export function articleJsonLd(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+}) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    mainEntityOfPage: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    ...(opts.image ? { image: opts.image } : {}),
+    author: { "@type": "Organization", name: "Cabinet Erkilic Expertise Comptable" },
+    publisher: {
+      "@type": "Organization",
+      name: "Cabinet Erkilic",
+      logo: { "@type": "ImageObject", url: "https://erkilic.fr/favicon.png" },
+    },
+  });
+}
