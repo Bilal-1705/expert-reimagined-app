@@ -165,5 +165,14 @@
       animation: none;
     }
   }
+
+  /* Mobile: lighter animations for faster paint & smoother scroll */
+  @media (max-width: 767px) {
+    .reveal.in-view, .reveal-stagger.in-view > * {
+      animation: reveal-fade 0.35s ease-out both;
+    }
+    .animate-float { animation: none; }
+    html { scroll-behavior: auto; }
+  }
 }
 
