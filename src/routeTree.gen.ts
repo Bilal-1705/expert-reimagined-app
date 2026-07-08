@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GuideRouteImport } from './routes/guide'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -43,6 +44,11 @@ import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.b
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulateurStatutRoute = SimulateurStatutRouteImport.update({
+  id: '/simulateur-statut',
+  path: '/simulateur-statut',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -210,6 +216,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
@@ -242,6 +249,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
@@ -275,6 +283,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
@@ -309,6 +318,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
@@ -341,6 +351,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
@@ -373,6 +384,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
     | '/actualites/facturation-electronique-2026'
@@ -406,6 +418,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
+  SimulateurStatutRoute: typeof SimulateurStatutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
   ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
@@ -437,6 +450,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulateur-statut': {
+      id: '/simulateur-statut'
+      path: '/simulateur-statut'
+      fullPath: '/simulateur-statut'
+      preLoaderRoute: typeof SimulateurStatutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -654,6 +674,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
+  SimulateurStatutRoute: SimulateurStatutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ActualitesBaremes2026Route: ActualitesBaremes2026Route,
   ActualitesFacturationElectronique2026Route:
