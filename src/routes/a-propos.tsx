@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 const PATH = "/a-propos";
 
 export const Route = createFileRoute("/a-propos")({

@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 const PATH = "/conseils";
 
 const articles = [

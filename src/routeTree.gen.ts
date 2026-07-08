@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GuideRouteImport } from './routes/guide'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -34,10 +35,20 @@ import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from '.
 import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
 import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
 import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
+import { Route as ComparatifEurlVsSasuRouteImport } from './routes/comparatif.eurl-vs-sasu'
+import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
+import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
+import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
+import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulateurStatutRoute = SimulateurStatutRouteImport.update({
+  id: '/simulateur-statut',
+  path: '/simulateur-statut',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -167,6 +178,34 @@ const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
   path: '/comparatif/indy-vs-erkilic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComparatifEurlVsSasuRoute = ComparatifEurlVsSasuRouteImport.update({
+  id: '/comparatif/eurl-vs-sasu',
+  path: '/comparatif/eurl-vs-sasu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparatifCabinetVsEnLigneRoute =
+  ComparatifCabinetVsEnLigneRouteImport.update({
+    id: '/comparatif/cabinet-vs-en-ligne',
+    path: '/comparatif/cabinet-vs-en-ligne',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesLoiFinances2026Route =
+  ActualitesLoiFinances2026RouteImport.update({
+    id: '/actualites/loi-finances-2026',
+    path: '/actualites/loi-finances-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesFacturationElectronique2026Route =
+  ActualitesFacturationElectronique2026RouteImport.update({
+    id: '/actualites/facturation-electronique-2026',
+    path: '/actualites/facturation-electronique-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
+  id: '/actualites/baremes-2026',
+  path: '/actualites/baremes-2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -177,7 +216,13 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
+  '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -204,7 +249,13 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
+  '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -232,7 +283,13 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/services': typeof ServicesRoute
+  '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
+  '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
   '/comparatif/indy-vs-erkilic': typeof ComparatifIndyVsErkilicRoute
   '/comparatif/keobiz-vs-erkilic': typeof ComparatifKeobizVsErkilicRoute
   '/comparatif/pennylane-vs-erkilic': typeof ComparatifPennylaneVsErkilicRoute
@@ -261,7 +318,13 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
+    | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
+    | '/comparatif/cabinet-vs-en-ligne'
+    | '/comparatif/eurl-vs-sasu'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -288,7 +351,13 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
+    | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
+    | '/comparatif/cabinet-vs-en-ligne'
+    | '/comparatif/eurl-vs-sasu'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -315,7 +384,13 @@ export interface FileRouteTypes {
     | '/faq'
     | '/guide'
     | '/services'
+    | '/simulateur-statut'
     | '/sitemap.xml'
+    | '/actualites/baremes-2026'
+    | '/actualites/facturation-electronique-2026'
+    | '/actualites/loi-finances-2026'
+    | '/comparatif/cabinet-vs-en-ligne'
+    | '/comparatif/eurl-vs-sasu'
     | '/comparatif/indy-vs-erkilic'
     | '/comparatif/keobiz-vs-erkilic'
     | '/comparatif/pennylane-vs-erkilic'
@@ -343,7 +418,13 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GuideRoute: typeof GuideRoute
   ServicesRoute: typeof ServicesRoute
+  SimulateurStatutRoute: typeof SimulateurStatutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
+  ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
+  ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
+  ComparatifCabinetVsEnLigneRoute: typeof ComparatifCabinetVsEnLigneRoute
+  ComparatifEurlVsSasuRoute: typeof ComparatifEurlVsSasuRoute
   ComparatifIndyVsErkilicRoute: typeof ComparatifIndyVsErkilicRoute
   ComparatifKeobizVsErkilicRoute: typeof ComparatifKeobizVsErkilicRoute
   ComparatifPennylaneVsErkilicRoute: typeof ComparatifPennylaneVsErkilicRoute
@@ -369,6 +450,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulateur-statut': {
+      id: '/simulateur-statut'
+      path: '/simulateur-statut'
+      fullPath: '/simulateur-statut'
+      preLoaderRoute: typeof SimulateurStatutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -539,6 +627,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/comparatif/eurl-vs-sasu': {
+      id: '/comparatif/eurl-vs-sasu'
+      path: '/comparatif/eurl-vs-sasu'
+      fullPath: '/comparatif/eurl-vs-sasu'
+      preLoaderRoute: typeof ComparatifEurlVsSasuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/cabinet-vs-en-ligne': {
+      id: '/comparatif/cabinet-vs-en-ligne'
+      path: '/comparatif/cabinet-vs-en-ligne'
+      fullPath: '/comparatif/cabinet-vs-en-ligne'
+      preLoaderRoute: typeof ComparatifCabinetVsEnLigneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/loi-finances-2026': {
+      id: '/actualites/loi-finances-2026'
+      path: '/actualites/loi-finances-2026'
+      fullPath: '/actualites/loi-finances-2026'
+      preLoaderRoute: typeof ActualitesLoiFinances2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/facturation-electronique-2026': {
+      id: '/actualites/facturation-electronique-2026'
+      path: '/actualites/facturation-electronique-2026'
+      fullPath: '/actualites/facturation-electronique-2026'
+      preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/baremes-2026': {
+      id: '/actualites/baremes-2026'
+      path: '/actualites/baremes-2026'
+      fullPath: '/actualites/baremes-2026'
+      preLoaderRoute: typeof ActualitesBaremes2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -551,7 +674,14 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GuideRoute: GuideRoute,
   ServicesRoute: ServicesRoute,
+  SimulateurStatutRoute: SimulateurStatutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ActualitesBaremes2026Route: ActualitesBaremes2026Route,
+  ActualitesFacturationElectronique2026Route:
+    ActualitesFacturationElectronique2026Route,
+  ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
+  ComparatifCabinetVsEnLigneRoute: ComparatifCabinetVsEnLigneRoute,
+  ComparatifEurlVsSasuRoute: ComparatifEurlVsSasuRoute,
   ComparatifIndyVsErkilicRoute: ComparatifIndyVsErkilicRoute,
   ComparatifKeobizVsErkilicRoute: ComparatifKeobizVsErkilicRoute,
   ComparatifPennylaneVsErkilicRoute: ComparatifPennylaneVsErkilicRoute,

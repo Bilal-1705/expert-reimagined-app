@@ -21,6 +21,10 @@ export type ContentPageProps = {
   faq?: QA[];
   cta?: { label: string; to: string; sub?: string };
   breadcrumbs?: { label: string; to?: string }[];
+  /** ISO date, e.g. "2026-01-15". Displayed under the H1 and used for schema.org. */
+  datePublished?: string;
+  /** ISO date, e.g. "2026-07-08". Displayed and used for schema.org dateModified. */
+  dateModified?: string;
 };
 
 /**
@@ -37,9 +41,24 @@ export function ContentPage({
   faq = [],
   cta,
   breadcrumbs = [],
+  datePublished,
+  dateModified,
 }: ContentPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
+
+  const fmt = (iso?: string) => {
+    if (!iso) return null;
+    try {
+      return new Date(iso).toLocaleDateString("fr-FR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+    } catch {
+      return iso;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
@@ -84,6 +103,26 @@ export function ContentPage({
                 </>
               )}
             </h1>
+            {(datePublished || dateModified) && (
+              <div className="mb-6 flex flex-wrap gap-x-6 gap-y-1 text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">
+                {datePublished && (
+                  <span>
+                    Publié le{" "}
+                    <time dateTime={datePublished} className="text-ink/75">
+                      {fmt(datePublished)}
+                    </time>
+                  </span>
+                )}
+                {dateModified && (
+                  <span>
+                    Mis à jour le{" "}
+                    <time dateTime={dateModified} className="text-ink/75">
+                      {fmt(dateModified)}
+                    </time>
+                  </span>
+                )}
+              </div>
+            )}
             <div className="prose-lg text-lg text-ink/75 leading-relaxed max-w-3xl reveal" data-reveal>
               {intro}
             </div>
@@ -181,5 +220,32 @@ export function faqJsonLd(faq: { q: string; plainAnswer: string }[]) {
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.plainAnswer },
     })),
+  });
+}
+
+/** Serialize an Article (dated content) into schema.org JSON-LD. */
+export function articleJsonLd(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+}) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    mainEntityOfPage: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    ...(opts.image ? { image: opts.image } : {}),
+    author: { "@type": "Organization", name: "Cabinet Erkilic Expertise Comptable" },
+    publisher: {
+      "@type": "Organization",
+      name: "Cabinet Erkilic",
+      logo: { "@type": "ImageObject", url: "https://erkilic.fr/favicon.png" },
+    },
   });
 }

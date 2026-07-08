@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import cabinetImg from "@/assets/cabinet.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 const PATH = "/pack/pro";
 
 export const Route = createFileRoute("/pack/pro")({

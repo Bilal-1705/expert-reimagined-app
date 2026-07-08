@@ -7,7 +7,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
 import heroOffice from "@/assets/hero-office.jpg";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 
 export const Route = createFileRoute("/cabinet")({
   head: () => ({

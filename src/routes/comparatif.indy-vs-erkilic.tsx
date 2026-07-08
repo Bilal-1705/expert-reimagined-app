@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage, faqJsonLd } from "@/components/site/ContentPage";
 
-const SITE = "https://expert-reimagined-app.lovable.app";
+const SITE = "https://erkilic.fr";
 const PATH = "/comparatif/indy-vs-erkilic";
 
 const faq = [
