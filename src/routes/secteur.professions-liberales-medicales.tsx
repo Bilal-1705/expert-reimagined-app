@@ -8,7 +8,7 @@ const faq = [
   {
     q: "Un médecin ou un kiné à Juvignac doit-il tenir une comptabilité ?",
     plain:
-      "Oui. Toute profession libérale relevant des BNC doit tenir un livre-journal des recettes-dépenses et produire une déclaration 2035 annuelle. Le cabinet Erkilic prend en charge cette obligation, gère la ventilation des honoraires, la TVA le cas échéant, la CARMF ou CARPIMKO, et l'adhésion AGA.",
+      "Oui. Toute profession libérale relevant des BNC doit tenir un livre-journal des recettes-dépenses et produire une déclaration 2035 annuelle. Le cabinet Erkilic Expertise Comptable prend en charge cette obligation, gère la ventilation des honoraires, la TVA le cas échéant, la CARMF ou CARPIMKO, et l'adhésion AGA.",
   },
   {
     q: "Qu'est-ce que la déclaration 2035 ?",
@@ -18,7 +18,7 @@ const faq = [
   {
     q: "Passer en SELARL ou SELAS : quand est-ce intéressant pour un médecin ?",
     plain:
-      "Le passage en SELARL / SELAS devient pertinent quand le bénéfice dépasse ~90–100 k€ (arbitrage rémunération / dividendes en IS), en cas d'association entre confrères, ou pour préparer la transmission du cabinet. Le cabinet Erkilic établit une simulation chiffrée sur 3 ans avant la décision.",
+      "Le passage en SELARL / SELAS devient pertinent quand le bénéfice dépasse ~90–100 k€ (arbitrage rémunération / dividendes en IS), en cas d'association entre confrères, ou pour préparer la transmission du cabinet. Le cabinet Erkilic Expertise Comptable établit une simulation chiffrée sur 3 ans avant la décision.",
   },
   {
     q: "Puis-je déduire mes véhicules et déplacements comme kiné à domicile ?",
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/secteur/professions-liberales-medicales")
           Juvignac, Grabels et les hauts de Massane regroupent une forte
           densité de professionnels de santé (médecins généralistes,
           spécialistes, kinés, infirmiers, dentistes, ostéopathes) et
-          libéraux (avocats, architectes, consultants). Le cabinet Erkilic
+          libéraux (avocats, architectes, consultants). Le cabinet Erkilic Expertise Comptable
           les accompagne depuis plus de 20 ans avec un savoir-faire pointu
           sur les BNC.
         </p>
@@ -78,7 +78,7 @@ export const Route = createFileRoute("/secteur/professions-liberales-medicales")
           ],
         },
         {
-          title: "Ce que le cabinet Erkilic prend en charge",
+          title: "Ce que le cabinet Erkilic Expertise Comptable prend en charge",
           bullets: [
             "Tenue trimestrielle ou mensuelle, révision et clôture.",
             "Établissement et télétransmission de la déclaration 2035.",

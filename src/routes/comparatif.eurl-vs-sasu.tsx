@@ -33,7 +33,7 @@ const faq = [
   {
     q: "Peut-on passer d'EURL à SASU (ou l'inverse) ?",
     plain:
-      "Oui, par transformation. Ce n'est pas anodin : coût juridique, incidences fiscales (plus-values latentes), changement de régime social. Le cabinet Erkilic accompagne ces transformations quand la structure initiale ne colle plus.",
+      "Oui, par transformation. Ce n'est pas anodin : coût juridique, incidences fiscales (plus-values latentes), changement de régime social. Le cabinet Erkilic Expertise Comptable accompagne ces transformations quand la structure initiale ne colle plus.",
   },
 ];
 
@@ -123,7 +123,7 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
           ],
         },
         {
-          title: "Ce que le cabinet Erkilic fait avant l'immatriculation",
+          title: "Ce que le cabinet Erkilic Expertise Comptable fait avant l'immatriculation",
           bullets: [
             "Comparatif chiffré sur 24 mois EURL vs SASU vs EI selon vos revenus prévisionnels.",
             "Simulation de vos revenus disponibles nets, cotisations et impôts.",

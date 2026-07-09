@@ -19,6 +19,7 @@ const comparatorLinks = [
   { to: "/comparatif/indy-vs-erkilic", label: "Indy vs Erkilic" },
   { to: "/comparatif/pennylane-vs-erkilic", label: "Pennylane vs Erkilic" },
   { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz vs Erkilic" },
+  { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
 ] as const;
 
 const zoneLinks = [
@@ -82,7 +83,7 @@ export function Footer() {
           </h2>
           <div className="flex flex-col justify-end items-start">
             <p className="text-paper/60 mb-8 max-w-sm leading-relaxed">
-              Basé à Juvignac, le cabinet Erkilic intervient sur toute la région
+              Basé à Juvignac, le cabinet Erkilic Expertise Comptable intervient sur toute la région
               de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La
               Mosson, Pignan, Montarnaud — et en distanciel partout en France.
             </p>

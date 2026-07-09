@@ -15,12 +15,12 @@ const faq = [
   {
     q: "Qu'est-ce qu'une Plateforme Agréée (PA) et comment la choisir ?",
     plain:
-      "Une Plateforme Agréée (PA, ex-PDP) est un opérateur privé immatriculé par la DGFiP pour transmettre les factures électroniques entre entreprises et à l'administration. Le choix se fait selon votre logiciel de comptabilité, votre secteur, vos volumes et le prix. Le cabinet Erkilic accompagne le choix et le paramétrage.",
+      "Une Plateforme Agréée (PA, ex-PDP) est un opérateur privé immatriculé par la DGFiP pour transmettre les factures électroniques entre entreprises et à l'administration. Le choix se fait selon votre logiciel de comptabilité, votre secteur, vos volumes et le prix. Le cabinet Erkilic Expertise Comptable accompagne le choix et le paramétrage.",
   },
   {
     q: "Le Portail Public de Facturation (PPF) est-il gratuit ?",
     plain:
-      "Le PPF ne joue plus qu'un rôle d'annuaire et de concentrateur de données de reporting depuis la réforme 2024. Il n'assume plus de mission d'émission/réception gratuite : chaque entreprise doit passer par une Plateforme Agréée. Le cabinet Erkilic conseille ses clients sur les offres gratuites ou low-cost adaptées aux TPE.",
+      "Le PPF ne joue plus qu'un rôle d'annuaire et de concentrateur de données de reporting depuis la réforme 2024. Il n'assume plus de mission d'émission/réception gratuite : chaque entreprise doit passer par une Plateforme Agréée. Le cabinet Erkilic Expertise Comptable conseille ses clients sur les offres gratuites ou low-cost adaptées aux TPE.",
   },
   {
     q: "Quelles données de e-reporting devrai-je transmettre ?",
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/actualites/facturation-electronique-2026"
             conformité.
           </p>
           <p className="mt-4">
-            Le cabinet Erkilic accompagne ses clients dans le choix d'une Plateforme
+            Le cabinet Erkilic Expertise Comptable accompagne ses clients dans le choix d'une Plateforme
             Agréée, le paramétrage de leur logiciel (Pennylane, Tiime, Sage, Cegid…)
             et la gestion du e-reporting.
           </p>
@@ -133,7 +133,7 @@ export const Route = createFileRoute("/actualites/facturation-electronique-2026"
           ],
         },
         {
-          title: "Comment le cabinet Erkilic accompagne la transition",
+          title: "Comment le cabinet Erkilic Expertise Comptable accompagne la transition",
           bullets: [
             "Audit de votre facturation actuelle (volumes B2B, B2C, international).",
             "Sélection d'une Plateforme Agréée adaptée à votre profil.",

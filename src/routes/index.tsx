@@ -12,7 +12,7 @@ const SITE = "https://erkilic.fr";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable à Juvignac près de Montpellier — Cabinet Erkilic" },
+      { title: "Expert-Comptable à Juvignac près de Montpellier — Cabinet Erkilic Expertise Comptable" },
       {
         name: "description",
         content:
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "expert-comptable Juvignac, cabinet comptable Montpellier, expertise comptable Hérault, comptable auto-entrepreneur Montpellier, comptable profession libérale Juvignac, comptable création entreprise Hérault, cabinet Erkilic",
+          "expert-comptable Juvignac, cabinet comptable Montpellier, expertise comptable Hérault, comptable auto-entrepreneur Montpellier, comptable profession libérale Juvignac, comptable création entreprise Hérault, cabinet Erkilic Expertise Comptable",
       },
-      { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic" },
+      { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:
@@ -169,7 +169,7 @@ function Home() {
                 <span className="font-sora text-5xl md:text-6xl font-extrabold tracking-tighter">
                   {k}
                 </span>
-                <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.25em] text-ink/50">
+                <span className="mt-3 text-[10px] font-bold uppercase tracking-[0.25em] text-ink/70">
                   {v}
                 </span>
               </div>
@@ -191,7 +191,7 @@ function Home() {
                   key={d.n}
                   className="bg-paper p-8 flex flex-col gap-5 min-h-52 group hover:bg-ink transition-colors duration-500"
                 >
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40 group-hover:text-paper/50">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/60 group-hover:text-paper/50">
                     {d.n}
                   </span>
                   <h3 className="font-sora text-2xl font-extrabold tracking-tighter group-hover:text-paper">
@@ -231,7 +231,7 @@ function Home() {
                   <p className="text-xs leading-relaxed text-ink/60 group-hover:text-paper/60 flex-1">
                     {p.desc}
                   </p>
-                  <span className="mt-6 text-[10px] font-bold uppercase tracking-widest text-ink/40 group-hover:text-paper transition-transform group-hover:translate-x-1">
+                  <span className="mt-6 text-[10px] font-bold uppercase tracking-widest text-ink/60 group-hover:text-paper transition-transform group-hover:translate-x-1">
                     Découvrir →
                   </span>
                 </Link>
@@ -314,7 +314,7 @@ function Home() {
                   key={a.label + i}
                   className="bg-ink p-7 flex items-start gap-4 group hover:bg-paper hover:text-ink transition-colors duration-300"
                 >
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-paper/30 group-hover:text-ink/40">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-paper/30 group-hover:text-ink/60">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1">
@@ -335,13 +335,13 @@ function Home() {
         <section className="relative py-20 md:py-28 px-6 border-t border-ink/5 overflow-hidden">
           <img
             src={handsLedger}
-            alt="Écriture comptable — cabinet Erkilic"
+            alt="Écriture comptable — cabinet Erkilic Expertise Comptable"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-paper via-paper/80 to-transparent pointer-events-none" />
           <div className="relative max-w-3xl">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-6">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 block mb-6">
               05 / Zone d'intervention
             </span>
             <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-6">

@@ -18,7 +18,7 @@ const faq = [
   {
     q: "Puis-je changer de statut plus tard ?",
     plain:
-      "Oui, tous les changements sont possibles (EI → EURL/SASU, EURL → SARL, SASU → SAS). Ils entraînent des coûts (rédaction, dépôt, publications légales) et parfois des impacts fiscaux. Le cabinet Erkilic anticipe et pilote ces bascules.",
+      "Oui, tous les changements sont possibles (EI → EURL/SASU, EURL → SARL, SASU → SAS). Ils entraînent des coûts (rédaction, dépôt, publications légales) et parfois des impacts fiscaux. Le cabinet Erkilic Expertise Comptable anticipe et pilote ces bascules.",
   },
   {
     q: "Puis-je toucher le chômage en créant une SASU à Montpellier ?",
@@ -126,7 +126,7 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
             <p>
               La bonne question n'est pas « quel statut ? » mais « quelle
               rémunération sur 3 ans, quelle sortie à 5 ans, quelle
-              couverture sociale ? ». Le cabinet Erkilic simule votre net
+              couverture sociale ? ». Le cabinet Erkilic Expertise Comptable simule votre net
               disponible et vos charges totales dans chaque scénario
               avant l'immatriculation. Un rendez-vous d'une heure économise
               souvent plusieurs milliers d'euros la première année.

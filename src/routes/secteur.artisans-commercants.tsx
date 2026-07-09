@@ -13,7 +13,7 @@ const faq = [
   {
     q: "Un commerçant à Montpellier doit-il tenir un livre de stocks ?",
     plain:
-      "Oui, tout commerçant tenant une comptabilité au régime réel doit valoriser son stock à chaque clôture, selon la méthode CMUP ou PEPS. Le cabinet Erkilic vous fournit un tableau d'inventaire adapté et calcule la variation de stock, un poste qui impacte directement votre bénéfice imposable.",
+      "Oui, tout commerçant tenant une comptabilité au régime réel doit valoriser son stock à chaque clôture, selon la méthode CMUP ou PEPS. Le cabinet Erkilic Expertise Comptable vous fournit un tableau d'inventaire adapté et calcule la variation de stock, un poste qui impacte directement votre bénéfice imposable.",
   },
   {
     q: "Contrats d'apprentissage, ZFU, aides à l'embauche : que peut m'apporter le cabinet ?",
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/secteur/artisans-commercants")({
         <p>
           Boulangeries, garages, coiffeurs, restaurants, boutiques,
           artisans du BTP : les métiers du geste et du commerce ont des
-          contraintes comptables spécifiques que le cabinet Erkilic maîtrise
+          contraintes comptables spécifiques que le cabinet Erkilic Expertise Comptable maîtrise
           depuis plus de 23 ans dans l'ouest montpelliérain.
         </p>
       }
@@ -76,7 +76,7 @@ export const Route = createFileRoute("/secteur/artisans-commercants")({
               La récupération des pièces justificatives (factures papier,
               tickets Z de caisse, bordereaux fournisseurs) est un vrai
               sujet pour un artisan. À 5 minutes du centre commercial de
-              La Plaine, sur la route de Saint-Georges, le cabinet Erkilic
+              La Plaine, sur la route de Saint-Georges, le cabinet Erkilic Expertise Comptable
               vous récupère les pièces en main propre lors d'un
               rendez-vous mensuel court. Fini les scans à 22h.
             </p>

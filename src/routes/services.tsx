@@ -178,7 +178,7 @@ function Services() {
             <div className="md:col-span-4">
               <img
                 src={handsLedger}
-                alt="Écriture comptable au stylo plume dans un grand livre — cabinet Erkilic"
+                alt="Écriture comptable au stylo plume dans un grand livre — cabinet Erkilic Expertise Comptable"
                 width={1024}
                 height={1280}
                 className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"

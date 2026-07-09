@@ -13,7 +13,7 @@ const faq = [
   {
     q: "Puis-je remplacer un expert-comptable par Indy ?",
     plain:
-      "Légalement, aucune loi n'oblige un indépendant à recourir à un expert-comptable. Mais Indy ne fait que la saisie automatisée : le conseil fiscal, l'optimisation du statut, la défense en cas de contrôle et la validation légale de vos comptes ne sont pas assurés. Le cabinet Erkilic engage sa responsabilité sur ces points, Indy non.",
+      "Légalement, aucune loi n'oblige un indépendant à recourir à un expert-comptable. Mais Indy ne fait que la saisie automatisée : le conseil fiscal, l'optimisation du statut, la défense en cas de contrôle et la validation légale de vos comptes ne sont pas assurés. Le cabinet Erkilic Expertise Comptable engage sa responsabilité sur ces points, Indy non.",
   },
   {
     q: "Combien coûte un expert-comptable pour un freelance à Montpellier ?",
@@ -25,13 +25,13 @@ const faq = [
 export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Indy vs Cabinet Erkilic : logiciel ou expert-comptable ?" },
+      { title: "Indy vs Cabinet Erkilic Expertise Comptable : logiciel ou expert-comptable ?" },
       {
         name: "description",
         content:
-          "Indy est un logiciel, pas un expert-comptable. Comparatif honnête entre Indy et le cabinet Erkilic à Juvignac : responsabilité, conseil, prix.",
+          "Indy est un logiciel, pas un expert-comptable. Comparatif honnête entre Indy et le cabinet Erkilic Expertise Comptable à Juvignac : responsabilité, conseil, prix.",
       },
-      { property: "og:title", content: "Indy vs Cabinet Erkilic — Comparatif honnête" },
+      { property: "og:title", content: "Indy vs Cabinet Erkilic Expertise Comptable — Comparatif honnête" },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
         { label: "Indy vs Erkilic" },
       ]}
       eyebrow="Comparatif · Logiciel vs Expert"
-      h1="Indy vs Cabinet Erkilic :"
+      h1="Indy vs Cabinet Erkilic Expertise Comptable :"
       italic="ce qu'un logiciel ne peut pas faire."
       intro={
         <>
@@ -123,6 +123,28 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
           ),
         },
       ]}
+      comparisonTable={{
+        title: "Indy vs Erkilic Expertise Comptable en un coup d'œil",
+        columns: ["Critère", "Indy (100% en ligne)", "Erkilic Expertise Comptable (Juvignac)"],
+        rows: [
+          { criterion: "Tarif de base", competitor: "Abonnement mensuel bas, ciblé freelance.", erkilic: "Forfait sur-mesure, tout compris." },
+          { criterion: "Contact humain", competitor: "Chat et support en ligne.", erkilic: "Interlocuteur unique, joignable, en cabinet ou visio." },
+          { criterion: "Optimisation fiscale", competitor: "Automatisée, standardisée.", erkilic: "Sur-mesure, arbitrage salaire/dividendes annuel." },
+          { criterion: "Rendez-vous physiques", competitor: "Non — 100% en ligne.", erkilic: "Oui, à Juvignac près de Montpellier." },
+          { criterion: "Ancrage local", competitor: "Aucun.", erkilic: "Connaissance des aides Hérault / Occitanie." },
+          { criterion: "Contrôle fiscal", competitor: "Assistance limitée.", erkilic: "Représentation, responsabilité civile professionnelle engagée." },
+        ],
+      }}
+      verdict={
+        <p>
+          En résumé, si vous êtes un freelance solo en BNC avec des opérations
+          standards et pas d'enjeu patrimonial, <strong>Indy</strong> est un très
+          bon outil. En revanche, si vous êtes une profession libérale, un
+          artisan ou une TPE à Juvignac ou Montpellier avec besoin de conseil
+          sur-mesure et de réactivité, le cabinet{" "}
+          <strong>Erkilic Expertise Comptable</strong> sera bien plus adapté.
+        </p>
+      }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
       cta={{ label: "Demander un devis", to: "/contact", sub: "Un vrai expert-comptable pour votre activité." }}
     />

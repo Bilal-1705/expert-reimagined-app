@@ -13,7 +13,7 @@ export const Route = createFileRoute("/zone/saint-georges-dorques")({
         content:
           "Cabinet d'expertise comptable à 5 minutes de Saint-Georges-d'Orques (34680). Vignerons, artisans, TPE, professions libérales : accompagnement de proximité.",
       },
-      { property: "og:title", content: "Comptable Saint-Georges-d'Orques — Cabinet Erkilic" },
+      { property: "og:title", content: "Comptable Saint-Georges-d'Orques — Cabinet Erkilic Expertise Comptable" },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/zone/saint-georges-dorques")({
       intro={
         <p>
           Basé à Juvignac, à moins de 5 minutes en voiture de
-          Saint-Georges-d'Orques par la RD5, le cabinet Erkilic accueille
+          Saint-Georges-d'Orques par la RD5, le cabinet Erkilic Expertise Comptable accueille
           régulièrement des vignerons, artisans, commerçants et
           professions libérales de la commune. Un cabinet local, réactif,
           qui connaît votre territoire.
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/zone/saint-georges-dorques")({
             <p>
               Saint-Georges-d'Orques est historiquement une commune
               viticole (AOP Grès de Montpellier), aujourd'hui aussi
-              résidentielle. Le cabinet Erkilic accompagne les vignerons
+              résidentielle. Le cabinet Erkilic Expertise Comptable accompagne les vignerons
               (domaines, caves particulières), les artisans du bâtiment,
               les commerces de la place et les nombreux
               télétravailleurs / consultants installés dans les nouveaux

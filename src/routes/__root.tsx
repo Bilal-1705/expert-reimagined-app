@@ -18,7 +18,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "AccountingService",
   name: "Erkilic Expertise Comptable",
-  legalName: "Cabinet Erkilic",
+  legalName: "Cabinet Erkilic Expertise Comptable",
   founder: { "@type": "Person", name: "Nazifé Erkilic" },
   description:
     "Cabinet d'expert-comptable à Juvignac, près de Montpellier. Comptabilité, fiscalité, social et juridique pour créateurs, professions libérales, PME et particuliers.",

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/a-propos")({
         content:
           "Nazifé Erkilic expert-comptable, cabinet comptable Juvignac histoire, équipe expert-comptable Hérault, valeurs cabinet comptable Montpellier",
       },
-      { property: "og:title", content: "À propos du Cabinet Erkilic à Juvignac" },
+      { property: "og:title", content: "À propos du Cabinet Erkilic Expertise Comptable à Juvignac" },
       {
         property: "og:description",
         content:
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/a-propos")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          name: "À propos — Cabinet Erkilic",
+          name: "À propos — Cabinet Erkilic Expertise Comptable",
           mainEntity: {
             "@type": "Person",
             name: "Nazifé Erkilic",
@@ -94,7 +94,7 @@ function APropos() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
             <img
               src={cabinetImg}
-              alt="Cabinet Erkilic à Juvignac — expert-comptable dans l'Hérault"
+              alt="Cabinet Erkilic Expertise Comptable à Juvignac — expert-comptable dans l'Hérault"
               className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"
               loading="lazy"
             />

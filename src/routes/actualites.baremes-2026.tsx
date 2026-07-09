@@ -15,7 +15,7 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
         content:
           "Barème kilométrique 2026, plafonds URSSAF, seuils micro-entreprise & TVA, SMIC : les chiffres à jour pour votre déclaration.",
       },
-      { property: "og:title", content: "Barèmes & seuils 2026 — Cabinet Erkilic" },
+      { property: "og:title", content: "Barèmes & seuils 2026 — Cabinet Erkilic Expertise Comptable" },
       { property: "og:description", content: "Chiffres officiels 2026 utiles aux dirigeants, indépendants et particuliers." },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },

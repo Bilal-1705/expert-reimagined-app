@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pack/profession-liberale")({
           "expert-comptable profession libérale Montpellier, comptable BNC 2035 Juvignac, comptable médecin infirmier kiné Hérault, comptable avocat architecte, AGA association gestion agréée, comptable consultant Montpellier",
       },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: "Pack Profession Libérale — Cabinet Erkilic" },
+      { property: "og:title", content: "Pack Profession Libérale — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:

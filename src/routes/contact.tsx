@@ -12,16 +12,16 @@ const CABINET_EMAIL = "cabinet@erkilic.fr";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Devis Gratuit — Cabinet Erkilic à Juvignac (34990)" },
+      { title: "Contact & Devis Gratuit — Cabinet Erkilic Expertise Comptable à Juvignac (34990)" },
       {
         name: "description",
         content:
-          "Cabinet Erkilic à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
+          "Cabinet Erkilic Expertise Comptable à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
       },
       {
         name: "keywords",
         content:
-          "contact expert-comptable Juvignac, devis gratuit comptable Montpellier, cabinet Erkilic téléphone, prise de rendez-vous expert-comptable Hérault",
+          "contact expert-comptable Juvignac, devis gratuit comptable Montpellier, cabinet Erkilic Expertise Comptable téléphone, prise de rendez-vous expert-comptable Hérault",
       },
       { property: "og:title", content: "Contact — Cabinet Erkilic Expertise Comptable" },
       {
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/contact")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Contact — Cabinet Erkilic",
+          name: "Contact — Cabinet Erkilic Expertise Comptable",
           mainEntity: {
             "@type": "AccountingService",
             name: "Erkilic Expertise Comptable",

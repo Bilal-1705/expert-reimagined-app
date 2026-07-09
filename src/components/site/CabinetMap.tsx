@@ -9,14 +9,14 @@ export function CabinetMap({
   className?: string;
   height?: number;
 }) {
-  const query = encodeURIComponent("Cabinet Erkilic, 29 bis rue du Poumpidou, 34990 Juvignac");
+  const query = encodeURIComponent("Cabinet Erkilic Expertise Comptable, 29 bis rue du Poumpidou, 34990 Juvignac");
   const src = `https://www.google.com/maps?q=${query}&hl=fr&z=16&output=embed`;
   const link = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
   return (
     <figure className={`relative overflow-hidden border border-ink/10 bg-paper-dark rounded-sm ${className}`}>
       <iframe
-        title="Cabinet Erkilic — 29 bis rue du Poumpidou, Juvignac (Google Maps)"
+        title="Cabinet Erkilic Expertise Comptable — 29 bis rue du Poumpidou, Juvignac (Google Maps)"
         src={src}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
@@ -24,7 +24,7 @@ export function CabinetMap({
         style={{ height, width: "100%", border: 0 }}
       />
       <figcaption className="absolute bottom-3 right-3 bg-paper/95 backdrop-blur px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg rounded-sm">
-        <span className="block text-ink">Cabinet Erkilic</span>
+        <span className="block text-ink">Cabinet Erkilic Expertise Comptable</span>
         <span className="block normal-case tracking-normal text-ink/60 mt-1 font-normal text-xs">
           29 bis rue du Poumpidou, 34990 Juvignac
         </span>

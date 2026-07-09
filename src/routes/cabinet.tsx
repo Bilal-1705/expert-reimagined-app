@@ -12,14 +12,14 @@ const SITE = "https://erkilic.fr";
 export const Route = createFileRoute("/cabinet")({
   head: () => ({
     meta: [
-      { title: "Le cabinet Erkilic — Expert-Comptable à Juvignac (34990)" },
+      { title: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac (34990)" },
       {
         name: "description",
         content:
-          "Cabinet Erkilic à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
+          "Cabinet Erkilic Expertise Comptable à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
       },
       { name: "keywords", content: "cabinet expert-comptable Juvignac, Nazifé Erkilic, Ordre Experts-Comptables Montpellier, comptable Hérault" },
-      { property: "og:title", content: "Le cabinet Erkilic — Expert-Comptable à Juvignac" },
+      { property: "og:title", content: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac" },
       {
         property: "og:description",
         content:
@@ -98,7 +98,7 @@ function Cabinet() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
             <img
               src={cabinetImg}
-              alt="Vue intérieure du cabinet Erkilic à Juvignac"
+              alt="Vue intérieure du cabinet Erkilic Expertise Comptable à Juvignac"
               className="w-full aspect-[4/5] object-cover grayscale outline outline-1 -outline-offset-1 outline-ink/5"
               loading="lazy"
             />

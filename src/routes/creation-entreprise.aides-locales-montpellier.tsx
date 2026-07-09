@@ -35,7 +35,7 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           ouvre l'accès à un écosystème d'aides denses : CCI Hérault,
           Région Occitanie, French Tech Montpellier, Bpifrance, aides
           nationales (ACRE, ARCE). Ce guide, mis à jour en 2026, recense
-          les dispositifs à activer par le cabinet Erkilic pour ses
+          les dispositifs à activer par le cabinet Erkilic Expertise Comptable pour ses
           clients créateurs.
         </p>
       }
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
               des parcours d'accompagnement gratuits ou à prix modéré :
               réunions d'information « 5 jours pour entreprendre »,
               diagnostics personnalisés, mise en réseau avec le tissu
-              économique montpelliérain. Le cabinet Erkilic collabore
+              économique montpelliérain. Le cabinet Erkilic Expertise Comptable collabore
               régulièrement avec les conseillers CCI sur des dossiers
               partagés.
             </p>
@@ -69,7 +69,7 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
             <p>
               L'écosystème French Tech de Montpellier est l'un des plus
               denses de France (Halle Tropisme, BIC Cap Omega, La Cité de
-              l'Économie). Le cabinet Erkilic accompagne des startups sur
+              l'Économie). Le cabinet Erkilic Expertise Comptable accompagne des startups sur
               la levée de fonds, le CIR (Crédit d'Impôt Recherche), la
               JEI (Jeune Entreprise Innovante) et l'ingénierie
               financière.
@@ -87,7 +87,7 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           ],
         },
         {
-          title: "Ce que le cabinet Erkilic fait pour vous",
+          title: "Ce que le cabinet Erkilic Expertise Comptable fait pour vous",
           body: (
             <p>
               Nous identifions les dispositifs auxquels vous êtes éligible,

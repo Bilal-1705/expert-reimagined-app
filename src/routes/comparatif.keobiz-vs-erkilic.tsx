@@ -80,7 +80,7 @@ export const Route = createFileRoute("/comparatif/keobiz-vs-erkilic")({
           ],
         },
         {
-          title: "Cabinet Erkilic : la proximité comme méthode",
+          title: "Cabinet Erkilic Expertise Comptable : la proximité comme méthode",
           body: (
             <p>
               À Juvignac, rue du Poumpidou, vous êtes reçu par la personne
@@ -113,6 +113,29 @@ export const Route = createFileRoute("/comparatif/keobiz-vs-erkilic")({
           ),
         },
       ]}
+      comparisonTable={{
+        title: "Keobiz vs Erkilic Expertise Comptable en un coup d'œil",
+        columns: ["Critère", "Keobiz (100% en ligne)", "Erkilic Expertise Comptable (Juvignac)"],
+        rows: [
+          { criterion: "Tarif de base", competitor: "Forfait mensuel attractif, options en supplément.", erkilic: "Forfait sur-mesure clair, tout compris." },
+          { criterion: "Interlocuteur", competitor: "Comptable dédié à distance, rotation possible.", erkilic: "Un expert-comptable unique qui vous suit dans la durée." },
+          { criterion: "Optimisation fiscale", competitor: "Standardisée.", erkilic: "Sur-mesure, chiffrée chaque année sur votre foyer." },
+          { criterion: "Rendez-vous physiques", competitor: "Non — 100% en ligne.", erkilic: "Oui, en cabinet à Juvignac ou en visio." },
+          { criterion: "Ancrage local", competitor: "Aucun — service national.", erkilic: "Écosystème Montpellier, CCI Hérault, aides Occitanie." },
+          { criterion: "Contrôle fiscal", competitor: "Assistance à distance.", erkilic: "Représentation du dossier, RCP engagée." },
+        ],
+      }}
+      verdict={
+        <p>
+          En résumé, si vous cherchez une comptabilité en ligne standardisée à
+          bas coût sans besoin de conseil personnalisé, <strong>Keobiz</strong>{" "}
+          fait le job. En revanche, si vous êtes une TPE, un artisan ou une
+          profession libérale à Juvignac ou Montpellier qui a besoin d'une vraie
+          stratégie fiscale et d'un interlocuteur qui connaît le tissu
+          économique local, le cabinet{" "}
+          <strong>Erkilic Expertise Comptable</strong> sera bien plus adapté.
+        </p>
+      }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
       cta={{ label: "Rencontrer le cabinet", to: "/contact", sub: "Un premier échange en cabinet, sans engagement." }}
     />

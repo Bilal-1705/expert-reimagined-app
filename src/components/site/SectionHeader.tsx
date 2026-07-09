@@ -21,7 +21,7 @@ export function SectionHeader({
         <span className="mt-5 block h-px w-16 bg-ink animate-line" />
       </div>
       {aside ? (
-        <div className="max-w-xs text-xs text-ink/50 uppercase leading-relaxed font-bold">
+        <div className="max-w-xs text-xs text-ink/70 uppercase leading-relaxed font-bold">
           {aside}
         </div>
       ) : null}

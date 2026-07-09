@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pack/particulier")({
           "expert-comptable particulier Montpellier, déclaration impôts revenus Juvignac, comptable IFI Hérault, déclaration revenus fonciers LMNP, optimisation fiscale particulier, gestion patrimoniale Montpellier, loi Girardin conseil",
       },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: "Pack Particulier — Cabinet Erkilic" },
+      { property: "og:title", content: "Pack Particulier — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:
