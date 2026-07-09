@@ -86,7 +86,7 @@ function PackAutoEntrepreneur() {
         "Comparatif micro / réel pour arbitrer",
       ]}
       heroImage={handsLedger}
-      heroAlt="Comptable pour auto-entrepreneur à Juvignac et Montpellier — cabinet Erkilic"
+      heroAlt="Comptable pour auto-entrepreneur à Juvignac et Montpellier — cabinet Erkilic Expertise Comptable"
       sections={[
         {
           title: "Pack Auto-Entrepreneur",

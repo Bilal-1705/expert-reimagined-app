@@ -24,7 +24,7 @@ function recommend(a: Answers): { statut: string; why: string[]; cta: string } |
         "Vous investissez dans l'immobilier : l'entreprise commerciale n'est pas la bonne enveloppe.",
         "SCI à l'IR : transparence fiscale, revenus fonciers, simple pour du locatif nu.",
         "SCI à l'IS : amortissement du bien, réservé aux stratégies patrimoniales long terme.",
-        "Alternative LMNP au réel si location meublée — le cabinet Erkilic compare les deux.",
+        "Alternative LMNP au réel si location meublée — le cabinet Erkilic Expertise Comptable compare les deux.",
       ],
       cta: "Comparer SCI et LMNP sur mon projet",
     };
@@ -171,7 +171,7 @@ function Simulator() {
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
               Répondez à 5 questions pour obtenir une première orientation :
               micro-entreprise, EURL, SASU, SARL, SAS, SCI ou LMNP. Cette
-              recommandation est indicative — le cabinet Erkilic établit ensuite
+              recommandation est indicative — le cabinet Erkilic Expertise Comptable établit ensuite
               un comparatif chiffré sur vos revenus prévisionnels avant
               immatriculation.
             </p>
@@ -276,7 +276,7 @@ export const Route = createFileRoute("/simulateur-statut")({
       {
         name: "description",
         content:
-          "5 questions pour identifier le bon statut : micro, EURL, SASU, SARL, SAS, SCI ou LMNP. Puis un comparatif chiffré avec le cabinet Erkilic.",
+          "5 questions pour identifier le bon statut : micro, EURL, SASU, SARL, SAS, SCI ou LMNP. Puis un comparatif chiffré avec le cabinet Erkilic Expertise Comptable.",
       },
       { property: "og:title", content: "Quel statut juridique choisir ?" },
       { property: "og:description", content: "Simulateur gratuit — 5 questions pour une première orientation." },

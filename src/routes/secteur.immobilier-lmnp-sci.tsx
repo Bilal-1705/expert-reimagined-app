@@ -8,7 +8,7 @@ const faq = [
   {
     q: "LMNP au micro-BIC ou au réel : lequel choisir ?",
     plain:
-      "Le micro-BIC applique un abattement forfaitaire de 50 % (30 % à compter de 2025 pour meublés de tourisme non classés). Le régime réel permet d'amortir le bien, le mobilier, et de déduire les charges réelles — souvent plus intéressant dès la première année sur un bien à Montpellier ou Juvignac. Le cabinet Erkilic établit le comparatif chiffré.",
+      "Le micro-BIC applique un abattement forfaitaire de 50 % (30 % à compter de 2025 pour meublés de tourisme non classés). Le régime réel permet d'amortir le bien, le mobilier, et de déduire les charges réelles — souvent plus intéressant dès la première année sur un bien à Montpellier ou Juvignac. Le cabinet Erkilic Expertise Comptable établit le comparatif chiffré.",
   },
   {
     q: "SCI à l'IR ou SCI à l'IS : que choisir ?",
@@ -23,7 +23,7 @@ const faq = [
   {
     q: "Puis-je récupérer la TVA sur un investissement locatif ?",
     plain:
-      "La récupération de TVA sur un investissement locatif est possible uniquement en résidence de services (para-hôtellerie, résidence étudiante, EHPAD) avec un bail commercial 9 ans à un exploitant. Le cabinet Erkilic monte le dossier et gère la déclaration de TVA.",
+      "La récupération de TVA sur un investissement locatif est possible uniquement en résidence de services (para-hôtellerie, résidence étudiante, EHPAD) avec un bail commercial 9 ans à un exploitant. Le cabinet Erkilic Expertise Comptable monte le dossier et gère la déclaration de TVA.",
   },
 ];
 
@@ -59,7 +59,7 @@ export const Route = createFileRoute("/secteur/immobilier-lmnp-sci")({
         <p>
           LMNP, SCI à l'IR ou à l'IS, résidence de services : les choix
           faits à l'acquisition conditionnent 10 ou 20 ans de fiscalité.
-          Le cabinet Erkilic accompagne les investisseurs locatifs de
+          Le cabinet Erkilic Expertise Comptable accompagne les investisseurs locatifs de
           l'Hérault dans l'arbitrage, le montage et la déclaration
           annuelle.
         </p>

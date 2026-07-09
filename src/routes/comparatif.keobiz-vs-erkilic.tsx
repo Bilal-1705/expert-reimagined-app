@@ -80,7 +80,7 @@ export const Route = createFileRoute("/comparatif/keobiz-vs-erkilic")({
           ],
         },
         {
-          title: "Cabinet Erkilic : la proximité comme méthode",
+          title: "Cabinet Erkilic Expertise Comptable : la proximité comme méthode",
           body: (
             <p>
               À Juvignac, rue du Poumpidou, vous êtes reçu par la personne

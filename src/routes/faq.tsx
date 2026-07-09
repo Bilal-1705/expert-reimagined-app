@@ -18,7 +18,7 @@ const faq = [
   {
     q: "Quel statut juridique choisir pour créer une TPE à Montpellier Ouest ?",
     plain:
-      "Le choix entre EI, EURL, SASU et SARL dépend de trois critères : votre régime social (TNS vs assimilé-salarié), votre stratégie de rémunération (dividendes vs salaire), et vos perspectives d'ouverture du capital. Le cabinet Erkilic établit un comparatif chiffré sur 24 mois avant l'immatriculation.",
+      "Le choix entre EI, EURL, SASU et SARL dépend de trois critères : votre régime social (TNS vs assimilé-salarié), votre stratégie de rémunération (dividendes vs salaire), et vos perspectives d'ouverture du capital. Le cabinet Erkilic Expertise Comptable établit un comparatif chiffré sur 24 mois avant l'immatriculation.",
   },
   {
     q: "Quelles sont les obligations comptables pour une profession libérale à Juvignac ?",
@@ -26,12 +26,12 @@ const faq = [
       "Une profession libérale relevant des BNC doit tenir un livre-journal des recettes-dépenses, produire une déclaration 2035 annuelle, gérer sa TVA le cas échéant, ses cotisations URSSAF et sa caisse de retraite (CARMF, CARPIMKO, CIPAV…). L'adhésion à une AGA reste fiscalement pertinente dans de nombreux cas.",
   },
   {
-    q: "Comment le cabinet Erkilic accompagne-t-il la création d'entreprise à Montpellier ?",
+    q: "Comment le cabinet Erkilic Expertise Comptable accompagne-t-il la création d'entreprise à Montpellier ?",
     plain:
       "Le pack Créateur comprend un entretien conseil, un prévisionnel financier sur 12–24 mois, la recherche d'aides locales (CCI Hérault, Région Occitanie, French Tech Montpellier), l'accompagnement bancaire, la rédaction des statuts, l'immatriculation et le suivi de la première année.",
   },
   {
-    q: "Puis-je travailler à distance avec le cabinet Erkilic si je ne suis pas dans l'Hérault ?",
+    q: "Puis-je travailler à distance avec le cabinet Erkilic Expertise Comptable si je ne suis pas dans l'Hérault ?",
     plain:
       "Oui. Le cabinet accompagne ses clients partout en France par visioconférence, signature électronique et outils collaboratifs (Pennylane, Tiime). Les clients de Juvignac, Montpellier, Saint-Georges-d'Orques, Grabels, Pignan et Montarnaud bénéficient en plus de rendez-vous en cabinet.",
   },
@@ -43,7 +43,7 @@ const faq = [
   {
     q: "Pennylane, Indy, Tiime : faut-il un expert-comptable si j'utilise ces logiciels ?",
     plain:
-      "Ces logiciels automatisent la saisie, pas le conseil ni la validation légale. L'expert-comptable est le seul professionnel réglementé habilité à établir et signer votre bilan, votre liasse fiscale et vos comptes annuels. Le cabinet Erkilic travaille en mode collaboratif sur Pennylane et Tiime avec ses clients qui le souhaitent.",
+      "Ces logiciels automatisent la saisie, pas le conseil ni la validation légale. L'expert-comptable est le seul professionnel réglementé habilité à établir et signer votre bilan, votre liasse fiscale et vos comptes annuels. Le cabinet Erkilic Expertise Comptable travaille en mode collaboratif sur Pennylane et Tiime avec ses clients qui le souhaitent.",
   },
   {
     q: "Dois-je passer de la micro-entreprise à la société quand je dépasse les seuils ?",
@@ -68,7 +68,7 @@ const faq = [
   {
     q: "Puis-je récupérer la TVA sur ma voiture d'entreprise ?",
     plain:
-      "En principe, non pour un véhicule de tourisme (VP). Oui pour un utilitaire (camionnette, fourgonnette), un véhicule 2 places affecté à 100 % à l'activité, ou certains VP dérogatoires (auto-écoles, taxis, VTC). Le cabinet Erkilic conseille sur le choix véhicule société vs indemnités kilométriques.",
+      "En principe, non pour un véhicule de tourisme (VP). Oui pour un utilitaire (camionnette, fourgonnette), un véhicule 2 places affecté à 100 % à l'activité, ou certains VP dérogatoires (auto-écoles, taxis, VTC). Le cabinet Erkilic Expertise Comptable conseille sur le choix véhicule société vs indemnités kilométriques.",
   },
   {
     q: "Comment se rémunérer optimalement en SASU ou EURL ?",
@@ -83,7 +83,7 @@ const faq = [
   {
     q: "La flat tax (PFU) 30 % est-elle toujours plus intéressante que le barème ?",
     plain:
-      "Non. Pour un contribuable dans les tranches basses (TMI 0 % ou 11 %), le barème progressif + 17,2 % de prélèvements sociaux est plus favorable. Sur option globale, tous les revenus mobiliers passent au barème. Le cabinet Erkilic compare chaque année les deux options avec votre déclaration IR.",
+      "Non. Pour un contribuable dans les tranches basses (TMI 0 % ou 11 %), le barème progressif + 17,2 % de prélèvements sociaux est plus favorable. Sur option globale, tous les revenus mobiliers passent au barème. Le cabinet Erkilic Expertise Comptable compare chaque année les deux options avec votre déclaration IR.",
   },
   {
     q: "Comment fonctionne le régime réel simplifié pour LMNP ?",
@@ -113,7 +113,7 @@ const faq = [
   {
     q: "Un expert-comptable peut-il m'aider à racheter une entreprise ?",
     plain:
-      "Oui, c'est même un rôle central : audit d'acquisition (comptable, fiscal, social), valorisation, montage juridique (holding, LBO simple), négociation du prix, accompagnement bancaire, garantie d'actif et de passif. Le cabinet Erkilic accompagne les reprises de commerces et de cabinets sur Montpellier et l'Hérault.",
+      "Oui, c'est même un rôle central : audit d'acquisition (comptable, fiscal, social), valorisation, montage juridique (holding, LBO simple), négociation du prix, accompagnement bancaire, garantie d'actif et de passif. Le cabinet Erkilic Expertise Comptable accompagne les reprises de commerces et de cabinets sur Montpellier et l'Hérault.",
   },
   {
     q: "Comment transmettre son entreprise à ses enfants sans fiscalité écrasante ?",
@@ -123,7 +123,7 @@ const faq = [
   {
     q: "Puis-je changer d'expert-comptable en cours d'année ?",
     plain:
-      "Oui, à tout moment. La lettre de mission encadre le préavis (souvent 3 mois). Le nouveau cabinet reprend contact avec l'ancien pour récupérer les pièces (loi anti-blanchiment). Le cabinet Erkilic reprend régulièrement des dossiers en cours et remet à plat le premier bilan.",
+      "Oui, à tout moment. La lettre de mission encadre le préavis (souvent 3 mois). Le nouveau cabinet reprend contact avec l'ancien pour récupérer les pièces (loi anti-blanchiment). Le cabinet Erkilic Expertise Comptable reprend régulièrement des dossiers en cours et remet à plat le premier bilan.",
   },
 ];
 
@@ -157,7 +157,7 @@ export const Route = createFileRoute("/faq")({
           Statut juridique, obligations comptables, création d'entreprise à
           Montpellier, LMNP, comparatif logiciels : les réponses aux
           questions que dirigeants, indépendants et particuliers posent le
-          plus souvent au cabinet Erkilic à Juvignac.
+          plus souvent au cabinet Erkilic Expertise Comptable à Juvignac.
         </p>
       }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}

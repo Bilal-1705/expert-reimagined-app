@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pack/pro")({
           "expert-comptable artisan Montpellier, comptable commerçant Juvignac, cabinet comptable PME Hérault, tenue comptabilité SARL SAS, comptable restaurateur BTP, DSN paie externalisée Montpellier, bilan société Occitanie",
       },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: "Pack Artisans, Commerçants & PME — Cabinet Erkilic" },
+      { property: "og:title", content: "Pack Artisans, Commerçants & PME — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:

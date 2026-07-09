@@ -12,7 +12,7 @@ const SITE = "https://erkilic.fr";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable à Juvignac près de Montpellier — Cabinet Erkilic" },
+      { title: "Expert-Comptable à Juvignac près de Montpellier — Cabinet Erkilic Expertise Comptable" },
       {
         name: "description",
         content:
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "expert-comptable Juvignac, cabinet comptable Montpellier, expertise comptable Hérault, comptable auto-entrepreneur Montpellier, comptable profession libérale Juvignac, comptable création entreprise Hérault, cabinet Erkilic",
+          "expert-comptable Juvignac, cabinet comptable Montpellier, expertise comptable Hérault, comptable auto-entrepreneur Montpellier, comptable profession libérale Juvignac, comptable création entreprise Hérault, cabinet Erkilic Expertise Comptable",
       },
-      { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic" },
+      { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:
@@ -335,7 +335,7 @@ function Home() {
         <section className="relative py-20 md:py-28 px-6 border-t border-ink/5 overflow-hidden">
           <img
             src={handsLedger}
-            alt="Écriture comptable — cabinet Erkilic"
+            alt="Écriture comptable — cabinet Erkilic Expertise Comptable"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
             loading="lazy"
           />

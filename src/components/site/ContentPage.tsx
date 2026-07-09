@@ -317,7 +317,7 @@ export function articleJsonLd(opts: {
     author: { "@type": "Organization", name: "Cabinet Erkilic Expertise Comptable" },
     publisher: {
       "@type": "Organization",
-      name: "Cabinet Erkilic",
+      name: "Cabinet Erkilic Expertise Comptable",
       logo: { "@type": "ImageObject", url: "https://erkilic.fr/favicon.png" },
     },
   });

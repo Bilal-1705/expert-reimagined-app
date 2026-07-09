@@ -13,7 +13,7 @@ const faq = [
   {
     q: "Puis-je combiner logiciel en ligne + expert-comptable ?",
     plain:
-      "Oui, c'est même la meilleure combinaison. Le cabinet Erkilic travaille en mode collaboratif sur Pennylane ou Tiime : vous saisissez et automatisez, le cabinet supervise, valide, conseille et signe. Vous gardez la souplesse d'un outil moderne avec la sécurité d'un professionnel réglementé.",
+      "Oui, c'est même la meilleure combinaison. Le cabinet Erkilic Expertise Comptable travaille en mode collaboratif sur Pennylane ou Tiime : vous saisissez et automatisez, le cabinet supervise, valide, conseille et signe. Vous gardez la souplesse d'un outil moderne avec la sécurité d'un professionnel réglementé.",
   },
   {
     q: "Les logiciels 100% en ligne sont-ils adaptés à un profession libérale ?",
@@ -112,7 +112,7 @@ export const Route = createFileRoute("/comparatif/cabinet-vs-en-ligne")({
           ],
         },
         {
-          title: "La solution hybride du cabinet Erkilic",
+          title: "La solution hybride du cabinet Erkilic Expertise Comptable",
           bullets: [
             "Vous gardez votre logiciel (Pennylane, Tiime, Indy) pour la saisie quotidienne.",
             "Le cabinet supervise, valide, conseille et signe.",

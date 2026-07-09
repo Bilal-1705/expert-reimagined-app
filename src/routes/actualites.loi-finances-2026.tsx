@@ -59,7 +59,7 @@ export const Route = createFileRoute("/actualites/loi-finances-2026")({
           </p>
           <p className="mt-4 text-sm text-ink/60 italic">
             Cette synthèse est mise à jour à mesure que les décrets d'application
-            sont publiés. Contactez le cabinet Erkilic pour un audit personnalisé
+            sont publiés. Contactez le cabinet Erkilic Expertise Comptable pour un audit personnalisé
             de votre situation.
           </p>
         </>
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/actualites/loi-finances-2026")({
           ],
         },
         {
-          title: "Ce que le cabinet Erkilic recommande de faire au T1 2026",
+          title: "Ce que le cabinet Erkilic Expertise Comptable recommande de faire au T1 2026",
           bullets: [
             "Refaire l'arbitrage salaire/dividendes en fonction des nouveaux plafonds.",
             "Valider votre calendrier de passage à la facture électronique.",

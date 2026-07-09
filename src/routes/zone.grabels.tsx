@@ -7,13 +7,13 @@ const PATH = "/zone/grabels";
 export const Route = createFileRoute("/zone/grabels")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Grabels (34790) | Cabinet Erkilic" },
+      { title: "Expert-Comptable Grabels (34790) | Cabinet Erkilic Expertise Comptable" },
       {
         name: "description",
         content:
           "Cabinet d'expertise comptable au nord de Juvignac, accessible en 5 minutes depuis Grabels (34790). TPE, professions médicales, indépendants.",
       },
-      { property: "og:title", content: "Comptable Grabels — Cabinet Erkilic" },
+      { property: "og:title", content: "Comptable Grabels — Cabinet Erkilic Expertise Comptable" },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/zone/grabels")({
         <p>
           Grabels et Juvignac sont deux communes limitrophes de
           l'agglomération de Montpellier. Depuis le centre de Grabels, le
-          cabinet Erkilic est à 5 minutes via la D127. Une proximité
+          cabinet Erkilic Expertise Comptable est à 5 minutes via la D127. Une proximité
           idéale pour les professionnels de santé, indépendants et TPE
           installés sur la commune.
         </p>

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pack/createur")({
           "expert-comptable création entreprise Montpellier, aide création SASU EURL, prévisionnel financier expert-comptable, choix statut juridique, business plan cabinet comptable Juvignac, ouvrir société Hérault",
       },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: "Pack Créateur d'entreprise — Cabinet Erkilic" },
+      { property: "og:title", content: "Pack Créateur d'entreprise — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:
@@ -64,7 +64,7 @@ function PackCreateur() {
         "Recherche d'aides et subventions locales",
       ]}
       heroImage={cabinetImg}
-      heroAlt="Accompagnement à la création d'entreprise à Juvignac Montpellier — cabinet Erkilic"
+      heroAlt="Accompagnement à la création d'entreprise à Juvignac Montpellier — cabinet Erkilic Expertise Comptable"
       sections={[
         {
           title: "Pack Créateur",

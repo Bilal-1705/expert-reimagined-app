@@ -22,7 +22,7 @@ export const Route = createFileRoute("/guide")({
         content:
           "guide expert-comptable Montpellier, missions expert-comptable, choix statut juridique SASU EURL SARL, obligations comptables entreprise, TVA franchise en base, fiscalité entreprise Hérault, expert-comptable Juvignac guide",
       },
-      { property: "og:title", content: "Guide de l'expertise comptable — Cabinet Erkilic" },
+      { property: "og:title", content: "Guide de l'expertise comptable — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
         content:
@@ -92,7 +92,7 @@ const chapters = [
   {
     n: "01",
     title: "Le rôle de l'expert-comptable",
-    p: `L'expert-comptable joue un rôle central dans la vie d'une entreprise. À Montpellier, Juvignac et dans tout l'Hérault, il accompagne créateurs, artisans, commerçants, professions libérales et particuliers dans la maîtrise de leurs obligations comptables, fiscales, sociales et juridiques. Choisir un cabinet de proximité comme le Cabinet Erkilic à Juvignac, c'est s'assurer un interlocuteur disponible, réactif et fidèle à la déontologie de l'Ordre des Experts-Comptables.`,
+    p: `L'expert-comptable joue un rôle central dans la vie d'une entreprise. À Montpellier, Juvignac et dans tout l'Hérault, il accompagne créateurs, artisans, commerçants, professions libérales et particuliers dans la maîtrise de leurs obligations comptables, fiscales, sociales et juridiques. Choisir un cabinet de proximité comme le Cabinet Erkilic Expertise Comptable à Juvignac, c'est s'assurer un interlocuteur disponible, réactif et fidèle à la déontologie de l'Ordre des Experts-Comptables.`,
   },
   {
     n: "02",
@@ -204,7 +204,7 @@ function Guide() {
               Un projet, une question ?
             </h2>
             <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-              Le Cabinet Erkilic, expert-comptable à Juvignac, vous accompagne
+              Le Cabinet Erkilic Expertise Comptable, expert-comptable à Juvignac, vous accompagne
               à chaque étape.
             </p>
             <Link

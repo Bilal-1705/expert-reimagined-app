@@ -6,9 +6,9 @@ const PATH = "/comparatif/pennylane-vs-erkilic";
 
 const faq = [
   {
-    q: "Le cabinet Erkilic travaille-t-il avec Pennylane ?",
+    q: "Le cabinet Erkilic Expertise Comptable travaille-t-il avec Pennylane ?",
     plain:
-      "Oui. Le cabinet Erkilic utilise Pennylane comme outil collaboratif avec les clients qui le souhaitent : synchronisation bancaire automatique, factures en un clic, tableau de bord partagé en temps réel. Nous utilisons également Tiime et d'autres solutions selon vos préférences.",
+      "Oui. Le cabinet Erkilic Expertise Comptable utilise Pennylane comme outil collaboratif avec les clients qui le souhaitent : synchronisation bancaire automatique, factures en un clic, tableau de bord partagé en temps réel. Nous utilisons également Tiime et d'autres solutions selon vos préférences.",
   },
   {
     q: "Puis-je utiliser Pennylane sans expert-comptable ?",
@@ -25,7 +25,7 @@ const faq = [
 export const Route = createFileRoute("/comparatif/pennylane-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Pennylane vs Cabinet Erkilic : la bonne combinaison" },
+      { title: "Pennylane vs Cabinet Erkilic Expertise Comptable : la bonne combinaison" },
       {
         name: "description",
         content:
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/comparatif/pennylane-vs-erkilic")({
         <>
           <p>
             Pennylane est le meilleur logiciel de comptabilité collaborative
-            du marché français. Le cabinet Erkilic est un expert-comptable
+            du marché français. Le cabinet Erkilic Expertise Comptable est un expert-comptable
             physique à Juvignac. La bonne question n'est pas « lequel
             choisir ? » mais « comment les combiner ? ».
           </p>

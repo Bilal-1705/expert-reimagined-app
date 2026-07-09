@@ -45,14 +45,14 @@ const articles = [
   {
     to: "/comparatif/indy-vs-erkilic",
     tag: "Comparatif",
-    title: "Indy vs Cabinet Erkilic : logiciel ou expert-comptable ?",
+    title: "Indy vs Cabinet Erkilic Expertise Comptable : logiciel ou expert-comptable ?",
     excerpt:
       "Ce qu'un logiciel de comptabilité ne peut pas faire : signer un bilan, engager sa responsabilité, défendre votre dossier en cas de contrôle fiscal.",
   },
   {
     to: "/comparatif/pennylane-vs-erkilic",
     tag: "Comparatif",
-    title: "Pennylane vs Cabinet Erkilic : logiciel + expert, la bonne combinaison",
+    title: "Pennylane vs Cabinet Erkilic Expertise Comptable : logiciel + expert, la bonne combinaison",
     excerpt:
       "Pourquoi utiliser Pennylane comme outil collaboratif avec votre expert-comptable local plutôt que comme substitut à ce dernier.",
   },
@@ -75,13 +75,13 @@ const articles = [
 export const Route = createFileRoute("/conseils")({
   head: () => ({
     meta: [
-      { title: "Conseils Expert-Comptable Montpellier | Cabinet Erkilic" },
+      { title: "Conseils Expert-Comptable Montpellier | Cabinet Erkilic Expertise Comptable" },
       {
         name: "description",
         content:
-          "Analyses, comparatifs et guides pratiques du cabinet Erkilic : création d'entreprise, statut juridique, LMNP, professions libérales à Montpellier.",
+          "Analyses, comparatifs et guides pratiques du cabinet Erkilic Expertise Comptable : création d'entreprise, statut juridique, LMNP, professions libérales à Montpellier.",
       },
-      { property: "og:title", content: "Conseils & analyses — Cabinet Erkilic" },
+      { property: "og:title", content: "Conseils & analyses — Cabinet Erkilic Expertise Comptable" },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -92,7 +92,7 @@ export const Route = createFileRoute("/conseils")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Conseils & analyses — Cabinet Erkilic",
+          name: "Conseils & analyses — Cabinet Erkilic Expertise Comptable",
           url: `${SITE}${PATH}`,
           about: "Expertise comptable, fiscalité, création d'entreprise, LMNP",
         }),

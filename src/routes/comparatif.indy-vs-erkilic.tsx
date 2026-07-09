@@ -13,7 +13,7 @@ const faq = [
   {
     q: "Puis-je remplacer un expert-comptable par Indy ?",
     plain:
-      "Légalement, aucune loi n'oblige un indépendant à recourir à un expert-comptable. Mais Indy ne fait que la saisie automatisée : le conseil fiscal, l'optimisation du statut, la défense en cas de contrôle et la validation légale de vos comptes ne sont pas assurés. Le cabinet Erkilic engage sa responsabilité sur ces points, Indy non.",
+      "Légalement, aucune loi n'oblige un indépendant à recourir à un expert-comptable. Mais Indy ne fait que la saisie automatisée : le conseil fiscal, l'optimisation du statut, la défense en cas de contrôle et la validation légale de vos comptes ne sont pas assurés. Le cabinet Erkilic Expertise Comptable engage sa responsabilité sur ces points, Indy non.",
   },
   {
     q: "Combien coûte un expert-comptable pour un freelance à Montpellier ?",
@@ -25,13 +25,13 @@ const faq = [
 export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Indy vs Cabinet Erkilic : logiciel ou expert-comptable ?" },
+      { title: "Indy vs Cabinet Erkilic Expertise Comptable : logiciel ou expert-comptable ?" },
       {
         name: "description",
         content:
-          "Indy est un logiciel, pas un expert-comptable. Comparatif honnête entre Indy et le cabinet Erkilic à Juvignac : responsabilité, conseil, prix.",
+          "Indy est un logiciel, pas un expert-comptable. Comparatif honnête entre Indy et le cabinet Erkilic Expertise Comptable à Juvignac : responsabilité, conseil, prix.",
       },
-      { property: "og:title", content: "Indy vs Cabinet Erkilic — Comparatif honnête" },
+      { property: "og:title", content: "Indy vs Cabinet Erkilic Expertise Comptable — Comparatif honnête" },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
         { label: "Indy vs Erkilic" },
       ]}
       eyebrow="Comparatif · Logiciel vs Expert"
-      h1="Indy vs Cabinet Erkilic :"
+      h1="Indy vs Cabinet Erkilic Expertise Comptable :"
       italic="ce qu'un logiciel ne peut pas faire."
       intro={
         <>
