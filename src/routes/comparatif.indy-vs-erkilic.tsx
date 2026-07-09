@@ -123,6 +123,28 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
           ),
         },
       ]}
+      comparisonTable={{
+        title: "Indy vs Erkilic Expertise Comptable en un coup d'œil",
+        columns: ["Critère", "Indy (100% en ligne)", "Erkilic Expertise Comptable (Juvignac)"],
+        rows: [
+          { criterion: "Tarif de base", competitor: "Abonnement mensuel bas, ciblé freelance.", erkilic: "Forfait sur-mesure, tout compris." },
+          { criterion: "Contact humain", competitor: "Chat et support en ligne.", erkilic: "Interlocuteur unique, joignable, en cabinet ou visio." },
+          { criterion: "Optimisation fiscale", competitor: "Automatisée, standardisée.", erkilic: "Sur-mesure, arbitrage salaire/dividendes annuel." },
+          { criterion: "Rendez-vous physiques", competitor: "Non — 100% en ligne.", erkilic: "Oui, à Juvignac près de Montpellier." },
+          { criterion: "Ancrage local", competitor: "Aucun.", erkilic: "Connaissance des aides Hérault / Occitanie." },
+          { criterion: "Contrôle fiscal", competitor: "Assistance limitée.", erkilic: "Représentation, responsabilité civile professionnelle engagée." },
+        ],
+      }}
+      verdict={
+        <p>
+          En résumé, si vous êtes un freelance solo en BNC avec des opérations
+          standards et pas d'enjeu patrimonial, <strong>Indy</strong> est un très
+          bon outil. En revanche, si vous êtes une profession libérale, un
+          artisan ou une TPE à Juvignac ou Montpellier avec besoin de conseil
+          sur-mesure et de réactivité, le cabinet{" "}
+          <strong>Erkilic Expertise Comptable</strong> sera bien plus adapté.
+        </p>
+      }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
       cta={{ label: "Demander un devis", to: "/contact", sub: "Un vrai expert-comptable pour votre activité." }}
     />
