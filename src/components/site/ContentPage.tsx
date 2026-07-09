@@ -81,7 +81,7 @@ export function ContentPage({
             {breadcrumbs.length > 0 && (
               <nav
                 aria-label="fil d'ariane"
-                className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 mb-8 flex flex-wrap gap-2"
+                className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-8 flex flex-wrap gap-2"
               >
                 {breadcrumbs.map((b, i) => (
                   <span key={i} className="flex items-center gap-2">
@@ -97,7 +97,7 @@ export function ContentPage({
                 ))}
               </nav>
             )}
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/50 mb-6 block reveal" data-reveal>
+            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-6 block reveal" data-reveal>
               {eyebrow}
             </span>
             <h1
@@ -113,7 +113,7 @@ export function ContentPage({
               )}
             </h1>
             {(datePublished || dateModified) && (
-              <div className="mb-6 flex flex-wrap gap-x-6 gap-y-1 text-[11px] font-bold uppercase tracking-[0.25em] text-ink/50">
+              <div className="mb-6 flex flex-wrap gap-x-6 gap-y-1 text-[11px] font-bold uppercase tracking-[0.25em] text-ink/70">
                 {datePublished && (
                   <span>
                     Publié le{" "}
@@ -234,7 +234,7 @@ export function ContentPage({
         {faq.length > 0 && (
           <section className="py-20 md:py-24 px-6 bg-paper-dark/40 border-t border-ink/5">
             <div className="max-w-4xl mx-auto">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 mb-4 block">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-4 block">
                 Questions fréquentes
               </span>
               <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter mb-12 leading-[0.95]">
@@ -247,7 +247,7 @@ export function ContentPage({
                       <h3 className="font-sora text-lg md:text-xl font-bold leading-snug">
                         {f.q}
                       </h3>
-                      <span className="font-sora text-2xl leading-none text-ink/40 group-open:rotate-45 transition-transform">
+                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">
                         +
                       </span>
                     </summary>

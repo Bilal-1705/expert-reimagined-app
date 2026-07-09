@@ -120,7 +120,7 @@ export function Nav() {
             <span className="font-sora font-extrabold text-lg tracking-tight uppercase">
               Erkilic
             </span>
-            <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-ink/50 mt-0.5">
+            <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-ink/70 mt-0.5">
               Expertise Comptable
             </span>
           </span>
@@ -200,7 +200,7 @@ export function Nav() {
 
             <details className="py-2 border-b border-ink/5">
               <summary className="py-1 list-none cursor-pointer flex justify-between items-center">
-                Pour qui ? <span className="text-ink/40">+</span>
+                Pour qui ? <span className="text-ink/60">+</span>
               </summary>
               <div className="mt-2 pl-3 flex flex-col gap-1 text-[11px] tracking-wider text-ink/70">
                 {packLinks.map((l) => (
@@ -213,7 +213,7 @@ export function Nav() {
 
             <details className="py-2 border-b border-ink/5">
               <summary className="py-1 list-none cursor-pointer flex justify-between items-center">
-                Ressources <span className="text-ink/40">+</span>
+                Ressources <span className="text-ink/60">+</span>
               </summary>
               <div className="mt-2 pl-3 flex flex-col gap-1 text-[11px] tracking-wider text-ink/70">
                 {ressourcesLinks.map((l) => (
