@@ -20,6 +20,7 @@ const entries = [
   { path: "/comparatif/indy-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
   { path: "/comparatif/pennylane-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
   { path: "/comparatif/keobiz-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/comparatif/dougs-vs-erkilic", priority: "0.8", changefreq: "monthly" as const },
   { path: "/secteur/artisans-commercants", priority: "0.8", changefreq: "monthly" as const },
   { path: "/secteur/professions-liberales-medicales", priority: "0.8", changefreq: "monthly" as const },
   { path: "/secteur/immobilier-lmnp-sci", priority: "0.8", changefreq: "monthly" as const },
