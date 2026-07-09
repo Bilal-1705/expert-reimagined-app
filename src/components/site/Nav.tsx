@@ -50,7 +50,7 @@ function DesktopDropdown({
         aria-haspopup="true"
         onFocus={enter}
         onBlur={leave}
-        className="relative py-1 hover:text-ink/60 transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-ink after:transition-all hover:after:w-full flex items-center gap-1.5"
+        className="relative py-1 uppercase tracking-widest font-bold hover:text-ink/60 transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-ink after:transition-all hover:after:w-full flex items-center gap-1.5"
       >
         {label}
         <span
