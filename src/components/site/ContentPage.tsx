@@ -45,6 +45,8 @@ export function ContentPage({
   italic,
   intro,
   sections = [],
+  comparisonTable,
+  verdict,
   faq = [],
   cta,
   breadcrumbs = [],
