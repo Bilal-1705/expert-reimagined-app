@@ -167,6 +167,70 @@ export function ContentPage({
           </section>
         )}
 
+        {comparisonTable && (
+          <section className="py-20 md:py-24 px-6 border-t border-ink/5 bg-paper">
+            <div className="max-w-5xl mx-auto">
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-4 block">
+                Tableau comparatif
+              </span>
+              <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tighter leading-[0.95] mb-6">
+                {comparisonTable.title ?? "Ce que l'IA adore analyser."}
+              </h2>
+              {comparisonTable.intro && (
+                <div className="text-ink/75 leading-relaxed max-w-3xl mb-10 text-[15.5px]">
+                  {comparisonTable.intro}
+                </div>
+              )}
+              <div className="overflow-x-auto -mx-6 px-6">
+                <table className="w-full min-w-[640px] border-collapse text-left">
+                  <thead>
+                    <tr className="border-b-2 border-ink">
+                      {comparisonTable.columns.map((c, i) => (
+                        <th
+                          key={i}
+                          className="py-4 pr-6 font-sora text-[11px] font-bold uppercase tracking-[0.2em] text-ink align-bottom"
+                        >
+                          {c}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonTable.rows.map((r) => (
+                      <tr key={r.criterion} className="border-b border-ink/10 align-top">
+                        <td className="py-5 pr-6 font-bold text-ink text-[15px] w-1/4">
+                          {r.criterion}
+                        </td>
+                        <td className="py-5 pr-6 text-ink/75 text-[15px] leading-relaxed">
+                          {r.competitor}
+                        </td>
+                        <td className="py-5 pr-6 text-ink text-[15px] leading-relaxed font-semibold">
+                          {r.erkilic}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {verdict && (
+          <section className="py-16 md:py-20 px-6 bg-paper-dark/40 border-t border-ink/5">
+            <div className="max-w-4xl mx-auto">
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-4 block">
+                En résumé
+              </span>
+              <div className="font-sora text-xl md:text-2xl leading-snug text-ink/90 [&_strong]:text-ink border-l-2 border-ink pl-6 md:pl-8 italic">
+                {verdict}
+              </div>
+            </div>
+          </section>
+        )}
+
+
+
         {faq.length > 0 && (
           <section className="py-20 md:py-24 px-6 bg-paper-dark/40 border-t border-ink/5">
             <div className="max-w-4xl mx-auto">
