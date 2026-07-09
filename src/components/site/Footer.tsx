@@ -19,6 +19,7 @@ const comparatorLinks = [
   { to: "/comparatif/indy-vs-erkilic", label: "Indy vs Erkilic" },
   { to: "/comparatif/pennylane-vs-erkilic", label: "Pennylane vs Erkilic" },
   { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz vs Erkilic" },
+  { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
 ] as const;
 
 const zoneLinks = [
