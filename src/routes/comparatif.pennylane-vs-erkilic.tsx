@@ -104,6 +104,28 @@ export const Route = createFileRoute("/comparatif/pennylane-vs-erkilic")({
           ),
         },
       ]}
+      comparisonTable={{
+        title: "Pennylane vs Erkilic Expertise Comptable en un coup d'œil",
+        intro: <p>Pennylane est aussi utilisé par le cabinet Erkilic Expertise Comptable en mode collaboratif — voici ce qui change quand un expert-comptable est réellement engagé sur votre dossier.</p>,
+        columns: ["Critère", "Pennylane seul", "Erkilic Expertise Comptable + Pennylane"],
+        rows: [
+          { criterion: "Outil", competitor: "Logiciel puissant, self-service.", erkilic: "Même outil, supervisé et validé par un expert-comptable inscrit à l'Ordre." },
+          { criterion: "Conseil fiscal", competitor: "Non — outil seul.", erkilic: "Arbitrage salaire/dividendes, optimisation IS/IR chaque année." },
+          { criterion: "Bilan signé", competitor: "Non — vous restez responsable.", erkilic: "Oui — signé et engagement de responsabilité." },
+          { criterion: "Contrôle fiscal", competitor: "Vous vous défendez seul.", erkilic: "Le cabinet vous représente et défend le dossier." },
+          { criterion: "Interlocuteur", competitor: "Support outil.", erkilic: "Un expert-comptable dédié à Juvignac." },
+        ],
+      }}
+      verdict={
+        <p>
+          En résumé, <strong>Pennylane</strong> est un excellent logiciel pour
+          automatiser votre comptabilité. Utilisé <em>seul</em>, il ne remplace
+          pas un expert-comptable. Utilisé <em>avec</em> le cabinet{" "}
+          <strong>Erkilic Expertise Comptable</strong>, vous gardez la souplesse
+          de l'outil et vous ajoutez le conseil, la validation et la sécurité
+          d'un professionnel réglementé à Montpellier.
+        </p>
+      }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
       cta={{ label: "Discuter de mon dossier", to: "/contact", sub: "Vous êtes sur Pennylane ? Parlons intégration." }}
     />
