@@ -21,6 +21,7 @@ const ressourcesLinks: LinkItem[] = [
   { to: "/actualites/baremes-2026", label: "Barèmes & seuils 2026" },
   { to: "/simulateur-statut", label: "Simulateur : quel statut ?" },
   { to: "/comparatif/cabinet-vs-en-ligne", label: "Cabinet vs 100% en ligne" },
+  { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
 ];
 
 function DesktopDropdown({
