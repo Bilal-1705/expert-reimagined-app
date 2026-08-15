@@ -26,7 +26,12 @@ Nouvelle page hub `/comparatifs` ajoutée au menu RESSOURCES (et au footer/sitem
 
 - Introduction : cabinet local vs solutions en ligne, ce qu'un logiciel ne peut pas faire.
 - Tableau de synthèse Erkilic Expertise Comptable vs plateformes.
-- Cartes vers les comparatifs existants : Indy, Pennylane, Keobiz, Dougs, plus "Cabinet vs 100 % en ligne" et "EURL vs SASU".
+- Cartes vers les comparatifs existants : Indy, Pennylane, Keobiz, Dougs, plus "Cabinet vs 100 % en ligne" et "EURL vs SASU".  
+
+
+5. Optimisation search engine
+
+Les nouvelles pages et celle déjà existance vérifier si elles peuvent être optimisées encore plus pour du SEO Local, IA search engine, Fils d'ariane.
 
 ## Détails techniques
 
