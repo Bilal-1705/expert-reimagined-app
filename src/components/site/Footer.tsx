@@ -20,6 +20,7 @@ const comparatorLinks = [
   { to: "/comparatif/pennylane-vs-erkilic", label: "Pennylane vs Erkilic" },
   { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz vs Erkilic" },
   { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
+  { to: "/comparatifs", label: "Tous les comparatifs" },
 ] as const;
 
 const zoneLinks = [
@@ -36,7 +37,9 @@ const creationLinks = [
 const editorialLinks = [
   { to: "/a-propos", label: "À propos" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
-  { to: "/conseils", label: "Conseils & analyses" },
+  { to: "/actualites", label: "Actualités" },
+  { to: "/comparatifs", label: "Comparatifs" },
+  { to: "/simulateur-statut", label: "Simulateur : quel statut ?" },
   { to: "/faq", label: "FAQ" },
 ] as const;
 

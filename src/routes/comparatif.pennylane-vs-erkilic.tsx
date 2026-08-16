@@ -44,7 +44,7 @@ export const Route = createFileRoute("/comparatif/pennylane-vs-erkilic")({
     <ContentPage
       breadcrumbs={[
         { label: "Accueil", to: "/" },
-        { label: "Conseils", to: "/conseils" },
+        { label: "Comparatifs", to: "/comparatifs" },
         { label: "Pennylane vs Erkilic" },
       ]}
       eyebrow="Comparatif · Tech + humain"
