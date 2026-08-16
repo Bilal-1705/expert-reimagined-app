@@ -146,8 +146,15 @@ export function Nav() {
           >
             Prestations
           </Link>
-          <DesktopDropdown label="Pour qui ?" items={packLinks} />
+          <DesktopDropdown label="Nos packs" items={packLinks} />
           <DesktopDropdown label="Ressources" items={ressourcesLinks} />
+          <Link
+            to="/actualites"
+            className="relative py-1 hover:text-ink/60 transition-colors after:content-[\'\'] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-ink after:transition-all hover:after:w-full"
+            activeProps={{ className: "text-ink after:w-full" }}
+          >
+            Actualités
+          </Link>
           <Link
             to="/contact"
             className="relative py-1 hover:text-ink/60 transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-ink after:transition-all hover:after:w-full"
@@ -183,6 +190,7 @@ export function Nav() {
               { to: "/", label: "Accueil" },
               { to: "/cabinet", label: "Cabinet" },
               { to: "/services", label: "Prestations" },
+              { to: "/actualites", label: "Actualités" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <Link
@@ -197,7 +205,7 @@ export function Nav() {
 
             <details className="py-2 border-b border-ink/5">
               <summary className="py-1 list-none cursor-pointer flex justify-between items-center">
-                Pour qui ? <span className="text-ink/60">+</span>
+                Nos packs <span className="text-ink/60">+</span>
               </summary>
               <div className="mt-2 pl-3 flex flex-col gap-1 text-[11px] tracking-wider text-ink/70">
                 {packLinks.map((l) => (
