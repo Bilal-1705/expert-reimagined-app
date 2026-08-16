@@ -19,6 +19,7 @@ import { Route as ConseilsRouteImport } from './routes/conseils'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
 import { Route as ZoneSaintGeorgesDorquesRouteImport } from './routes/zone.saint-georges-dorques'
 import { Route as ZoneGrabelsRouteImport } from './routes/zone.grabels'
 import { Route as ZoneCelleneuveMossonRouteImport } from './routes/zone.celleneuve-mosson'
@@ -38,8 +39,11 @@ import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif
 import { Route as ComparatifEurlVsSasuRouteImport } from './routes/comparatif.eurl-vs-sasu'
 import { Route as ComparatifDougsVsErkilicRouteImport } from './routes/comparatif.dougs-vs-erkilic'
 import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
+import { Route as ActualitesMicroEntrepriseSeuilsTva2026RouteImport } from './routes/actualites.micro-entreprise-seuils-tva-2026'
 import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
+import { Route as ActualitesFacturationElectroniqueSeptembre2026RouteImport } from './routes/actualites.facturation-electronique-septembre-2026'
 import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
+import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/actualites.declaration-revenus-2026'
 import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -90,6 +94,11 @@ const AProposRoute = AProposRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesIndexRoute = ActualitesIndexRouteImport.update({
+  id: '/actualites/',
+  path: '/actualites/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZoneSaintGeorgesDorquesRoute = ZoneSaintGeorgesDorquesRouteImport.update({
@@ -196,16 +205,34 @@ const ComparatifCabinetVsEnLigneRoute =
     path: '/comparatif/cabinet-vs-en-ligne',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ActualitesMicroEntrepriseSeuilsTva2026Route =
+  ActualitesMicroEntrepriseSeuilsTva2026RouteImport.update({
+    id: '/actualites/micro-entreprise-seuils-tva-2026',
+    path: '/actualites/micro-entreprise-seuils-tva-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ActualitesLoiFinances2026Route =
   ActualitesLoiFinances2026RouteImport.update({
     id: '/actualites/loi-finances-2026',
     path: '/actualites/loi-finances-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ActualitesFacturationElectroniqueSeptembre2026Route =
+  ActualitesFacturationElectroniqueSeptembre2026RouteImport.update({
+    id: '/actualites/facturation-electronique-septembre-2026',
+    path: '/actualites/facturation-electronique-septembre-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ActualitesFacturationElectronique2026Route =
   ActualitesFacturationElectronique2026RouteImport.update({
     id: '/actualites/facturation-electronique-2026',
     path: '/actualites/facturation-electronique-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesDeclarationRevenus2026Route =
+  ActualitesDeclarationRevenus2026RouteImport.update({
+    id: '/actualites/declaration-revenus-2026',
+    path: '/actualites/declaration-revenus-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
@@ -226,8 +253,11 @@ export interface FileRoutesByFullPath {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -247,6 +277,7 @@ export interface FileRoutesByFullPath {
   '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
   '/zone/grabels': typeof ZoneGrabelsRoute
   '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
+  '/actualites/': typeof ActualitesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -260,8 +291,11 @@ export interface FileRoutesByTo {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -281,6 +315,7 @@ export interface FileRoutesByTo {
   '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
   '/zone/grabels': typeof ZoneGrabelsRoute
   '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
+  '/actualites': typeof ActualitesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -295,8 +330,11 @@ export interface FileRoutesById {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
+  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
+  '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -316,6 +354,7 @@ export interface FileRoutesById {
   '/zone/celleneuve-mosson': typeof ZoneCelleneuveMossonRoute
   '/zone/grabels': typeof ZoneGrabelsRoute
   '/zone/saint-georges-dorques': typeof ZoneSaintGeorgesDorquesRoute
+  '/actualites/': typeof ActualitesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -331,8 +370,11 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/facturation-electronique-septembre-2026'
     | '/actualites/loi-finances-2026'
+    | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -352,6 +394,7 @@ export interface FileRouteTypes {
     | '/zone/celleneuve-mosson'
     | '/zone/grabels'
     | '/zone/saint-georges-dorques'
+    | '/actualites/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -365,8 +408,11 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/facturation-electronique-septembre-2026'
     | '/actualites/loi-finances-2026'
+    | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -386,6 +432,7 @@ export interface FileRouteTypes {
     | '/zone/celleneuve-mosson'
     | '/zone/grabels'
     | '/zone/saint-georges-dorques'
+    | '/actualites'
   id:
     | '__root__'
     | '/'
@@ -399,8 +446,11 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
+    | '/actualites/facturation-electronique-septembre-2026'
     | '/actualites/loi-finances-2026'
+    | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -420,6 +470,7 @@ export interface FileRouteTypes {
     | '/zone/celleneuve-mosson'
     | '/zone/grabels'
     | '/zone/saint-georges-dorques'
+    | '/actualites/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -434,8 +485,11 @@ export interface RootRouteChildren {
   SimulateurStatutRoute: typeof SimulateurStatutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
+  ActualitesDeclarationRevenus2026Route: typeof ActualitesDeclarationRevenus2026Route
   ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
+  ActualitesFacturationElectroniqueSeptembre2026Route: typeof ActualitesFacturationElectroniqueSeptembre2026Route
   ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
+  ActualitesMicroEntrepriseSeuilsTva2026Route: typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   ComparatifCabinetVsEnLigneRoute: typeof ComparatifCabinetVsEnLigneRoute
   ComparatifDougsVsErkilicRoute: typeof ComparatifDougsVsErkilicRoute
   ComparatifEurlVsSasuRoute: typeof ComparatifEurlVsSasuRoute
@@ -455,6 +509,7 @@ export interface RootRouteChildren {
   ZoneCelleneuveMossonRoute: typeof ZoneCelleneuveMossonRoute
   ZoneGrabelsRoute: typeof ZoneGrabelsRoute
   ZoneSaintGeorgesDorquesRoute: typeof ZoneSaintGeorgesDorquesRoute
+  ActualitesIndexRoute: typeof ActualitesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -527,6 +582,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/': {
+      id: '/actualites/'
+      path: '/actualites'
+      fullPath: '/actualites/'
+      preLoaderRoute: typeof ActualitesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zone/saint-georges-dorques': {
@@ -662,6 +724,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComparatifCabinetVsEnLigneRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/micro-entreprise-seuils-tva-2026': {
+      id: '/actualites/micro-entreprise-seuils-tva-2026'
+      path: '/actualites/micro-entreprise-seuils-tva-2026'
+      fullPath: '/actualites/micro-entreprise-seuils-tva-2026'
+      preLoaderRoute: typeof ActualitesMicroEntrepriseSeuilsTva2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/actualites/loi-finances-2026': {
       id: '/actualites/loi-finances-2026'
       path: '/actualites/loi-finances-2026'
@@ -669,11 +738,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActualitesLoiFinances2026RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actualites/facturation-electronique-septembre-2026': {
+      id: '/actualites/facturation-electronique-septembre-2026'
+      path: '/actualites/facturation-electronique-septembre-2026'
+      fullPath: '/actualites/facturation-electronique-septembre-2026'
+      preLoaderRoute: typeof ActualitesFacturationElectroniqueSeptembre2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/actualites/facturation-electronique-2026': {
       id: '/actualites/facturation-electronique-2026'
       path: '/actualites/facturation-electronique-2026'
       fullPath: '/actualites/facturation-electronique-2026'
       preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/declaration-revenus-2026': {
+      id: '/actualites/declaration-revenus-2026'
+      path: '/actualites/declaration-revenus-2026'
+      fullPath: '/actualites/declaration-revenus-2026'
+      preLoaderRoute: typeof ActualitesDeclarationRevenus2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/actualites/baremes-2026': {
@@ -698,9 +781,14 @@ const rootRouteChildren: RootRouteChildren = {
   SimulateurStatutRoute: SimulateurStatutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ActualitesBaremes2026Route: ActualitesBaremes2026Route,
+  ActualitesDeclarationRevenus2026Route: ActualitesDeclarationRevenus2026Route,
   ActualitesFacturationElectronique2026Route:
     ActualitesFacturationElectronique2026Route,
+  ActualitesFacturationElectroniqueSeptembre2026Route:
+    ActualitesFacturationElectroniqueSeptembre2026Route,
   ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
+  ActualitesMicroEntrepriseSeuilsTva2026Route:
+    ActualitesMicroEntrepriseSeuilsTva2026Route,
   ComparatifCabinetVsEnLigneRoute: ComparatifCabinetVsEnLigneRoute,
   ComparatifDougsVsErkilicRoute: ComparatifDougsVsErkilicRoute,
   ComparatifEurlVsSasuRoute: ComparatifEurlVsSasuRoute,
@@ -722,6 +810,7 @@ const rootRouteChildren: RootRouteChildren = {
   ZoneCelleneuveMossonRoute: ZoneCelleneuveMossonRoute,
   ZoneGrabelsRoute: ZoneGrabelsRoute,
   ZoneSaintGeorgesDorquesRoute: ZoneSaintGeorgesDorquesRoute,
+  ActualitesIndexRoute: ActualitesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
