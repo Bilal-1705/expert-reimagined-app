@@ -14,14 +14,10 @@ const packLinks: LinkItem[] = [
 
 const ressourcesLinks: LinkItem[] = [
   { to: "/guide", label: "Guide de l'expertise comptable" },
-  { to: "/conseils", label: "Conseils & analyses" },
+  { to: "/comparatifs", label: "Comparatifs" },
   { to: "/faq", label: "FAQ" },
-  { to: "/actualites/facturation-electronique-2026", label: "Facture électronique 2026" },
-  { to: "/actualites/loi-finances-2026", label: "Loi de Finances 2026" },
-  { to: "/actualites/baremes-2026", label: "Barèmes & seuils 2026" },
   { to: "/simulateur-statut", label: "Simulateur : quel statut ?" },
-  { to: "/comparatif/cabinet-vs-en-ligne", label: "Cabinet vs 100% en ligne" },
-  { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
+  { to: "/creation-entreprise/sasu-eurl-ei", label: "Créer son entreprise" },
 ];
 
 function DesktopDropdown({
