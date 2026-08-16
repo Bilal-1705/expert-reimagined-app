@@ -16,6 +16,7 @@ import { Route as GuideRouteImport } from './routes/guide'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConseilsRouteImport } from './routes/conseils'
+import { Route as ComparatifsRouteImport } from './routes/comparatifs'
 import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
@@ -79,6 +80,11 @@ const ContactRoute = ContactRouteImport.update({
 const ConseilsRoute = ConseilsRouteImport.update({
   id: '/conseils',
   path: '/conseils',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparatifsRoute = ComparatifsRouteImport.update({
+  id: '/comparatifs',
+  path: '/comparatifs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CabinetRoute = CabinetRouteImport.update({
@@ -245,6 +251,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/comparatifs': typeof ComparatifsRoute
   '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
@@ -283,6 +290,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/comparatifs': typeof ComparatifsRoute
   '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
@@ -322,6 +330,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
+  '/comparatifs': typeof ComparatifsRoute
   '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
@@ -362,6 +371,7 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/comparatifs'
     | '/conseils'
     | '/contact'
     | '/faq'
@@ -400,6 +410,7 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/comparatifs'
     | '/conseils'
     | '/contact'
     | '/faq'
@@ -438,6 +449,7 @@ export interface FileRouteTypes {
     | '/'
     | '/a-propos'
     | '/cabinet'
+    | '/comparatifs'
     | '/conseils'
     | '/contact'
     | '/faq'
@@ -477,6 +489,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AProposRoute: typeof AProposRoute
   CabinetRoute: typeof CabinetRoute
+  ComparatifsRoute: typeof ComparatifsRoute
   ConseilsRoute: typeof ConseilsRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
@@ -561,6 +574,13 @@ declare module '@tanstack/react-router' {
       path: '/conseils'
       fullPath: '/conseils'
       preLoaderRoute: typeof ConseilsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatifs': {
+      id: '/comparatifs'
+      path: '/comparatifs'
+      fullPath: '/comparatifs'
+      preLoaderRoute: typeof ComparatifsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cabinet': {
@@ -773,6 +793,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AProposRoute: AProposRoute,
   CabinetRoute: CabinetRoute,
+  ComparatifsRoute: ComparatifsRoute,
   ConseilsRoute: ConseilsRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
