@@ -9,7 +9,8 @@ const entries = [
   { path: "/cabinet", priority: "0.8", changefreq: "monthly" as const },
   { path: "/a-propos", priority: "0.6", changefreq: "yearly" as const },
   { path: "/guide", priority: "0.8", changefreq: "monthly" as const },
-  { path: "/conseils", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/actualites", priority: "0.9", changefreq: "weekly" as const },
+  { path: "/comparatifs", priority: "0.9", changefreq: "monthly" as const },
   { path: "/faq", priority: "0.8", changefreq: "monthly" as const },
   { path: "/contact", priority: "0.8", changefreq: "yearly" as const },
   { path: "/pack/createur", priority: "0.9", changefreq: "monthly" as const },
@@ -35,6 +36,9 @@ const entries = [
   { path: "/actualites/facturation-electronique-2026", priority: "0.9", changefreq: "weekly" as const },
   { path: "/actualites/loi-finances-2026", priority: "0.9", changefreq: "monthly" as const },
   { path: "/actualites/baremes-2026", priority: "0.9", changefreq: "monthly" as const },
+  { path: "/actualites/facturation-electronique-septembre-2026", priority: "0.9", changefreq: "weekly" as const },
+  { path: "/actualites/declaration-revenus-2026", priority: "0.9", changefreq: "monthly" as const },
+  { path: "/actualites/micro-entreprise-seuils-tva-2026", priority: "0.9", changefreq: "monthly" as const },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
