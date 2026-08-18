@@ -56,13 +56,26 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
       h1="SASU, EURL, EI :"
       italic="quel statut pour votre TPE à Montpellier ?"
       intro={
-        <p>
-          Le choix du statut juridique conditionne votre régime social,
-          votre fiscalité, vos droits au chômage et la protection de votre
-          patrimoine. Ce comparatif détaillé, à jour 2026, vous donne les
-          bases — mais aucune décision ne devrait se prendre sans
-          simulation chiffrée sur votre situation.
-        </p>
+        <>
+          <p>
+            Le choix du statut juridique conditionne votre régime social,
+            votre fiscalité, vos droits au chômage et la protection de votre
+            patrimoine. Ce comparatif détaillé, à jour 2026, vous donne les
+            bases — mais aucune décision ne devrait se prendre sans
+            simulation chiffrée sur votre situation.
+          </p>
+          <p className="mt-4 text-[16px]">
+            Vous hésitez uniquement entre les deux formes sociétaires ?
+            Consultez le{" "}
+            <Link
+              to="/comparatif/eurl-vs-sasu"
+              className="underline underline-offset-4"
+            >
+              comparatif détaillé SASU ou EURL
+            </Link>{" "}
+            avec son tableau chiffré 2026.
+          </p>
+        </>
       }
       sections={[
         {
