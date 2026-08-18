@@ -31,7 +31,7 @@ const entries = [
   { path: "/creation-entreprise/aides-locales-montpellier", priority: "0.8", changefreq: "monthly" as const },
   { path: "/creation-entreprise/sasu-eurl-ei", priority: "0.8", changefreq: "monthly" as const },
   { path: "/comparatif/cabinet-vs-en-ligne", priority: "0.8", changefreq: "monthly" as const },
-  { path: "/comparatif/eurl-vs-sasu", priority: "0.8", changefreq: "monthly" as const },
+  { path: "/comparatif/eurl-vs-sasu", priority: "1.0", changefreq: "monthly" as const },
   { path: "/simulateur-statut", priority: "0.9", changefreq: "monthly" as const },
   { path: "/actualites/facturation-electronique-2026", priority: "0.9", changefreq: "weekly" as const },
   { path: "/actualites/loi-finances-2026", priority: "0.9", changefreq: "monthly" as const },
@@ -45,11 +45,10 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const today = new Date().toISOString().slice(0, 10);
         const urls = entries
           .map(
             (e) =>
-              `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
+              `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
           )
           .join("\n");
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;

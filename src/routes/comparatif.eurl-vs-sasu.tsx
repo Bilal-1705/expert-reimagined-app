@@ -1,55 +1,77 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ContentPage, faqJsonLd } from "@/components/site/ContentPage";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ContentPage, faqJsonLd, articleJsonLd } from "@/components/site/ContentPage";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/comparatif/eurl-vs-sasu";
+const PUBLISHED = "2026-01-12";
+const UPDATED = "2026-08-18";
 
 const faq = [
   {
-    q: "Quelle est la différence fondamentale entre EURL et SASU ?",
+    q: "SASU ou EURL : quelle est la différence entre EURL et SASU ?",
     plain:
-      "L'EURL relève par défaut de l'IR (option IS possible) et son gérant unique associé est TNS (travailleur non salarié, cotisations SSI ≈ 40-45 %). La SASU est à l'IS par défaut et son président est assimilé salarié (cotisations ≈ 75-80 % mais couverture sociale équivalente au salarié).",
+      "La différence entre EURL et SASU tient à deux choses. Le régime social : le gérant d'EURL est TNS (SSI, environ 40 à 45 % de cotisations sur la rémunération), le président de SASU est assimilé salarié (environ 75 à 80 %, mais couverture identique à un salarié hors chômage). Le régime fiscal : l'EURL est à l'IR par défaut avec option IS, la SASU est à l'IS par défaut avec option IR limitée à 5 ans. Juridiquement, les deux sont des sociétés unipersonnelles à responsabilité limitée aux apports.",
   },
   {
-    q: "Faut-il choisir EURL ou SASU pour se verser des dividendes ?",
+    q: "EURL ou SASU : lequel coûte le moins cher en 2026 ?",
     plain:
-      "Sur les dividendes, la SASU est plus favorable : les dividendes ne supportent que la flat tax (30 % PFU) sans cotisations sociales. En EURL à l'IS, les dividendes qui dépassent 10 % du capital + primes + compte courant sont soumis aux cotisations TNS. Pour une stratégie dividendes, la SASU domine.",
+      "À rémunération identique, l'EURL coûte moins cher : pour 40 000 € de revenu net, comptez environ 17 000 à 18 000 € de cotisations en EURL contre 30 000 à 32 000 € en SASU. Mais la SASU permet la stratégie zéro salaire + dividendes taxés à 30 % de flat tax : dans ce scénario, elle devient la moins chère. Le comparatif n'a de sens que sur vos chiffres et votre besoin de couverture sociale.",
   },
   {
-    q: "Quel statut coûte le moins cher en charges sociales ?",
+    q: "Quels sont les avantages de la SASU par rapport à l'EURL ?",
     plain:
-      "À rémunération égale, l'EURL (gérant TNS) coûte moins cher en cotisations que la SASU (président assimilé salarié). Mais la SASU permet le zéro-salaire + dividendes, qui devient l'option la plus économique dès qu'un dirigeant a une autre couverture sociale (conjoint, retraite, autre emploi).",
+      "Les avantages de la SASU : dividendes non soumis aux cotisations sociales (flat tax 30 % uniquement), retraite au régime général et AGIRC-ARRCO, maintien de l'ARE Pôle emploi si aucun salaire n'est versé, statuts très souples, transformation immédiate en SAS pour accueillir des associés ou des investisseurs.",
   },
   {
-    q: "Quel régime de retraite est le meilleur ?",
+    q: "Quels sont les avantages de l'EURL par rapport à la SASU ?",
     plain:
-      "Un président de SASU cotise au régime général et à l'AGIRC-ARRCO comme un salarié — retraite plus lisible et prévisible. Un gérant d'EURL cotise à la SSI (ex-RSI), avec un taux plus faible mais des droits plus modestes. Pour une jeune génération, la SASU est souvent préférée sur le long terme.",
+      "Les avantages de l'EURL : cotisations sociales nettement plus faibles à rémunération égale, option IR possible sans limite de durée (utile en début d'activité déficitaire), gestion administrative plus légère, cadre juridique encadré par la loi donc moins de risques de statuts mal rédigés, et régime du conjoint collaborateur accessible.",
   },
   {
-    q: "L'EURL est-elle plus simple à gérer que la SASU ?",
+    q: "SAS ou EURL : la comparaison est-elle la même ?",
     plain:
-      "Techniquement, oui : moins d'obligations formelles, statuts plus courts, moins de subtilités. Mais avec un expert-comptable, cette différence se réduit à quelques heures par an. Le vrai critère de choix reste fiscal et social, pas administratif.",
+      "Oui pour l'essentiel. La SAS est la version pluripersonnelle de la SASU et la SARL celle de l'EURL. Les arbitrages social (assimilé salarié contre TNS) et dividendes (flat tax contre cotisations TNS au-delà de 10 % du capital) sont identiques. Seule nuance : en SARL, le gérant minoritaire est assimilé salarié, contrairement au gérant majoritaire.",
   },
   {
-    q: "Peut-on passer d'EURL à SASU (ou l'inverse) ?",
+    q: "Quel statut choisir pour se verser des dividendes ?",
     plain:
-      "Oui, par transformation. Ce n'est pas anodin : coût juridique, incidences fiscales (plus-values latentes), changement de régime social. Le cabinet Erkilic Expertise Comptable accompagne ces transformations quand la structure initiale ne colle plus.",
+      "La SASU. Les dividendes n'y supportent que la flat tax de 30 % (12,8 % d'IR et 17,2 % de prélèvements sociaux). En EURL à l'IS, la fraction de dividendes qui dépasse 10 % du capital social, des primes d'émission et du compte courant est soumise aux cotisations TNS, ce qui peut ajouter 40 % de charges.",
+  },
+  {
+    q: "Peut-on passer d'EURL à SASU ou l'inverse ?",
+    plain:
+      "Oui, par transformation de la société, sans créer de personne morale nouvelle. Attention aux conséquences : coût juridique, éventuelle imposition des plus-values latentes en cas de changement de régime fiscal, changement de caisse sociale, et perte des droits en cours de constitution. Erkilic Expertise Comptable chiffre l'opération avant de la déclencher.",
+  },
+  {
+    q: "Quel statut choisir quand on touche le chômage ?",
+    plain:
+      "La SASU sans rémunération permet de conserver l'intégralité de l'ARE pendant que l'entreprise démarre, car aucun salaire n'est versé. En EURL, la rémunération du gérant réduit l'allocation et un minimum forfaitaire de cotisations reste dû même sans revenu. Pour un créateur indemnisé, la SASU est presque toujours plus avantageuse la première année.",
   },
 ];
 
 export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
   head: () => ({
     meta: [
-      { title: "EURL vs SASU : quel statut choisir en 2026 ? | Erkilic" },
+      { title: "SASU ou EURL : comparatif 2026 pour choisir" },
       {
         name: "description",
         content:
-          "Comparatif complet EURL vs SASU en 2026 : fiscalité, cotisations, retraite, dividendes. Le bon choix selon votre profil dirigeant.",
+          "EURL ou SASU en 2026 : différences de charges, fiscalité, dividendes et retraite, tableau comparatif chiffré et simulateur gratuit pour trancher.",
       },
-      { property: "og:title", content: "EURL ou SASU : quel statut choisir en 2026" },
-      { property: "og:description", content: "Fiscalité, social, dividendes : le comparatif pour choisir entre EURL et SASU." },
+      {
+        name: "keywords",
+        content:
+          "sasu ou eurl, eurl ou sasu, comparatif sasu eurl, différence entre eurl et sasu, avantage sasu eurl, sas vs eurl, eurl vs sasu",
+      },
+      { property: "og:title", content: "SASU ou EURL : le comparatif 2026" },
+      {
+        property: "og:description",
+        content:
+          "Charges, dividendes, retraite, chômage : le tableau comparatif EURL vs SASU et le bon choix selon votre profil.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE}${PATH}` }],
     scripts: [
@@ -57,86 +79,193 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
       },
+      {
+        type: "application/ld+json",
+        children: articleJsonLd({
+          headline: "SASU ou EURL : comparatif 2026 pour choisir son statut",
+          description:
+            "Comparatif chiffré EURL vs SASU 2026 : cotisations sociales, fiscalité, dividendes, retraite, chômage et cas concrets.",
+          url: `${SITE}${PATH}`,
+          datePublished: PUBLISHED,
+          dateModified: UPDATED,
+        }),
+      },
     ],
   }),
   component: () => (
     <ContentPage
       breadcrumbs={[
         { label: "Accueil", to: "/" },
-        { label: "Comparatifs" },
+        { label: "Comparatifs", to: "/comparatifs" },
         { label: "EURL vs SASU" },
       ]}
       eyebrow="Comparatif · Statut juridique"
-      h1="EURL vs SASU"
-      italic="quel statut pour un dirigeant seul ?"
+      h1="SASU ou EURL ?"
+      italic="le comparatif chiffré 2026"
+      datePublished={PUBLISHED}
+      dateModified={UPDATED}
       intro={
+        <>
+          <p>
+            <strong>EURL ou SASU</strong> : les deux formes dominent la création
+            d'entreprise à associé unique. La différence entre EURL et SASU ne
+            se joue pas sur la responsabilité (limitée aux apports dans les deux
+            cas) mais sur le <strong>régime social du dirigeant</strong>, la{" "}
+            <strong>fiscalité par défaut</strong> et le{" "}
+            <strong>traitement des dividendes</strong>.
+          </p>
+          <ul className="mt-6 space-y-2 text-[16px]">
+            <li>
+              <strong>EURL</strong> : gérant TNS, ~40-45 % de cotisations, IR par
+              défaut, dividendes chargés au-delà de 10 % du capital.
+            </li>
+            <li>
+              <strong>SASU</strong> : président assimilé salarié, ~75-80 % de
+              cotisations, IS par défaut, dividendes à la flat tax 30 %.
+            </li>
+            <li>
+              <strong>Le bon réflexe</strong> : comparer sur vos revenus
+              prévisionnels, pas sur des moyennes —{" "}
+              <Link to="/simulateur-statut" className="underline underline-offset-4">
+                testez le simulateur de statut
+              </Link>
+              .
+            </li>
+          </ul>
+        </>
+      }
+      comparisonTable={{
+        title: "EURL vs SASU : tableau comparatif 2026",
+        intro: (
+          <p>
+            Comparaison point par point sur les critères qui changent réellement
+            votre revenu disponible et votre protection.
+          </p>
+        ),
+        columns: ["Critère", "EURL", "SASU"],
+        rows: [
+          {
+            criterion: "Statut du dirigeant",
+            competitor: "Gérant associé unique — travailleur non salarié (SSI)",
+            erkilic: "Président — assimilé salarié (régime général)",
+          },
+          {
+            criterion: "Cotisations sociales",
+            competitor: "≈ 40 à 45 % du revenu net",
+            erkilic: "≈ 75 à 80 % du salaire net",
+          },
+          {
+            criterion: "Cotisations si zéro rémunération",
+            competitor: "Minimum forfaitaire dû (~1 200 €/an)",
+            erkilic: "Aucune cotisation",
+          },
+          {
+            criterion: "Fiscalité par défaut",
+            competitor: "IR (option IS irrévocable possible)",
+            erkilic: "IS (option IR limitée à 5 exercices)",
+          },
+          {
+            criterion: "Dividendes",
+            competitor: "Cotisations TNS au-delà de 10 % du capital + CCA",
+            erkilic: "Flat tax 30 % uniquement, aucune cotisation",
+          },
+          {
+            criterion: "Retraite",
+            competitor: "SSI — droits plus faibles, coût plus bas",
+            erkilic: "Régime général + AGIRC-ARRCO — droits supérieurs",
+          },
+          {
+            criterion: "Cumul avec l'ARE",
+            competitor: "Réduit dès qu'une rémunération est versée",
+            erkilic: "Maintien intégral si aucun salaire versé",
+          },
+          {
+            criterion: "Chômage du dirigeant",
+            competitor: "Aucun droit cotisé",
+            erkilic: "Aucun droit cotisé non plus",
+          },
+          {
+            criterion: "Souplesse des statuts",
+            competitor: "Encadrée par la loi — cadre sécurisant",
+            erkilic: "Liberté quasi totale — rédaction à soigner",
+          },
+          {
+            criterion: "Entrée d'associés / investisseurs",
+            competitor: "Devient une SARL — parts sociales, agrément",
+            erkilic: "Devient une SAS — actions, très fluide",
+          },
+          {
+            criterion: "Coût comptable annuel",
+            competitor: "Équivalent",
+            erkilic: "Équivalent",
+          },
+        ],
+      }}
+      verdict={
         <p>
-          Deux formes juridiques dominent la création d'entreprise à un seul
-          associé : l'<strong>EURL</strong> (gérant TNS) et la <strong>SASU</strong>{" "}
-          (président assimilé salarié). Le choix conditionne pendant des années
-          vos cotisations, votre retraite et vos revenus disponibles. Ce
-          comparatif chiffre les arbitrages selon votre profil.
+          <strong>EURL</strong> si vous vous versez l'essentiel de vos revenus en
+          rémunération et cherchez le coût social le plus bas.{" "}
+          <strong>SASU</strong> si vous privilégiez les dividendes, si vous
+          démarrez en conservant l'ARE, ou si vous visez une meilleure retraite
+          et l'entrée future d'associés. Au-delà d'environ 60 000 € de résultat,
+          l'arbitrage se calcule au cas par cas.
         </p>
       }
       sections={[
         {
-          title: "Régime fiscal par défaut",
+          title: "Le point de bascule chiffré entre EURL et SASU",
           bullets: [
-            "EURL : IR par défaut, option IS possible (souvent choisie).",
-            "SASU : IS par défaut, option IR possible sur 5 ans seulement.",
-            "À l'IS, les deux structures se ressemblent fiscalement — la différence se joue sur les cotisations.",
+            "Résultat de 30 000 € entièrement en rémunération : l'EURL laisse environ 4 000 à 5 000 € de net de plus par an.",
+            "Résultat de 60 000 € avec rémunération limitée au SMIC + dividendes : la SASU reprend l'avantage grâce à la flat tax.",
+            "Créateur indemnisé par France Travail : la SASU sans salaire préserve 100 % de l'ARE, l'EURL non.",
+            "Dirigeant déjà couvert par ailleurs (conjoint, retraité, autre emploi) : la SASU zéro salaire + dividendes est la plus efficiente.",
+            "Besoin de trimestres de retraite et de prévoyance solides : la SASU les achète plus cher mais les fournit vraiment.",
           ],
         },
         {
-          title: "Cotisations sociales — l'écart clé",
+          title: "Différence entre EURL et SASU sur la protection sociale",
           bullets: [
-            "EURL gérant unique : régime TNS (SSI). Cotisations ≈ 40-45 % du revenu net.",
-            "SASU président : assimilé salarié. Cotisations ≈ 75-80 % du salaire net.",
-            "Zéro rémunération en SASU = zéro cotisation (sauf CET/CSG minimales).",
-            "En EURL, une rémunération nulle génère quand même un minimum forfaitaire de cotisations.",
+            "SASU : maladie, maternité, retraite de base et complémentaire au niveau salarié, indemnités journalières calculées sur le salaire.",
+            "EURL : couverture SSI correcte sur la santé, mais retraite complémentaire plus faible et prévoyance à compléter.",
+            "Aucun des deux statuts n'ouvre de droits au chômage pour le dirigeant.",
+            "En EURL, une prévoyance Madelin et un PER rétablissent l'équilibre pour un coût inférieur au surcoût SASU.",
           ],
         },
         {
-          title: "Stratégie dividendes",
+          title: "EURL ou SASU : erreurs les plus fréquentes",
           bullets: [
-            "SASU : dividendes soumis uniquement à la flat tax 30 % (12,8 % IR + 17,2 % PS).",
-            "EURL à l'IS : dividendes soumis à cotisations TNS au-delà de 10 % du capital.",
-            "→ SASU nettement plus favorable pour une stratégie dividendes.",
+            "Choisir la SASU « parce que c'est moderne » puis se verser un salaire mensuel : le surcoût social atteint vite 10 000 €/an.",
+            "Choisir l'EURL à l'IR sans anticiper une année très bénéficiaire : l'impôt personnel explose.",
+            "Opter pour l'IS en EURL sans mesurer l'effet des cotisations sur les dividendes au-delà de 10 % du capital.",
+            "Sous-capitaliser une EURL à l'IS : plus le capital est faible, plus vite les dividendes deviennent chargés.",
+            "Rédiger des statuts de SASU sur un modèle gratuit : clauses de direction et d'agrément inadaptées.",
           ],
         },
         {
-          title: "Protection sociale & retraite",
+          title: "SAS vs EURL, SARL vs SASU : les variantes",
           bullets: [
-            "SASU : régime général + AGIRC-ARRCO, meilleure couverture, retraite plus lisible.",
-            "EURL : SSI, couverture correcte mais moins généreuse, retraite plus faible à cotisation égale.",
-            "Ajout d'une prévoyance et d'un PER souvent recommandé en EURL.",
+            "SAS = SASU à plusieurs associés : mêmes règles sociales et fiscales.",
+            "SARL = EURL à plusieurs associés ; le gérant minoritaire y devient assimilé salarié.",
+            "Profession libérale réglementée : le cadre passe par la SELARL ou la SELAS, avec des règles de détention spécifiques.",
+            "Entreprise individuelle : plus simple, patrimoine séparé depuis 2022, mais aucune capacité à arbitrer rémunération/dividendes.",
           ],
         },
         {
-          title: "Quel statut pour quel profil ?",
+          title: "Choisir son statut avec Erkilic Expertise Comptable à Juvignac",
           bullets: [
-            "Consultant seul, revenus stables, veut minimiser les charges : EURL à l'IS.",
-            "Dirigeant qui veut se verser peu de salaire + gros dividendes : SASU.",
-            "Créateur qui veut cumuler ARE Pôle emploi et rémunération : SASU (zéro salaire).",
-            "Profession libérale réglementée : SELARL / SELAS — cadre spécifique.",
-            "Activité qui va accueillir des associés : SASU (transformation SAS immédiate).",
-          ],
-        },
-        {
-          title: "Ce que le cabinet Erkilic Expertise Comptable fait avant l'immatriculation",
-          bullets: [
-            "Comparatif chiffré sur 24 mois EURL vs SASU vs EI selon vos revenus prévisionnels.",
-            "Simulation de vos revenus disponibles nets, cotisations et impôts.",
-            "Arbitrage rémunération/dividendes optimal selon votre foyer fiscal.",
-            "Rédaction des statuts et immatriculation clé en main.",
+            "Comparatif chiffré sur 24 mois EURL vs SASU vs EI à partir de vos prévisions de chiffre d'affaires.",
+            "Simulation du revenu net disponible, cotisations, IS et IR de votre foyer.",
+            "Arbitrage rémunération / dividendes et calibrage du capital social.",
+            "Rédaction des statuts, immatriculation et déclarations la première année.",
+            "Cabinet inscrit à l'Ordre des experts-comptables, à Juvignac près de Montpellier — 09 72 54 07 71.",
           ],
         },
       ]}
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
       cta={{
-        label: "Comparer sur mes chiffres",
+        label: "Lancer le simulateur",
         to: "/simulateur-statut",
-        sub: "Testez notre simulateur ou prenez rendez-vous.",
+        sub: "Comparez EURL et SASU sur vos propres chiffres.",
       }}
     />
   ),
