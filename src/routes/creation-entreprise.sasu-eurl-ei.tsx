@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage, faqJsonLd } from "@/components/site/ContentPage";
 
 const SITE = "https://erkilic.fr";
