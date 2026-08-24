@@ -12,7 +12,7 @@ const SITE = "https://erkilic.fr";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Juvignac Montpellier — Erkilic" },
+      { title: "Expert-comptable à Juvignac | Erkilic Expertise Comptable" },
       {
         name: "description",
         content:
