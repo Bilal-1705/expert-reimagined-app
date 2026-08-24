@@ -1,19 +1,29 @@
-# Cabinet Erkilic — Expertise Comptable
+# Erkilic Expertise Comptable — Cabinet d'expertise comptable à Juvignac
 
-> Cabinet d'expert-comptable à Juvignac (34990), près de Montpellier, dirigé par Nazifé Erkilic. Inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience au service des créateurs, auto-entrepreneurs, professions libérales, artisans, commerçants, PME et particuliers de l'Hérault.
+> Cabinet d'expert-comptable à Juvignac (34990), près de Montpellier, dirigé par Nazifé Erkilic, experte-comptable inscrite à l'Ordre des Experts-Comptables de Montpellier. SIREN 814 349 841. 23 ans d'expérience au service des créateurs, auto-entrepreneurs, professions libérales, artisans, commerçants, PME et particuliers de l'Hérault.
 
 Adresse : 29 bis rue du Poumpidou, 34990 Juvignac
 Téléphone : 09 72 54 07 71 / 06 59 88 40 80
 Email : cabinet@erkilic.fr
 
-Zone d'intervention : Juvignac, Montpellier, Saint-Georges-d'Orques, Pignan, Montarnaud, Hérault, Occitanie.
+Zone d'intervention : Juvignac, Montpellier, Saint-Georges-d'Orques, Grabels, Pignan, Montarnaud, Hérault, Occitanie — et en distanciel partout en France.
 
 ## Pages principales
 
 - [Accueil](/): présentation du cabinet, domaines d'expertise et packs
+- [Expert-comptable à Juvignac](/expert-comptable-juvignac): page locale — adresse, accès, missions, zone d'intervention
 - [Le cabinet](/cabinet): histoire, valeurs, déontologie, zone d'intervention
-- [Prestations](/services): comptabilité, fiscalité, social, juridique — détail
-- [Contact & devis gratuit](/contact): coordonnées, formulaire, prise de rendez-vous en ligne, carte
+- [À propos](/a-propos): parcours de Nazifé Erkilic et valeurs du cabinet
+- [Prestations](/services): vue d'ensemble comptabilité, fiscalité, social, juridique, conseil
+- [FAQ](/faq): réponses aux questions fréquentes des particuliers et professionnels
+- [Contact & devis gratuit](/contact): coordonnées, prise de rendez-vous en ligne, carte
+
+## Prestations détaillées
+
+- [Comptabilité & bilan](/services/comptabilite): tenue, surveillance, révision, bilan annuel et liasse fiscale
+- [Fiscalité & TVA](/services/fiscalite-tva): déclarations de TVA, IS, IR, optimisation fiscale
+- [Social & juridique](/services/social-juridique): bulletins de paie, DSN, statuts, secrétariat juridique
+- [Conseil & gestion](/services/conseil-gestion): tableaux de bord, prévisionnels, accompagnement du dirigeant
 
 ## Packs sur-mesure
 
@@ -22,3 +32,49 @@ Zone d'intervention : Juvignac, Montpellier, Saint-Georges-d'Orques, Pignan, Mon
 - [Pack Profession Libérale](/pack/profession-liberale): BNC, déclaration 2035, AGA — santé, droit, conseil, architecture
 - [Pack Artisans, Commerçants & PME](/pack/pro): tenue, bilan, tableaux de bord, paie DSN, juridique
 - [Pack Particulier](/pack/particulier): déclaration IR, IFI, revenus fonciers, LMNP, optimisation fiscale et patrimoniale
+
+## Création d'entreprise
+
+- [Créer son entreprise à Juvignac](/creation-entreprise/juvignac): accompagnement local de l'idée au premier bilan
+- [Aides locales à Montpellier](/creation-entreprise/aides-locales-montpellier): subventions et dispositifs métropole / région Occitanie
+- [SASU, EURL ou EI : quel statut ?](/creation-entreprise/sasu-eurl-ei): comparatif des formes juridiques
+- [Simulateur : quel statut choisir ?](/simulateur-statut): orientation interactive en 2 minutes
+
+## Secteurs d'activité
+
+- [Artisans & commerçants](/secteur/artisans-commercants)
+- [Professions libérales & médicales](/secteur/professions-liberales-medicales)
+- [Immobilier — LMNP & SCI](/secteur/immobilier-lmnp-sci)
+- [Commerce & e-commerce](/secteur/commerce-ecommerce): vente en ligne, marketplaces, TVA internationale
+
+## Comparatifs
+
+- [Tous les comparatifs](/comparatifs)
+- [Cabinet traditionnel vs compta en ligne](/comparatif/cabinet-vs-en-ligne)
+- [EURL vs SASU](/comparatif/eurl-vs-sasu)
+- [Indy vs Erkilic](/comparatif/indy-vs-erkilic)
+- [Pennylane vs Erkilic](/comparatif/pennylane-vs-erkilic)
+- [Keobiz vs Erkilic](/comparatif/keobiz-vs-erkilic)
+- [Dougs vs Erkilic](/comparatif/dougs-vs-erkilic)
+
+## Actualités 2026
+
+- [Actualités](/actualites)
+- [Facturation électronique 2026](/actualites/facturation-electronique-2026)
+- [Facturation électronique — septembre 2026](/actualites/facturation-electronique-septembre-2026)
+- [Loi de finances 2026](/actualites/loi-finances-2026)
+- [Barèmes 2026](/actualites/baremes-2026)
+- [Déclaration de revenus 2026](/actualites/declaration-revenus-2026)
+- [Micro-entreprise : seuils de TVA 2026](/actualites/micro-entreprise-seuils-tva-2026)
+
+## Zones d'intervention
+
+- [Saint-Georges-d'Orques](/zone/saint-georges-dorques)
+- [Grabels](/zone/grabels)
+- [Celleneuve / La Mosson](/zone/celleneuve-mosson)
+
+## Ressources
+
+- [Guide de l'expertise comptable](/guide)
+- [Mentions légales](/mentions-legales)
+- [Politique de confidentialité](/politique-confidentialite)

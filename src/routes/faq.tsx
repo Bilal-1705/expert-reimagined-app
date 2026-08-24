@@ -11,6 +11,21 @@ const faq = [
       "Un cabinet physique comme Erkilic à Juvignac vous donne un interlocuteur unique, joignable en 10 minutes en rendez-vous rue du Poumpidou, et signe une lettre de mission qui engage sa responsabilité civile professionnelle sur vos comptes. Un logiciel en ligne (Indy, Pennylane) ne signe rien : en cas d'erreur, vous êtes seul face au fisc.",
   },
   {
+    q: "Combien coûte un expert-comptable à Juvignac ?",
+    plain:
+      "Les honoraires dépendent de votre structure et du volume de pièces : en général 40 à 90 € HT/mois pour un auto-entrepreneur, 90 à 150 € HT/mois pour une profession libérale en BNC, et 150 à 400 € HT/mois pour une TPE avec bilan annuel. Le cabinet Erkilic Expertise Comptable établit un devis gratuit et sans engagement après un premier rendez-vous.",
+  },
+  {
+    q: "Comment trouver un bon expert-comptable à Juvignac ou Montpellier ?",
+    plain:
+      "Trois vérifications : 1) le professionnel est inscrit à l'Ordre des Experts-Comptables (vérifiable sur experts-comptables.fr), 2) il signe une lettre de mission qui engage sa responsabilité civile professionnelle, 3) il est joignable et de proximité. Le cabinet Erkilic Expertise Comptable, installé 29 bis rue du Poumpidou à Juvignac, est inscrit à l'Ordre de Montpellier et reçoit sur rendez-vous.",
+  },
+  {
+    q: "Comment créer une SAS à Juvignac ?",
+    plain:
+      "Les étapes : choix du président et du capital, rédaction des statuts, dépôt du capital sur un compte bloqué, annonce légale, puis immatriculation au greffe de Montpellier via le guichet unique. Comptez 2 à 4 semaines. Le cabinet Erkilic Expertise Comptable accompagne chaque étape et prépare le prévisionnel exigé par les banques.",
+  },
+  {
     q: "Combien coûte un expert-comptable pour une auto-entreprise à Montpellier ?",
     plain:
       "Pour un auto-entrepreneur à Montpellier ou Juvignac, un accompagnement de base (déclarations URSSAF, suivi de CA, alerte seuils TVA) se situe généralement entre 40 et 90 € HT / mois selon le volume d'opérations et les options (comparatif micro / réel, tenue du registre). Un devis gratuit est établi après un premier échange.",

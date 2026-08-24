@@ -13,6 +13,7 @@ const packLinks: LinkItem[] = [
 ];
 
 const ressourcesLinks: LinkItem[] = [
+  { to: "/expert-comptable-juvignac", label: "Expert-comptable Juvignac" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
   { to: "/comparatifs", label: "Comparatifs" },
   { to: "/faq", label: "FAQ" },

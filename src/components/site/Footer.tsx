@@ -13,6 +13,7 @@ const sectorLinks = [
   { to: "/secteur/artisans-commercants", label: "Artisans & commerçants" },
   { to: "/secteur/professions-liberales-medicales", label: "Professions libérales & médicales" },
   { to: "/secteur/immobilier-lmnp-sci", label: "Immobilier — LMNP & SCI" },
+  { to: "/secteur/commerce-ecommerce", label: "Commerce & e-commerce" },
 ] as const;
 
 const comparatorLinks = [
@@ -30,11 +31,13 @@ const zoneLinks = [
 ] as const;
 
 const creationLinks = [
+  { to: "/creation-entreprise/juvignac", label: "Créer son entreprise à Juvignac" },
   { to: "/creation-entreprise/aides-locales-montpellier", label: "Aides locales Montpellier" },
   { to: "/creation-entreprise/sasu-eurl-ei", label: "SASU, EURL, EI : quel statut ?" },
 ] as const;
 
 const editorialLinks = [
+  { to: "/expert-comptable-juvignac", label: "Expert-comptable Juvignac" },
   { to: "/a-propos", label: "À propos" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
   { to: "/actualites", label: "Actualités" },
@@ -116,6 +119,10 @@ export function Footer() {
                 <li><Link to="/" className="hover:text-paper transition-colors">Accueil</Link></li>
                 <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
                 <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
+                <li><Link to="/services/comptabilite" className="hover:text-paper transition-colors">— Comptabilité & bilan</Link></li>
+                <li><Link to="/services/fiscalite-tva" className="hover:text-paper transition-colors">— Fiscalité & TVA</Link></li>
+                <li><Link to="/services/social-juridique" className="hover:text-paper transition-colors">— Social & juridique</Link></li>
+                <li><Link to="/services/conseil-gestion" className="hover:text-paper transition-colors">— Conseil & gestion</Link></li>
                 <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
               </ul>
             </div>
@@ -151,8 +158,12 @@ export function Footer() {
 
         <div className="pt-8 mt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30 space-y-2">
-            <p>© {new Date().getFullYear()} Erkilic Expertise Comptable</p>
+            <p>© {new Date().getFullYear()} Erkilic Expertise Comptable — SIREN 814 349 841</p>
             <p>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</p>
+            <p className="flex gap-4">
+              <Link to="/mentions-legales" className="hover:text-paper/60 transition-colors">Mentions légales</Link>
+              <Link to="/politique-confidentialite" className="hover:text-paper/60 transition-colors">Confidentialité</Link>
+            </p>
           </div>
           <a
             href="https://www.experts-comptables.fr/"

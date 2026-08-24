@@ -17,9 +17,15 @@ const SITE = "https://erkilic.fr";
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "AccountingService",
+  "@id": `${SITE}/#cabinet`,
   name: "Erkilic Expertise Comptable",
   legalName: "Cabinet Erkilic Expertise Comptable",
-  founder: { "@type": "Person", name: "Nazifé Erkilic" },
+  identifier: { "@type": "PropertyValue", propertyID: "SIREN", value: "814349841" },
+  founder: {
+    "@type": "Person",
+    name: "Nazifé Erkilic",
+    jobTitle: "Experte-comptable",
+  },
   description:
     "Cabinet d'expert-comptable à Juvignac, près de Montpellier. Comptabilité, fiscalité, social et juridique pour créateurs, professions libérales, PME et particuliers.",
   url: SITE,
@@ -68,6 +74,17 @@ const localBusinessJsonLd = {
     "Paie et DSN",
   ],
   slogan: "Parce que vous comptez pour nous, nous comptons pour vous.",
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE}/#website`,
+  name: "Erkilic Expertise Comptable",
+  alternateName: "Cabinet Erkilic — Expert-Comptable Juvignac",
+  url: SITE,
+  inLanguage: "fr-FR",
+  publisher: { "@id": `${SITE}/#cabinet` },
 };
 
 
@@ -158,6 +175,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         type: "application/ld+json",
         children: JSON.stringify(localBusinessJsonLd),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(websiteJsonLd),
       },
     ],
   }),
