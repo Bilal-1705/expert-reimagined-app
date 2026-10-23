@@ -1,3 +1,4 @@
+import { ProfileFunnel } from "@/components/site/ProfileFunnel";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -52,13 +53,37 @@ const comparatifs = [
 ];
 
 const table: Array<[string, string, string]> = [
-  ["Signature et dépôt du bilan", "Erkilic Expertise Comptable : incluse, expert-comptable inscrit à l'Ordre", "Logiciels seuls : non — vous restez responsable"],
-  ["Responsabilité civile professionnelle", "Engagée sur chaque mission", "Limitée aux conditions générales de la plateforme"],
-  ["Interlocuteur", "Le même expert-comptable, joignable directement", "Support mutualisé, interlocuteur variable"],
-  ["Optimisation fiscale personnalisée", "Étude annuelle rémunération / dividendes", "Recommandations génériques automatisées"],
+  [
+    "Signature et dépôt du bilan",
+    "Erkilic Expertise Comptable : incluse, expert-comptable inscrit à l'Ordre",
+    "Logiciels seuls : non — vous restez responsable",
+  ],
+  [
+    "Responsabilité civile professionnelle",
+    "Engagée sur chaque mission",
+    "Limitée aux conditions générales de la plateforme",
+  ],
+  [
+    "Interlocuteur",
+    "Le même expert-comptable, joignable directement",
+    "Support mutualisé, interlocuteur variable",
+  ],
+  [
+    "Optimisation fiscale personnalisée",
+    "Étude annuelle rémunération / dividendes",
+    "Recommandations génériques automatisées",
+  ],
   ["Contrôle fiscal / URSSAF", "Assistance et représentation du dossier", "Non couvert"],
-  ["Ancrage local (Juvignac, Montpellier)", "Rendez-vous au cabinet, connaissance du tissu local", "Aucun"],
-  ["Tarif", "Forfait clair selon le pack, devis gratuit sous 24 h", "Abonnement bas, options facturées en plus"],
+  [
+    "Ancrage local (Juvignac, Montpellier)",
+    "Rendez-vous au cabinet, connaissance du tissu local",
+    "Aucun",
+  ],
+  [
+    "Tarif",
+    "Forfait clair selon le pack, devis gratuit sous 24 h",
+    "Abonnement bas, options facturées en plus",
+  ],
 ];
 
 export const Route = createFileRoute("/comparatifs")({
@@ -125,8 +150,13 @@ function Comparatifs() {
       <main>
         <section ref={heroRef} className="pt-16 md:pt-24 pb-14 md:pb-20 px-6 border-b border-ink/5">
           <div className="max-w-5xl mx-auto">
-            <nav aria-label="Fil d'Ariane" className="text-[11px] uppercase tracking-widest text-ink/60 mb-6">
-              <Link to="/" className="hover:text-ink">Accueil</Link>
+            <nav
+              aria-label="Fil d'Ariane"
+              className="text-[11px] uppercase tracking-widest text-ink/60 mb-6"
+            >
+              <Link to="/" className="hover:text-ink">
+                Accueil
+              </Link>
               <span className="mx-2">/</span>
               <span className="text-ink">Comparatifs</span>
             </nav>
@@ -135,11 +165,10 @@ function Comparatifs() {
               <span className="text-ink/25 italic font-normal">ou solution en ligne&nbsp;?</span>
             </h1>
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
-              Indy, Pennylane, Keobiz, Dougs : ces outils font très bien une
-              partie du travail. Mais aucun ne signe un bilan, n'engage sa
-              responsabilité ni ne défend votre dossier face à
-              l'administration. Voici, comparatif par comparatif, ce qui
-              change concrètement pour une TPE de Juvignac ou de Montpellier.
+              Indy, Pennylane, Keobiz, Dougs : ces outils font très bien une partie du travail. Mais
+              aucun ne signe un bilan, n'engage sa responsabilité ni ne défend votre dossier face à
+              l'administration. Voici, comparatif par comparatif, ce qui change concrètement pour
+              une TPE de Juvignac ou de Montpellier.
             </p>
           </div>
         </section>
@@ -153,15 +182,23 @@ function Comparatifs() {
               <table className="w-full text-left text-sm">
                 <thead className="bg-ink text-paper">
                   <tr>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">Critère</th>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">Erkilic Expertise Comptable</th>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">Solutions 100 % en ligne</th>
+                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
+                      Critère
+                    </th>
+                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
+                      Erkilic Expertise Comptable
+                    </th>
+                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
+                      Solutions 100 % en ligne
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {table.map(([critere, nous, eux]) => (
                     <tr key={critere} className="border-t border-ink/10 align-top">
-                      <th scope="row" className="p-4 font-semibold text-ink w-1/4">{critere}</th>
+                      <th scope="row" className="p-4 font-semibold text-ink w-1/4">
+                        {critere}
+                      </th>
                       <td className="p-4 text-ink/80">{nous}</td>
                       <td className="p-4 text-ink/70">{eux}</td>
                     </tr>
@@ -177,7 +214,10 @@ function Comparatifs() {
             <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight mb-10">
               Tous nos comparatifs
             </h2>
-            <div className="grid gap-px bg-ink/5 border border-ink/5 md:grid-cols-2 reveal-stagger" data-reveal>
+            <div
+              className="grid gap-px bg-ink/5 border border-ink/5 md:grid-cols-2 reveal-stagger"
+              data-reveal
+            >
               {comparatifs.map((c) => (
                 <Link
                   key={c.to}
@@ -202,26 +242,10 @@ function Comparatifs() {
           </div>
         </section>
 
-        <section className="pb-24 px-6">
-          <div className="max-w-5xl mx-auto bg-ink text-paper p-10 md:p-14">
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-              Vous hésitez encore&nbsp;?
-            </h2>
-            <p className="text-paper/70 max-w-2xl mb-8 leading-relaxed">
-              Testez notre simulateur pour identifier le statut adapté à votre
-              projet, puis parlons-en de vive voix au cabinet, 29 bis rue du
-              Poumpidou à Juvignac.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/simulateur-statut" className="px-8 py-4 bg-paper text-ink font-bold uppercase tracking-widest text-xs">
-                Simulateur : quel statut ?
-              </Link>
-              <Link to="/contact" className="px-8 py-4 border border-paper/30 font-bold uppercase tracking-widest text-xs hover:bg-paper/10 transition-colors">
-                Devis gratuit sous 24 h
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ProfileFunnel
+          title="Vous hésitez encore ?"
+          intro="Laissez votre numéro en deux ou trois clics : l'experte-comptable vous rappelle pour comparer les options sur votre cas."
+        />
       </main>
       <Footer />
     </div>

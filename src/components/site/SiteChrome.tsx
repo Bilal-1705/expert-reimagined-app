@@ -70,7 +70,7 @@ function MobileCtaBar() {
         }}
         className="py-4 text-center bg-ink text-paper"
       >
-        Prendre RDV
+        Être rappelé
       </a>
     </div>
   );

@@ -1,3 +1,4 @@
+import { ProfileFunnel } from "@/components/site/ProfileFunnel";
 import { AUTHOR, breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
@@ -159,22 +160,10 @@ function APropos() {
           </div>
         </section>
 
-        <section className="py-24 px-6 bg-ink text-paper">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-[0.95]">
-              Faisons connaissance.
-            </h2>
-            <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-              Un premier échange, sans engagement, pour évaluer ensemble vos besoins.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-paper text-ink font-bold uppercase tracking-widest text-sm hover:bg-paper-dark transition-colors"
-            >
-              Prendre rendez-vous →
-            </Link>
-          </div>
-        </section>
+        <ProfileFunnel
+          title="Faisons connaissance"
+          intro="Dites-nous en deux ou trois clics qui vous êtes : Nazifé Erkilic vous rappelle pour un premier échange, sans engagement."
+        />
       </main>
       <Footer />
     </div>

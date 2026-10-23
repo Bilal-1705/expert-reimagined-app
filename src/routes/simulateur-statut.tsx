@@ -451,6 +451,12 @@ function Simulator() {
           </div>
         </section>
 
+        <ProfileFunnel
+          profile="createur"
+          title="Faites chiffrer votre cas précis"
+          intro="Deux ou trois clics, puis l'experte-comptable vous rappelle et compare les statuts sur vos vrais chiffres, foyer fiscal compris."
+        />
+
         <section className="py-16 md:py-20 px-6 border-t border-ink/5">
           <div className="max-w-4xl mx-auto space-y-12 text-ink/80 leading-relaxed text-[15.5px]">
             <article>
@@ -562,11 +568,6 @@ function Simulator() {
 
         <AuthorBox dateModified={UPDATED} />
         <RelatedLinks />
-        <ProfileFunnel
-          profile="createur"
-          title="Faites chiffrer votre cas précis"
-          intro="Trois questions, puis vous choisissez un créneau. L'experte-comptable compare les statuts sur vos vrais chiffres, foyer fiscal compris."
-        />
       </main>
       <Footer />
     </div>

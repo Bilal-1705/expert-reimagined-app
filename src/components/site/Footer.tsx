@@ -95,13 +95,20 @@ export function Footer() {
               de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La Mosson, Pignan,
               Montarnaud — et en distanciel partout en France.
             </p>
-            <Link
-              to="/contact"
+            <a
+              href="/rendez-vous"
+              onClick={(e) => {
+                const card = document.getElementById("rendez-vous");
+                if (card) {
+                  e.preventDefault();
+                  card.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="group px-10 py-5 bg-paper text-ink font-bold uppercase tracking-widest text-sm hover:bg-paper-dark transition-all inline-flex items-center gap-3"
             >
-              Demander un devis gratuit
+              Être rappelé gratuitement
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
+            </a>
           </div>
         </div>
 

@@ -127,6 +127,8 @@ export function PackPage({
           </div>
         </section>
 
+        <ProfileFunnel profile={funnel} />
+
         {/* Sections */}
         <section ref={bodyRef} className="py-20 px-6">
           <div className="max-w-7xl mx-auto space-y-24">
@@ -215,8 +217,6 @@ export function PackPage({
             </div>
           </section>
         )}
-
-        <ProfileFunnel profile={funnel} />
       </main>
       <Footer />
     </div>

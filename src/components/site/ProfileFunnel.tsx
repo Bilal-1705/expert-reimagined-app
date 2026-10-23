@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { useRouterState } from "@tanstack/react-router";
-import { CalendlyInline } from "@/components/site/CalendlyInline";
+import { useState, type FormEvent } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { track } from "@/lib/analytics";
-
-const CALENDLY_URL = "https://calendly.com/cabinet-erkilic/30min";
+import { sendCallbackRequest } from "@/lib/lead";
 
 export type ProfileId =
   "createur" | "auto-entrepreneur" | "liberal" | "pro" | "particulier" | "immobilier";
@@ -128,35 +126,154 @@ export const PROFILES: Profile[] = [
   },
 ];
 
-export function buildCalendlyUrl(profile: Profile, answers: Record<string, string>, path: string) {
-  const summary = [
-    `Profil : ${profile.label}`,
-    ...profile.questions.filter((q) => answers[q.id]).map((q) => `${q.label} : ${answers[q.id]}`),
-    `Page : ${path}`,
-  ].join(" | ");
-  const params = new URLSearchParams({
-    hide_gdpr_banner: "1",
-    a1: summary,
-    utm_source: "site",
-    utm_medium: "tunnel",
-    utm_campaign: profile.id,
-    utm_content: path,
-  });
-  return `${CALENDLY_URL}?${params.toString()}`;
+const SLOTS = ["Le matin (9 h-12 h)", "L'après-midi (14 h-18 h)", "Peu importe"];
+
+const chip =
+  "text-left px-4 py-3 border border-ink/15 bg-paper hover:border-ink hover:bg-paper-dark/40 transition-colors";
+const field =
+  "mt-1.5 w-full border border-ink/20 bg-paper px-3 py-2.5 text-[15px] focus:outline-none focus:border-ink";
+
+function CallbackForm({ summary, onReset }: { summary: string; onReset: () => void }) {
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const [slot, setSlot] = useState(SLOTS[0]);
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "mailto" | "error">("idle");
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const f = new FormData(e.currentTarget);
+    if (f.get("website")) return; // honeypot
+    setState("sending");
+    try {
+      const result = await sendCallbackRequest({
+        name: String(f.get("name") ?? "").trim(),
+        phone: String(f.get("phone") ?? "").trim(),
+        email: String(f.get("email") ?? "").trim(),
+        message: String(f.get("message") ?? "").trim(),
+        slot,
+        summary,
+        page: path,
+      });
+      setState(result);
+      track("generate_lead", {
+        method: result === "sent" ? "callback_form" : "callback_mailto",
+        page_path: path,
+      });
+    } catch {
+      setState("error");
+    }
+  };
+
+  if (state === "sent" || state === "mailto") {
+    return (
+      <div className="border-l-2 border-ink pl-5 py-2">
+        <p className="font-sora text-xl font-bold">Merci, votre demande est bien partie.</p>
+        <p className="mt-2 text-ink/70 leading-relaxed">
+          {state === "sent"
+            ? "Nazifé Erkilic vous rappelle dans la journée ouvrée, sur le créneau indiqué."
+            : "Votre messagerie s'est ouverte avec la demande pré-remplie : il ne reste qu'à l'envoyer. Le cabinet vous rappelle dans la journée ouvrée."}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={submit} className="grid gap-4">
+      <p className="text-sm text-ink/70">
+        <span className="font-bold text-ink">{summary}</span>{" "}
+        <button type="button" onClick={onReset} className="underline underline-offset-4">
+          Modifier
+        </button>
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <label className="block text-[12px] font-bold uppercase tracking-[0.15em] text-ink/70">
+          Nom et prénom
+          <input name="name" required autoComplete="name" className={field} />
+        </label>
+        <label className="block text-[12px] font-bold uppercase tracking-[0.15em] text-ink/70">
+          Téléphone
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            pattern="[0-9 +().-]{9,}"
+            className={field}
+          />
+        </label>
+      </div>
+      <label className="block text-[12px] font-bold uppercase tracking-[0.15em] text-ink/70">
+        E-mail (facultatif)
+        <input name="email" type="email" autoComplete="email" className={field} />
+      </label>
+      <fieldset>
+        <legend className="text-[12px] font-bold uppercase tracking-[0.15em] text-ink/70 mb-2">
+          Quand vous rappeler ?
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {SLOTS.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => setSlot(s)}
+              aria-pressed={slot === s}
+              className={`px-4 py-2 border text-sm font-semibold transition-colors ${
+                slot === s ? "bg-ink text-paper border-ink" : "border-ink/20 hover:border-ink"
+              }`}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+      <label className="block text-[12px] font-bold uppercase tracking-[0.15em] text-ink/70">
+        Un mot sur votre situation (facultatif)
+        <textarea name="message" rows={3} className={field} />
+      </label>
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+      <p className="text-xs text-ink/55 leading-relaxed">
+        Vos coordonnées servent uniquement à vous rappeler et à préparer le devis.{" "}
+        <Link to="/politique-confidentialite" className="underline underline-offset-2">
+          Politique de confidentialité
+        </Link>
+      </p>
+      <button
+        type="submit"
+        disabled={state === "sending"}
+        className="justify-self-start px-8 py-4 bg-ink text-paper text-sm font-bold uppercase tracking-widest hover:bg-ink-muted transition-colors disabled:opacity-60"
+      >
+        {state === "sending" ? "Envoi…" : "Être rappelé gratuitement"}
+      </button>
+      {state === "error" && (
+        <p className="text-sm text-red-700">
+          L'envoi n'a pas fonctionné. Appelez le 09 72 54 07 71 ou écrivez à cabinet@erkilic.fr.
+        </p>
+      )}
+    </form>
+  );
 }
 
 /**
- * Two-to-four click qualifier per visitor profile, ending on the Calendly
- * booking widget with the answers pre-filled in the first booking question.
+ * Light booking card: one to three clicks to qualify the visitor, then a
+ * short callback request carrying the answers to the cabinet.
  */
 export function ProfileFunnel({
   profile: initial,
-  title = "Prenez rendez-vous en 1 minute",
-  intro = "Trois questions pour préparer l'échange, puis vous choisissez votre créneau. Premier rendez-vous offert, sans engagement.",
+  title = "Votre premier rendez-vous, offert",
+  intro = "Deux ou trois clics pour préciser votre besoin, puis l'experte-comptable vous rappelle. Sans engagement.",
+  embedded = false,
 }: {
   profile?: ProfileId;
   title?: string;
   intro?: string;
+  /** Render without the outer section (e.g. inside the contact page column). */
+  embedded?: boolean;
 }) {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const [profileId, setProfileId] = useState<ProfileId | undefined>(initial);
@@ -189,95 +306,89 @@ export function ProfileFunnel({
     if (!initial) setProfileId(undefined);
   };
 
-  return (
-    <section id="rendez-vous" className="py-20 md:py-24 px-6 bg-ink text-paper scroll-mt-24">
-      <div className="max-w-5xl mx-auto">
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/60 mb-4 block">
-          Rendez-vous gratuit
-        </span>
-        <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-4">
-          {title}
-        </h2>
-        <p className="text-paper/70 max-w-2xl mb-10 leading-relaxed">{intro}</p>
+  const summary = profile
+    ? [profile.label, ...questions.map((q) => answers[q.id]).filter(Boolean)].join(" · ")
+    : "";
 
-        {!profile && (
-          <div>
-            <p className="font-sora font-bold mb-4">Vous êtes…</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {PROFILES.map((p) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => chooseProfile(p.id)}
-                  className="text-left p-5 border border-paper/20 hover:border-paper hover:bg-paper/5 transition-colors"
-                >
-                  <span className="font-sora font-bold block">{p.label}</span>
-                  <span className="text-sm text-paper/60">{p.hint}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {profile && !done && (
-          <div>
-            <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-paper/60 mb-4">
-              <span>{profile.label}</span>
-              <span>·</span>
-              <span>
-                Étape {step + 1} / {questions.length}
-              </span>
-            </div>
-            <p className="font-sora text-xl font-bold mb-4">{questions[step].label}</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {questions[step].options.map((o) => (
-                <button
-                  key={o}
-                  type="button"
-                  onClick={() => answer(questions[step], o)}
-                  className="text-left p-5 border border-paper/20 hover:border-paper hover:bg-paper/5 transition-colors font-semibold"
-                >
-                  {o}
-                </button>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={reset}
-              className="mt-6 text-sm text-paper/60 underline underline-offset-4"
-            >
-              Recommencer
-            </button>
-          </div>
-        )}
-
-        {profile && done && (
-          <div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-sm text-paper/70">
-              <span className="font-bold text-paper">{profile.label}</span>
-              {questions.map((q) => (
-                <span key={q.id}>· {answers[q.id]}</span>
-              ))}
-              <button type="button" onClick={reset} className="underline underline-offset-4">
-                Modifier
-              </button>
-            </div>
-            <CalendlyInline
-              url={buildCalendlyUrl(profile, answers, path)}
-              height={700}
-              className="text-ink"
-            />
-          </div>
-        )}
-
-        <p className="mt-8 text-sm text-paper/60">
-          Vous préférez appeler ?{" "}
-          <a href="tel:+33972540771" className="text-paper font-bold underline underline-offset-4">
-            09 72 54 07 71
-          </a>{" "}
-          — du lundi au vendredi, 9 h-12 h et 14 h-18 h.
-        </p>
+  const card = (
+    <div className="border border-ink/15 bg-paper-dark/30 p-6 md:p-10">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 block mb-3">
+            Rendez-vous gratuit
+          </span>
+          <h2 className="font-sora text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">
+            {title}
+          </h2>
+          <p className="mt-3 text-ink/70 max-w-2xl leading-relaxed">{intro}</p>
+        </div>
+        <a
+          href="tel:+33972540771"
+          className="shrink-0 text-sm font-bold underline underline-offset-4"
+        >
+          ou appelez le 09 72 54 07 71
+        </a>
       </div>
+
+      {!profile && (
+        <div>
+          <p className="font-sora font-bold mb-3">Vous êtes…</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {PROFILES.map((p) => (
+              <button key={p.id} type="button" onClick={() => chooseProfile(p.id)} className={chip}>
+                <span className="font-sora font-bold block">{p.label}</span>
+                <span className="text-sm text-ink/60">{p.hint}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {profile && !done && (
+        <div>
+          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60 mb-3">
+            <span>{profile.label}</span>
+            <span>·</span>
+            <span>
+              Étape {step + 1} / {questions.length}
+            </span>
+          </div>
+          <p className="font-sora text-lg font-bold mb-3">{questions[step].label}</p>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {questions[step].options.map((o) => (
+              <button
+                key={o}
+                type="button"
+                onClick={() => answer(questions[step], o)}
+                className={`${chip} font-semibold`}
+              >
+                {o}
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={reset}
+            className="mt-4 text-sm text-ink/60 underline underline-offset-4"
+          >
+            Recommencer
+          </button>
+        </div>
+      )}
+
+      {profile && done && <CallbackForm summary={summary} onReset={reset} />}
+    </div>
+  );
+
+  if (embedded)
+    return (
+      <div id="rendez-vous" className="scroll-mt-24">
+        {card}
+      </div>
+    );
+  return (
+    <section id="rendez-vous" className="px-6 py-10 md:py-14 scroll-mt-24">
+      <div className="max-w-5xl mx-auto">{card}</div>
     </section>
   );
 }

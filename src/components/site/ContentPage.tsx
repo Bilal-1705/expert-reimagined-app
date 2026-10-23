@@ -170,6 +170,18 @@ export function ContentPage({
           </div>
         </section>
 
+        {funnel !== false && (
+          <ProfileFunnel
+            profile={
+              funnel && funnel !== "choose"
+                ? funnel
+                : funnel === "choose"
+                  ? undefined
+                  : funnelFor(path)
+            }
+          />
+        )}
+
         {sections.length > 0 && (
           <section ref={bodyRef} className="py-20 md:py-24 px-6">
             <div className="max-w-4xl mx-auto space-y-16 reveal-stagger" data-reveal>
@@ -296,18 +308,6 @@ export function ContentPage({
         <AuthorBox dateModified={dateModified ?? datePublished} />
 
         <RelatedLinks />
-
-        {funnel !== false && (
-          <ProfileFunnel
-            profile={
-              funnel && funnel !== "choose"
-                ? funnel
-                : funnel === "choose"
-                  ? undefined
-                  : funnelFor(path)
-            }
-          />
-        )}
 
         {cta && funnel === false && (
           <section className="py-20 md:py-24 px-6 bg-ink text-paper">

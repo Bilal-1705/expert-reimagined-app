@@ -92,17 +92,6 @@ export function initAnalytics() {
       track("click_tel", { link_url: href, page_path: location.pathname });
     else if (href.startsWith("mailto:")) track("click_email", { page_path: location.pathname });
   });
-
-  // Calendly widget events (inline embeds post messages to the parent window).
-  window.addEventListener("message", (e) => {
-    const data = e.data as { event?: string } | undefined;
-    if (!e.origin.includes("calendly.com") || !data?.event?.startsWith("calendly.")) return;
-    if (data.event === "calendly.date_and_time_selected") track("calendly_time_selected");
-    if (data.event === "calendly.event_scheduled") {
-      track("calendly_event_scheduled");
-      track("generate_lead", { method: "calendly", page_path: location.pathname });
-    }
-  });
 }
 
 export function track(event: string, params: Record<string, unknown> = {}) {

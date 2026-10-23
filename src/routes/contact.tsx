@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CabinetMap } from "@/components/site/CabinetMap";
-import { CalendlyInline } from "@/components/site/CalendlyInline";
+import { ProfileFunnel } from "@/components/site/ProfileFunnel";
 import { useReveal } from "@/hooks/use-reveal";
 
 const SITE = "https://erkilic.fr";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Cabinet Erkilic Expertise Comptable à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
+          "Cabinet Erkilic Expertise Comptable à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, demande de rappel en ligne.",
       },
       { property: "og:title", content: "Contact — Cabinet Erkilic Expertise Comptable" },
       {
@@ -73,7 +73,7 @@ function Contact() {
           </div>
         </section>
 
-        {/* Coordinates + Calendly */}
+        {/* Coordinates + callback request */}
         <section ref={bodyRef} className="py-16 md:py-20 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-14 reveal" data-reveal>
             <aside className="md:col-span-4 space-y-10">
@@ -161,20 +161,10 @@ function Contact() {
             </aside>
 
             <div className="md:col-span-8">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 block mb-4">
-                Prise de rendez-vous en ligne
-              </span>
-              <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-4">
-                Réservez un créneau,{" "}
-                <span className="text-ink/25 italic font-normal">directement.</span>
-              </h2>
-              <p className="text-sm text-ink/70 leading-relaxed mb-8 max-w-xl">
-                Choisissez un créneau qui vous convient pour un premier échange de 30 minutes, en
-                visio ou en cabinet — sans engagement.
-              </p>
-              <CalendlyInline
-                url="https://calendly.com/cabinet-erkilic/30min?hide_event_type_details=1&hide_gdpr_banner=1"
-                height={720}
+              <ProfileFunnel
+                embedded
+                title="Être rappelé par l'experte-comptable"
+                intro="Précisez votre profil en deux ou trois clics, laissez votre numéro : vous êtes rappelé dans la journée ouvrée, sans engagement."
               />
             </div>
           </div>

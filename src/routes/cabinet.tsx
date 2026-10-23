@@ -1,3 +1,4 @@
+import { ProfileFunnel } from "@/components/site/ProfileFunnel";
 import { breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
@@ -7,7 +8,6 @@ import { CabinetMap } from "@/components/site/CabinetMap";
 import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
 import cabinetImgWebp from "@/assets/cabinet.webp";
-import heroOfficeWebp from "@/assets/hero-office.webp";
 
 const SITE = "https://erkilic.fr";
 
@@ -266,30 +266,10 @@ function Cabinet() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="relative py-32 px-6 overflow-hidden bg-ink text-paper">
-          <img
-            src={heroOfficeWebp}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-15"
-          />
-          <div className="relative max-w-4xl mx-auto text-center">
-            <h2 className="font-sora text-4xl md:text-6xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
-              Demandez un devis gratuit.
-            </h2>
-            <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-              Nous mettons à votre disposition liens utiles, conseils et accompagnement
-              personnalisé. Un premier échange, sans engagement.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-paper text-ink font-bold uppercase tracking-widest text-sm hover:bg-paper-dark transition-colors"
-            >
-              Contactez le cabinet →
-            </Link>
-          </div>
-        </section>
+        <ProfileFunnel
+          title="Demandez un devis gratuit"
+          intro="Deux ou trois clics pour préciser votre besoin, puis l'experte-comptable vous rappelle et vous envoie un devis sous 24 h."
+        />
       </main>
       <Footer />
     </div>
