@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import cabinetImg from "@/assets/cabinet.jpg";
+import cabinetImgWebp from "@/assets/cabinet.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/pack/pro";
@@ -62,7 +63,7 @@ function PackPro() {
         "Paie / DSN externalisées",
         "Secrétariat juridique complet",
       ]}
-      heroImage={cabinetImg}
+      heroImage={cabinetImgWebp}
       heroAlt="Cabinet d'expertise comptable pour artisans commerçants et PME à Juvignac Montpellier"
       sections={[
         {

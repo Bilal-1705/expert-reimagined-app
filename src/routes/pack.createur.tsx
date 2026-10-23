@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import cabinetImg from "@/assets/cabinet.jpg";
+import cabinetImgWebp from "@/assets/cabinet.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/pack/createur";
@@ -59,7 +60,7 @@ function PackCreateur() {
         "Aide au choix : EI, SASU, EURL, SARL",
         "Recherche d'aides et subventions locales",
       ]}
-      heroImage={cabinetImg}
+      heroImage={cabinetImgWebp}
       heroAlt="Accompagnement à la création d'entreprise à Juvignac Montpellier — cabinet Erkilic Expertise Comptable"
       sections={[
         {

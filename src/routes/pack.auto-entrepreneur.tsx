@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import handsLedger from "@/assets/hands-ledger.jpg";
+import handsLedgerWebp from "@/assets/hands-ledger.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/pack/auto-entrepreneur";
@@ -69,7 +70,7 @@ function PackAutoEntrepreneur() {
         "Alerte franchissement des seuils TVA",
         "Comparatif micro / réel pour arbitrer",
       ]}
-      heroImage={handsLedger}
+      heroImage={handsLedgerWebp}
       heroAlt="Comptable pour auto-entrepreneur à Juvignac et Montpellier — cabinet Erkilic Expertise Comptable"
       sections={[
         {

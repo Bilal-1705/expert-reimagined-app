@@ -1,10 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import { ProfileFunnel, type ProfileId } from "@/components/site/ProfileFunnel";
-import { RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
+import { AuthorBox, RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
 
 export interface PackSection {
   title: string;
@@ -22,6 +23,10 @@ export interface PackPageProps {
   heroAlt: string;
   next?: { label: string; to: string; params?: Record<string, string> };
   funnel: ProfileId;
+  /** Long-form explanatory content shown after the pack details. */
+  editorial?: ReactNode;
+  faq?: { q: string; a: string }[];
+  dateModified?: string;
 }
 
 export function PackPage({
@@ -35,6 +40,9 @@ export function PackPage({
   heroAlt,
   next,
   funnel,
+  editorial,
+  faq,
+  dateModified,
 }: PackPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
@@ -85,13 +93,13 @@ export function PackPage({
                 </ul>
               )}
               <div className="flex flex-wrap gap-4 mt-10">
-                <Link
-                  to="/contact"
+                <a
+                  href="#rendez-vous"
                   className="group px-8 py-4 bg-ink text-paper text-sm font-bold uppercase tracking-widest rounded-full flex items-center gap-3 hover:bg-ink-muted transition-colors"
                 >
-                  Demander un devis
+                  Prendre rendez-vous
                   <span className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
+                </a>
                 <Link
                   to="/services"
                   className="px-8 py-4 border border-ink/15 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-paper-dark transition-colors"
@@ -106,6 +114,7 @@ export function PackPage({
                 alt={heroAlt}
                 className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -146,6 +155,35 @@ export function PackPage({
             ))}
           </div>
         </section>
+
+        {editorial && (
+          <section className="py-16 md:py-20 px-6 border-t border-ink/5">
+            <div className="max-w-4xl mx-auto space-y-10 text-ink/80 leading-relaxed text-[15.5px] [&_h2]:font-sora [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-ink [&_h2]:mb-4 [&_p+p]:mt-4">
+              {editorial}
+            </div>
+          </section>
+        )}
+
+        {faq && faq.length > 0 && (
+          <section className="py-16 md:py-20 px-6 bg-paper-dark/40 border-t border-ink/5">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tighter mb-8">Questions fréquentes</h2>
+              <div className="divide-y divide-ink/10 border-y border-ink/10">
+                {faq.map((f) => (
+                  <details key={f.q} className="group py-5">
+                    <summary className="cursor-pointer list-none flex justify-between items-start gap-6">
+                      <h3 className="font-sora text-lg font-bold leading-snug">{f.q}</h3>
+                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p className="mt-3 text-ink/75 text-[15px] leading-relaxed">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {editorial && <AuthorBox dateModified={dateModified} />}
 
         <RelatedLinks />
 

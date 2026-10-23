@@ -1,21 +1,47 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { faqJsonLd } from "@/components/site/ContentPage";
 import { PackPage } from "@/components/site/PackPage";
 import heroOffice from "@/assets/hero-office.jpg";
+import heroOfficeWebp from "@/assets/hero-office.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/pack/profession-liberale";
+const UPDATED = "2026-10-23";
+
+const faq = [
+  {
+    q: "Micro-BNC ou déclaration contrôlée (2035) : que choisir ?",
+    a: "Le micro-BNC applique un abattement forfaitaire de 34 % sur vos recettes, jusqu'à 83 600 € de recettes en 2026. Si vos frais réels dépassent 34 % de vos recettes (local, véhicule, matériel, remplaçants, cotisations), la déclaration contrôlée avec la 2035 devient plus intéressante. Le calcul se fait sur vos chiffres, et l'option peut se prendre en cours de route.",
+  },
+  {
+    q: "Quand faut-il déposer la déclaration 2035 ?",
+    a: "La 2035 se dépose au printemps, en général début mai, avec un délai supplémentaire de quinze jours pour un dépôt en ligne. Le cabinet prépare la déclaration, la télétransmet et reporte le bénéfice sur votre déclaration de revenus.",
+  },
+  {
+    q: "Faut-il encore adhérer à une association de gestion agréée ?",
+    a: "L'adhésion n'est plus nécessaire pour éviter une majoration du bénéfice : la majoration de 25 % pour non-adhésion a été supprimée progressivement et ne s'applique plus depuis l'imposition des revenus 2023. Une AGA peut rester utile pour ses formations ou ses services, mais ce n'est plus un passage obligé.",
+  },
+  {
+    q: "Quelle caisse de retraite pour une profession libérale ?",
+    a: "Cela dépend du métier : CARMF pour les médecins, CARPIMKO pour les infirmiers, kinésithérapeutes, orthophonistes, orthoptistes et pédicures-podologues, CNBF pour les avocats, CIPAV pour plusieurs professions réglementées comme les architectes ou les psychologues. Les professions libérales non réglementées relèvent de la sécurité sociale des indépendants (SSI).",
+  },
+  {
+    q: "Quand passer en SELARL ou en SELAS ?",
+    a: "Quand vos revenus deviennent élevés et que vous n'avez pas besoin de tout prélever chaque année, la société d'exercice libéral permet de laisser une partie du bénéfice à l'impôt sur les sociétés. Le passage a un coût juridique et change votre protection sociale : il se décide avec une simulation sur plusieurs années.",
+  },
+];
 
 export const Route = createFileRoute("/pack/profession-liberale")({
   head: () => ({
     meta: [
-      { title: "Comptable Profession Libérale Montpellier | BNC 2035" },
+      { title: "Expert-comptable profession libérale (BNC) à Montpellier | Erkilic" },
       {
         name: "description",
         content:
-          "Cabinet spécialisé BNC, 2035, AGA à Juvignac / Montpellier : médecins, kinés, avocats, architectes, consultants.",
+          "Expert-comptable pour professions libérales à Montpellier : micro-BNC ou 2035, CARMF, CARPIMKO, CIPAV, SELARL. Médecins, kinés, avocats, consultants.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:title", content: "Pack Profession Libérale — Cabinet Erkilic Expertise Comptable" },
+      { property: "og:title", content: "Expert-comptable profession libérale (BNC) | Erkilic" },
       {
         property: "og:description",
         content:
@@ -34,15 +60,16 @@ export const Route = createFileRoute("/pack/profession-liberale")({
           "@type": "Service",
           serviceType: "Expertise comptable profession libérale",
           name: "Pack Profession Libérale",
-          provider: { "@type": "AccountingService", name: "Erkilic Expertise Comptable" },
+          provider: { "@id": `${SITE}/#cabinet` },
           areaServed: ["Juvignac", "Montpellier", "Hérault", "Occitanie"],
           audience: {
             "@type": "BusinessAudience",
-            audienceType: "Professions libérales — santé (médecin, infirmier, kiné, sage-femme), droit, conseil, architecture",
+            audienceType: "Professions libérales : santé (médecin, infirmier, kiné, sage-femme), droit, conseil, architecture",
           },
           url: `${SITE}${PATH}`,
         }),
       },
+      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))) },
     ],
   }),
   component: PackLiberale,
@@ -52,18 +79,66 @@ function PackLiberale() {
   return (
     <PackPage
       funnel="liberal"
+      dateModified={UPDATED}
+      faq={faq}
+      editorial={
+        <>
+          <article>
+            <h2>Un expert-comptable qui connaît les BNC</h2>
+            <p>
+              Les professions libérales relèvent des bénéfices non commerciaux (BNC). Leur comptabilité suit en
+              général une logique de recettes et de dépenses encaissées, avec ses propres règles : frais de
+              véhicule, quote-part du local professionnel, rétrocessions d'honoraires aux remplaçants, cotisations
+              sociales obligatoires et facultatives. Le cabinet accompagne des médecins, kinésithérapeutes,
+              infirmiers, avocats, architectes, consultants et formateurs à Montpellier et dans l'Hérault.
+            </p>
+          </article>
+          <article>
+            <h2>Micro-BNC ou régime de la déclaration contrôlée</h2>
+            <p>
+              En micro-BNC, l'administration retient vos recettes moins un abattement forfaitaire de 34 %, dans la
+              limite de 83 600 € de recettes en 2026. C'est simple, mais vos frais réels ne sont pas déduits. En
+              déclaration contrôlée, vous déposez chaque année une déclaration 2035 et vous déduisez vos dépenses
+              réelles. Dès que vos frais dépassent le tiers de vos recettes, ce régime devient généralement plus
+              avantageux.
+            </p>
+          </article>
+          <article>
+            <h2>Cotisations : SSI et caisses de professions libérales</h2>
+            <p>
+              Selon votre métier, vos cotisations retraite vont à une caisse spécifique (CARMF, CARPIMKO, CNBF,
+              CIPAV) ou à la sécurité sociale des indépendants. Les appels sont provisoires puis régularisés : le
+              cabinet vérifie les bases déclarées, anticipe les régularisations et vous aide à lisser votre
+              trésorerie. Les médecins et auxiliaires médicaux trouveront plus de détails sur notre page{" "}
+              <Link to="/secteur/professions-liberales-medicales" className="font-bold underline underline-offset-4">
+                professions médicales et paramédicales
+              </Link>
+              .
+            </p>
+          </article>
+          <article>
+            <h2>Exercice en société : SELARL, SELAS, SCM</h2>
+            <p>
+              Une société d'exercice libéral permet d'arbitrer entre rémunération et bénéfice laissé dans la
+              société, et de préparer une association ou une cession. Une SCM permet de partager les frais d'un
+              cabinet à plusieurs. Le cabinet chiffre ces options sur plusieurs années avant toute décision, et
+              assure ensuite le suivi juridique (assemblées, cessions de parts).
+            </p>
+          </article>
+        </>
+      }
       eyebrow="Pack Profession Libérale"
       title="La comptabilité BNC,"
       italic="par des spécialistes."
       intro="Que votre activité soit réglementée ou non, le régime libéral se caractérise par de nombreuses spécificités comptables, fiscales et juridiques. Nous nous positionnons en véritable spécialiste, vous facilitons vos prises de décisions et vous déchargeons de certaines responsabilités."
       bullets={[
-        "Déclaration 2035, BNC, AGA",
+        "Micro-BNC ou déclaration 2035",
         "Externalisation paie et DSN",
         "Suivi trimestriel via espace client",
         "Conseil patrimonial dédié",
       ]}
-      heroImage={heroOffice}
-      heroAlt="Expert-comptable pour profession libérale à Juvignac Montpellier — BNC, 2035, AGA"
+      heroImage={heroOfficeWebp}
+      heroAlt="Expert-comptable pour profession libérale à Juvignac et Montpellier : BNC et déclaration 2035"
       sections={[
         {
           title: "Pack Comptabilité & Gestion",
@@ -86,7 +161,7 @@ function PackLiberale() {
             {
               label: "Entretien annuel",
               body:
-                "Ensemble nous analysons vos résultats — points forts, points faibles, évolutions significatives. Un vrai temps de compréhension et de conseil.",
+                "Ensemble nous analysons vos résultats : points forts, points faibles, évolutions significatives. Un vrai temps de compréhension et de conseil.",
             },
             {
               label: "Situation comptable intermédiaire",
@@ -145,7 +220,7 @@ function PackLiberale() {
             {
               label: "Suivi juridique des structures de groupe",
               body:
-                "SCI, SCM, SEL, SCP, SDF — secrétariat juridique (CA, AG), cessions de titres, modifications statutaires.",
+                "SCI, SCM, SEL, SCP, SDF : secrétariat juridique (CA, AG), cessions de titres, modifications statutaires.",
             },
           ],
         },

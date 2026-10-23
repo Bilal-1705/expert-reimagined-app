@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PackPage } from "@/components/site/PackPage";
 import handsLedger from "@/assets/hands-ledger.jpg";
+import handsLedgerWebp from "@/assets/hands-ledger.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/pack/particulier";
@@ -59,7 +60,7 @@ function PackParticulier() {
         "Bilan et audit patrimonial",
         "Optimisation fiscale (Girardin, Pinel, etc.)",
       ]}
-      heroImage={handsLedger}
+      heroImage={handsLedgerWebp}
       heroAlt="Expert-comptable pour particuliers à Juvignac Montpellier — déclaration d'impôts"
       sections={[
         {
