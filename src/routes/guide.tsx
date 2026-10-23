@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -17,7 +18,10 @@ export const Route = createFileRoute("/guide")({
         content:
           "Guide complet : missions de l'expert-comptable, choix du statut juridique, TVA, obligations sociales, fiscalité à Juvignac / Montpellier.",
       },
-      { property: "og:title", content: "Guide de l'expertise comptable — Cabinet Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Guide de l'expertise comptable — Cabinet Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -30,6 +34,13 @@ export const Route = createFileRoute("/guide")({
     ],
     links: [{ rel: "canonical", href: `${SITE}${PATH}` }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: breadcrumbJsonLd(
+          [{ label: "Accueil", to: "/" }, { label: "Guide de l'expertise comptable" }],
+          "/guide",
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -53,8 +64,7 @@ export const Route = createFileRoute("/guide")({
               name: "Pourquoi faire appel à un expert-comptable à Montpellier ?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text:
-                  "L'expert-comptable sécurise vos obligations comptables, fiscales et sociales, vous fait gagner du temps et devient un véritable partenaire de la croissance de votre entreprise.",
+                text: "L'expert-comptable sécurise vos obligations comptables, fiscales et sociales, vous fait gagner du temps et devient un véritable partenaire de la croissance de votre entreprise.",
               },
             },
             {
@@ -62,8 +72,7 @@ export const Route = createFileRoute("/guide")({
               name: "Quel statut juridique choisir pour créer son entreprise ?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text:
-                  "Le choix dépend de votre projet, de votre patrimoine, de votre régime social souhaité et de la fiscalité. EI, EURL, SASU, SARL, SAS : nous comparons et optimisons selon votre situation.",
+                text: "Le choix dépend de votre projet, de votre patrimoine, de votre régime social souhaité et de la fiscalité. EI, EURL, SASU, SARL, SAS : nous comparons et optimisons selon votre situation.",
               },
             },
             {
@@ -71,8 +80,7 @@ export const Route = createFileRoute("/guide")({
               name: "Quel est le coût d'un expert-comptable à Juvignac ?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text:
-                  "Nos honoraires sont adaptés au volume et à la complexité de la mission. Nous établissons un devis gratuit sur mesure sous 24 heures.",
+                text: "Nos honoraires sont adaptés au volume et à la complexité de la mission. Nous établissons un devis gratuit sur mesure sous 24 heures.",
               },
             },
           ],
@@ -147,8 +155,8 @@ function Guide() {
               </span>
             </h1>
             <p className="mt-8 max-w-3xl text-lg text-ink/70 leading-relaxed">
-              Tout ce qu'un entrepreneur ou un particulier du 34 doit savoir sur
-              le rôle de l'expert-comptable et les prestations essentielles.
+              Tout ce qu'un entrepreneur ou un particulier du 34 doit savoir sur le rôle de
+              l'expert-comptable et les prestations essentielles.
             </p>
           </div>
         </section>
@@ -176,10 +184,7 @@ function Guide() {
             <SectionHeader index="FAQ" title="Questions fréquentes" />
             <div className="space-y-6 reveal-stagger" data-reveal>
               {faqs.map((f) => (
-                <details
-                  key={f.q}
-                  className="group border border-ink/10 bg-paper p-6 rounded-sm"
-                >
+                <details key={f.q} className="group border border-ink/10 bg-paper p-6 rounded-sm">
                   <summary className="font-sora font-bold text-lg cursor-pointer list-none flex justify-between items-center gap-4">
                     {f.q}
                     <span className="text-ink/40 group-open:rotate-45 transition-transform text-2xl leading-none">
@@ -199,8 +204,8 @@ function Guide() {
               Un projet, une question ?
             </h2>
             <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-              Le Cabinet Erkilic Expertise Comptable, expert-comptable à Juvignac, vous accompagne
-              à chaque étape.
+              Le Cabinet Erkilic Expertise Comptable, expert-comptable à Juvignac, vous accompagne à
+              chaque étape.
             </p>
             <Link
               to="/contact"

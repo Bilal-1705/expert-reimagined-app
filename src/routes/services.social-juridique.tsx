@@ -35,21 +35,24 @@ export const Route = createFileRoute("/services/social-juridique")({
           url: `${SITE}${PATH}`,
         }),
       },
-      
     ],
   }),
   component: () => (
     <ContentPage
-      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Prestations", to: "/services" }, { label: "Social & juridique" }]}
+      breadcrumbs={[
+        { label: "Accueil", to: "/" },
+        { label: "Prestations", to: "/services" },
+        { label: "Social & juridique" },
+      ]}
       eyebrow="Prestation · Social & juridique"
       h1="Paie, social"
       italic="et juridique."
       intro={
         <p>
-          Embaucher, payer, déclarer, puis faire vivre la société dans les
-          règles : le social et le juridique sont les deux faces administratives
-          de votre développement. Erkilic Expertise Comptable les prend en
-          charge à Juvignac, pour que vous restiez concentré sur votre métier.
+          Embaucher, payer, déclarer, puis faire vivre la société dans les règles : le social et le
+          juridique sont les deux faces administratives de votre développement. Erkilic Expertise
+          Comptable les prend en charge à Juvignac, pour que vous restiez concentré sur votre
+          métier.
         </p>
       }
       sections={[
@@ -86,16 +89,19 @@ export const Route = createFileRoute("/services/social-juridique")({
           title: "Pourquoi c'est important",
           body: (
             <p>
-              Une paie erronée ou une assemblée générale non tenue expose la
-              société à des sanctions et le dirigeant à une mise en cause
-              personnelle. Le secrétariat social et juridique d'un
-              expert-comptable sécurise ces obligations, dans les délais, avec
-              une traçabilité complète.
+              Une paie erronée ou une assemblée générale non tenue expose la société à des sanctions
+              et le dirigeant à une mise en cause personnelle. Le secrétariat social et juridique
+              d'un expert-comptable sécurise ces obligations, dans les délais, avec une traçabilité
+              complète.
             </p>
           ),
         },
       ]}
-      cta={{ label: "Demander un devis", to: "/contact", sub: "Paie et juridique en règle, sans y penser." }}
+      cta={{
+        label: "Demander un devis",
+        to: "/contact",
+        sub: "Paie et juridique en règle, sans y penser.",
+      }}
     />
   ),
 });

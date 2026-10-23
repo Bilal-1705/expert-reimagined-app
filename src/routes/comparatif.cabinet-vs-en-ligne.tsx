@@ -37,7 +37,10 @@ export const Route = createFileRoute("/comparatif/cabinet-vs-en-ligne")({
           "Cabinet d'expertise comptable en ligne ou de proximité : prix réels, réactivité, conseil. Le comparatif pour choisir selon votre profil.",
       },
       { property: "og:title", content: "Cabinet vs comptable en ligne" },
-      { property: "og:description", content: "Comparatif honnête entre cabinet physique et logiciels de comptabilité en ligne." },
+      {
+        property: "og:description",
+        content: "Comparatif honnête entre cabinet physique et logiciels de comptabilité en ligne.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -61,13 +64,11 @@ export const Route = createFileRoute("/comparatif/cabinet-vs-en-ligne")({
       italic="que choisir en 2026 ?"
       intro={
         <p>
-          La question revient à chaque création d'entreprise à Montpellier :
-          faut-il un <strong>cabinet d'expertise comptable physique</strong> comme
-          Erkilic à Juvignac, ou un{" "}
-          <strong>logiciel 100% en ligne</strong> type Indy, Pennylane ou
-          Keobiz&nbsp;? La réponse dépend de votre profil, mais surtout de ce que
-          vous attendez d'un comptable : automatiser des tâches, ou sécuriser
-          votre fiscalité.
+          La question revient à chaque création d'entreprise à Montpellier : faut-il un{" "}
+          <strong>cabinet d'expertise comptable physique</strong> comme Erkilic à Juvignac, ou un{" "}
+          <strong>logiciel 100% en ligne</strong> type Indy, Pennylane ou Keobiz&nbsp;? La réponse
+          dépend de votre profil, mais surtout de ce que vous attendez d'un comptable : automatiser
+          des tâches, ou sécuriser votre fiscalité.
         </p>
       }
       sections={[

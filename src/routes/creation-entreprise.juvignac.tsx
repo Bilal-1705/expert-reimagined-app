@@ -13,7 +13,10 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
         content:
           "Créer sa SAS, SASU, SARL, EURL ou EI à Juvignac : choix du statut, prévisionnel, immatriculation. Accompagnement par un expert-comptable local.",
       },
-      { property: "og:title", content: "Créer son entreprise à Juvignac — Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Créer son entreprise à Juvignac — Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -36,7 +39,6 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
           about: { "@id": `${SITE}/#cabinet` },
         }),
       },
-      
     ],
   }),
   component: () => (
@@ -52,10 +54,10 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
       intro={
         <>
           <p>
-            Vous lancez votre activité à Juvignac, dans l'ouest de Montpellier ?
-            Erkilic Expertise Comptable vous accompagne de l'idée au premier
-            bilan : choix du statut, rédaction des statuts, prévisionnel pour
-            la banque, immatriculation et mise en place de votre comptabilité.
+            Vous lancez votre activité à Juvignac, dans l'ouest de Montpellier ? Erkilic Expertise
+            Comptable vous accompagne de l'idée au premier bilan : choix du statut, rédaction des
+            statuts, prévisionnel pour la banque, immatriculation et mise en place de votre
+            comptabilité.
           </p>
           <ul className="mt-4 space-y-2">
             <li>• Un entretien conseil gratuit pour cadrer votre projet</li>
@@ -70,16 +72,14 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
           title: "Créer une SAS, SASU, SARL, EURL ou EI à Juvignac",
           body: (
             <p>
-              SAS, SASU, SARL, EURL, entreprise individuelle : chaque forme a
-              ses règles de rémunération, de protection sociale et d'imposition.
-              Le cabinet analyse votre situation personnelle (revenus,
-              patrimoine, famille, projet à 3 ans) pour vous orienter vers le
-              statut réellement adapté — pas celui à la mode. Notre{" "}
+              SAS, SASU, SARL, EURL, entreprise individuelle : chaque forme a ses règles de
+              rémunération, de protection sociale et d'imposition. Le cabinet analyse votre
+              situation personnelle (revenus, patrimoine, famille, projet à 3 ans) pour vous
+              orienter vers le statut réellement adapté — pas celui à la mode. Notre{" "}
               <Link to="/simulateur-statut" className="font-bold underline underline-offset-4">
                 simulateur « quel statut choisir »
               </Link>{" "}
-              vous donne une première orientation, affinée ensuite en
-              rendez-vous.
+              vous donne une première orientation, affinée ensuite en rendez-vous.
             </p>
           ),
         },
@@ -97,12 +97,10 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
           title: "Les obligations comptables dès la création",
           body: (
             <p>
-              Dès l'immatriculation, votre entreprise doit tenir une
-              comptabilité, déclarer la TVA le cas échéant, et respecter des
-              échéances précises (bilan annuel, liasse fiscale, CFE dès la
-              première année). Le cabinet met en place vos outils, vos
-              habitudes de collecte de pièces et un calendrier d'échéances —
-              pour ne jamais subir de majoration de retard.
+              Dès l'immatriculation, votre entreprise doit tenir une comptabilité, déclarer la TVA
+              le cas échéant, et respecter des échéances précises (bilan annuel, liasse fiscale, CFE
+              dès la première année). Le cabinet met en place vos outils, vos habitudes de collecte
+              de pièces et un calendrier d'échéances — pour ne jamais subir de majoration de retard.
             </p>
           ),
         },
@@ -116,7 +114,11 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
           ],
         },
       ]}
-      cta={{ label: "Prendre rendez-vous", to: "/contact", sub: "Créons votre entreprise à Juvignac." }}
+      cta={{
+        label: "Prendre rendez-vous",
+        to: "/contact",
+        sub: "Créons votre entreprise à Juvignac.",
+      }}
     />
   ),
 });

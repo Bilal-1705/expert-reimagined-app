@@ -58,17 +58,27 @@ export function PackPage({
       <Nav />
       <main>
         {/* Hero */}
-        <section ref={heroRef} className="relative pt-14 pb-16 md:pb-24 px-6 border-b border-ink/5 overflow-hidden">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-14 items-end reveal-stagger" data-reveal>
+        <section
+          ref={heroRef}
+          className="relative pt-14 pb-16 md:pb-24 px-6 border-b border-ink/5 overflow-hidden"
+        >
+          <div
+            className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-14 items-end reveal-stagger"
+            data-reveal
+          >
             <div className="md:col-span-7">
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd(crumbs, path) }}
               />
               <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 mb-8">
-                <Link to="/" className="hover:text-ink transition-colors">Accueil</Link>
+                <Link to="/" className="hover:text-ink transition-colors">
+                  Accueil
+                </Link>
                 <span>/</span>
-                <Link to="/services" className="hover:text-ink transition-colors">Prestations</Link>
+                <Link to="/services" className="hover:text-ink transition-colors">
+                  Prestations
+                </Link>
                 <span>/</span>
                 <span className="text-ink/70">{eyebrow}</span>
               </nav>
@@ -76,12 +86,9 @@ export function PackPage({
                 {eyebrow}
               </span>
               <h1 className="font-sora text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.95] text-balance">
-                {title}{" "}
-                <span className="text-ink/25 italic font-normal">{italic}</span>
+                {title} <span className="text-ink/25 italic font-normal">{italic}</span>
               </h1>
-              <p className="mt-8 max-w-2xl text-lg text-ink/70 leading-relaxed">
-                {intro}
-              </p>
+              <p className="mt-8 max-w-2xl text-lg text-ink/70 leading-relaxed">{intro}</p>
               {bullets && (
                 <ul className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl">
                   {bullets.map((b) => (
@@ -131,10 +138,7 @@ export function PackPage({
                 />
                 <div className="grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/5">
                   {s.items.map((it) => (
-                    <article
-                      key={it.label}
-                      className="bg-paper p-8 md:p-10 flex flex-col gap-4"
-                    >
+                    <article key={it.label} className="bg-paper p-8 md:p-10 flex flex-col gap-4">
                       <div className="flex items-baseline gap-3">
                         {it.optional && (
                           <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-gold bg-gold/10 px-2 py-1">
@@ -145,9 +149,7 @@ export function PackPage({
                           {it.label}
                         </h3>
                       </div>
-                      <p className="text-sm text-ink/75 leading-relaxed">
-                        {it.body}
-                      </p>
+                      <p className="text-sm text-ink/75 leading-relaxed">{it.body}</p>
                     </article>
                   ))}
                 </div>
@@ -167,13 +169,17 @@ export function PackPage({
         {faq && faq.length > 0 && (
           <section className="py-16 md:py-20 px-6 bg-paper-dark/40 border-t border-ink/5">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tighter mb-8">Questions fréquentes</h2>
+              <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tighter mb-8">
+                Questions fréquentes
+              </h2>
               <div className="divide-y divide-ink/10 border-y border-ink/10">
                 {faq.map((f) => (
                   <details key={f.q} className="group py-5">
                     <summary className="cursor-pointer list-none flex justify-between items-start gap-6">
                       <h3 className="font-sora text-lg font-bold leading-snug">{f.q}</h3>
-                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">+</span>
+                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">
+                        +
+                      </span>
                     </summary>
                     <p className="mt-3 text-ink/75 text-[15px] leading-relaxed">{f.a}</p>
                   </details>
@@ -200,7 +206,6 @@ export function PackPage({
                 </h2>
               </div>
               <Link
-                
                 to={next.to}
                 params={next.params}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-ink text-paper text-[11px] font-bold uppercase tracking-widest rounded-full hover:bg-ink-muted transition-colors"

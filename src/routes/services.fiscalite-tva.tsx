@@ -13,7 +13,10 @@ export const Route = createFileRoute("/services/fiscalite-tva")({
         content:
           "Déclarations de TVA, IS, CFE, CVAE et optimisation fiscale à Juvignac (34990). Assistance en cas de contrôle fiscal. Cabinet Erkilic.",
       },
-      { property: "og:title", content: "Fiscalité, TVA et optimisation — Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Fiscalité, TVA et optimisation — Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -35,21 +38,23 @@ export const Route = createFileRoute("/services/fiscalite-tva")({
           url: `${SITE}${PATH}`,
         }),
       },
-      
     ],
   }),
   component: () => (
     <ContentPage
-      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Prestations", to: "/services" }, { label: "Fiscalité & TVA" }]}
+      breadcrumbs={[
+        { label: "Accueil", to: "/" },
+        { label: "Prestations", to: "/services" },
+        { label: "Fiscalité & TVA" },
+      ]}
       eyebrow="Prestation · Fiscalité"
       h1="Fiscalité, TVA"
       italic="et optimisation."
       intro={
         <p>
-          TVA, impôt sur les sociétés, CFE, CVAE : la fiscalité d'entreprise
-          est un empilement d'échéances et de régimes. Erkilic Expertise
-          Comptable sécurise vos déclarations et recherche systématiquement
-          les crédits et réductions d'impôt auxquels vous avez droit.
+          TVA, impôt sur les sociétés, CFE, CVAE : la fiscalité d'entreprise est un empilement
+          d'échéances et de régimes. Erkilic Expertise Comptable sécurise vos déclarations et
+          recherche systématiquement les crédits et réductions d'impôt auxquels vous avez droit.
         </p>
       }
       sections={[
@@ -77,11 +82,10 @@ export const Route = createFileRoute("/services/fiscalite-tva")({
           title: "Pourquoi être accompagné ?",
           body: (
             <p>
-              Une erreur de TVA ou un crédit d'impôt oublié coûte cher — en
-              majorations ou en manque à gagner. L'expert-comptable connaît
-              les textes, suit leurs évolutions annuelles (lois de finances)
-              et fait valoir vos droits. En cas de contrôle, il est à vos
-              côtés physiquement et prépare chaque réponse.
+              Une erreur de TVA ou un crédit d'impôt oublié coûte cher — en majorations ou en manque
+              à gagner. L'expert-comptable connaît les textes, suit leurs évolutions annuelles (lois
+              de finances) et fait valoir vos droits. En cas de contrôle, il est à vos côtés
+              physiquement et prépare chaque réponse.
             </p>
           ),
         },
@@ -89,11 +93,9 @@ export const Route = createFileRoute("/services/fiscalite-tva")({
           title: "Quand nous solliciter ?",
           body: (
             <p>
-              Idéalement dès la création, pour choisir les bons régimes
-              d'imposition. Mais aussi à tout moment : avant un investissement
-              important, lors d'un franchissement de seuil de TVA, à
-              l'approche de la clôture, ou dès réception d'une proposition de
-              rectification.
+              Idéalement dès la création, pour choisir les bons régimes d'imposition. Mais aussi à
+              tout moment : avant un investissement important, lors d'un franchissement de seuil de
+              TVA, à l'approche de la clôture, ou dès réception d'une proposition de rectification.
             </p>
           ),
         },

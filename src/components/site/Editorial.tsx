@@ -22,7 +22,11 @@ export const AUTHOR = {
 /** E-E-A-T block: who wrote / checked the page, and her credentials. */
 export function AuthorBox({ dateModified }: { dateModified?: string }) {
   const updated = dateModified
-    ? new Date(dateModified).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })
+    ? new Date(dateModified).toLocaleDateString("fr-FR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
     : null;
   return (
     <section className="px-6 py-12 border-t border-ink/5">
@@ -41,8 +45,8 @@ export function AuthorBox({ dateModified }: { dateModified?: string }) {
             , experte-comptable
           </p>
           <p className="text-sm text-ink/70 leading-relaxed mt-1">
-            Inscrite au tableau de l'Ordre des experts-comptables, plus de 20 ans d'expérience auprès des
-            entrepreneurs de Juvignac et de Montpellier.
+            Inscrite au tableau de l'Ordre des experts-comptables, plus de 20 ans d'expérience
+            auprès des entrepreneurs de Juvignac et de Montpellier.
             {updated && <> Contenu vérifié le {updated}.</>}
           </p>
         </div>
@@ -70,11 +74,16 @@ export function RelatedLinks({ title = "À lire aussi" }: { title?: string }) {
         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-4 block">
           Pour aller plus loin
         </span>
-        <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight mb-8">{title}</h2>
+        <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight mb-8">
+          {title}
+        </h2>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 border border-ink/10">
           {links.map((l) => (
             <li key={l.to} className="bg-paper">
-              <Link to={l.to} className="group block h-full p-6 hover:bg-paper-dark/50 transition-colors">
+              <Link
+                to={l.to}
+                className="group block h-full p-6 hover:bg-paper-dark/50 transition-colors"
+              >
                 <span className="font-sora font-bold leading-snug block group-hover:underline underline-offset-4">
                   {l.label}
                 </span>

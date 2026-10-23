@@ -50,8 +50,16 @@ export function compareStatuses(turnover: number, expenses: number, activity: Ac
           ? `Hors plafond micro (${micro.ceiling.toLocaleString("fr-FR")} €)`
           : `Cotisations de ${(micro.rate * 100).toLocaleString("fr-FR")} % du chiffre d'affaires, avant impôt sur le revenu`,
     },
-    { label: "EURL, tout en rémunération", net: eurl, note: "Gérant TNS, cotisations d'environ 45 % du net, avant impôt sur le revenu" },
-    { label: "SASU, tout en salaire", net: sasuSalary, note: "Président assimilé salarié, avant impôt sur le revenu" },
+    {
+      label: "EURL, tout en rémunération",
+      net: eurl,
+      note: "Gérant TNS, cotisations d'environ 45 % du net, avant impôt sur le revenu",
+    },
+    {
+      label: "SASU, tout en salaire",
+      net: sasuSalary,
+      note: "Président assimilé salarié, avant impôt sur le revenu",
+    },
     {
       label: "SASU, zéro salaire et dividendes",
       net: sasuDividends,
@@ -216,14 +224,19 @@ function Comparator() {
   const [turnover, setTurnover] = useState(60000);
   const [expenses, setExpenses] = useState(10000);
   const [activity, setActivity] = useState<Activity>("service");
-  const rows = useMemo(() => compareStatuses(turnover, expenses, activity), [turnover, expenses, activity]);
+  const rows = useMemo(
+    () => compareStatuses(turnover, expenses, activity),
+    [turnover, expenses, activity],
+  );
   const best = Math.max(...rows.map((r) => r.net ?? -Infinity));
 
   return (
     <div className="border border-ink/15 p-6 md:p-8">
       <div className="grid sm:grid-cols-3 gap-4">
         <label className="block">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">Chiffre d'affaires HT / an</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">
+            Chiffre d'affaires HT / an
+          </span>
           <input
             type="number"
             min={0}
@@ -234,7 +247,9 @@ function Comparator() {
           />
         </label>
         <label className="block">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">Charges réelles / an</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">
+            Charges réelles / an
+          </span>
           <input
             type="number"
             min={0}
@@ -245,7 +260,9 @@ function Comparator() {
           />
         </label>
         <label className="block">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">Activité</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink/60">
+            Activité
+          </span>
           <select
             value={activity}
             onChange={(e) => setActivity(e.target.value as Activity)}
@@ -271,7 +288,9 @@ function Comparator() {
                 <span className="font-bold block">{r.label}</span>
                 <span className="text-sm text-ink/60">{r.note}</span>
               </td>
-              <td className={`py-4 text-right font-sora text-lg font-extrabold whitespace-nowrap ${r.net === best ? "underline underline-offset-4" : ""}`}>
+              <td
+                className={`py-4 text-right font-sora text-lg font-extrabold whitespace-nowrap ${r.net === best ? "underline underline-offset-4" : ""}`}
+              >
                 {r.net === null ? "Non applicable" : euro(r.net)}
               </td>
             </tr>
@@ -279,8 +298,9 @@ function Comparator() {
         </tbody>
       </table>
       <p className="mt-4 text-xs text-ink/55 leading-relaxed">
-        Estimation 2026 par an, hors ACRE, hors impôt sur le revenu du foyer (sauf PFU sur les dividendes) et hors
-        cotisations minimales. Les montants ne remplacent pas une étude personnalisée.
+        Estimation 2026 par an, hors ACRE, hors impôt sur le revenu du foyer (sauf PFU sur les
+        dividendes) et hors cotisations minimales. Les montants ne remplacent pas une étude
+        personnalisée.
       </p>
     </div>
   );
@@ -317,16 +337,13 @@ function Simulator() {
             </span>
             <h1 className="font-sora text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.95] mb-8 text-balance">
               Quel statut{" "}
-              <span className="text-ink/25 italic font-normal">
-                pour votre projet&nbsp;?
-              </span>
+              <span className="text-ink/25 italic font-normal">pour votre projet&nbsp;?</span>
             </h1>
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
-              Répondez à 5 questions pour obtenir une première orientation :
-              micro-entreprise, EURL, SASU, SARL, SAS, SCI ou LMNP. Cette
-              recommandation est indicative : le cabinet Erkilic Expertise Comptable établit ensuite
-              un comparatif chiffré sur vos revenus prévisionnels avant
-              immatriculation.
+              Répondez à 5 questions pour obtenir une première orientation : micro-entreprise, EURL,
+              SASU, SARL, SAS, SCI ou LMNP. Cette recommandation est indicative : le cabinet Erkilic
+              Expertise Comptable établit ensuite un comparatif chiffré sur vos revenus
+              prévisionnels avant immatriculation.
             </p>
           </div>
         </section>
@@ -408,9 +425,9 @@ function Simulator() {
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <p className="mt-6 text-xs text-paper/50 leading-relaxed">
-                  Résultat indicatif. Un comparatif chiffré personnalisé (24 mois,
-                  intégrant votre foyer fiscal, votre couverture actuelle et vos
-                  projets) est établi lors du rendez-vous de cadrage.
+                  Résultat indicatif. Un comparatif chiffré personnalisé (24 mois, intégrant votre
+                  foyer fiscal, votre couverture actuelle et vos projets) est établi lors du
+                  rendez-vous de cadrage.
                 </p>
               </div>
             )}
@@ -426,9 +443,9 @@ function Simulator() {
               Combien vous reste-t-il selon le statut ?
             </h2>
             <p className="text-ink/75 leading-relaxed mb-8 max-w-3xl">
-              Saisissez votre chiffre d'affaires prévisionnel et vos charges. Le comparateur estime ce qui vous reste
-              en micro-entreprise, en EURL et en SASU, avec les taux de cotisations et d'impôt sur les sociétés de
-              2026.
+              Saisissez votre chiffre d'affaires prévisionnel et vos charges. Le comparateur estime
+              ce qui vous reste en micro-entreprise, en EURL et en SASU, avec les taux de
+              cotisations et d'impôt sur les sociétés de 2026.
             </p>
             <Comparator />
           </div>
@@ -441,15 +458,17 @@ function Simulator() {
                 Comment lire le résultat
               </h2>
               <p>
-                Le chiffre affiché est un revenu disponible avant impôt sur le revenu de votre foyer, sauf pour la
-                ligne dividendes où le prélèvement forfaitaire unique est déjà déduit. Les quatre lignes ne donnent
-                donc pas la même protection : 1 000 € de salaire de président de SASU ouvrent des droits à la retraite
-                du régime général et à la prévoyance, 1 000 € de dividendes n'ouvrent rien.
+                Le chiffre affiché est un revenu disponible avant impôt sur le revenu de votre
+                foyer, sauf pour la ligne dividendes où le prélèvement forfaitaire unique est déjà
+                déduit. Les quatre lignes ne donnent donc pas la même protection : 1 000 € de
+                salaire de président de SASU ouvrent des droits à la retraite du régime général et à
+                la prévoyance, 1 000 € de dividendes n'ouvrent rien.
               </p>
               <p className="mt-4">
-                Le résultat dépend aussi de votre situation personnelle : nombre de parts du foyer, autres revenus,
-                droits à l'ARE, ACRE la première année. C'est pour cela que l'outil vous oriente puis vous propose
-                un échange avec l'experte-comptable plutôt qu'une réponse définitive.
+                Le résultat dépend aussi de votre situation personnelle : nombre de parts du foyer,
+                autres revenus, droits à l'ARE, ACRE la première année. C'est pour cela que l'outil
+                vous oriente puis vous propose un échange avec l'experte-comptable plutôt qu'une
+                réponse définitive.
               </p>
             </article>
             <article>
@@ -457,25 +476,33 @@ function Simulator() {
                 Micro-entreprise, EURL ou SASU : ce qui change vraiment
               </h2>
               <p>
-                En micro-entreprise, vous payez des cotisations sur votre chiffre d'affaires, pas sur votre bénéfice.
-                C'est simple et peu coûteux quand vos frais sont faibles. Les plafonds 2026-2028 sont de 83 600 € pour
-                les prestations de services et les professions libérales, et de 203 100 € pour la vente.
+                En micro-entreprise, vous payez des cotisations sur votre chiffre d'affaires, pas
+                sur votre bénéfice. C'est simple et peu coûteux quand vos frais sont faibles. Les
+                plafonds 2026-2028 sont de 83 600 € pour les prestations de services et les
+                professions libérales, et de 203 100 € pour la vente.
               </p>
               <p className="mt-4">
-                En EURL, le gérant associé unique est travailleur non salarié. Ses cotisations représentent environ
-                45 % de sa rémunération nette, ce qui coûte moins cher qu'un salaire de président de SASU, en échange
-                d'une protection sociale plus faible. L'EURL est à l'impôt sur le revenu par défaut, avec une option
-                pour l'impôt sur les sociétés révocable jusqu'au cinquième exercice.
+                En EURL, le gérant associé unique est travailleur non salarié. Ses cotisations
+                représentent environ 45 % de sa rémunération nette, ce qui coûte moins cher qu'un
+                salaire de président de SASU, en échange d'une protection sociale plus faible.
+                L'EURL est à l'impôt sur le revenu par défaut, avec une option pour l'impôt sur les
+                sociétés révocable jusqu'au cinquième exercice.
               </p>
               <p className="mt-4">
-                En SASU, le président est assimilé salarié. Un salaire coûte cher en cotisations, mais la société peut
-                verser des dividendes taxés au prélèvement forfaitaire unique de 31,4 % en 2026, sans cotisations
-                sociales. Le détail est dans notre{" "}
-                <Link to="/comparatif/eurl-vs-sasu" className="font-bold underline underline-offset-4">
+                En SASU, le président est assimilé salarié. Un salaire coûte cher en cotisations,
+                mais la société peut verser des dividendes taxés au prélèvement forfaitaire unique
+                de 31,4 % en 2026, sans cotisations sociales. Le détail est dans notre{" "}
+                <Link
+                  to="/comparatif/eurl-vs-sasu"
+                  className="font-bold underline underline-offset-4"
+                >
                   comparatif EURL ou SASU
                 </Link>{" "}
                 et dans notre guide{" "}
-                <Link to="/creation-entreprise/sasu-eurl-ei" className="font-bold underline underline-offset-4">
+                <Link
+                  to="/creation-entreprise/sasu-eurl-ei"
+                  className="font-bold underline underline-offset-4"
+                >
                   quel statut juridique choisir à Montpellier
                 </Link>
                 .
@@ -486,15 +513,30 @@ function Simulator() {
                 Les hypothèses du simulateur
               </h2>
               <ul className="space-y-2">
-                <li>Micro : 12,3 % (vente), 21,2 % (prestations BIC), 26,1 % (professions libérales relevant de la SSI).</li>
-                <li>EURL : cotisations TNS d'environ 45 % de la rémunération nette, tout le bénéfice versé en rémunération.</li>
-                <li>SASU en salaire : coût total d'environ 1,82 fois le salaire net (cotisations patronales et salariales).</li>
-                <li>SASU en dividendes : IS de 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà, puis PFU de 31,4 %.</li>
-                <li>Non pris en compte : ACRE, cotisations minimales, CFE, frais de tenue de comptabilité, impôt sur le revenu du foyer.</li>
+                <li>
+                  Micro : 12,3 % (vente), 21,2 % (prestations BIC), 26,1 % (professions libérales
+                  relevant de la SSI).
+                </li>
+                <li>
+                  EURL : cotisations TNS d'environ 45 % de la rémunération nette, tout le bénéfice
+                  versé en rémunération.
+                </li>
+                <li>
+                  SASU en salaire : coût total d'environ 1,82 fois le salaire net (cotisations
+                  patronales et salariales).
+                </li>
+                <li>
+                  SASU en dividendes : IS de 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà, puis
+                  PFU de 31,4 %.
+                </li>
+                <li>
+                  Non pris en compte : ACRE, cotisations minimales, CFE, frais de tenue de
+                  comptabilité, impôt sur le revenu du foyer.
+                </li>
               </ul>
               <p className="mt-4 text-sm text-ink/60">
-                Sources : barèmes URSSAF 2026, article 219 du CGI (taux d'IS), article 200 A du CGI et LFSS 2026
-                (prélèvement forfaitaire unique).
+                Sources : barèmes URSSAF 2026, article 219 du CGI (taux d'IS), article 200 A du CGI
+                et LFSS 2026 (prélèvement forfaitaire unique).
               </p>
             </article>
             <article>
@@ -506,7 +548,9 @@ function Simulator() {
                   <details key={f.q} className="group py-5">
                     <summary className="cursor-pointer list-none flex justify-between items-start gap-6">
                       <h3 className="font-sora text-lg font-bold leading-snug text-ink">{f.q}</h3>
-                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">+</span>
+                      <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">
+                        +
+                      </span>
                     </summary>
                     <p className="mt-3">{f.a}</p>
                   </details>
@@ -539,7 +583,10 @@ export const Route = createFileRoute("/simulateur-statut")({
           "Simulateur gratuit : 5 questions pour vous orienter, puis un comparateur chiffré 2026 du revenu net en micro, EURL et SASU. Par une experte-comptable.",
       },
       { property: "og:title", content: "Quel statut juridique choisir ?" },
-      { property: "og:description", content: "Simulateur gratuit : orientation en 5 questions et comparateur chiffré 2026." },
+      {
+        property: "og:description",
+        content: "Simulateur gratuit : orientation en 5 questions et comparateur chiffré 2026.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "website" },
     ],
@@ -561,10 +608,16 @@ export const Route = createFileRoute("/simulateur-statut")({
           dateModified: UPDATED,
         }),
       },
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))) },
       {
         type: "application/ld+json",
-        children: breadcrumbJsonLd([{ label: "Accueil", to: "/" }, { label: "Simulateur de statut juridique" }], PATH),
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))),
+      },
+      {
+        type: "application/ld+json",
+        children: breadcrumbJsonLd(
+          [{ label: "Accueil", to: "/" }, { label: "Simulateur de statut juridique" }],
+          PATH,
+        ),
       },
     ],
   }),

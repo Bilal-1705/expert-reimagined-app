@@ -44,7 +44,12 @@ function funnelFor(path: string): ProfileId | undefined {
   if (path.includes("commerce") || path.includes("artisans")) return "pro";
   if (path.includes("liberale")) return "liberal";
   if (path.includes("immobilier") || path.includes("lmnp")) return "immobilier";
-  if (path.startsWith("/creation-entreprise") || path.includes("eurl-vs-sasu") || path.startsWith("/simulateur")) return "createur";
+  if (
+    path.startsWith("/creation-entreprise") ||
+    path.includes("eurl-vs-sasu") ||
+    path.startsWith("/simulateur")
+  )
+    return "createur";
   if (path.includes("micro-entreprise")) return "auto-entrepreneur";
   if (path.includes("declaration-revenus")) return "particulier";
   return undefined;
@@ -73,7 +78,8 @@ export function ContentPage({
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
   const path = useRouterState({ select: (s) => s.location.pathname });
-  const crumbs = breadcrumbs.length > 0 ? breadcrumbs : [{ label: "Accueil", to: "/" }, { label: eyebrow }];
+  const crumbs =
+    breadcrumbs.length > 0 ? breadcrumbs : [{ label: "Accueil", to: "/" }, { label: eyebrow }];
 
   const fmt = (iso?: string) => {
     if (!iso) return null;
@@ -92,10 +98,7 @@ export function ContentPage({
     <div className="min-h-screen bg-paper text-ink font-manrope">
       <Nav />
       <main>
-        <section
-          ref={heroRef}
-          className="pt-16 md:pt-24 pb-14 md:pb-20 px-6 border-b border-ink/5"
-        >
+        <section ref={heroRef} className="pt-16 md:pt-24 pb-14 md:pb-20 px-6 border-b border-ink/5">
           <div className="max-w-5xl mx-auto">
             <script
               type="application/ld+json"
@@ -120,7 +123,10 @@ export function ContentPage({
                 ))}
               </nav>
             )}
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-6 block reveal" data-reveal>
+            <span
+              className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-6 block reveal"
+              data-reveal
+            >
               {eyebrow}
             </span>
             <h1
@@ -155,7 +161,10 @@ export function ContentPage({
                 )}
               </div>
             )}
-            <div className="prose-lg text-lg text-ink/75 leading-relaxed max-w-3xl reveal" data-reveal>
+            <div
+              className="prose-lg text-lg text-ink/75 leading-relaxed max-w-3xl reveal"
+              data-reveal
+            >
               {intro}
             </div>
           </div>
@@ -256,8 +265,6 @@ export function ContentPage({
           </section>
         )}
 
-
-
         {faq.length > 0 && (
           <section className="py-20 md:py-24 px-6 bg-paper-dark/40 border-t border-ink/5">
             <div className="max-w-4xl mx-auto">
@@ -271,9 +278,7 @@ export function ContentPage({
                 {faq.map((f) => (
                   <details key={f.q} className="group py-6">
                     <summary className="cursor-pointer list-none flex justify-between items-start gap-6">
-                      <h3 className="font-sora text-lg md:text-xl font-bold leading-snug">
-                        {f.q}
-                      </h3>
+                      <h3 className="font-sora text-lg md:text-xl font-bold leading-snug">{f.q}</h3>
                       <span className="font-sora text-2xl leading-none text-ink/60 group-open:rotate-45 transition-transform">
                         +
                       </span>
@@ -293,7 +298,15 @@ export function ContentPage({
         <RelatedLinks />
 
         {funnel !== false && (
-          <ProfileFunnel profile={funnel && funnel !== "choose" ? funnel : funnel === "choose" ? undefined : funnelFor(path)} />
+          <ProfileFunnel
+            profile={
+              funnel && funnel !== "choose"
+                ? funnel
+                : funnel === "choose"
+                  ? undefined
+                  : funnelFor(path)
+            }
+          />
         )}
 
         {cta && funnel === false && (

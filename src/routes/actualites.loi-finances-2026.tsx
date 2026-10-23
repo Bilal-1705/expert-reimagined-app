@@ -16,7 +16,10 @@ export const Route = createFileRoute("/actualites/loi-finances-2026")({
           "Synthèse de la Loi de Finances 2026 : IS, TVA, CFE, aides à l'embauche, mesures pour les TPE/PME et professions libérales de l'Hérault.",
       },
       { property: "og:title", content: "Loi de Finances 2026 — synthèse dirigeants" },
-      { property: "og:description", content: "Les mesures fiscales et sociales qui touchent les TPE, PME et indépendants." },
+      {
+        property: "og:description",
+        content: "Les mesures fiscales et sociales qui touchent les TPE, PME et indépendants.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
       { property: "article:published_time", content: PUBLISHED },
@@ -52,15 +55,15 @@ export const Route = createFileRoute("/actualites/loi-finances-2026")({
       intro={
         <>
           <p>
-            La Loi de Finances pour 2026 introduit plusieurs mesures qui impactent
-            directement les TPE, PME et professions libérales de la région de
-            Montpellier. Cette page synthétise les points d'attention immédiats
-            pour un dirigeant, avec les arbitrages à faire dès le premier trimestre.
+            La Loi de Finances pour 2026 introduit plusieurs mesures qui impactent directement les
+            TPE, PME et professions libérales de la région de Montpellier. Cette page synthétise les
+            points d'attention immédiats pour un dirigeant, avec les arbitrages à faire dès le
+            premier trimestre.
           </p>
           <p className="mt-4 text-sm text-ink/60 italic">
-            Cette synthèse est mise à jour à mesure que les décrets d'application
-            sont publiés. Contactez le cabinet Erkilic Expertise Comptable pour un audit personnalisé
-            de votre situation.
+            Cette synthèse est mise à jour à mesure que les décrets d'application sont publiés.
+            Contactez le cabinet Erkilic Expertise Comptable pour un audit personnalisé de votre
+            situation.
           </p>
         </>
       }

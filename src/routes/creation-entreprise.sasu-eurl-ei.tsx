@@ -42,7 +42,10 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
     ],
     links: [{ rel: "canonical", href: `${SITE}${PATH}` }],
     scripts: [
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
+      },
     ],
   }),
   component: () => (
@@ -58,19 +61,14 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
       intro={
         <>
           <p>
-            Le choix du statut juridique conditionne votre régime social,
-            votre fiscalité, vos droits au chômage et la protection de votre
-            patrimoine. Ce comparatif détaillé, à jour 2026, vous donne les
-            bases : mais aucune décision ne devrait se prendre sans
-            simulation chiffrée sur votre situation.
+            Le choix du statut juridique conditionne votre régime social, votre fiscalité, vos
+            droits au chômage et la protection de votre patrimoine. Ce comparatif détaillé, à jour
+            2026, vous donne les bases : mais aucune décision ne devrait se prendre sans simulation
+            chiffrée sur votre situation.
           </p>
           <p className="mt-4 text-[16px]">
-            Vous hésitez uniquement entre les deux formes sociétaires ?
-            Consultez le{" "}
-            <Link
-              to="/comparatif/eurl-vs-sasu"
-              className="underline underline-offset-4"
-            >
+            Vous hésitez uniquement entre les deux formes sociétaires ? Consultez le{" "}
+            <Link to="/comparatif/eurl-vs-sasu" className="underline underline-offset-4">
               comparatif détaillé SASU ou EURL
             </Link>{" "}
             avec son tableau chiffré 2026.
@@ -82,12 +80,10 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           title: "Entreprise Individuelle (EI) : simplicité maximale",
           body: (
             <p>
-              Formalité de création simple et gratuite, comptabilité
-              allégée, régime micro possible en dessous de 83 600 € (BNC)
-              ou 203 100 € (BIC). Depuis mai 2022, le patrimoine personnel
-              est automatiquement protégé. Régime TNS (URSSAF + retraite +
-              maladie). Idéal pour tester une activité seul, sans
-              associé.
+              Formalité de création simple et gratuite, comptabilité allégée, régime micro possible
+              en dessous de 83 600 € (BNC) ou 203 100 € (BIC). Depuis mai 2022, le patrimoine
+              personnel est automatiquement protégé. Régime TNS (URSSAF + retraite + maladie). Idéal
+              pour tester une activité seul, sans associé.
             </p>
           ),
           bullets: [
@@ -101,11 +97,9 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           title: "EURL : la société à associé unique en TNS",
           body: (
             <p>
-              Structure de type SARL avec un seul associé. Le gérant
-              associé unique est TNS (comme l'EI) mais dispose d'un
-              patrimoine juridiquement séparé et d'une image « société ».
-              Option IR pendant 5 ans possible pour purger un déficit de
-              démarrage.
+              Structure de type SARL avec un seul associé. Le gérant associé unique est TNS (comme
+              l'EI) mais dispose d'un patrimoine juridiquement séparé et d'une image « société ».
+              Option IR pendant 5 ans possible pour purger un déficit de démarrage.
             </p>
           ),
           bullets: [
@@ -119,11 +113,9 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           title: "SASU : la société assimilée-salariée",
           body: (
             <p>
-              SAS à associé unique, le président est assimilé-salarié
-              (régime général) : meilleure protection sociale mais charges
-              ~80 % sur salaire. Grande souplesse statutaire, ouverture du
-              capital facile, dividendes non soumis à cotisations
-              sociales.
+              SAS à associé unique, le président est assimilé-salarié (régime général) : meilleure
+              protection sociale mais charges ~80 % sur salaire. Grande souplesse statutaire,
+              ouverture du capital facile, dividendes non soumis à cotisations sociales.
             </p>
           ),
           bullets: [
@@ -137,18 +129,21 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           title: "Le vrai arbitrage : rémunération et sortie",
           body: (
             <p>
-              La bonne question n'est pas « quel statut ? » mais « quelle
-              rémunération sur 3 ans, quelle sortie à 5 ans, quelle
-              couverture sociale ? ». Le cabinet Erkilic Expertise Comptable simule votre net
-              disponible et vos charges totales dans chaque scénario
-              avant l'immatriculation. Un rendez-vous d'une heure économise
-              souvent plusieurs milliers d'euros la première année.
+              La bonne question n'est pas « quel statut ? » mais « quelle rémunération sur 3 ans,
+              quelle sortie à 5 ans, quelle couverture sociale ? ». Le cabinet Erkilic Expertise
+              Comptable simule votre net disponible et vos charges totales dans chaque scénario
+              avant l'immatriculation. Un rendez-vous d'une heure économise souvent plusieurs
+              milliers d'euros la première année.
             </p>
           ),
         },
       ]}
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
-      cta={{ label: "Simuler mon statut", to: "/contact", sub: "Un comparatif chiffré sur votre projet." }}
+      cta={{
+        label: "Simuler mon statut",
+        to: "/contact",
+        sub: "Un comparatif chiffré sur votre projet.",
+      }}
     />
   ),
 });

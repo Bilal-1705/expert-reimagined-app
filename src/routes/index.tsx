@@ -19,7 +19,10 @@ export const Route = createFileRoute("/")({
         content:
           "Cabinet d'expert-comptable à Juvignac, à 10 min de Montpellier : comptabilité, fiscalité, paie, création d'entreprise. 1er rendez-vous offert, devis sous 24 h.",
       },
-      { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -68,10 +71,22 @@ const packs = [
 ] as const;
 
 const domains = [
-  { n: "01", t: "Comptable", d: "Tenue, révision, comptes annuels, situations intermédiaires et consolidation." },
-  { n: "02", t: "Fiscal", d: "TVA, IS, IR, optimisation du statut du dirigeant, assistance en contrôle." },
+  {
+    n: "01",
+    t: "Comptable",
+    d: "Tenue, révision, comptes annuels, situations intermédiaires et consolidation.",
+  },
+  {
+    n: "02",
+    t: "Fiscal",
+    d: "TVA, IS, IR, optimisation du statut du dirigeant, assistance en contrôle.",
+  },
   { n: "03", t: "Social", d: "Paies, DSN, SSI, accords d'intéressement, contentieux prud'homal." },
-  { n: "04", t: "Juridique", d: "Statuts, secrétariat juridique, transmission, opérations exceptionnelles." },
+  {
+    n: "04",
+    t: "Juridique",
+    d: "Statuts, secrétariat juridique, transmission, opérations exceptionnelles.",
+  },
 ];
 
 const audiences = [
@@ -96,7 +111,10 @@ function Home() {
       <Nav />
       <main>
         {/* Hero */}
-        <section ref={heroRef} className="relative pt-10 md:pt-14 pb-20 md:pb-28 px-6 overflow-hidden border-b border-ink/5">
+        <section
+          ref={heroRef}
+          className="relative pt-10 md:pt-14 pb-20 md:pb-28 px-6 overflow-hidden border-b border-ink/5"
+        >
           <img
             src={heroOfficeWebp}
             alt="Bureau du cabinet d'expertise comptable Erkilic à Juvignac"
@@ -115,15 +133,12 @@ function Home() {
                 <h1 className="font-sora text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] text-balance mb-6">
                   Expert-comptable à Juvignac,
                   <br />
-                  <span className="text-ink/25 italic font-normal">
-                    près de Montpellier.
-                  </span>
+                  <span className="text-ink/25 italic font-normal">près de Montpellier.</span>
                   <span className="inline-block ml-1 w-[0.08em] h-[0.85em] align-[-0.1em] bg-ink animate-blink" />
                 </h1>
                 <p className="text-lg text-ink/70 max-w-2xl mb-8 leading-relaxed">
-                  Comptabilité, fiscalité, social et juridique. Un
-                  accompagnement rigoureux pour créateurs, professions
-                  libérales, PME et particuliers — porté par 23 ans
+                  Comptabilité, fiscalité, social et juridique. Un accompagnement rigoureux pour
+                  créateurs, professions libérales, PME et particuliers — porté par 23 ans
                   d'expérience.
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -132,7 +147,9 @@ function Home() {
                     className="group px-7 py-4 bg-ink text-paper text-sm font-bold uppercase tracking-widest rounded-full flex items-center gap-3 hover:bg-ink-muted transition-colors"
                   >
                     Nos prestations
-                    <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
+                    <span className="text-lg transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
                   </Link>
                   <Link
                     to="/contact"
@@ -147,7 +164,6 @@ function Home() {
                   « Parce que vous comptez pour nous, nous comptons pour vous. »
                 </p>
               </div>
-
             </div>
           </div>
         </section>
@@ -184,7 +200,10 @@ function Home() {
               title="Quatre pôles d'expertise"
               aside="Comptable, fiscal, social, juridique — un savoir-faire complet, dans le respect de la déontologie de l'Ordre."
             />
-            <div className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+            <div
+              className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
+              data-reveal
+            >
               {domains.map((d) => (
                 <article
                   key={d.n}
@@ -213,10 +232,12 @@ function Home() {
               title="Cinq packs sur-mesure"
               aside="Solutions adaptées à chaque structure juridique et à chaque stade de développement."
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
+              data-reveal
+            >
               {packs.map((p) => (
                 <Link
-                  
                   to={p.to}
                   key={p.n}
                   className="bg-paper p-7 group hover:bg-ink transition-colors duration-500 flex flex-col min-h-60"
@@ -258,22 +279,18 @@ function Home() {
                 </h2>
                 <p className="text-lg text-ink/70 leading-relaxed mb-6">
                   Fondé par Mme <strong className="text-ink font-semibold">Nazifé Erkilic</strong>,
-                  le cabinet est inscrit à l'Ordre des Experts-Comptables de
-                  Montpellier. Nous proposons un accompagnement de proximité,
-                  personnalisé, à chaque demande.
+                  le cabinet est inscrit à l'Ordre des Experts-Comptables de Montpellier. Nous
+                  proposons un accompagnement de proximité, personnalisé, à chaque demande.
                 </p>
                 <p className="text-lg text-ink/70 leading-relaxed mb-10">
-                  Ensemble, construisons une relation pérenne pour le pilotage
-                  de votre entreprise — de la création au développement, jusqu'à
-                  la transmission.
+                  Ensemble, construisons une relation pérenne pour le pilotage de votre entreprise —
+                  de la création au développement, jusqu'à la transmission.
                 </p>
                 <div className="grid grid-cols-2 gap-x-6">
                   {["Compétence", "Indépendance", "Intégrité", "Secret professionnel"].map((v) => (
                     <div key={v} className="flex items-center gap-3 py-3 border-t border-ink/10">
                       <span className="w-1 h-1 bg-ink rounded-full" />
-                      <span className="text-xs uppercase font-bold tracking-widest">
-                        {v}
-                      </span>
+                      <span className="text-xs uppercase font-bold tracking-widest">{v}</span>
                     </div>
                   ))}
                 </div>
@@ -301,14 +318,13 @@ function Home() {
                 </h2>
               </div>
               <p className="md:col-span-4 text-paper/60 text-sm leading-relaxed">
-                Nous mettons en œuvre notre savoir-faire dans le respect de la
-                déontologie de l'Ordre des Experts-Comptables.
+                Nous mettons en œuvre notre savoir-faire dans le respect de la déontologie de
+                l'Ordre des Experts-Comptables.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-paper/10">
               {audiences.map((a, i) => (
                 <Link
-                  
                   to={a.to}
                   key={a.label + i}
                   className="bg-ink p-7 flex items-start gap-4 group hover:bg-paper hover:text-ink transition-colors duration-300"
@@ -345,14 +361,12 @@ function Home() {
             </span>
             <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-6">
               Expert-comptable à Juvignac,{" "}
-              <span className="text-ink/30 italic font-normal">
-                au service de tout l'Hérault.
-              </span>
+              <span className="text-ink/30 italic font-normal">au service de tout l'Hérault.</span>
             </h2>
             <p className="text-ink/70 text-lg leading-relaxed mb-8">
-              Notre cabinet accompagne les entrepreneurs et particuliers de
-              Juvignac, Montpellier, Saint-Georges-d'Orques, Pignan, Montarnaud
-              et alentours. Prise de rendez-vous en cabinet ou en visioconférence.
+              Notre cabinet accompagne les entrepreneurs et particuliers de Juvignac, Montpellier,
+              Saint-Georges-d'Orques, Pignan, Montarnaud et alentours. Prise de rendez-vous en
+              cabinet ou en visioconférence.
             </p>
             <Link
               to="/contact"

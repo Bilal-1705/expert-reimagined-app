@@ -88,7 +88,8 @@ export function initAnalytics() {
   document.addEventListener("click", (e) => {
     const a = (e.target as HTMLElement | null)?.closest?.("a");
     const href = a?.getAttribute("href") ?? "";
-    if (href.startsWith("tel:")) track("click_tel", { link_url: href, page_path: location.pathname });
+    if (href.startsWith("tel:"))
+      track("click_tel", { link_url: href, page_path: location.pathname });
     else if (href.startsWith("mailto:")) track("click_email", { page_path: location.pathname });
   });
 

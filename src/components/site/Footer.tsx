@@ -70,10 +70,7 @@ function Column({
       <ul className="space-y-2">
         {links.map((l) => (
           <li key={l.to}>
-            <Link
-              to={l.to}
-              className="text-sm text-paper/60 hover:text-paper transition-colors"
-            >
+            <Link to={l.to} className="text-sm text-paper/60 hover:text-paper transition-colors">
               {l.label}
             </Link>
           </li>
@@ -89,13 +86,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <h2 className="font-sora text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.95]">
-            Prêt à<br />avancer&nbsp;?
+            Prêt à<br />
+            avancer&nbsp;?
           </h2>
           <div className="flex flex-col justify-end items-start">
             <p className="text-paper/60 mb-8 max-w-sm leading-relaxed">
               Basé à Juvignac, le cabinet Erkilic Expertise Comptable intervient sur toute la région
-              de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La
-              Mosson, Pignan, Montarnaud — et en distanciel partout en France.
+              de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La Mosson, Pignan,
+              Montarnaud — et en distanciel partout en France.
             </p>
             <Link
               to="/contact"
@@ -120,14 +118,52 @@ export function Footer() {
                 Navigation
               </p>
               <ul className="space-y-2 text-sm text-paper/60">
-                <li><Link to="/" className="hover:text-paper transition-colors">Accueil</Link></li>
-                <li><Link to="/cabinet" className="hover:text-paper transition-colors">Le cabinet</Link></li>
-                <li><Link to="/services" className="hover:text-paper transition-colors">Prestations</Link></li>
-                <li><Link to="/services/comptabilite" className="hover:text-paper transition-colors">— Comptabilité & bilan</Link></li>
-                <li><Link to="/services/fiscalite-tva" className="hover:text-paper transition-colors">— Fiscalité & TVA</Link></li>
-                <li><Link to="/services/social-juridique" className="hover:text-paper transition-colors">— Social & juridique</Link></li>
-                <li><Link to="/services/conseil-gestion" className="hover:text-paper transition-colors">— Conseil & gestion</Link></li>
-                <li><Link to="/contact" className="hover:text-paper transition-colors">Contact & devis</Link></li>
+                <li>
+                  <Link to="/" className="hover:text-paper transition-colors">
+                    Accueil
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/cabinet" className="hover:text-paper transition-colors">
+                    Le cabinet
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:text-paper transition-colors">
+                    Prestations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/comptabilite" className="hover:text-paper transition-colors">
+                    — Comptabilité & bilan
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/fiscalite-tva" className="hover:text-paper transition-colors">
+                    — Fiscalité & TVA
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/social-juridique"
+                    className="hover:text-paper transition-colors"
+                  >
+                    — Social & juridique
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/conseil-gestion"
+                    className="hover:text-paper transition-colors"
+                  >
+                    — Conseil & gestion
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:text-paper transition-colors">
+                    Contact & devis
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -139,24 +175,28 @@ export function Footer() {
               Contact
             </p>
             <address className="not-italic text-sm text-paper/60 leading-relaxed">
-              29 bis rue du Poumpidou<br />
-              34990 Juvignac, Hérault<br />
+              29 bis rue du Poumpidou
+              <br />
+              34990 Juvignac, Hérault
+              <br />
               <a href="tel:+33972540771" className="hover:text-paper transition-colors block mt-3">
                 09 72 54 07 71
               </a>
               <a href="tel:+33659884080" className="hover:text-paper transition-colors block">
                 06 59 88 40 80
               </a>
-              <a href="mailto:cabinet@erkilic.fr" className="hover:text-paper transition-colors block mt-1 break-all">
+              <a
+                href="mailto:cabinet@erkilic.fr"
+                className="hover:text-paper transition-colors block mt-1 break-all"
+              >
                 cabinet@erkilic.fr
               </a>
             </address>
           </div>
           <p className="text-xs text-paper/50 leading-relaxed md:text-right">
-            Cabinet inscrit à l'Ordre des Experts-Comptables de Montpellier.
-            Nous engageons notre responsabilité civile professionnelle sur
-            chaque mission — une garantie que les logiciels de comptabilité
-            en ligne ne peuvent pas offrir.
+            Cabinet inscrit à l'Ordre des Experts-Comptables de Montpellier. Nous engageons notre
+            responsabilité civile professionnelle sur chaque mission — une garantie que les
+            logiciels de comptabilité en ligne ne peuvent pas offrir.
           </p>
         </div>
 
@@ -165,8 +205,15 @@ export function Footer() {
             <p>© {new Date().getFullYear()} Erkilic Expertise Comptable — SIREN 814 349 841</p>
             <p>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</p>
             <p className="flex gap-4">
-              <Link to="/mentions-legales" className="hover:text-paper/60 transition-colors">Mentions légales</Link>
-              <Link to="/politique-confidentialite" className="hover:text-paper/60 transition-colors">Confidentialité</Link>
+              <Link to="/mentions-legales" className="hover:text-paper/60 transition-colors">
+                Mentions légales
+              </Link>
+              <Link
+                to="/politique-confidentialite"
+                className="hover:text-paper/60 transition-colors"
+              >
+                Confidentialité
+              </Link>
             </p>
           </div>
           <a

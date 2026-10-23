@@ -62,7 +62,6 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
       },
-      
     ],
   }),
   component: () => (
@@ -80,17 +79,21 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
       intro={
         <>
           <p>
-            Chaque année, le cabinet constate les mêmes oublis : une case
-            non cochée, un revenu de plateforme non reporté, un amortissement
-            LMNP mal repris. Voici le récapitulatif 2026, orienté dirigeants,
-            indépendants et bailleurs de Juvignac et Montpellier.
+            Chaque année, le cabinet constate les mêmes oublis : une case non cochée, un revenu de
+            plateforme non reporté, un amortissement LMNP mal repris. Voici le récapitulatif 2026,
+            orienté dirigeants, indépendants et bailleurs de Juvignac et Montpellier.
           </p>
           <ul className="mt-4 space-y-2 list-disc pl-5">
             <li>Hérault = zone 2 pour la déclaration en ligne.</li>
-            <li>Barème de l'impôt revalorisé : le taux de prélèvement à la source s'ajuste automatiquement.</li>
+            <li>
+              Barème de l'impôt revalorisé : le taux de prélèvement à la source s'ajuste
+              automatiquement.
+            </li>
             <li>Indépendants : le chiffre d'affaires se reporte toujours sur la 2042-C-PRO.</li>
             <li>LMNP au réel : liasse 2031 avant report sur la déclaration personnelle.</li>
-            <li>Dividendes : arbitrer entre PFU à 31,4 % et barème progressif, chiffres à l'appui.</li>
+            <li>
+              Dividendes : arbitrer entre PFU à 31,4 % et barème progressif, chiffres à l'appui.
+            </li>
           </ul>
         </>
       }
@@ -118,12 +121,11 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
           title: "Dirigeant : salaire, dividendes ou les deux ?",
           body: (
             <p>
-              La déclaration est le moment où l'arbitrage rémunération /
-              dividendes se paie — en bien ou en mal. Nous chiffrons chaque année
-              les deux scénarios pour nos clients en EURL et SASU avant la
-              clôture, pas après. Si vous hésitez encore sur votre structure,
-              notre <strong>simulateur de statut</strong> donne une première
-              orientation en quelques questions.
+              La déclaration est le moment où l'arbitrage rémunération / dividendes se paie — en
+              bien ou en mal. Nous chiffrons chaque année les deux scénarios pour nos clients en
+              EURL et SASU avant la clôture, pas après. Si vous hésitez encore sur votre structure,
+              notre <strong>simulateur de statut</strong> donne une première orientation en quelques
+              questions.
             </p>
           ),
         },

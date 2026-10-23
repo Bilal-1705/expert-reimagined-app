@@ -93,7 +93,6 @@ const websiteJsonLd = {
   publisher: { "@id": `${SITE}/#cabinet` },
 };
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-paper px-4">

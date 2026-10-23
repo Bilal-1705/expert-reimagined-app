@@ -31,13 +31,19 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
         content:
           "Indy est un logiciel, pas un expert-comptable. Comparatif honnête entre Indy et le cabinet Erkilic Expertise Comptable à Juvignac : responsabilité, conseil, prix.",
       },
-      { property: "og:title", content: "Indy vs Cabinet Erkilic Expertise Comptable — Comparatif honnête" },
+      {
+        property: "og:title",
+        content: "Indy vs Cabinet Erkilic Expertise Comptable — Comparatif honnête",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
     links: [{ rel: "canonical", href: `${SITE}${PATH}` }],
     scripts: [
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
+      },
     ],
   }),
   component: () => (
@@ -53,16 +59,14 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
       intro={
         <>
           <p>
-            Indy est un logiciel de comptabilité en ligne, très bien
-            marketé, populaire chez les freelances français. Le cabinet
-            Erkilic est un cabinet d'expert-comptable inscrit à l'Ordre,
-            basé à Juvignac près de Montpellier. Confondre les deux, c'est
-            confondre un tableur avec un fiscaliste.
+            Indy est un logiciel de comptabilité en ligne, très bien marketé, populaire chez les
+            freelances français. Le cabinet Erkilic est un cabinet d'expert-comptable inscrit à
+            l'Ordre, basé à Juvignac près de Montpellier. Confondre les deux, c'est confondre un
+            tableur avec un fiscaliste.
           </p>
           <p className="mt-4">
-            Ce comparatif ne cherche pas à disqualifier Indy — leur produit
-            est bon pour ce qu'il est. Il cherche à dire la vérité sur ce
-            qu'il n'est pas.
+            Ce comparatif ne cherche pas à disqualifier Indy — leur produit est bon pour ce qu'il
+            est. Il cherche à dire la vérité sur ce qu'il n'est pas.
           </p>
         </>
       }
@@ -72,20 +76,17 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
           body: (
             <>
               <p>
-                Un expert-comptable est un professionnel réglementé,
-                diplômé (DEC bac+8), inscrit à l'Ordre, prêtant serment et
-                engageant sa responsabilité civile professionnelle sur
-                chaque mission par une lettre de mission signée. C'est le
-                seul professionnel habilité à tenir, présenter et
-                certifier vos comptes annuels en France (loi du 30 avril
-                1946, article 2).
+                Un expert-comptable est un professionnel réglementé, diplômé (DEC bac+8), inscrit à
+                l'Ordre, prêtant serment et engageant sa responsabilité civile professionnelle sur
+                chaque mission par une lettre de mission signée. C'est le seul professionnel
+                habilité à tenir, présenter et certifier vos comptes annuels en France (loi du 30
+                avril 1946, article 2).
               </p>
               <p>
-                Indy est une SAS commerciale qui édite un SaaS. Les CGU
-                d'Indy précisent explicitement que la société n'est pas
-                un expert-comptable, ne rend pas de conseil individualisé
-                et ne se substitue pas à ce dernier. En cas d'erreur dans
-                votre bilan, la responsabilité vous incombe intégralement.
+                Indy est une SAS commerciale qui édite un SaaS. Les CGU d'Indy précisent
+                explicitement que la société n'est pas un expert-comptable, ne rend pas de conseil
+                individualisé et ne se substitue pas à ce dernier. En cas d'erreur dans votre bilan,
+                la responsabilité vous incombe intégralement.
               </p>
             </>
           ),
@@ -113,12 +114,10 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
           title: "Pourquoi choisir Erkilic à Juvignac",
           body: (
             <p>
-              Vous êtes reçu rue du Poumpidou pour un premier échange
-              gratuit. Une lettre de mission fixe le périmètre. Le cabinet
-              signe votre bilan et engage sa responsabilité. Vous avez un
-              interlocuteur unique, joignable au 09 72 54 07 71, qui
-              connaît votre dossier. En cas de contrôle fiscal, le cabinet
-              vous défend — c'est inclus dans la mission.
+              Vous êtes reçu rue du Poumpidou pour un premier échange gratuit. Une lettre de mission
+              fixe le périmètre. Le cabinet signe votre bilan et engage sa responsabilité. Vous avez
+              un interlocuteur unique, joignable au 09 72 54 07 71, qui connaît votre dossier. En
+              cas de contrôle fiscal, le cabinet vous défend — c'est inclus dans la mission.
             </p>
           ),
         },
@@ -127,26 +126,53 @@ export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
         title: "Indy vs Erkilic Expertise Comptable en un coup d'œil",
         columns: ["Critère", "Indy (100% en ligne)", "Erkilic Expertise Comptable (Juvignac)"],
         rows: [
-          { criterion: "Tarif de base", competitor: "Abonnement mensuel bas, ciblé freelance.", erkilic: "Forfait sur-mesure, tout compris." },
-          { criterion: "Contact humain", competitor: "Chat et support en ligne.", erkilic: "Interlocuteur unique, joignable, en cabinet ou visio." },
-          { criterion: "Optimisation fiscale", competitor: "Automatisée, standardisée.", erkilic: "Sur-mesure, arbitrage salaire/dividendes annuel." },
-          { criterion: "Rendez-vous physiques", competitor: "Non — 100% en ligne.", erkilic: "Oui, à Juvignac près de Montpellier." },
-          { criterion: "Ancrage local", competitor: "Aucun.", erkilic: "Connaissance des aides Hérault / Occitanie." },
-          { criterion: "Contrôle fiscal", competitor: "Assistance limitée.", erkilic: "Représentation, responsabilité civile professionnelle engagée." },
+          {
+            criterion: "Tarif de base",
+            competitor: "Abonnement mensuel bas, ciblé freelance.",
+            erkilic: "Forfait sur-mesure, tout compris.",
+          },
+          {
+            criterion: "Contact humain",
+            competitor: "Chat et support en ligne.",
+            erkilic: "Interlocuteur unique, joignable, en cabinet ou visio.",
+          },
+          {
+            criterion: "Optimisation fiscale",
+            competitor: "Automatisée, standardisée.",
+            erkilic: "Sur-mesure, arbitrage salaire/dividendes annuel.",
+          },
+          {
+            criterion: "Rendez-vous physiques",
+            competitor: "Non — 100% en ligne.",
+            erkilic: "Oui, à Juvignac près de Montpellier.",
+          },
+          {
+            criterion: "Ancrage local",
+            competitor: "Aucun.",
+            erkilic: "Connaissance des aides Hérault / Occitanie.",
+          },
+          {
+            criterion: "Contrôle fiscal",
+            competitor: "Assistance limitée.",
+            erkilic: "Représentation, responsabilité civile professionnelle engagée.",
+          },
         ],
       }}
       verdict={
         <p>
-          En résumé, si vous êtes un freelance solo en BNC avec des opérations
-          standards et pas d'enjeu patrimonial, <strong>Indy</strong> est un très
-          bon outil. En revanche, si vous êtes une profession libérale, un
-          artisan ou une TPE à Juvignac ou Montpellier avec besoin de conseil
-          sur-mesure et de réactivité, le cabinet{" "}
+          En résumé, si vous êtes un freelance solo en BNC avec des opérations standards et pas
+          d'enjeu patrimonial, <strong>Indy</strong> est un très bon outil. En revanche, si vous
+          êtes une profession libérale, un artisan ou une TPE à Juvignac ou Montpellier avec besoin
+          de conseil sur-mesure et de réactivité, le cabinet{" "}
           <strong>Erkilic Expertise Comptable</strong> sera bien plus adapté.
         </p>
       }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
-      cta={{ label: "Demander un devis", to: "/contact", sub: "Un vrai expert-comptable pour votre activité." }}
+      cta={{
+        label: "Demander un devis",
+        to: "/contact",
+        sub: "Un vrai expert-comptable pour votre activité.",
+      }}
     />
   ),
 });

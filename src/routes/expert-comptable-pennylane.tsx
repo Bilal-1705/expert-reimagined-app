@@ -31,16 +31,17 @@ const faq = [
 export const Route = createFileRoute("/expert-comptable-pennylane")({
   head: () => ({
     meta: [
-      { title: "Expert-comptable Pennylane : un cabinet qui travaille dans votre outil" },
+      { title: "Expert-comptable Pennylane : le cabinet dans votre outil" },
       {
         name: "description",
         content:
-          "Vous utilisez Pennylane ? Le cabinet Erkilic révise vos comptes, établit le bilan et vous conseille directement dans Pennylane. Experte-comptable à Juvignac, près de Montpellier.",
+          "Vous utilisez Pennylane ? Le cabinet Erkilic révise vos comptes, établit le bilan et vous conseille directement dans Pennylane, près de Montpellier.",
       },
       { property: "og:title", content: "Expert-comptable sur Pennylane | Erkilic" },
       {
         property: "og:description",
-        content: "Le logiciel automatise, l'experte-comptable vérifie, signe et conseille. Comment ça marche concrètement.",
+        content:
+          "Le logiciel automatise, l'experte-comptable vérifie, signe et conseille. Comment ça marche concrètement.",
       },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "website" },
@@ -81,13 +82,15 @@ export const Route = createFileRoute("/expert-comptable-pennylane")({
       intro={
         <>
           <p>
-            Pennylane fait gagner beaucoup de temps : la banque est synchronisée, les justificatifs se
-            rapprochent presque seuls, les factures partent depuis l'outil. Mais un logiciel ne révise pas
-            votre comptabilité, ne signe pas votre bilan et ne vous dit pas comment vous rémunérer.
+            Pennylane fait gagner beaucoup de temps : la banque est synchronisée, les justificatifs
+            se rapprochent presque seuls, les factures partent depuis l'outil. Mais un logiciel ne
+            révise pas votre comptabilité, ne signe pas votre bilan et ne vous dit pas comment vous
+            rémunérer.
           </p>
           <p className="mt-4">
-            Le cabinet Erkilic Expertise Comptable travaille directement dans votre espace Pennylane. Vous
-            gardez votre outil, et vous avez une experte-comptable qui vérifie, déclare et conseille.
+            Le cabinet Erkilic Expertise Comptable travaille directement dans votre espace
+            Pennylane. Vous gardez votre outil, et vous avez une experte-comptable qui vérifie,
+            déclare et conseille.
           </p>
         </>
       }
@@ -96,8 +99,8 @@ export const Route = createFileRoute("/expert-comptable-pennylane")({
           title: "Ce que fait Pennylane, ce que fait l'expert-comptable",
           body: (
             <p>
-              Le partage des rôles est simple : l'outil s'occupe des tâches répétitives, le cabinet du
-              contrôle et des décisions.
+              Le partage des rôles est simple : l'outil s'occupe des tâches répétitives, le cabinet
+              du contrôle et des décisions.
             </p>
           ),
           bullets: [
@@ -111,14 +114,15 @@ export const Route = createFileRoute("/expert-comptable-pennylane")({
           body: (
             <>
               <p>
-                Vous déposez vos justificatifs au fil de l'eau, depuis votre téléphone ou par e-mail. Le
-                cabinet passe régulièrement sur votre dossier, corrige les catégorisations et vous signale ce
-                qui manque. Les déclarations de TVA partent à la bonne date, sans relance de dernière minute.
+                Vous déposez vos justificatifs au fil de l'eau, depuis votre téléphone ou par
+                e-mail. Le cabinet passe régulièrement sur votre dossier, corrige les
+                catégorisations et vous signale ce qui manque. Les déclarations de TVA partent à la
+                bonne date, sans relance de dernière minute.
               </p>
               <p>
-                À la clôture, l'experte-comptable révise l'exercice, établit les comptes annuels et la liasse
-                fiscale, puis vous présente le bilan en rendez-vous : ce qui a bien marché, ce qui pèse sur la
-                trésorerie, ce qu'il faut anticiper l'année suivante.
+                À la clôture, l'experte-comptable révise l'exercice, établit les comptes annuels et
+                la liasse fiscale, puis vous présente le bilan en rendez-vous : ce qui a bien
+                marché, ce qui pèse sur la trésorerie, ce qu'il faut anticiper l'année suivante.
               </p>
             </>
           ),
@@ -136,17 +140,27 @@ export const Route = createFileRoute("/expert-comptable-pennylane")({
           title: "Pennylane ou cabinet : faut-il vraiment choisir ?",
           body: (
             <p>
-              La question revient souvent sous la forme « Pennylane ou expert-comptable ? ». En pratique, les
-              deux se combinent. Nous avons détaillé les différences dans notre comparatif{" "}
-              <Link to="/comparatif/pennylane-vs-erkilic" className="font-bold underline underline-offset-4">
+              La question revient souvent sous la forme « Pennylane ou expert-comptable ? ». En
+              pratique, les deux se combinent. Nous avons détaillé les différences dans notre
+              comparatif{" "}
+              <Link
+                to="/comparatif/pennylane-vs-erkilic"
+                className="font-bold underline underline-offset-4"
+              >
                 Pennylane ou expert-comptable
               </Link>
               , et plus largement dans{" "}
-              <Link to="/comparatif/cabinet-vs-en-ligne" className="font-bold underline underline-offset-4">
+              <Link
+                to="/comparatif/cabinet-vs-en-ligne"
+                className="font-bold underline underline-offset-4"
+              >
                 cabinet comptable en ligne ou local
               </Link>
               . Si vous êtes à Montpellier ou autour, voyez aussi notre page{" "}
-              <Link to="/expert-comptable-montpellier" className="font-bold underline underline-offset-4">
+              <Link
+                to="/expert-comptable-montpellier"
+                className="font-bold underline underline-offset-4"
+              >
                 expert-comptable à Montpellier
               </Link>
               .

@@ -62,7 +62,6 @@ export const Route = createFileRoute("/actualites/micro-entreprise-seuils-tva-20
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
       },
-      
     ],
   }),
   component: () => (
@@ -80,16 +79,17 @@ export const Route = createFileRoute("/actualites/micro-entreprise-seuils-tva-20
       intro={
         <>
           <p>
-            La franchise en base de TVA reste l'atout majeur de la
-            micro-entreprise — et son principal point de rupture. Passé un
-            certain chiffre d'affaires, la TVA s'applique, la marge se
-            réajuste, et la question de la société se pose sérieusement.
+            La franchise en base de TVA reste l'atout majeur de la micro-entreprise — et son
+            principal point de rupture. Passé un certain chiffre d'affaires, la TVA s'applique, la
+            marge se réajuste, et la question de la société se pose sérieusement.
           </p>
           <ul className="mt-4 space-y-2 list-disc pl-5">
             <li>Deux familles de seuils : vente de marchandises et prestations de services.</li>
             <li>Dépassement du seuil de franchise = TVA à facturer, déclarer et reverser.</li>
             <li>La micro applique un abattement forfaitaire, pas vos charges réelles.</li>
-            <li>Charges élevées ou investissements : l'EURL ou la SASU au réel reprend l'avantage.</li>
+            <li>
+              Charges élevées ou investissements : l'EURL ou la SASU au réel reprend l'avantage.
+            </li>
             <li>Le passage en société se prépare, idéalement avant la fin de l'exercice.</li>
           </ul>
         </>
@@ -99,11 +99,10 @@ export const Route = createFileRoute("/actualites/micro-entreprise-seuils-tva-20
           title: "Comment fonctionne la franchise en base",
           body: (
             <p>
-              Tant que votre chiffre d'affaires reste sous le seuil applicable à
-              votre activité, vous facturez sans TVA avec la mention « TVA non
-              applicable, article 293 B du CGI ». En contrepartie, vous ne
-              récupérez pas la TVA sur vos achats — un désavantage réel dès que
-              vous investissez en matériel ou sous-traitez.
+              Tant que votre chiffre d'affaires reste sous le seuil applicable à votre activité,
+              vous facturez sans TVA avec la mention « TVA non applicable, article 293 B du CGI ».
+              En contrepartie, vous ne récupérez pas la TVA sur vos achats — un désavantage réel dès
+              que vous investissez en matériel ou sous-traitez.
             </p>
           ),
         },
@@ -121,12 +120,11 @@ export const Route = createFileRoute("/actualites/micro-entreprise-seuils-tva-20
           title: "Micro, EURL ou SASU : trancher avec des chiffres",
           body: (
             <p>
-              Le cabinet Erkilic Expertise Comptable, à Juvignac, chiffre les
-              trois scénarios sur vos propres données : revenu net après charges
-              sociales et impôt, protection sociale, coût de gestion. Notre{" "}
-              <strong>simulateur de statut</strong> donne une première
-              orientation en ligne, et notre comparatif EURL vs SASU détaille le
-              choix une fois la société décidée.
+              Le cabinet Erkilic Expertise Comptable, à Juvignac, chiffre les trois scénarios sur
+              vos propres données : revenu net après charges sociales et impôt, protection sociale,
+              coût de gestion. Notre <strong>simulateur de statut</strong> donne une première
+              orientation en ligne, et notre comparatif EURL vs SASU détaille le choix une fois la
+              société décidée.
             </p>
           ),
         },

@@ -13,7 +13,10 @@ export const Route = createFileRoute("/services/comptabilite")({
         content:
           "Tenue comptable, révision, bilan annuel et liasse fiscale à Juvignac (34990). Cabinet d'expertise comptable pour TPE, PME et indépendants.",
       },
-      { property: "og:title", content: "Comptabilité, bilan et liasse fiscale — Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Comptabilité, bilan et liasse fiscale — Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -35,21 +38,24 @@ export const Route = createFileRoute("/services/comptabilite")({
           url: `${SITE}${PATH}`,
         }),
       },
-      
     ],
   }),
   component: () => (
     <ContentPage
-      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Prestations", to: "/services" }, { label: "Comptabilité" }]}
+      breadcrumbs={[
+        { label: "Accueil", to: "/" },
+        { label: "Prestations", to: "/services" },
+        { label: "Comptabilité" },
+      ]}
       eyebrow="Prestation · Comptabilité"
       h1="Comptabilité, bilan"
       italic="et liasse fiscale."
       intro={
         <p>
-          La tenue comptable est la colonne vertébrale de votre entreprise.
-          Erkilic Expertise Comptable assure la tenue complète ou partielle de
-          votre comptabilité, la révision de vos comptes et l'établissement de
-          votre bilan annuel — commenté avec vous, pas simplement transmis.
+          La tenue comptable est la colonne vertébrale de votre entreprise. Erkilic Expertise
+          Comptable assure la tenue complète ou partielle de votre comptabilité, la révision de vos
+          comptes et l'établissement de votre bilan annuel — commenté avec vous, pas simplement
+          transmis.
         </p>
       }
       sections={[
@@ -77,12 +83,11 @@ export const Route = createFileRoute("/services/comptabilite")({
           title: "Pourquoi externaliser sa comptabilité ?",
           body: (
             <p>
-              Une comptabilité tenue par un expert-comptable inscrit à l'Ordre,
-              c'est une responsabilité professionnelle engagée sur chaque
-              écriture, des échéances respectées et un dirigeant libéré des
-              tâches administratives. C'est aussi un regard extérieur qui
-              détecte les dérives de marge ou de trésorerie avant qu'elles ne
-              deviennent des problèmes.
+              Une comptabilité tenue par un expert-comptable inscrit à l'Ordre, c'est une
+              responsabilité professionnelle engagée sur chaque écriture, des échéances respectées
+              et un dirigeant libéré des tâches administratives. C'est aussi un regard extérieur qui
+              détecte les dérives de marge ou de trésorerie avant qu'elles ne deviennent des
+              problèmes.
             </p>
           ),
         },
@@ -90,18 +95,20 @@ export const Route = createFileRoute("/services/comptabilite")({
           title: "Comment se déroule la collaboration ?",
           body: (
             <p>
-              Après un premier rendez-vous gratuit au cabinet (29 bis rue du
-              Poumpidou, Juvignac), nous définissons ensemble le périmètre de
-              la mission et établissons un devis. Vous transmettez vos pièces
-              selon un rythme convenu (mensuel, trimestriel), nous tenons et
-              contrôlons vos comptes, puis nous nous retrouvons pour commenter
-              le bilan. En cours d'année, votre interlocuteur reste joignable
-              au 09 72 54 07 71.
+              Après un premier rendez-vous gratuit au cabinet (29 bis rue du Poumpidou, Juvignac),
+              nous définissons ensemble le périmètre de la mission et établissons un devis. Vous
+              transmettez vos pièces selon un rythme convenu (mensuel, trimestriel), nous tenons et
+              contrôlons vos comptes, puis nous nous retrouvons pour commenter le bilan. En cours
+              d'année, votre interlocuteur reste joignable au 09 72 54 07 71.
             </p>
           ),
         },
       ]}
-      cta={{ label: "Demander un devis", to: "/contact", sub: "Un devis gratuit et détaillé, sans engagement." }}
+      cta={{
+        label: "Demander un devis",
+        to: "/contact",
+        sub: "Un devis gratuit et détaillé, sans engagement.",
+      }}
     />
   ),
 });

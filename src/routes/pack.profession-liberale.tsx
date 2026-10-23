@@ -34,7 +34,7 @@ const faq = [
 export const Route = createFileRoute("/pack/profession-liberale")({
   head: () => ({
     meta: [
-      { title: "Expert-comptable profession libérale (BNC) à Montpellier | Erkilic" },
+      { title: "Expert-comptable profession libérale (BNC) à Montpellier" },
       {
         name: "description",
         content:
@@ -64,12 +64,16 @@ export const Route = createFileRoute("/pack/profession-liberale")({
           areaServed: ["Juvignac", "Montpellier", "Hérault", "Occitanie"],
           audience: {
             "@type": "BusinessAudience",
-            audienceType: "Professions libérales : santé (médecin, infirmier, kiné, sage-femme), droit, conseil, architecture",
+            audienceType:
+              "Professions libérales : santé (médecin, infirmier, kiné, sage-femme), droit, conseil, architecture",
           },
           url: `${SITE}${PATH}`,
         }),
       },
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))),
+      },
     ],
   }),
   component: PackLiberale,
@@ -86,31 +90,36 @@ function PackLiberale() {
           <article>
             <h2>Un expert-comptable qui connaît les BNC</h2>
             <p>
-              Les professions libérales relèvent des bénéfices non commerciaux (BNC). Leur comptabilité suit en
-              général une logique de recettes et de dépenses encaissées, avec ses propres règles : frais de
-              véhicule, quote-part du local professionnel, rétrocessions d'honoraires aux remplaçants, cotisations
-              sociales obligatoires et facultatives. Le cabinet accompagne des médecins, kinésithérapeutes,
-              infirmiers, avocats, architectes, consultants et formateurs à Montpellier et dans l'Hérault.
+              Les professions libérales relèvent des bénéfices non commerciaux (BNC). Leur
+              comptabilité suit en général une logique de recettes et de dépenses encaissées, avec
+              ses propres règles : frais de véhicule, quote-part du local professionnel,
+              rétrocessions d'honoraires aux remplaçants, cotisations sociales obligatoires et
+              facultatives. Le cabinet accompagne des médecins, kinésithérapeutes, infirmiers,
+              avocats, architectes, consultants et formateurs à Montpellier et dans l'Hérault.
             </p>
           </article>
           <article>
             <h2>Micro-BNC ou régime de la déclaration contrôlée</h2>
             <p>
-              En micro-BNC, l'administration retient vos recettes moins un abattement forfaitaire de 34 %, dans la
-              limite de 83 600 € de recettes en 2026. C'est simple, mais vos frais réels ne sont pas déduits. En
-              déclaration contrôlée, vous déposez chaque année une déclaration 2035 et vous déduisez vos dépenses
-              réelles. Dès que vos frais dépassent le tiers de vos recettes, ce régime devient généralement plus
-              avantageux.
+              En micro-BNC, l'administration retient vos recettes moins un abattement forfaitaire de
+              34 %, dans la limite de 83 600 € de recettes en 2026. C'est simple, mais vos frais
+              réels ne sont pas déduits. En déclaration contrôlée, vous déposez chaque année une
+              déclaration 2035 et vous déduisez vos dépenses réelles. Dès que vos frais dépassent le
+              tiers de vos recettes, ce régime devient généralement plus avantageux.
             </p>
           </article>
           <article>
             <h2>Cotisations : SSI et caisses de professions libérales</h2>
             <p>
-              Selon votre métier, vos cotisations retraite vont à une caisse spécifique (CARMF, CARPIMKO, CNBF,
-              CIPAV) ou à la sécurité sociale des indépendants. Les appels sont provisoires puis régularisés : le
-              cabinet vérifie les bases déclarées, anticipe les régularisations et vous aide à lisser votre
-              trésorerie. Les médecins et auxiliaires médicaux trouveront plus de détails sur notre page{" "}
-              <Link to="/secteur/professions-liberales-medicales" className="font-bold underline underline-offset-4">
+              Selon votre métier, vos cotisations retraite vont à une caisse spécifique (CARMF,
+              CARPIMKO, CNBF, CIPAV) ou à la sécurité sociale des indépendants. Les appels sont
+              provisoires puis régularisés : le cabinet vérifie les bases déclarées, anticipe les
+              régularisations et vous aide à lisser votre trésorerie. Les médecins et auxiliaires
+              médicaux trouveront plus de détails sur notre page{" "}
+              <Link
+                to="/secteur/professions-liberales-medicales"
+                className="font-bold underline underline-offset-4"
+              >
                 professions médicales et paramédicales
               </Link>
               .
@@ -119,10 +128,11 @@ function PackLiberale() {
           <article>
             <h2>Exercice en société : SELARL, SELAS, SCM</h2>
             <p>
-              Une société d'exercice libéral permet d'arbitrer entre rémunération et bénéfice laissé dans la
-              société, et de préparer une association ou une cession. Une SCM permet de partager les frais d'un
-              cabinet à plusieurs. Le cabinet chiffre ces options sur plusieurs années avant toute décision, et
-              assure ensuite le suivi juridique (assemblées, cessions de parts).
+              Une société d'exercice libéral permet d'arbitrer entre rémunération et bénéfice laissé
+              dans la société, et de préparer une association ou une cession. Une SCM permet de
+              partager les frais d'un cabinet à plusieurs. Le cabinet chiffre ces options sur
+              plusieurs années avant toute décision, et assure ensuite le suivi juridique
+              (assemblées, cessions de parts).
             </p>
           </article>
         </>
@@ -145,35 +155,29 @@ function PackLiberale() {
           items: [
             {
               label: "Tenue de la comptabilité",
-              body:
-                "Nous vous déchargeons partiellement ou totalement de votre comptabilité : saisie des pièces (factures d'achats, ventes, relevés bancaires), rapprochements et contrôles.",
+              body: "Nous vous déchargeons partiellement ou totalement de votre comptabilité : saisie des pièces (factures d'achats, ventes, relevés bancaires), rapprochements et contrôles.",
             },
             {
               label: "Tableaux de bord trimestriels",
-              body:
-                "Indicateurs clés pour piloter votre activité : niveau d'activité, trésorerie, principales charges. Ratios personnalisés en fonction de vos besoins.",
+              body: "Indicateurs clés pour piloter votre activité : niveau d'activité, trésorerie, principales charges. Ratios personnalisés en fonction de vos besoins.",
             },
             {
               label: "Comptes annuels et déclaration 2035",
-              body:
-                "Contrôle des écritures courantes, opérations d'inventaire dans le respect des normes professionnelles. Bilan, compte de résultat et déclarations fiscales transmis en fin de mission.",
+              body: "Contrôle des écritures courantes, opérations d'inventaire dans le respect des normes professionnelles. Bilan, compte de résultat et déclarations fiscales transmis en fin de mission.",
             },
             {
               label: "Entretien annuel",
-              body:
-                "Ensemble nous analysons vos résultats : points forts, points faibles, évolutions significatives. Un vrai temps de compréhension et de conseil.",
+              body: "Ensemble nous analysons vos résultats : points forts, points faibles, évolutions significatives. Un vrai temps de compréhension et de conseil.",
             },
             {
               label: "Situation comptable intermédiaire",
               optional: true,
-              body:
-                "Bilan et compte de résultat en cours d'année pour ajuster votre gestion sur le solde de l'exercice.",
+              body: "Bilan et compte de résultat en cours d'année pour ajuster votre gestion sur le solde de l'exercice.",
             },
             {
               label: "Déclarations fiscales : TVA, CET…",
               optional: true,
-              body:
-                "Réalisation ou contrôle de vos déclarations courantes : TVA, CFE, CVAE, taxe sur les véhicules, DAS2.",
+              body: "Réalisation ou contrôle de vos déclarations courantes : TVA, CFE, CVAE, taxe sur les véhicules, DAS2.",
             },
           ],
         },
@@ -182,25 +186,21 @@ function PackLiberale() {
           items: [
             {
               label: "Assistance SSI et caisses libérales",
-              body:
-                "Le régime des indépendants concerne les libéraux. Nous vous assistons sur les calculs prévisionnels puis réels, la vérification des appels et la recherche de diminutions possibles.",
+              body: "Le régime des indépendants concerne les libéraux. Nous vous assistons sur les calculs prévisionnels puis réels, la vérification des appels et la recherche de diminutions possibles.",
             },
             {
               label: "Bulletins de salaire & charges sociales",
-              body:
-                "Bulletins réalisés par un prestataire spécialisé adapté à votre convention collective. Calcul des charges, télépaiement possible.",
+              body: "Bulletins réalisés par un prestataire spécialisé adapté à votre convention collective. Calcul des charges, télépaiement possible.",
             },
             {
               label: "Assistance en cas de contrôle URSSAF",
               optional: true,
-              body:
-                "Pré-réunion, présence pendant le contrôle, réponses aux demandes complémentaires, contestation des sanctions si nécessaire.",
+              body: "Pré-réunion, présence pendant le contrôle, réponses aux demandes complémentaires, contestation des sanctions si nécessaire.",
             },
             {
               label: "Formalités d'embauche et de rupture",
               optional: true,
-              body:
-                "DUE, affiliations, contrats, indemnités de rupture, solde de tout compte, attestation France Travail.",
+              body: "DUE, affiliations, contrats, indemnités de rupture, solde de tout compte, attestation France Travail.",
             },
           ],
         },
@@ -209,18 +209,15 @@ function PackLiberale() {
           items: [
             {
               label: "Gestion patrimoniale",
-              body:
-                "Bilan patrimonial annuel ou audit patrimonial approfondi : stratégie succession / donation, placements long terme, minimisation des droits.",
+              body: "Bilan patrimonial annuel ou audit patrimonial approfondi : stratégie succession / donation, placements long terme, minimisation des droits.",
             },
             {
               label: "Aide au pilotage & trésorerie",
-              body:
-                "Récupération dématérialisée des relevés bancaires, suivi personnalisé, interface avec la banque pour financements et réduction des frais.",
+              body: "Récupération dématérialisée des relevés bancaires, suivi personnalisé, interface avec la banque pour financements et réduction des frais.",
             },
             {
               label: "Suivi juridique des structures de groupe",
-              body:
-                "SCI, SCM, SEL, SCP, SDF : secrétariat juridique (CA, AG), cessions de titres, modifications statutaires.",
+              body: "SCI, SCM, SEL, SCP, SDF : secrétariat juridique (CA, AG), cessions de titres, modifications statutaires.",
             },
           ],
         },

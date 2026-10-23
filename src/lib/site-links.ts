@@ -16,7 +16,11 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Cabinet comptable à Juvignac",
     desc: "Adresse, accès et missions du cabinet à Juvignac (34990).",
   },
-  "/zone/grabels": { to: "/zone/grabels", label: "Comptable à Grabels", desc: "Accompagnement des entreprises de Grabels." },
+  "/zone/grabels": {
+    to: "/zone/grabels",
+    label: "Comptable à Grabels",
+    desc: "Accompagnement des entreprises de Grabels.",
+  },
   "/zone/saint-georges-dorques": {
     to: "/zone/saint-georges-dorques",
     label: "Comptable à Saint-Georges-d'Orques",
@@ -27,7 +31,11 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Comptable à Celleneuve et La Mosson",
     desc: "Montpellier Ouest : Celleneuve, La Mosson, Hauts de Massane.",
   },
-  "/pack/createur": { to: "/pack/createur", label: "Pack Créateur d'entreprise", desc: "Statut, prévisionnel, aides et immatriculation." },
+  "/pack/createur": {
+    to: "/pack/createur",
+    label: "Pack Créateur d'entreprise",
+    desc: "Statut, prévisionnel, aides et immatriculation.",
+  },
   "/pack/auto-entrepreneur": {
     to: "/pack/auto-entrepreneur",
     label: "Pack Auto-entrepreneur",
@@ -38,8 +46,16 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Expert-comptable profession libérale (BNC)",
     desc: "Déclaration 2035, CARMF, CIPAV, SELARL.",
   },
-  "/pack/pro": { to: "/pack/pro", label: "Pack Artisans, commerçants et PME", desc: "Bilan, TVA, paie et pilotage de l'activité." },
-  "/pack/particulier": { to: "/pack/particulier", label: "Pack Particulier", desc: "Déclaration de revenus, foncier, IFI." },
+  "/pack/pro": {
+    to: "/pack/pro",
+    label: "Pack Artisans, commerçants et PME",
+    desc: "Bilan, TVA, paie et pilotage de l'activité.",
+  },
+  "/pack/particulier": {
+    to: "/pack/particulier",
+    label: "Pack Particulier",
+    desc: "Déclaration de revenus, foncier, IFI.",
+  },
   "/creation-entreprise/sasu-eurl-ei": {
     to: "/creation-entreprise/sasu-eurl-ei",
     label: "SASU, EURL ou EI : quel statut à Montpellier ?",
@@ -70,8 +86,16 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Comptabilité, bilan et liasse fiscale",
     desc: "Tenue, révision et comptes annuels.",
   },
-  "/services/fiscalite-tva": { to: "/services/fiscalite-tva", label: "Fiscalité et TVA", desc: "Déclarations de TVA, IS, IR et optimisation." },
-  "/services/social-juridique": { to: "/services/social-juridique", label: "Paie, social et juridique", desc: "Bulletins, DSN, statuts et AG." },
+  "/services/fiscalite-tva": {
+    to: "/services/fiscalite-tva",
+    label: "Fiscalité et TVA",
+    desc: "Déclarations de TVA, IS, IR et optimisation.",
+  },
+  "/services/social-juridique": {
+    to: "/services/social-juridique",
+    label: "Paie, social et juridique",
+    desc: "Bulletins, DSN, statuts et AG.",
+  },
   "/services/conseil-gestion": {
     to: "/services/conseil-gestion",
     label: "Conseil de gestion et prévisionnel",
@@ -112,9 +136,21 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Cabinet comptable en ligne ou local ?",
     desc: "Prix, réactivité, conseil : le vrai comparatif.",
   },
-  "/comparatif/indy-vs-erkilic": { to: "/comparatif/indy-vs-erkilic", label: "Indy ou expert-comptable ?", desc: "Logiciel seul ou accompagnement." },
-  "/comparatif/dougs-vs-erkilic": { to: "/comparatif/dougs-vs-erkilic", label: "Dougs ou cabinet local ?", desc: "Deux modèles d'expertise comptable." },
-  "/comparatif/keobiz-vs-erkilic": { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz ou cabinet local ?", desc: "Réseau national ou proximité." },
+  "/comparatif/indy-vs-erkilic": {
+    to: "/comparatif/indy-vs-erkilic",
+    label: "Indy ou expert-comptable ?",
+    desc: "Logiciel seul ou accompagnement.",
+  },
+  "/comparatif/dougs-vs-erkilic": {
+    to: "/comparatif/dougs-vs-erkilic",
+    label: "Dougs ou cabinet local ?",
+    desc: "Deux modèles d'expertise comptable.",
+  },
+  "/comparatif/keobiz-vs-erkilic": {
+    to: "/comparatif/keobiz-vs-erkilic",
+    label: "Keobiz ou cabinet local ?",
+    desc: "Réseau national ou proximité.",
+  },
   "/actualites/micro-entreprise-seuils-tva-2026": {
     to: "/actualites/micro-entreprise-seuils-tva-2026",
     label: "Micro-entreprise : seuils de TVA 2026",
@@ -125,8 +161,16 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Facture électronique : le cap de septembre 2026",
     desc: "Ce qui change pour votre entreprise.",
   },
-  "/actualites/loi-finances-2026": { to: "/actualites/loi-finances-2026", label: "Loi de finances 2026", desc: "Les mesures pour les TPE et PME." },
-  "/actualites/baremes-2026": { to: "/actualites/baremes-2026", label: "Barèmes et seuils 2026", desc: "Kilométrique, URSSAF, micro." },
+  "/actualites/loi-finances-2026": {
+    to: "/actualites/loi-finances-2026",
+    label: "Loi de finances 2026",
+    desc: "Les mesures pour les TPE et PME.",
+  },
+  "/actualites/baremes-2026": {
+    to: "/actualites/baremes-2026",
+    label: "Barèmes et seuils 2026",
+    desc: "Kilométrique, URSSAF, micro.",
+  },
   "/actualites/declaration-revenus-2026": {
     to: "/actualites/declaration-revenus-2026",
     label: "Déclaration de revenus 2026",
@@ -158,7 +202,12 @@ const CLUSTERS: Record<string, string[]> = {
     "/zone/saint-georges-dorques",
     "/creation-entreprise/juvignac",
   ],
-  services: ["/services/comptabilite", "/services/fiscalite-tva", "/services/social-juridique", "/services/conseil-gestion"],
+  services: [
+    "/services/comptabilite",
+    "/services/fiscalite-tva",
+    "/services/social-juridique",
+    "/services/conseil-gestion",
+  ],
   secteurs: [
     "/secteur/commerce-ecommerce",
     "/secteur/artisans-commercants",
@@ -266,11 +315,20 @@ const CURATED: Record<string, string[]> = {
 
 function clusterOf(path: string): string[] {
   if (path.startsWith("/services/")) return [...CLUSTERS.services, ...CLUSTERS.local.slice(0, 2)];
-  if (path.startsWith("/zone/") || path.includes("expert-comptable-")) return [...CLUSTERS.local, ...CLUSTERS.services.slice(0, 2)];
-  if (path.startsWith("/comparatif/")) return [...CLUSTERS.comparatifs, "/expert-comptable-montpellier"];
-  if (path.startsWith("/actualites/")) return [...CLUSTERS.actualites, "/services/fiscalite-tva", "/pack/createur"];
-  if (path.startsWith("/secteur/") || path === "/pack/pro" || path === "/pack/particulier") return [...CLUSTERS.secteurs, ...CLUSTERS.services.slice(0, 2)];
-  if (path.startsWith("/pack/") || path.startsWith("/creation-entreprise/") || path === "/simulateur-statut") return CLUSTERS.creation;
+  if (path.startsWith("/zone/") || path.includes("expert-comptable-"))
+    return [...CLUSTERS.local, ...CLUSTERS.services.slice(0, 2)];
+  if (path.startsWith("/comparatif/"))
+    return [...CLUSTERS.comparatifs, "/expert-comptable-montpellier"];
+  if (path.startsWith("/actualites/"))
+    return [...CLUSTERS.actualites, "/services/fiscalite-tva", "/pack/createur"];
+  if (path.startsWith("/secteur/") || path === "/pack/pro" || path === "/pack/particulier")
+    return [...CLUSTERS.secteurs, ...CLUSTERS.services.slice(0, 2)];
+  if (
+    path.startsWith("/pack/") ||
+    path.startsWith("/creation-entreprise/") ||
+    path === "/simulateur-statut"
+  )
+    return CLUSTERS.creation;
   return [...CLUSTERS.local.slice(0, 2), ...CLUSTERS.services];
 }
 

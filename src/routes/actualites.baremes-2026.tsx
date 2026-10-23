@@ -15,8 +15,14 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
         content:
           "Barème kilométrique 2026, plafonds URSSAF, seuils micro-entreprise & TVA, SMIC : les chiffres à jour pour votre déclaration.",
       },
-      { property: "og:title", content: "Barèmes & seuils 2026 — Cabinet Erkilic Expertise Comptable" },
-      { property: "og:description", content: "Chiffres officiels 2026 utiles aux dirigeants, indépendants et particuliers." },
+      {
+        property: "og:title",
+        content: "Barèmes & seuils 2026 — Cabinet Erkilic Expertise Comptable",
+      },
+      {
+        property: "og:description",
+        content: "Chiffres officiels 2026 utiles aux dirigeants, indépendants et particuliers.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
       { property: "article:published_time", content: PUBLISHED },
@@ -51,10 +57,9 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
       dateModified={UPDATED}
       intro={
         <p>
-          Cette page regroupe les chiffres officiels 2026 utiles aux dirigeants,
-          indépendants et particuliers de l'Hérault : barème kilométrique,
-          plafonds URSSAF, seuils micro-entreprise, franchise TVA, SMIC. Elle est
-          mise à jour à chaque publication officielle.
+          Cette page regroupe les chiffres officiels 2026 utiles aux dirigeants, indépendants et
+          particuliers de l'Hérault : barème kilométrique, plafonds URSSAF, seuils micro-entreprise,
+          franchise TVA, SMIC. Elle est mise à jour à chaque publication officielle.
         </p>
       }
       sections={[

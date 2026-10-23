@@ -13,7 +13,10 @@ export const Route = createFileRoute("/zone/celleneuve-mosson")({
         content:
           "Cabinet d'expertise comptable pour les quartiers ouest de Montpellier : Celleneuve, La Mosson, La Paillade, Les Hauts de Massane. Accès tramway Ligne 3.",
       },
-      { property: "og:title", content: "Comptable Celleneuve / La Mosson — Cabinet Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Comptable Celleneuve / La Mosson — Cabinet Erkilic Expertise Comptable",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
@@ -39,16 +42,19 @@ export const Route = createFileRoute("/zone/celleneuve-mosson")({
   }),
   component: () => (
     <ContentPage
-      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Zones" }, { label: "Celleneuve / La Mosson" }]}
+      breadcrumbs={[
+        { label: "Accueil", to: "/" },
+        { label: "Zones" },
+        { label: "Celleneuve / La Mosson" },
+      ]}
       eyebrow="Zone d'intervention · Montpellier Ouest"
       h1="Comptable à Celleneuve,"
       italic="La Mosson & Hauts de Massane."
       intro={
         <p>
-          Les quartiers ouest de Montpellier — Celleneuve, La Mosson, La
-          Paillade, Les Hauts de Massane — sont collés à Juvignac. Le
-          cabinet Erkilic Expertise Comptable y est accessible en 5 à 10 minutes, que ce soit
-          en voiture, en bus ou par le tramway Ligne 3.
+          Les quartiers ouest de Montpellier — Celleneuve, La Mosson, La Paillade, Les Hauts de
+          Massane — sont collés à Juvignac. Le cabinet Erkilic Expertise Comptable y est accessible
+          en 5 à 10 minutes, que ce soit en voiture, en bus ou par le tramway Ligne 3.
         </p>
       }
       sections={[
@@ -56,10 +62,9 @@ export const Route = createFileRoute("/zone/celleneuve-mosson")({
           title: "Un cabinet à la frontière de Montpellier",
           body: (
             <p>
-              Rue du Poumpidou, à Juvignac, le cabinet Erkilic Expertise Comptable est
-              accessible depuis Celleneuve par l'avenue de Lodève, depuis
-              La Mosson via l'échangeur A750, depuis Les Hauts de Massane
-              par la route de Bionne. Le tramway Ligne 3 (arrêt Mosson)
+              Rue du Poumpidou, à Juvignac, le cabinet Erkilic Expertise Comptable est accessible
+              depuis Celleneuve par l'avenue de Lodève, depuis La Mosson via l'échangeur A750,
+              depuis Les Hauts de Massane par la route de Bionne. Le tramway Ligne 3 (arrêt Mosson)
               vous dépose à 10 minutes à pied du cabinet.
             </p>
           ),
@@ -78,12 +83,10 @@ export const Route = createFileRoute("/zone/celleneuve-mosson")({
           title: "Un choix de proximité, pas d'exil vers le centre-ville",
           body: (
             <p>
-              Beaucoup d'entreprises de Montpellier Ouest se sentent
-              obligées d'aller chercher un expert-comptable dans les
-              grands cabinets du centre — perte de temps, stationnement
-              impossible. À Juvignac, on se gare gratuitement devant le
-              cabinet, on est reçu à l'heure et on repart avec des
-              réponses.
+              Beaucoup d'entreprises de Montpellier Ouest se sentent obligées d'aller chercher un
+              expert-comptable dans les grands cabinets du centre — perte de temps, stationnement
+              impossible. À Juvignac, on se gare gratuitement devant le cabinet, on est reçu à
+              l'heure et on repart avec des réponses.
             </p>
           ),
         },

@@ -152,13 +152,20 @@ export const Route = createFileRoute("/faq")({
           "Toutes les réponses sur l'expertise comptable à Montpellier / Juvignac : statut juridique, tarifs, LMNP, comparatif logiciels, création d'entreprise.",
       },
       { property: "og:title", content: "FAQ — Cabinet Erkilic Expertise Comptable" },
-      { property: "og:description", content: "Les questions que dirigeants et particuliers posent le plus souvent à un expert-comptable." },
+      {
+        property: "og:description",
+        content:
+          "Les questions que dirigeants et particuliers posent le plus souvent à un expert-comptable.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
     ],
     links: [{ rel: "canonical", href: `${SITE}${PATH}` }],
     scripts: [
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
+      },
     ],
   }),
   component: () => (
@@ -169,14 +176,17 @@ export const Route = createFileRoute("/faq")({
       italic="nos réponses."
       intro={
         <p>
-          Statut juridique, obligations comptables, création d'entreprise à
-          Montpellier, LMNP, comparatif logiciels : les réponses aux
-          questions que dirigeants, indépendants et particuliers posent le
-          plus souvent au cabinet Erkilic Expertise Comptable à Juvignac.
+          Statut juridique, obligations comptables, création d'entreprise à Montpellier, LMNP,
+          comparatif logiciels : les réponses aux questions que dirigeants, indépendants et
+          particuliers posent le plus souvent au cabinet Erkilic Expertise Comptable à Juvignac.
         </p>
       }
       faq={faq.map((f) => ({ q: f.q, a: <p>{f.plain}</p> }))}
-      cta={{ label: "Poser ma question", to: "/contact", sub: "Une question spécifique ? Prenez rendez-vous." }}
+      cta={{
+        label: "Poser ma question",
+        to: "/contact",
+        sub: "Une question spécifique ? Prenez rendez-vous.",
+      }}
     />
   ),
 });

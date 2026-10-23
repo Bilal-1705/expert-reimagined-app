@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { initAnalytics, readConsent, saveConsent, track } from "@/lib/analytics";
+import { GA_MEASUREMENT_ID, initAnalytics, readConsent, saveConsent, track } from "@/lib/analytics";
 
 /** Cookie consent (CNIL: "Refuser" as visible as "Accepter"). */
 function ConsentBanner() {
@@ -8,7 +8,8 @@ function ConsentBanner() {
 
   useEffect(() => {
     initAnalytics();
-    setVisible(readConsent() === null);
+    // No banner until an analytics tool is actually configured.
+    setVisible(GA_MEASUREMENT_ID !== "" && readConsent() === null);
   }, []);
 
   if (!visible) return null;
@@ -23,8 +24,8 @@ function ConsentBanner() {
       className="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-6 md:right-auto md:max-w-md z-50 bg-paper text-ink border border-ink/15 shadow-lg p-5"
     >
       <p className="text-sm leading-relaxed text-ink/80">
-        Nous mesurons l'audience du site pour l'améliorer (Google Analytics, sans publicité). Vous pouvez
-        accepter ou refuser.{" "}
+        Nous mesurons l'audience du site pour l'améliorer (Google Analytics, sans publicité). Vous
+        pouvez accepter ou refuser.{" "}
         <Link to="/politique-confidentialite" className="underline underline-offset-2">
           En savoir plus
         </Link>

@@ -48,13 +48,17 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
         type: "application/ld+json",
         children: articleJsonLd({
           headline: "Aides à la création d'entreprise à Montpellier : le guide 2026",
-          description: "ACRE, ARCE, prêts d'honneur, aides régionales et accompagnement à Montpellier.",
+          description:
+            "ACRE, ARCE, prêts d'honneur, aides régionales et accompagnement à Montpellier.",
           url: `${SITE}${PATH}`,
           datePublished: PUBLISHED,
           dateModified: UPDATED,
         }),
       },
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))),
+      },
     ],
   }),
   component: () => (
@@ -72,14 +76,14 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
       intro={
         <>
           <p>
-            Créer son entreprise à Montpellier, à Juvignac ou ailleurs dans l'Hérault donne accès à des aides
-            nationales, régionales et locales. Certaines réduisent vos charges la première année, d'autres
-            renforcent vos fonds propres pour obtenir un prêt bancaire. Les règles ont changé en 2026, en
-            particulier pour l'ACRE.
+            Créer son entreprise à Montpellier, à Juvignac ou ailleurs dans l'Hérault donne accès à
+            des aides nationales, régionales et locales. Certaines réduisent vos charges la première
+            année, d'autres renforcent vos fonds propres pour obtenir un prêt bancaire. Les règles
+            ont changé en 2026, en particulier pour l'ACRE.
           </p>
           <p className="mt-4">
-            Ce guide liste les dispositifs que le cabinet active le plus souvent pour ses clients créateurs, avec
-            ce qu'il faut savoir pour ne pas les rater.
+            Ce guide liste les dispositifs que le cabinet active le plus souvent pour ses clients
+            créateurs, avec ce qu'il faut savoir pour ne pas les rater.
           </p>
         </>
       }
@@ -89,15 +93,17 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           body: (
             <>
               <p>
-                L'ACRE (aide aux créateurs et repreneurs d'entreprise) réduit vos cotisations sociales au
-                démarrage. Depuis le 1er janvier 2026, elle n'est plus accordée automatiquement : vous devez la
-                demander à l'URSSAF dans les 60 jours qui suivent l'immatriculation.
+                L'ACRE (aide aux créateurs et repreneurs d'entreprise) réduit vos cotisations
+                sociales au démarrage. Depuis le 1er janvier 2026, elle n'est plus accordée
+                automatiquement : vous devez la demander à l'URSSAF dans les 60 jours qui suivent
+                l'immatriculation.
               </p>
               <p>
-                La loi de financement de la sécurité sociale pour 2026 a aussi recentré l'aide sur certains
-                publics (notamment les demandeurs d'emploi indemnisés et les bénéficiaires de minima sociaux) et
-                réduit l'exonération, avec un changement pour les micro-entrepreneurs au 1er juillet 2026. Le
-                cabinet vérifie votre éligibilité au cas par cas avant de l'intégrer au prévisionnel.
+                La loi de financement de la sécurité sociale pour 2026 a aussi recentré l'aide sur
+                certains publics (notamment les demandeurs d'emploi indemnisés et les bénéficiaires
+                de minima sociaux) et réduit l'exonération, avec un changement pour les
+                micro-entrepreneurs au 1er juillet 2026. Le cabinet vérifie votre éligibilité au cas
+                par cas avant de l'intégrer au prévisionnel.
               </p>
             </>
           ),
@@ -106,12 +112,16 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Si vous touchez l'ARE : ARCE ou maintien des allocations",
           body: (
             <p>
-              Si vous êtes indemnisé par France Travail, deux options s'offrent à vous. L'ARCE vous verse en
-              capital une partie de vos droits restants (60 %), en deux fois ; elle suppose d'avoir obtenu
-              l'ACRE. Le maintien de l'ARE vous laisse percevoir l'allocation chaque mois pendant le démarrage. En
-              SASU sans salaire, le maintien est souvent intéressant ; si vous avez besoin de fonds pour investir,
-              l'ARCE peut l'être davantage. Voyez aussi notre{" "}
-              <Link to="/comparatif/eurl-vs-sasu" className="font-bold underline underline-offset-4">
+              Si vous êtes indemnisé par France Travail, deux options s'offrent à vous. L'ARCE vous
+              verse en capital une partie de vos droits restants (60 %), en deux fois ; elle suppose
+              d'avoir obtenu l'ACRE. Le maintien de l'ARE vous laisse percevoir l'allocation chaque
+              mois pendant le démarrage. En SASU sans salaire, le maintien est souvent intéressant ;
+              si vous avez besoin de fonds pour investir, l'ARCE peut l'être davantage. Voyez aussi
+              notre{" "}
+              <Link
+                to="/comparatif/eurl-vs-sasu"
+                className="font-bold underline underline-offset-4"
+              >
                 comparatif EURL ou SASU
               </Link>
               , car le statut choisi change la donne.
@@ -122,11 +132,11 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Prêts d'honneur : renforcer vos fonds propres",
           body: (
             <p>
-              Les prêts d'honneur sont des prêts personnels à taux zéro et sans garantie. Dans l'Hérault, ils
-              passent principalement par le réseau Initiative (plateforme Initiative Montpellier Pic Saint-Loup)
-              et par Réseau Entreprendre Occitanie, qui ajoute un mentorat par des chefs d'entreprise. Les
-              montants varient selon le réseau et le projet. Ils servent souvent de levier pour obtenir le prêt
-              bancaire principal.
+              Les prêts d'honneur sont des prêts personnels à taux zéro et sans garantie. Dans
+              l'Hérault, ils passent principalement par le réseau Initiative (plateforme Initiative
+              Montpellier Pic Saint-Loup) et par Réseau Entreprendre Occitanie, qui ajoute un
+              mentorat par des chefs d'entreprise. Les montants varient selon le réseau et le
+              projet. Ils servent souvent de levier pour obtenir le prêt bancaire principal.
             </p>
           ),
         },
@@ -134,11 +144,12 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Région Occitanie et AD'OCC",
           body: (
             <p>
-              La Région Occitanie finance la création et le développement des entreprises par son agence AD'OCC.
-              Le Pass Occitanie, par exemple, subventionne une partie des investissements des jeunes entreprises,
-              dans la limite de 10 000 € et sans dépasser leurs fonds propres. Les conditions évoluent souvent :
-              le cabinet vérifie les dispositifs ouverts au moment de votre projet. Occitanie Garantie et
-              Bpifrance peuvent par ailleurs garantir une partie de votre prêt bancaire.
+              La Région Occitanie finance la création et le développement des entreprises par son
+              agence AD'OCC. Le Pass Occitanie, par exemple, subventionne une partie des
+              investissements des jeunes entreprises, dans la limite de 10 000 € et sans dépasser
+              leurs fonds propres. Les conditions évoluent souvent : le cabinet vérifie les
+              dispositifs ouverts au moment de votre projet. Occitanie Garantie et Bpifrance peuvent
+              par ailleurs garantir une partie de votre prêt bancaire.
             </p>
           ),
         },
@@ -146,10 +157,11 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Startups et projets innovants",
           body: (
             <p>
-              Montpellier Méditerranée Métropole accompagne les projets innovants par son BIC (Business &
-              Innovation Centre), et l'écosystème French Tech Méditerranée fédère startups et investisseurs. Côté
-              fiscal, le statut de jeune entreprise innovante (JEI) et le crédit d'impôt recherche (CIR) se
-              préparent dès la création, car ils dépendent de la nature et du suivi de vos dépenses.
+              Montpellier Méditerranée Métropole accompagne les projets innovants par son BIC
+              (Business & Innovation Centre), et l'écosystème French Tech Méditerranée fédère
+              startups et investisseurs. Côté fiscal, le statut de jeune entreprise innovante (JEI)
+              et le crédit d'impôt recherche (CIR) se préparent dès la création, car ils dépendent
+              de la nature et du suivi de vos dépenses.
             </p>
           ),
         },
@@ -157,9 +169,10 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Chambres consulaires : CCI Hérault et Chambre de métiers",
           body: (
             <p>
-              La CCI Hérault (pour les commerçants et prestataires) et la Chambre de métiers et de l'artisanat de
-              l'Hérault (pour les artisans) proposent des réunions d'information et des formations à la création.
-              C'est un bon point de départ pour valider votre projet avant de passer au prévisionnel.
+              La CCI Hérault (pour les commerçants et prestataires) et la Chambre de métiers et de
+              l'artisanat de l'Hérault (pour les artisans) proposent des réunions d'information et
+              des formations à la création. C'est un bon point de départ pour valider votre projet
+              avant de passer au prévisionnel.
             </p>
           ),
         },
@@ -176,10 +189,10 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Sources",
           body: (
             <p className="text-sm text-ink/70">
-              LFSS 2026 et URSSAF (ACRE), France Travail (ARCE et maintien de l'ARE), Région Occitanie et AD'OCC
-              (Pass Occitanie), Initiative France et Réseau Entreprendre (prêts d'honneur), Bpifrance. Les
-              montants et conditions évoluent : ils sont vérifiés à chaque dossier. Pour comparer les statuts,
-              utilisez notre{" "}
+              LFSS 2026 et URSSAF (ACRE), France Travail (ARCE et maintien de l'ARE), Région
+              Occitanie et AD'OCC (Pass Occitanie), Initiative France et Réseau Entreprendre (prêts
+              d'honneur), Bpifrance. Les montants et conditions évoluent : ils sont vérifiés à
+              chaque dossier. Pour comparer les statuts, utilisez notre{" "}
               <Link to="/simulateur-statut" className="underline underline-offset-4">
                 simulateur de statut juridique
               </Link>

@@ -62,7 +62,6 @@ export const Route = createFileRoute("/actualites/facturation-electronique-septe
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
       },
-      
     ],
   }),
   component: () => (
@@ -80,20 +79,26 @@ export const Route = createFileRoute("/actualites/facturation-electronique-septe
       intro={
         <>
           <p>
-            L'échéance du 1<sup>er</sup> septembre 2026 marque l'entrée réelle de
-            toutes les entreprises françaises dans la facturation électronique :
-            à cette date, chacune doit être capable de <strong>recevoir</strong>{" "}
-            une facture au format électronique via une plateforme agréée.
+            L'échéance du 1<sup>er</sup> septembre 2026 marque l'entrée réelle de toutes les
+            entreprises françaises dans la facturation électronique : à cette date, chacune doit
+            être capable de <strong>recevoir</strong> une facture au format électronique via une
+            plateforme agréée.
           </p>
-          <p className="mt-4">
-            Voici l'essentiel, en résumé :
-          </p>
+          <p className="mt-4">Voici l'essentiel, en résumé :</p>
           <ul className="mt-4 space-y-2 list-disc pl-5">
             <li>Réception obligatoire pour toutes les entreprises assujetties à la TVA.</li>
-            <li>Émission obligatoire d'abord pour les grandes entreprises et ETI, puis pour les PME et TPE.</li>
+            <li>
+              Émission obligatoire d'abord pour les grandes entreprises et ETI, puis pour les PME et
+              TPE.
+            </li>
             <li>Raccordement indispensable à une Plateforme Agréée (PA).</li>
-            <li>Vos données de facturation doivent être fiables : SIREN, TVA, mentions obligatoires.</li>
-            <li>Erkilic Expertise Comptable réalise le paramétrage et le test pour ses clients de Juvignac et Montpellier.</li>
+            <li>
+              Vos données de facturation doivent être fiables : SIREN, TVA, mentions obligatoires.
+            </li>
+            <li>
+              Erkilic Expertise Comptable réalise le paramétrage et le test pour ses clients de
+              Juvignac et Montpellier.
+            </li>
           </ul>
         </>
       }
@@ -121,11 +126,10 @@ export const Route = createFileRoute("/actualites/facturation-electronique-septe
           title: "Concrètement, comment le cabinet vous accompagne",
           body: (
             <p>
-              Nous auditons votre chaîne de facturation, sélectionnons la
-              plateforme, la paramétrons avec vous et vérifions les premiers flux
-              réels. Les clients du cabinet, à Juvignac comme sur Saint-Georges-d'Orques,
-              Grabels ou Celleneuve, n'ont pas à devenir experts de la réforme :
-              nous prenons le paramétrage à notre charge dans le cadre de la
+              Nous auditons votre chaîne de facturation, sélectionnons la plateforme, la paramétrons
+              avec vous et vérifions les premiers flux réels. Les clients du cabinet, à Juvignac
+              comme sur Saint-Georges-d'Orques, Grabels ou Celleneuve, n'ont pas à devenir experts
+              de la réforme : nous prenons le paramétrage à notre charge dans le cadre de la
               mission.
             </p>
           ),

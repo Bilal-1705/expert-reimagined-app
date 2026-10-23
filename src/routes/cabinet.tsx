@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -19,7 +20,10 @@ export const Route = createFileRoute("/cabinet")({
         content:
           "Cabinet Erkilic Expertise Comptable à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
       },
-      { property: "og:title", content: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac" },
+      {
+        property: "og:title",
+        content: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac",
+      },
       {
         property: "og:description",
         content:
@@ -30,11 +34,28 @@ export const Route = createFileRoute("/cabinet")({
       { name: "twitter:image", content: `${SITE}${cabinetImg}` },
     ],
     links: [{ rel: "canonical", href: `${SITE}/cabinet` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: breadcrumbJsonLd(
+          [{ label: "Accueil", to: "/" }, { label: "Le cabinet" }],
+          "/cabinet",
+        ),
+      },
+    ],
   }),
   component: Cabinet,
 });
 
-const audiences: { label: string; to: "/pack/pro" | "/pack/profession-liberale" | "/pack/createur" | "/pack/auto-entrepreneur" | "/pack/particulier" }[] = [
+const audiences: {
+  label: string;
+  to:
+    | "/pack/pro"
+    | "/pack/profession-liberale"
+    | "/pack/createur"
+    | "/pack/auto-entrepreneur"
+    | "/pack/particulier";
+}[] = [
   { label: "Artisans", to: "/pack/pro" },
   { label: "Commerçants", to: "/pack/pro" },
   { label: "PME", to: "/pack/pro" },
@@ -44,7 +65,6 @@ const audiences: { label: string; to: "/pack/pro" | "/pack/profession-liberale" 
   { label: "Auto-entrepreneurs", to: "/pack/auto-entrepreneur" },
   { label: "Particuliers", to: "/pack/particulier" },
 ];
-
 
 const values = [
   ["Compétence", "Une équipe formée en continu, en veille permanente sur la réglementation."],
@@ -72,16 +92,17 @@ function Cabinet() {
       <main>
         {/* Hero */}
         <section className="pt-20 pb-20 px-6 border-b border-ink/5">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-end reveal-stagger" data-reveal>
+          <div
+            className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-end reveal-stagger"
+            data-reveal
+          >
             <div className="md:col-span-8">
               <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-8">
                 Le cabinet
               </span>
               <h1 className="font-sora text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] text-balance">
                 Un cabinet de proximité,{" "}
-                <span className="text-ink/25 italic font-normal">
-                  à Juvignac.
-                </span>
+                <span className="text-ink/25 italic font-normal">à Juvignac.</span>
               </h1>
             </div>
             <div className="md:col-span-4">
@@ -95,7 +116,10 @@ function Cabinet() {
 
         {/* Intro / Vision */}
         <section ref={introRef} className="py-24 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
+          <div
+            className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal"
+            data-reveal
+          >
             <img
               src={cabinetImgWebp}
               alt="Vue intérieure du cabinet Erkilic Expertise Comptable à Juvignac"
@@ -106,23 +130,22 @@ function Cabinet() {
               <SectionHeader index="01 / Qui sommes-nous ?" title="Notre approche" />
               <div className="space-y-6 text-ink/70 leading-relaxed">
                 <p>
-                  Situé sur <strong className="text-ink font-semibold">Juvignac</strong>,
-                  en périphérie de Montpellier, le cabinet{" "}
+                  Situé sur <strong className="text-ink font-semibold">Juvignac</strong>, en
+                  périphérie de Montpellier, le cabinet{" "}
                   <strong className="text-ink font-semibold">Erkilic Expertise Comptable</strong>,
-                  inscrit à l'Ordre des Experts-Comptables de Montpellier, vous
-                  accompagne dans tous vos projets.
+                  inscrit à l'Ordre des Experts-Comptables de Montpellier, vous accompagne dans tous
+                  vos projets.
                 </p>
                 <p>
                   Fondé par Mme <strong className="text-ink font-semibold">Nazifé Erkilic</strong>,
-                  il rassemble aujourd'hui une clientèle très diversifiée.
-                  Disposant d'une expérience de{" "}
-                  <strong className="text-ink font-semibold">23 ans</strong> dans le
-                  métier, le cabinet met au profit de ses clients toute sa
-                  compétence en tant que partenaire privilégié de l'entrepreneur.
+                  il rassemble aujourd'hui une clientèle très diversifiée. Disposant d'une
+                  expérience de <strong className="text-ink font-semibold">23 ans</strong> dans le
+                  métier, le cabinet met au profit de ses clients toute sa compétence en tant que
+                  partenaire privilégié de l'entrepreneur.
                 </p>
                 <p>
-                  Nous proposons un accompagnement de proximité afin de pouvoir
-                  répondre à chaque demande de façon personnalisée.
+                  Nous proposons un accompagnement de proximité afin de pouvoir répondre à chaque
+                  demande de façon personnalisée.
                 </p>
                 <p className="font-sora font-bold text-ink text-xl pt-4">
                   Parce que vous comptez pour nous, nous comptons pour vous.
@@ -136,12 +159,13 @@ function Cabinet() {
         <section ref={valuesRef} className="py-24 px-6 bg-paper-dark/40">
           <div className="max-w-7xl mx-auto">
             <SectionHeader index="02 / Nos valeurs" title="Ce qui nous guide" />
-            <div className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+            <div
+              className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
+              data-reveal
+            >
               {values.map(([t, d]) => (
                 <div key={t} className="bg-paper p-8 min-h-56 flex flex-col">
-                  <h3 className="font-sora text-2xl font-extrabold tracking-tighter mb-4">
-                    {t}
-                  </h3>
+                  <h3 className="font-sora text-2xl font-extrabold tracking-tighter mb-4">{t}</h3>
                   <p className="text-sm text-ink/70 leading-relaxed">{d}</p>
                 </div>
               ))}
@@ -181,7 +205,10 @@ function Cabinet() {
               title="Vous êtes ?"
               aside="Nous mettons en œuvre notre savoir-faire dans le respect de la déontologie de l'Ordre des Experts-Comptables."
             />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+            <div
+              className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
+              data-reveal
+            >
               {audiences.map((a, i) => (
                 <Link
                   key={a.label}
@@ -202,17 +229,13 @@ function Cabinet() {
                 </Link>
               ))}
             </div>
-
           </div>
         </section>
 
         {/* Location + map */}
         <section className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              index="05 / Localisation"
-              title="À Juvignac, à 10 min de Montpellier"
-            />
+            <SectionHeader index="05 / Localisation" title="À Juvignac, à 10 min de Montpellier" />
             <div className="grid md:grid-cols-12 gap-8 reveal" data-reveal>
               <div className="md:col-span-4 flex flex-col justify-center gap-6">
                 <address className="not-italic">
@@ -220,13 +243,14 @@ function Cabinet() {
                     Adresse
                   </p>
                   <p className="font-sora text-xl font-bold leading-tight">
-                    29 bis rue du Poumpidou<br />
+                    29 bis rue du Poumpidou
+                    <br />
                     34990 Juvignac
                   </p>
                 </address>
                 <p className="text-sm text-ink/60 leading-relaxed">
-                  Expert-comptable à Juvignac, proche de Saint-Georges-d'Orques,
-                  Pignan, Montarnaud et Montpellier.
+                  Expert-comptable à Juvignac, proche de Saint-Georges-d'Orques, Pignan, Montarnaud
+                  et Montpellier.
                 </p>
                 <Link
                   to="/contact"
@@ -255,8 +279,8 @@ function Cabinet() {
               Demandez un devis gratuit.
             </h2>
             <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-              Nous mettons à votre disposition liens utiles, conseils et
-              accompagnement personnalisé. Un premier échange, sans engagement.
+              Nous mettons à votre disposition liens utiles, conseils et accompagnement
+              personnalisé. Un premier échange, sans engagement.
             </p>
             <Link
               to="/contact"

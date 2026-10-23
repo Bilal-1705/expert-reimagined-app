@@ -5,7 +5,8 @@ import { track } from "@/lib/analytics";
 
 const CALENDLY_URL = "https://calendly.com/cabinet-erkilic/30min";
 
-export type ProfileId = "createur" | "auto-entrepreneur" | "liberal" | "pro" | "particulier" | "immobilier";
+export type ProfileId =
+  "createur" | "auto-entrepreneur" | "liberal" | "pro" | "particulier" | "immobilier";
 
 type Question = { id: string; label: string; options: string[] };
 type Profile = { id: ProfileId; label: string; hint: string; questions: Question[] };
@@ -16,9 +17,26 @@ export const PROFILES: Profile[] = [
     label: "Je crée mon entreprise",
     hint: "Statut, prévisionnel, aides",
     questions: [
-      { id: "stade", label: "Où en est votre projet ?", options: ["Idée à valider", "Création dans les 3 mois", "Déjà immatriculé"] },
-      { id: "statut", label: "Statut envisagé", options: ["Micro-entreprise / EI", "EURL / SARL", "SASU / SAS", "Je ne sais pas encore"] },
-      { id: "besoin", label: "Votre priorité", options: ["Choisir le statut", "Prévisionnel et financement", "Aides (ACRE, ARCE…)", "Tout l'accompagnement"] },
+      {
+        id: "stade",
+        label: "Où en est votre projet ?",
+        options: ["Idée à valider", "Création dans les 3 mois", "Déjà immatriculé"],
+      },
+      {
+        id: "statut",
+        label: "Statut envisagé",
+        options: ["Micro-entreprise / EI", "EURL / SARL", "SASU / SAS", "Je ne sais pas encore"],
+      },
+      {
+        id: "besoin",
+        label: "Votre priorité",
+        options: [
+          "Choisir le statut",
+          "Prévisionnel et financement",
+          "Aides (ACRE, ARCE…)",
+          "Tout l'accompagnement",
+        ],
+      },
     ],
   },
   {
@@ -26,8 +44,16 @@ export const PROFILES: Profile[] = [
     label: "Je suis auto-entrepreneur",
     hint: "URSSAF, TVA, passage en société",
     questions: [
-      { id: "ca", label: "Chiffre d'affaires annuel", options: ["Moins de 37 500 €", "37 500 à 85 000 €", "Plus de 85 000 €"] },
-      { id: "besoin", label: "Votre question principale", options: ["Seuils de TVA", "Passer en société", "Déclarations URSSAF", "Autre"] },
+      {
+        id: "ca",
+        label: "Chiffre d'affaires annuel",
+        options: ["Moins de 37 500 €", "37 500 à 85 000 €", "Plus de 85 000 €"],
+      },
+      {
+        id: "besoin",
+        label: "Votre question principale",
+        options: ["Seuils de TVA", "Passer en société", "Déclarations URSSAF", "Autre"],
+      },
     ],
   },
   {
@@ -35,8 +61,26 @@ export const PROFILES: Profile[] = [
     label: "Profession libérale",
     hint: "BNC, 2035, SELARL",
     questions: [
-      { id: "metier", label: "Votre activité", options: ["Santé (médecin, kiné, infirmier…)", "Conseil / consultant", "Juridique / technique", "Autre"] },
-      { id: "situation", label: "Votre situation", options: ["Installation", "En activité (BNC)", "Passage en SEL / société", "Changement d'expert-comptable"] },
+      {
+        id: "metier",
+        label: "Votre activité",
+        options: [
+          "Santé (médecin, kiné, infirmier…)",
+          "Conseil / consultant",
+          "Juridique / technique",
+          "Autre",
+        ],
+      },
+      {
+        id: "situation",
+        label: "Votre situation",
+        options: [
+          "Installation",
+          "En activité (BNC)",
+          "Passage en SEL / société",
+          "Changement d'expert-comptable",
+        ],
+      },
     ],
   },
   {
@@ -44,9 +88,17 @@ export const PROFILES: Profile[] = [
     label: "Artisan, commerçant, PME",
     hint: "Bilan, TVA, paie, pilotage",
     questions: [
-      { id: "activite", label: "Votre activité", options: ["Artisan / BTP", "Commerce / restauration", "E-commerce", "Services / PME"] },
+      {
+        id: "activite",
+        label: "Votre activité",
+        options: ["Artisan / BTP", "Commerce / restauration", "E-commerce", "Services / PME"],
+      },
       { id: "salaries", label: "Salariés", options: ["Aucun", "1 à 5", "6 à 20", "Plus de 20"] },
-      { id: "besoin", label: "Votre besoin", options: ["Changer d'expert-comptable", "Bilan et liasse", "Paie", "Conseil et trésorerie"] },
+      {
+        id: "besoin",
+        label: "Votre besoin",
+        options: ["Changer d'expert-comptable", "Bilan et liasse", "Paie", "Conseil et trésorerie"],
+      },
     ],
   },
   {
@@ -54,7 +106,11 @@ export const PROFILES: Profile[] = [
     label: "Particulier",
     hint: "Impôts, foncier, IFI",
     questions: [
-      { id: "besoin", label: "Votre besoin", options: ["Déclaration de revenus", "Revenus fonciers", "Succession / donation", "IFI"] },
+      {
+        id: "besoin",
+        label: "Votre besoin",
+        options: ["Déclaration de revenus", "Revenus fonciers", "Succession / donation", "IFI"],
+      },
     ],
   },
   {
@@ -62,7 +118,11 @@ export const PROFILES: Profile[] = [
     label: "LMNP ou SCI",
     hint: "Location meublée, SCI IS/IR",
     questions: [
-      { id: "type", label: "Votre situation", options: ["LMNP (location meublée)", "SCI à l'IR", "SCI à l'IS", "Projet d'investissement"] },
+      {
+        id: "type",
+        label: "Votre situation",
+        options: ["LMNP (location meublée)", "SCI à l'IR", "SCI à l'IS", "Projet d'investissement"],
+      },
       { id: "biens", label: "Nombre de biens", options: ["1", "2 à 4", "5 ou plus"] },
     ],
   },
@@ -119,7 +179,8 @@ export function ProfileFunnel({
     const next = step + 1;
     setStep(next);
     track("funnel_step", { funnel_profile: profileId, funnel_step: q.id, page_path: path });
-    if (next >= questions.length) track("funnel_complete", { funnel_profile: profileId, page_path: path });
+    if (next >= questions.length)
+      track("funnel_complete", { funnel_profile: profileId, page_path: path });
   };
 
   const reset = () => {
@@ -134,7 +195,9 @@ export function ProfileFunnel({
         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-paper/60 mb-4 block">
           Rendez-vous gratuit
         </span>
-        <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-4">{title}</h2>
+        <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-4">
+          {title}
+        </h2>
         <p className="text-paper/70 max-w-2xl mb-10 leading-relaxed">{intro}</p>
 
         {!profile && (
@@ -178,7 +241,11 @@ export function ProfileFunnel({
                 </button>
               ))}
             </div>
-            <button type="button" onClick={reset} className="mt-6 text-sm text-paper/60 underline underline-offset-4">
+            <button
+              type="button"
+              onClick={reset}
+              className="mt-6 text-sm text-paper/60 underline underline-offset-4"
+            >
               Recommencer
             </button>
           </div>
@@ -195,7 +262,11 @@ export function ProfileFunnel({
                 Modifier
               </button>
             </div>
-            <CalendlyInline url={buildCalendlyUrl(profile, answers, path)} height={700} className="text-ink" />
+            <CalendlyInline
+              url={buildCalendlyUrl(profile, answers, path)}
+              height={700}
+              className="text-ink"
+            />
           </div>
         )}
 

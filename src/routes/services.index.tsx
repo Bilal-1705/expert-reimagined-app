@@ -1,3 +1,4 @@
+import { breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -29,6 +30,13 @@ export const Route = createFileRoute("/services/")({
     ],
     links: [{ rel: "canonical", href: `${SITE}/services` }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: breadcrumbJsonLd(
+          [{ label: "Accueil", to: "/" }, { label: "Prestations" }],
+          "/services",
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -114,36 +122,31 @@ const packs = [
     n: "Pack 01",
     title: "Créateur d'entreprise",
     to: "/pack/createur",
-    desc:
-      "Entretien conseil, prévisionnel détaillé sur 12–24 mois, accompagnement bancaire, recherche d'aides et subventions, choix du statut juridique et social.",
+    desc: "Entretien conseil, prévisionnel détaillé sur 12–24 mois, accompagnement bancaire, recherche d'aides et subventions, choix du statut juridique et social.",
   },
   {
     n: "Pack 02",
     title: "Auto-entrepreneur",
     to: "/pack/auto-entrepreneur",
-    desc:
-      "Suivi du chiffre d'affaires, déclarations URSSAF, conseil sur le franchissement de seuils et le passage en société.",
+    desc: "Suivi du chiffre d'affaires, déclarations URSSAF, conseil sur le franchissement de seuils et le passage en société.",
   },
   {
     n: "Pack 03",
     title: "Profession libérale",
     to: "/pack/profession-liberale",
-    desc:
-      "BNC, déclaration 2035, AGA, gestion du patrimoine professionnel. Spécialistes santé, droit, conseil, architecture.",
+    desc: "BNC, déclaration 2035, AGA, gestion du patrimoine professionnel. Spécialistes santé, droit, conseil, architecture.",
   },
   {
     n: "Pack 04",
     title: "Artisans, Commerçants & PME",
     to: "/pack/pro",
-    desc:
-      "Tenue, bilan, tableaux de bord commentés, paie externalisée, secrétariat juridique et conseil au dirigeant.",
+    desc: "Tenue, bilan, tableaux de bord commentés, paie externalisée, secrétariat juridique et conseil au dirigeant.",
   },
   {
     n: "Pack 05",
     title: "Particulier",
     to: "/pack/particulier",
-    desc:
-      "Déclaration d'impôt sur le revenu, IFI, revenus fonciers, LMNP, conseil en optimisation patrimoniale.",
+    desc: "Déclaration d'impôt sur le revenu, IFI, revenus fonciers, LMNP, conseil en optimisation patrimoniale.",
   },
 ] as const;
 
@@ -157,22 +160,22 @@ function Services() {
       <main>
         {/* Hero */}
         <section className="relative pt-10 md:pt-14 pb-16 md:pb-20 px-6 border-b border-ink/5 overflow-hidden">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 items-end reveal-stagger" data-reveal>
+          <div
+            className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 items-end reveal-stagger"
+            data-reveal
+          >
             <div className="md:col-span-8">
               <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-6">
                 Nos prestations
               </span>
               <h1 className="font-sora text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95] text-balance">
                 Une expertise complète,{" "}
-                <span className="text-ink/25 italic font-normal">
-                  quatre disciplines.
-                </span>
+                <span className="text-ink/25 italic font-normal">quatre disciplines.</span>
               </h1>
               <p className="mt-8 text-lg text-ink/70 max-w-2xl leading-relaxed">
-                Véritable coach du chef d'entreprise, nous vous orientons dans
-                vos choix stratégiques et dans leur mise en œuvre opérationnelle.
-                Nos prestations sont regroupées en packs adaptés à votre
-                situation.
+                Véritable coach du chef d'entreprise, nous vous orientons dans vos choix
+                stratégiques et dans leur mise en œuvre opérationnelle. Nos prestations sont
+                regroupées en packs adaptés à votre situation.
               </p>
             </div>
             <div className="md:col-span-4">
@@ -192,12 +195,12 @@ function Services() {
         <section ref={domainsRef} className="py-20 md:py-24 px-6">
           <div className="max-w-7xl mx-auto">
             <SectionHeader index="01 / Domaines" title="Domaines d'expertise" />
-            <div className="grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/5 reveal-stagger" data-reveal>
+            <div
+              className="grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
+              data-reveal
+            >
               {domains.map((d) => (
-                <article
-                  key={d.n}
-                  className="bg-paper p-8 md:p-10 flex flex-col gap-5"
-                >
+                <article key={d.n} className="bg-paper p-8 md:p-10 flex flex-col gap-5">
                   <div className="flex items-baseline gap-6">
                     <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-ink/40">
                       {d.n}
@@ -240,7 +243,6 @@ function Services() {
             <div className="flex flex-col reveal-stagger" data-reveal>
               {packs.map((p, i) => (
                 <Link
-
                   to={p.to}
                   key={p.n}
                   className={`group grid md:grid-cols-12 gap-8 py-10 md:py-12 transition-all hover:bg-paper hover:px-8 rounded ${i !== 0 ? "border-t border-ink/10" : ""}`}
@@ -256,9 +258,7 @@ function Services() {
                     </h3>
                   </div>
                   <div className="md:col-span-6">
-                    <p className="text-sm text-ink/70 leading-relaxed mb-4">
-                      {p.desc}
-                    </p>
+                    <p className="text-sm text-ink/70 leading-relaxed mb-4">{p.desc}</p>
                     <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest border-b border-ink pb-1">
                       Découvrir le pack
                       <span className="transition-transform group-hover:translate-x-1">→</span>

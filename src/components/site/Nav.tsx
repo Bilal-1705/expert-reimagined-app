@@ -31,13 +31,7 @@ const ressourcesLinks: LinkItem[] = [
   { to: "/creation-entreprise/sasu-eurl-ei", label: "Créer son entreprise" },
 ];
 
-function DesktopDropdown({
-  label,
-  items,
-}: {
-  label: string;
-  items: LinkItem[];
-}) {
+function DesktopDropdown({ label, items }: { label: string; items: LinkItem[] }) {
   const [open, setOpen] = useState(false);
   const timer = useRef<number | null>(null);
 

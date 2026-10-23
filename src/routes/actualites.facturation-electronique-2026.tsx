@@ -49,7 +49,10 @@ export const Route = createFileRoute("/actualites/facturation-electronique-2026"
           "Calendrier, obligations, Plateformes Agréées, e-reporting : tout savoir sur la facture électronique obligatoire 2026-2027 pour TPE, PME et indépendants.",
       },
       { property: "og:title", content: "Facturation électronique 2026-2027" },
-      { property: "og:description", content: "Ce qui change pour votre entreprise, calendrier officiel et étapes concrètes." },
+      {
+        property: "og:description",
+        content: "Ce qui change pour votre entreprise, calendrier officiel et étapes concrètes.",
+      },
       { property: "og:url", content: `${SITE}${PATH}` },
       { property: "og:type", content: "article" },
       { property: "article:published_time", content: PUBLISHED },
@@ -90,16 +93,15 @@ export const Route = createFileRoute("/actualites/facturation-electronique-2026"
         <>
           <p>
             La facturation électronique devient <strong>obligatoire entre entreprises</strong>{" "}
-            françaises assujetties à la TVA. Le calendrier officiel publié par la
-            DGFiP prévoit une entrée en vigueur en deux vagues, en 2026 puis 2027.
-            Cette page synthétise ce que doit faire un dirigeant de TPE, PME ou
-            profession libérale à Montpellier, Juvignac ou ailleurs pour être en
-            conformité.
+            françaises assujetties à la TVA. Le calendrier officiel publié par la DGFiP prévoit une
+            entrée en vigueur en deux vagues, en 2026 puis 2027. Cette page synthétise ce que doit
+            faire un dirigeant de TPE, PME ou profession libérale à Montpellier, Juvignac ou
+            ailleurs pour être en conformité.
           </p>
           <p className="mt-4">
-            Le cabinet Erkilic Expertise Comptable accompagne ses clients dans le choix d'une Plateforme
-            Agréée, le paramétrage de leur logiciel (Pennylane, Tiime, Sage, Cegid…)
-            et la gestion du e-reporting.
+            Le cabinet Erkilic Expertise Comptable accompagne ses clients dans le choix d'une
+            Plateforme Agréée, le paramétrage de leur logiciel (Pennylane, Tiime, Sage, Cegid…) et
+            la gestion du e-reporting.
           </p>
         </>
       }

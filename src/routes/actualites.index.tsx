@@ -244,10 +244,9 @@ function Actualites() {
               <span className="text-ink/25 italic font-normal">décryptée pour vous.</span>
             </h1>
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
-              Réformes, échéances, barèmes et analyses sectorielles : Erkilic
-              Expertise Comptable, cabinet d'expert-comptable à Juvignac près de
-              Montpellier, publie ici ce qui change réellement pour les
-              dirigeants, indépendants et particuliers de l'Hérault.
+              Réformes, échéances, barèmes et analyses sectorielles : Erkilic Expertise Comptable,
+              cabinet d'expert-comptable à Juvignac près de Montpellier, publie ici ce qui change
+              réellement pour les dirigeants, indépendants et particuliers de l'Hérault.
             </p>
           </div>
         </section>

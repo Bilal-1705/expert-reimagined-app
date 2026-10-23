@@ -52,7 +52,7 @@ const faq = [
 export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
   head: () => ({
     meta: [
-      { title: "EURL ou SASU en 2026 : comparatif chiffré par une experte-comptable" },
+      { title: "EURL ou SASU en 2026 : le comparatif d'une experte-comptable" },
       {
         name: "description",
         content:
@@ -102,23 +102,23 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
       intro={
         <>
           <p>
-            L'EURL et la SASU sont les deux formes de société à associé unique les plus utilisées en création. Elles ne se distinguent pas sur la responsabilité (limitée aux apports dans les deux
-            cas) mais sur le <strong>régime social du dirigeant</strong>, la{" "}
-            <strong>fiscalité par défaut</strong> et le{" "}
-            <strong>traitement des dividendes</strong>.
+            L'EURL et la SASU sont les deux formes de société à associé unique les plus utilisées en
+            création. Elles ne se distinguent pas sur la responsabilité (limitée aux apports dans
+            les deux cas) mais sur le <strong>régime social du dirigeant</strong>, la{" "}
+            <strong>fiscalité par défaut</strong> et le <strong>traitement des dividendes</strong>.
           </p>
           <ul className="mt-6 space-y-2 text-[16px]">
             <li>
-              <strong>EURL</strong> : gérant TNS, ~40-45 % de cotisations, IR par
-              défaut, dividendes chargés au-delà de 10 % du capital.
+              <strong>EURL</strong> : gérant TNS, ~40-45 % de cotisations, IR par défaut, dividendes
+              chargés au-delà de 10 % du capital.
             </li>
             <li>
-              <strong>SASU</strong> : président assimilé salarié, ~75-80 % de
-              cotisations, IS par défaut, dividendes à la flat tax 31,4 %.
+              <strong>SASU</strong> : président assimilé salarié, ~75-80 % de cotisations, IS par
+              défaut, dividendes à la flat tax 31,4 %.
             </li>
             <li>
-              <strong>Le bon réflexe</strong> : comparer sur vos revenus
-              prévisionnels, pas sur des moyennes :{" "}
+              <strong>Le bon réflexe</strong> : comparer sur vos revenus prévisionnels, pas sur des
+              moyennes :{" "}
               <Link to="/simulateur-statut" className="underline underline-offset-4">
                 testez le simulateur de statut
               </Link>
@@ -131,8 +131,8 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
         title: "Les deux statuts, critère par critère",
         intro: (
           <p>
-            Comparaison point par point sur les critères qui changent réellement
-            votre revenu disponible et votre protection.
+            Comparaison point par point sur les critères qui changent réellement votre revenu
+            disponible et votre protection.
           </p>
         ),
         neutral: true,
@@ -197,12 +197,11 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
       }}
       verdict={
         <p>
-          <strong>EURL</strong> si vous vous versez l'essentiel de vos revenus en
-          rémunération et cherchez le coût social le plus bas.{" "}
-          <strong>SASU</strong> si vous privilégiez les dividendes, si vous
-          démarrez en conservant l'ARE, ou si vous visez une meilleure retraite
-          et l'entrée future d'associés. Au-delà d'environ 60 000 € de résultat,
-          l'arbitrage se calcule au cas par cas.
+          <strong>EURL</strong> si vous vous versez l'essentiel de vos revenus en rémunération et
+          cherchez le coût social le plus bas. <strong>SASU</strong> si vous privilégiez les
+          dividendes, si vous démarrez en conservant l'ARE, ou si vous visez une meilleure retraite
+          et l'entrée future d'associés. Au-delà d'environ 60 000 € de résultat, l'arbitrage se
+          calcule au cas par cas.
         </p>
       }
       sections={[
@@ -248,11 +247,11 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
           title: "Sources",
           body: (
             <p>
-              Code général des impôts : art. 8 (EURL à l'IR), art. 206-3 et 239 (option pour l'IS et sa
-              révocation), art. 200 A (prélèvement forfaitaire unique). Code de la sécurité sociale :
-              art. L.131-6 (dividendes des gérants majoritaires au-delà de 10 % du capital), art. L.311-3
-              (présidents de SAS assimilés salariés). LFSS 2026 pour la hausse de la CSG sur les revenus du
-              capital. Barèmes 2026 de l'URSSAF et du BOFiP.
+              Code général des impôts : art. 8 (EURL à l'IR), art. 206-3 et 239 (option pour l'IS et
+              sa révocation), art. 200 A (prélèvement forfaitaire unique). Code de la sécurité
+              sociale : art. L.131-6 (dividendes des gérants majoritaires au-delà de 10 % du
+              capital), art. L.311-3 (présidents de SAS assimilés salariés). LFSS 2026 pour la
+              hausse de la CSG sur les revenus du capital. Barèmes 2026 de l'URSSAF et du BOFiP.
             </p>
           ),
         },

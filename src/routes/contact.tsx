@@ -1,10 +1,10 @@
+import { breadcrumbJsonLd } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { CabinetMap } from "@/components/site/CabinetMap";
 import { CalendlyInline } from "@/components/site/CalendlyInline";
 import { useReveal } from "@/hooks/use-reveal";
-
 
 const SITE = "https://erkilic.fr";
 const CABINET_EMAIL = "cabinet@erkilic.fr";
@@ -30,6 +30,13 @@ export const Route = createFileRoute("/contact")({
     scripts: [
       {
         type: "application/ld+json",
+        children: breadcrumbJsonLd(
+          [{ label: "Accueil", to: "/" }, { label: "Contact" }],
+          "/contact",
+        ),
+      },
+      {
+        type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ContactPage",
@@ -46,7 +53,6 @@ function Contact() {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
 
-
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
       <Nav />
@@ -61,8 +67,8 @@ function Contact() {
               <span className="text-ink/25 italic font-normal">Parlons-en.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-ink/70 leading-relaxed">
-              Réponse sous 24 heures. Premier échange sans engagement pour
-              évaluer ensemble le périmètre de votre accompagnement.
+              Réponse sous 24 heures. Premier échange sans engagement pour évaluer ensemble le
+              périmètre de votre accompagnement.
             </p>
           </div>
         </section>
@@ -76,7 +82,8 @@ function Contact() {
                   Adresse
                 </span>
                 <address className="not-italic font-sora text-xl font-bold leading-tight">
-                  29 bis rue du Poumpidou<br />
+                  29 bis rue du Poumpidou
+                  <br />
                   34990 Juvignac
                 </address>
                 <p className="text-sm text-ink/60 mt-3 leading-relaxed">
@@ -91,7 +98,10 @@ function Contact() {
                   <a href="tel:+33972540771" className="block hover:text-ink/60 transition-colors">
                     09 72 54 07 71
                   </a>
-                  <a href="tel:+33659884080" className="block mt-1 hover:text-ink/60 transition-colors">
+                  <a
+                    href="tel:+33659884080"
+                    className="block mt-1 hover:text-ink/60 transition-colors"
+                  >
                     06 59 88 40 80
                   </a>
                 </p>
@@ -112,7 +122,8 @@ function Contact() {
                   Horaires
                 </span>
                 <p className="text-sm text-ink/70 leading-relaxed">
-                  Lundi — Vendredi<br />
+                  Lundi — Vendredi
+                  <br />
                   09h00 — 12h00 · 14h00 — 18h00
                 </p>
               </div>
@@ -122,17 +133,26 @@ function Contact() {
                 </span>
                 <ul className="text-sm space-y-2">
                   <li>
-                    <Link to="/services" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                    <Link
+                      to="/services"
+                      className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors"
+                    >
                       Toutes nos prestations
                     </Link>
                   </li>
                   <li>
-                    <Link to="/cabinet" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                    <Link
+                      to="/cabinet"
+                      className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors"
+                    >
                       Découvrir le cabinet
                     </Link>
                   </li>
                   <li>
-                    <Link to="/guide" className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors">
+                    <Link
+                      to="/guide"
+                      className="border-b border-ink/20 hover:border-ink pb-0.5 transition-colors"
+                    >
                       Guide de l'expertise comptable
                     </Link>
                   </li>
@@ -149,14 +169,13 @@ function Contact() {
                 <span className="text-ink/25 italic font-normal">directement.</span>
               </h2>
               <p className="text-sm text-ink/70 leading-relaxed mb-8 max-w-xl">
-                Choisissez un créneau qui vous convient pour un premier échange
-                de 30 minutes, en visio ou en cabinet — sans engagement.
+                Choisissez un créneau qui vous convient pour un premier échange de 30 minutes, en
+                visio ou en cabinet — sans engagement.
               </p>
               <CalendlyInline
                 url="https://calendly.com/cabinet-erkilic/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                 height={720}
               />
-
             </div>
           </div>
         </section>

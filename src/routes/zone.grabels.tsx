@@ -40,11 +40,10 @@ export const Route = createFileRoute("/zone/grabels")({
       italic="Le cabinet est juste au sud."
       intro={
         <p>
-          Grabels et Juvignac sont deux communes limitrophes de
-          l'agglomération de Montpellier. Depuis le centre de Grabels, le
-          cabinet Erkilic Expertise Comptable est à 5 minutes via la D127. Une proximité
-          idéale pour les professionnels de santé, indépendants et TPE
-          installés sur la commune.
+          Grabels et Juvignac sont deux communes limitrophes de l'agglomération de Montpellier.
+          Depuis le centre de Grabels, le cabinet Erkilic Expertise Comptable est à 5 minutes via la
+          D127. Une proximité idéale pour les professionnels de santé, indépendants et TPE installés
+          sur la commune.
         </p>
       }
       sections={[
@@ -52,12 +51,10 @@ export const Route = createFileRoute("/zone/grabels")({
           title: "Un tissu économique dynamique et diversifié",
           body: (
             <p>
-              Grabels combine artisans historiques, professions libérales
-              (nombreux médecins et paramédicaux autour du centre),
-              nouveaux commerces et zones d'activités récentes. Le cabinet
-              Erkilic connaît le tissu local et vous met en relation
-              rapidement avec les bons interlocuteurs (banques,
-              notaires, CCI Hérault).
+              Grabels combine artisans historiques, professions libérales (nombreux médecins et
+              paramédicaux autour du centre), nouveaux commerces et zones d'activités récentes. Le
+              cabinet Erkilic connaît le tissu local et vous met en relation rapidement avec les
+              bons interlocuteurs (banques, notaires, CCI Hérault).
             </p>
           ),
         },
@@ -75,10 +72,9 @@ export const Route = createFileRoute("/zone/grabels")({
           title: "Accessibilité et réactivité",
           body: (
             <p>
-              Le cabinet est accessible en voiture par la D127 ou en
-              tramway (Ligne 3, arrêt Mosson) puis 5 minutes de bus.
-              Rendez-vous en cabinet sous 48h en cas d'urgence, ligne
-              directe au 09 72 54 07 71.
+              Le cabinet est accessible en voiture par la D127 ou en tramway (Ligne 3, arrêt Mosson)
+              puis 5 minutes de bus. Rendez-vous en cabinet sous 48h en cas d'urgence, ligne directe
+              au 09 72 54 07 71.
             </p>
           ),
         },

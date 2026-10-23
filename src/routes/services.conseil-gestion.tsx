@@ -13,7 +13,10 @@ export const Route = createFileRoute("/services/conseil-gestion")({
         content:
           "Prévisionnel, tableaux de bord, pilotage de trésorerie et accompagnement du dirigeant à Juvignac (34990). Cabinet Erkilic Expertise Comptable.",
       },
-      { property: "og:title", content: "Conseil de gestion et prévisionnel — Erkilic Expertise Comptable" },
+      {
+        property: "og:title",
+        content: "Conseil de gestion et prévisionnel — Erkilic Expertise Comptable",
+      },
       {
         property: "og:description",
         content:
@@ -35,21 +38,23 @@ export const Route = createFileRoute("/services/conseil-gestion")({
           url: `${SITE}${PATH}`,
         }),
       },
-      
     ],
   }),
   component: () => (
     <ContentPage
-      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Prestations", to: "/services" }, { label: "Conseil de gestion" }]}
+      breadcrumbs={[
+        { label: "Accueil", to: "/" },
+        { label: "Prestations", to: "/services" },
+        { label: "Conseil de gestion" },
+      ]}
       eyebrow="Prestation · Conseil de gestion"
       h1="Conseil de gestion"
       italic="et prévisionnel."
       intro={
         <p>
-          Un bilan regarde le passé ; un dirigeant décide de l'avenir. Erkilic
-          Expertise Comptable transforme vos chiffres en outils de décision :
-          prévisionnels, tableaux de bord commentés et pilotage de la
-          trésorerie.
+          Un bilan regarde le passé ; un dirigeant décide de l'avenir. Erkilic Expertise Comptable
+          transforme vos chiffres en outils de décision : prévisionnels, tableaux de bord commentés
+          et pilotage de la trésorerie.
         </p>
       }
       sections={[
@@ -76,11 +81,10 @@ export const Route = createFileRoute("/services/conseil-gestion")({
           title: "Quand faire un prévisionnel ?",
           body: (
             <p>
-              À la création, bien sûr — c'est la pièce maîtresse du dossier
-              bancaire. Mais aussi avant chaque décision structurante :
-              embauche, achat de matériel, ouverture d'un point de vente,
-              reprise d'un fonds de commerce. Un prévisionnel actualisé
-              transforme une intuition en décision documentée.
+              À la création, bien sûr — c'est la pièce maîtresse du dossier bancaire. Mais aussi
+              avant chaque décision structurante : embauche, achat de matériel, ouverture d'un point
+              de vente, reprise d'un fonds de commerce. Un prévisionnel actualisé transforme une
+              intuition en décision documentée.
             </p>
           ),
         },
@@ -88,15 +92,19 @@ export const Route = createFileRoute("/services/conseil-gestion")({
           title: "Un coach du chef d'entreprise",
           body: (
             <p>
-              La vocation du cabinet : être le coach du chef d'entreprise.
-              Vos chiffres sont commentés avec vous, en langage clair, lors de
-              rendez-vous réguliers au cabinet de Juvignac ou à distance. Vous
-              repartez avec des décisions, pas avec des tableaux incompris.
+              La vocation du cabinet : être le coach du chef d'entreprise. Vos chiffres sont
+              commentés avec vous, en langage clair, lors de rendez-vous réguliers au cabinet de
+              Juvignac ou à distance. Vous repartez avec des décisions, pas avec des tableaux
+              incompris.
             </p>
           ),
         },
       ]}
-      cta={{ label: "Prendre rendez-vous", to: "/contact", sub: "Pilotez votre entreprise avec des chiffres clairs." }}
+      cta={{
+        label: "Prendre rendez-vous",
+        to: "/contact",
+        sub: "Pilotez votre entreprise avec des chiffres clairs.",
+      }}
     />
   ),
 });

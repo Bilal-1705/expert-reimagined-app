@@ -38,7 +38,10 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
         content:
           "Expert-comptable pour e-commerçants et commerçants : TVA OSS et IOSS, Amazon, Shopify, DAC7, stocks, facturation électronique. Cabinet près de Montpellier.",
       },
-      { property: "og:title", content: "Expert-comptable e-commerce | Erkilic, près de Montpellier" },
+      {
+        property: "og:title",
+        content: "Expert-comptable e-commerce | Erkilic, près de Montpellier",
+      },
       {
         property: "og:description",
         content:
@@ -61,7 +64,10 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
           about: { "@id": `${SITE}/#cabinet` },
         }),
       },
-      { type: "application/ld+json", children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))) },
+      {
+        type: "application/ld+json",
+        children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))),
+      },
     ],
   }),
   component: () => (
@@ -78,14 +84,15 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
       intro={
         <>
           <p>
-            Boutique Shopify, vendeur Amazon, Etsy ou Cdiscount, magasin physique avec un site en complément : le
-            commerce en ligne cumule un grand volume d'opérations et des règles de TVA qui dépendent du pays de
-            chaque client. Erkilic Expertise Comptable accompagne les e-commerçants et commerçants de Montpellier,
-            de Juvignac et de toute la France, à distance si besoin.
+            Boutique Shopify, vendeur Amazon, Etsy ou Cdiscount, magasin physique avec un site en
+            complément : le commerce en ligne cumule un grand volume d'opérations et des règles de
+            TVA qui dépendent du pays de chaque client. Erkilic Expertise Comptable accompagne les
+            e-commerçants et commerçants de Montpellier, de Juvignac et de toute la France, à
+            distance si besoin.
           </p>
           <p className="mt-4">
-            L'objectif est simple : des comptes justes malgré le volume, une TVA déclarée correctement dans chaque
-            pays, et une marge que vous connaissez canal par canal.
+            L'objectif est simple : des comptes justes malgré le volume, une TVA déclarée
+            correctement dans chaque pays, et une marge que vous connaissez canal par canal.
           </p>
         </>
       }
@@ -105,15 +112,16 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
           body: (
             <>
               <p>
-                Tant que vos ventes à distance à des particuliers d'autres pays de l'Union restent sous 10 000 € par
-                an, vous facturez la TVA française. Au-delà, vous appliquez la TVA du pays de livraison et la
-                déclarez via le guichet unique OSS, une déclaration trimestrielle pour tous les pays.
+                Tant que vos ventes à distance à des particuliers d'autres pays de l'Union restent
+                sous 10 000 € par an, vous facturez la TVA française. Au-delà, vous appliquez la TVA
+                du pays de livraison et la déclarez via le guichet unique OSS, une déclaration
+                trimestrielle pour tous les pays.
               </p>
               <p>
-                Si vous importez des marchandises de faible valeur (jusqu'à 150 €) vendues à des particuliers
-                européens, le guichet IOSS simplifie la TVA à l'import. Pour vos achats auprès de fournisseurs
-                européens professionnels, la TVA est autoliquidée. Le cabinet met en place ces régimes et vérifie
-                chaque déclaration.
+                Si vous importez des marchandises de faible valeur (jusqu'à 150 €) vendues à des
+                particuliers européens, le guichet IOSS simplifie la TVA à l'import. Pour vos achats
+                auprès de fournisseurs européens professionnels, la TVA est autoliquidée. Le cabinet
+                met en place ces régimes et vérifie chaque déclaration.
               </p>
             </>
           ),
@@ -122,11 +130,15 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
           title: "Rapprocher les versements des plateformes",
           body: (
             <p>
-              Un versement Amazon de 3 400 € peut correspondre à 5 000 € de ventes, moins des commissions, des frais
-              d'expédition FBA et des remboursements. Comptabiliser le versement net fausse votre chiffre d'affaires
-              et votre TVA. Le cabinet comptabilise le brut à partir des rapports de la plateforme, en connectant vos
-              outils quand c'est possible (par exemple avec{" "}
-              <Link to="/expert-comptable-pennylane" className="font-bold underline underline-offset-4">
+              Un versement Amazon de 3 400 € peut correspondre à 5 000 € de ventes, moins des
+              commissions, des frais d'expédition FBA et des remboursements. Comptabiliser le
+              versement net fausse votre chiffre d'affaires et votre TVA. Le cabinet comptabilise le
+              brut à partir des rapports de la plateforme, en connectant vos outils quand c'est
+              possible (par exemple avec{" "}
+              <Link
+                to="/expert-comptable-pennylane"
+                className="font-bold underline underline-offset-4"
+              >
                 Pennylane
               </Link>
               ).
@@ -146,10 +158,13 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
           title: "Commerce de proximité et commerce en ligne",
           body: (
             <p>
-              Le cabinet est rue du Poumpidou à Juvignac, près de la zone commerciale de la Plaine. Il suit des
-              commerces de proximité de l'Ouest montpelliérain comme des boutiques 100 % en ligne. Les commerçants
-              et artisans trouveront aussi des informations sur notre page{" "}
-              <Link to="/secteur/artisans-commercants" className="font-bold underline underline-offset-4">
+              Le cabinet est rue du Poumpidou à Juvignac, près de la zone commerciale de la Plaine.
+              Il suit des commerces de proximité de l'Ouest montpelliérain comme des boutiques 100 %
+              en ligne. Les commerçants et artisans trouveront aussi des informations sur notre page{" "}
+              <Link
+                to="/secteur/artisans-commercants"
+                className="font-bold underline underline-offset-4"
+              >
                 expert-comptable artisans et commerçants
               </Link>
               .
