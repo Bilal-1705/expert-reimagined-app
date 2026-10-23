@@ -6,7 +6,7 @@
  * leaving the page. While it is empty, the form falls back to opening a
  * pre-filled e-mail in the visitor's mail app.
  */
-export const WEB3FORMS_ACCESS_KEY = "";
+export const WEB3FORMS_ACCESS_KEY = "8cca0b87-821c-4631-849a-4f2ec19a7f98";
 export const CABINET_EMAIL = "cabinet@erkilic.fr";
 
 export type CallbackRequest = {
