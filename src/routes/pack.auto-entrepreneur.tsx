@@ -58,6 +58,7 @@ export const Route = createFileRoute("/pack/auto-entrepreneur")({
 function PackAutoEntrepreneur() {
   return (
     <PackPage
+      funnel="auto-entrepreneur"
       eyebrow="Pack Auto-Entrepreneur"
       title="Un cadre simple,"
       italic="une rigueur professionnelle."

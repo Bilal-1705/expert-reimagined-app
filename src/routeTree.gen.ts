@@ -19,6 +19,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GuideRouteImport } from './routes/guide'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
+import { Route as RendezVousRouteImport } from './routes/rendez-vous'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -107,6 +108,11 @@ const PolitiqueConfidentialiteRoute =
     path: '/politique-confidentialite',
     getParentRoute: () => rootRouteImport,
   } as any)
+const RendezVousRoute = RendezVousRouteImport.update({
+  id: '/rendez-vous',
+  path: '/rendez-vous',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -315,6 +321,7 @@ export interface FileRoutesByFullPath {
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/rendez-vous': typeof RendezVousRoute
   '/services': typeof ServicesRouteWithChildren
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -363,6 +370,7 @@ export interface FileRoutesByTo {
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/rendez-vous': typeof RendezVousRoute
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
@@ -411,6 +419,7 @@ export interface FileRoutesById {
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/rendez-vous': typeof RendezVousRoute
   '/services': typeof ServicesRouteWithChildren
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -461,6 +470,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/rendez-vous'
     | '/services'
     | '/simulateur-statut'
     | '/sitemap.xml'
@@ -509,6 +519,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/rendez-vous'
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
@@ -556,6 +567,7 @@ export interface FileRouteTypes {
     | '/guide'
     | '/mentions-legales'
     | '/politique-confidentialite'
+    | '/rendez-vous'
     | '/services'
     | '/simulateur-statut'
     | '/sitemap.xml'
@@ -605,6 +617,7 @@ export interface RootRouteChildren {
   GuideRoute: typeof GuideRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
+  RendezVousRoute: typeof RendezVousRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SimulateurStatutRoute: typeof SimulateurStatutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -708,6 +721,13 @@ declare module '@tanstack/react-router' {
       path: '/politique-confidentialite'
       fullPath: '/politique-confidentialite'
       preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rendez-vous': {
+      id: '/rendez-vous'
+      path: '/rendez-vous'
+      fullPath: '/rendez-vous'
+      preLoaderRoute: typeof RendezVousRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -996,6 +1016,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuideRoute: GuideRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
+  RendezVousRoute: RendezVousRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SimulateurStatutRoute: SimulateurStatutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

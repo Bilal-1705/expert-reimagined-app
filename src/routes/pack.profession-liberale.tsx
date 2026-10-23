@@ -51,6 +51,7 @@ export const Route = createFileRoute("/pack/profession-liberale")({
 function PackLiberale() {
   return (
     <PackPage
+      funnel="liberal"
       eyebrow="Pack Profession Libérale"
       title="La comptabilité BNC,"
       italic="par des spécialistes."

@@ -51,6 +51,7 @@ export const Route = createFileRoute("/pack/pro")({
 function PackPro() {
   return (
     <PackPage
+      funnel="pro"
       eyebrow="Pack Artisans, Commerçants & PME"
       title="Piloter votre entreprise,"
       italic="avec un vrai partenaire."

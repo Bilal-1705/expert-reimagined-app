@@ -48,6 +48,7 @@ export const Route = createFileRoute("/pack/particulier")({
 function PackParticulier() {
   return (
     <PackPage
+      funnel="particulier"
       eyebrow="Pack Particulier"
       title="Votre fiscalité personnelle,"
       italic="entre de bonnes mains."

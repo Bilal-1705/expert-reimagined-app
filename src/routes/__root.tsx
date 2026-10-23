@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteChrome } from "@/components/site/SiteChrome";
 
 const SITE = "https://erkilic.fr";
 
@@ -208,7 +209,10 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="pb-14 md:pb-0">
+        <Outlet />
+      </div>
+      <SiteChrome />
     </QueryClientProvider>
   );
 }

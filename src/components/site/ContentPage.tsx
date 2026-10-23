@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+import { ProfileFunnel, type ProfileId } from "@/components/site/ProfileFunnel";
 import { AUTHOR, AuthorBox, RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
 
 export type QA = { q: string; a: ReactNode };
@@ -33,7 +34,19 @@ export type ContentPageProps = {
   breadcrumbs?: { label: string; to?: string }[];
   datePublished?: string;
   dateModified?: string;
+  /** Booking funnel shown at the bottom. Inferred from the URL when omitted; false keeps the plain CTA. */
+  funnel?: ProfileId | "choose" | false;
 };
+
+function funnelFor(path: string): ProfileId | undefined {
+  if (path.includes("commerce") || path.includes("artisans")) return "pro";
+  if (path.includes("liberale")) return "liberal";
+  if (path.includes("immobilier") || path.includes("lmnp")) return "immobilier";
+  if (path.startsWith("/creation-entreprise") || path.includes("eurl-vs-sasu") || path.startsWith("/simulateur")) return "createur";
+  if (path.includes("micro-entreprise")) return "auto-entrepreneur";
+  if (path.includes("declaration-revenus")) return "particulier";
+  return undefined;
+}
 
 /**
  * A lightweight editorial content page used for SEO-oriented articles:
@@ -53,6 +66,7 @@ export function ContentPage({
   breadcrumbs = [],
   datePublished,
   dateModified,
+  funnel,
 }: ContentPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
@@ -272,7 +286,11 @@ export function ContentPage({
 
         <RelatedLinks />
 
-        {cta && (
+        {funnel !== false && (
+          <ProfileFunnel profile={funnel && funnel !== "choose" ? funnel : funnel === "choose" ? undefined : funnelFor(path)} />
+        )}
+
+        {cta && funnel === false && (
           <section className="py-20 md:py-24 px-6 bg-ink text-paper">
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
               <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] max-w-xl">

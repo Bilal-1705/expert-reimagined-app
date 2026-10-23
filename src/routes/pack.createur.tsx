@@ -48,6 +48,7 @@ export const Route = createFileRoute("/pack/createur")({
 function PackCreateur() {
   return (
     <PackPage
+      funnel="createur"
       eyebrow="Pack Créateur d'entreprise"
       title="Créer une entreprise,"
       italic="ensemble et sereinement."

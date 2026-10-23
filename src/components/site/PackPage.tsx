@@ -1,9 +1,9 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { type ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
+import { ProfileFunnel, type ProfileId } from "@/components/site/ProfileFunnel";
 import { RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
 
 export interface PackSection {
@@ -21,6 +21,7 @@ export interface PackPageProps {
   heroImage: string;
   heroAlt: string;
   next?: { label: string; to: string; params?: Record<string, string> };
+  funnel: ProfileId;
 }
 
 export function PackPage({
@@ -33,6 +34,7 @@ export function PackPage({
   heroImage,
   heroAlt,
   next,
+  funnel,
 }: PackPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
@@ -171,32 +173,9 @@ export function PackPage({
           </section>
         )}
 
-        {/* CTA */}
-        <PackCTA />
+        <ProfileFunnel profile={funnel} />
       </main>
       <Footer />
     </div>
-  );
-}
-
-function PackCTA(): ReactNode {
-  return (
-    <section className="py-24 px-6 bg-ink text-paper">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="font-sora text-3xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-[0.95]">
-          Un premier échange, sans engagement.
-        </h2>
-        <p className="text-paper/60 mb-10 max-w-xl mx-auto">
-          Parlons de votre projet — nous adaptons le périmètre du pack à
-          votre activité et à vos priorités.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-3 px-10 py-5 bg-paper text-ink font-bold uppercase tracking-widest text-sm hover:bg-paper-dark transition-colors"
-        >
-          Contactez le cabinet →
-        </Link>
-      </div>
-    </section>
   );
 }
