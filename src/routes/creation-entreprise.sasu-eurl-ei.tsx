@@ -6,9 +6,9 @@ const PATH = "/creation-entreprise/sasu-eurl-ei";
 
 const faq = [
   {
-    q: "Quelle différence entre SASU et EURL ?",
+    q: "Par où commencer pour choisir son statut à Montpellier ?",
     plain:
-      "La SASU place le dirigeant au régime général de la sécurité sociale (assimilé-salarié, ~80 % de charges sur salaire mais meilleure couverture retraite/prévoyance). L'EURL place le gérant au régime des travailleurs non-salariés (TNS, ~45 % de charges, protection moindre). Pour un projet à Juvignac, le choix dépend surtout de votre stratégie de rémunération (salaire vs dividendes) et de votre couverture existante.",
+      "Partez de trois questions : allez-vous vous verser un salaire dès la première année, touchez-vous l'ARE de France Travail, et prévoyez-vous d'accueillir des associés ? Selon les réponses, la micro-entreprise, l'EI au réel, l'EURL ou la SASU sortent en tête. Pour le détail EURL contre SASU, chiffres à l'appui, voyez notre comparatif EURL ou SASU.",
   },
   {
     q: "L'entreprise individuelle est-elle vraiment plus risquée qu'une société ?",
@@ -23,7 +23,7 @@ const faq = [
   {
     q: "Puis-je toucher le chômage en créant une SASU à Montpellier ?",
     plain:
-      "En SASU, si vous ne vous versez pas de salaire, vous conservez vos droits Pôle Emploi. Vous pouvez aussi opter pour l'ARCE (60 % de vos droits en capital). En EURL, le gérant TNS ne cotise pas au chômage donc ne cumule pas de droits. Point décisif à arbitrer avant la création.",
+      "En SASU, si vous ne vous versez pas de salaire, vous conservez vos droits France Travail. Vous pouvez aussi opter pour l'ARCE (une partie de vos droits restants versée en capital). En EURL, un gérant qui ne se rémunère pas peut aussi conserver l'ARE, mais le bénéfice d'une EURL à l'IR est traité comme une rémunération. Le point est à vérifier avec France Travail avant la création.",
   },
 ];
 
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
             Le choix du statut juridique conditionne votre régime social,
             votre fiscalité, vos droits au chômage et la protection de votre
             patrimoine. Ce comparatif détaillé, à jour 2026, vous donne les
-            bases — mais aucune décision ne devrait se prendre sans
+            bases : mais aucune décision ne devrait se prendre sans
             simulation chiffrée sur votre situation.
           </p>
           <p className="mt-4 text-[16px]">
@@ -79,12 +79,12 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
       }
       sections={[
         {
-          title: "Entreprise Individuelle (EI) — simplicité maximale",
+          title: "Entreprise Individuelle (EI) : simplicité maximale",
           body: (
             <p>
               Formalité de création simple et gratuite, comptabilité
-              allégée, régime micro possible en dessous de 77 700 € (BNC)
-              ou 188 700 € (BIC). Depuis mai 2022, le patrimoine personnel
+              allégée, régime micro possible en dessous de 83 600 € (BNC)
+              ou 203 100 € (BIC). Depuis mai 2022, le patrimoine personnel
               est automatiquement protégé. Régime TNS (URSSAF + retraite +
               maladie). Idéal pour tester une activité seul, sans
               associé.
@@ -98,7 +98,7 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           ],
         },
         {
-          title: "EURL — la société à associé unique en TNS",
+          title: "EURL : la société à associé unique en TNS",
           body: (
             <p>
               Structure de type SARL avec un seul associé. Le gérant
@@ -110,13 +110,13 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
           ),
           bullets: [
             "Régime social : TNS pour le gérant associé unique.",
-            "Fiscalité : IS par défaut, option IR 5 ans possible.",
+            "Fiscalité : IR par défaut quand l'associé unique est une personne physique, option IS possible (révocable jusqu'au 5e exercice).",
             "Chômage : Pas de droits pour le gérant TNS.",
             "Bon pour : artisan/commerçant qui veut structurer sans salaire.",
           ],
         },
         {
-          title: "SASU — la société assimilée-salariée",
+          title: "SASU : la société assimilée-salariée",
           body: (
             <p>
               SAS à associé unique, le président est assimilé-salarié

@@ -18,6 +18,8 @@ export type ComparisonTable = {
   title?: string;
   intro?: ReactNode;
   columns: [string, string, string];
+  /** Neutral comparison (e.g. EURL vs SASU): no emphasis on the last column. */
+  neutral?: boolean;
   rows: { criterion: string; competitor: ReactNode; erkilic: ReactNode }[];
 };
 
@@ -225,7 +227,11 @@ export function ContentPage({
                         <td className="py-5 pr-6 text-ink/75 text-[15px] leading-relaxed">
                           {r.competitor}
                         </td>
-                        <td className="py-5 pr-6 text-ink text-[15px] leading-relaxed font-semibold">
+                        <td
+                          className={`py-5 pr-6 text-[15px] leading-relaxed ${
+                            comparisonTable.neutral ? "text-ink/75" : "text-ink font-semibold"
+                          }`}
+                        >
                           {r.erkilic}
                         </td>
                       </tr>

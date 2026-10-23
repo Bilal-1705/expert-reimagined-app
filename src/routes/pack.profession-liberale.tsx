@@ -106,7 +106,7 @@ function PackLiberale() {
           title: "Pack Social",
           items: [
             {
-              label: "Assistance RSI / SSI",
+              label: "Assistance SSI et caisses libérales",
               body:
                 "Le régime des indépendants concerne les libéraux. Nous vous assistons sur les calculs prévisionnels puis réels, la vérification des appels et la recherche de diminutions possibles.",
             },
@@ -125,7 +125,7 @@ function PackLiberale() {
               label: "Formalités d'embauche et de rupture",
               optional: true,
               body:
-                "DUE, affiliations, contrats, indemnités de rupture, solde de tout compte, attestation Pôle Emploi.",
+                "DUE, affiliations, contrats, indemnités de rupture, solde de tout compte, attestation France Travail.",
             },
           ],
         },

@@ -80,7 +80,7 @@ export const Route = createFileRoute("/creation-entreprise/aides-locales-montpel
           title: "Aides nationales activables depuis Montpellier",
           bullets: [
             "ACRE : exonération de cotisations sociales la première année.",
-            "ARCE : versement en capital de 60 % de vos droits Pôle Emploi.",
+            "ARCE : versement en capital de 60 % de vos droits restants à l'ARE (France Travail).",
             "NACRE : accompagnement en 3 phases + prêt à taux zéro.",
             "Bpifrance : prêts d'honneur, garanties, prêts d'amorçage.",
             "Prêt Initiative Occitanie via Initiative Montpellier Pic Saint-Loup.",

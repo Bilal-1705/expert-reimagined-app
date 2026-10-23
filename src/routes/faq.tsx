@@ -63,7 +63,7 @@ const faq = [
   {
     q: "Dois-je passer de la micro-entreprise à la société quand je dépasse les seuils ?",
     plain:
-      "Pas nécessairement. Le dépassement des seuils TVA (36 800 € services / 91 900 € vente) impose la TVA mais pas le changement de structure. Le passage en EURL ou SASU se justifie par un besoin de séparation de patrimoine, une optimisation charges/dividendes ou une entrée d'associés — c'est un arbitrage à faire au cas par cas.",
+      "Pas nécessairement. Le dépassement des seuils TVA (37 500 € pour les services, 85 000 € pour la vente en 2026) impose la TVA mais pas le changement de structure. Le passage en EURL ou SASU se justifie par un besoin de séparation de patrimoine, une optimisation charges/dividendes ou une entrée d'associés — c'est un arbitrage à faire au cas par cas.",
   },
   {
     q: "Comment optimiser sa fiscalité personnelle avec un expert-comptable ?",
@@ -88,17 +88,17 @@ const faq = [
   {
     q: "Comment se rémunérer optimalement en SASU ou EURL ?",
     plain:
-      "L'arbitrage salaire / dividendes se refait chaque année. En SASU, un mix salaire (pour valider trimestres retraite + protection sociale) et dividendes (flat tax 30 %) est souvent optimal. En EURL à l'IS, la rémunération TNS est moins chargée mais les dividendes au-delà de 10 % du capital sont soumis aux cotisations. Le cabinet établit chaque année la simulation.",
+      "L'arbitrage salaire / dividendes se refait chaque année. En SASU, un mix salaire (pour valider trimestres retraite + protection sociale) et dividendes (flat tax 31,4 %) est souvent optimal. En EURL à l'IS, la rémunération TNS est moins chargée mais les dividendes au-delà de 10 % du capital sont soumis aux cotisations. Le cabinet établit chaque année la simulation.",
   },
   {
     q: "Faut-il opter pour l'IS ou rester à l'IR en EURL ?",
     plain:
-      "L'IR (par défaut) impose le bénéfice au barème progressif — pertinent tant que le revenu est faible ou que le foyer supporte peu d'impôt. L'IS (option irrévocable au bout de 5 ans) permet de lisser la fiscalité, de choisir sa rémunération et de sortir des dividendes. Le basculement se décide au vu des revenus prévisionnels sur 3 ans.",
+      "L'IR (par défaut) impose le bénéfice au barème progressif — pertinent tant que le revenu est faible ou que le foyer supporte peu d'impôt. L'IS (option révocable jusqu'au 5e exercice, définitive ensuite) permet de lisser la fiscalité, de choisir sa rémunération et de sortir des dividendes. Le basculement se décide au vu des revenus prévisionnels sur 3 ans.",
   },
   {
-    q: "La flat tax (PFU) 30 % est-elle toujours plus intéressante que le barème ?",
+    q: "La flat tax (PFU) 31,4 % est-elle toujours plus intéressante que le barème ?",
     plain:
-      "Non. Pour un contribuable dans les tranches basses (TMI 0 % ou 11 %), le barème progressif + 17,2 % de prélèvements sociaux est plus favorable. Sur option globale, tous les revenus mobiliers passent au barème. Le cabinet Erkilic Expertise Comptable compare chaque année les deux options avec votre déclaration IR.",
+      "Non. Pour un contribuable dans les tranches basses (TMI 0 % ou 11 %), le barème progressif + 18,6 % de prélèvements sociaux est plus favorable. Sur option globale, tous les revenus mobiliers passent au barème. Le cabinet Erkilic Expertise Comptable compare chaque année les deux options avec votre déclaration IR.",
   },
   {
     q: "Comment fonctionne le régime réel simplifié pour LMNP ?",

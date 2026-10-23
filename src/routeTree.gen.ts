@@ -15,6 +15,8 @@ import { Route as CabinetRouteImport } from './routes/cabinet'
 import { Route as ComparatifsRouteImport } from './routes/comparatifs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExpertComptableJuvignacRouteImport } from './routes/expert-comptable-juvignac'
+import { Route as ExpertComptableMontpellierRouteImport } from './routes/expert-comptable-montpellier'
+import { Route as ExpertComptablePennylaneRouteImport } from './routes/expert-comptable-pennylane'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GuideRouteImport } from './routes/guide'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
@@ -87,6 +89,18 @@ const ExpertComptableJuvignacRoute = ExpertComptableJuvignacRouteImport.update({
   path: '/expert-comptable-juvignac',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExpertComptableMontpellierRoute =
+  ExpertComptableMontpellierRouteImport.update({
+    id: '/expert-comptable-montpellier',
+    path: '/expert-comptable-montpellier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ExpertComptablePennylaneRoute =
+  ExpertComptablePennylaneRouteImport.update({
+    id: '/expert-comptable-pennylane',
+    path: '/expert-comptable-pennylane',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -317,6 +331,8 @@ export interface FileRoutesByFullPath {
   '/comparatifs': typeof ComparatifsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
+  '/expert-comptable-montpellier': typeof ExpertComptableMontpellierRoute
+  '/expert-comptable-pennylane': typeof ExpertComptablePennylaneRoute
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -366,6 +382,8 @@ export interface FileRoutesByTo {
   '/comparatifs': typeof ComparatifsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
+  '/expert-comptable-montpellier': typeof ExpertComptableMontpellierRoute
+  '/expert-comptable-pennylane': typeof ExpertComptablePennylaneRoute
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -415,6 +433,8 @@ export interface FileRoutesById {
   '/comparatifs': typeof ComparatifsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
+  '/expert-comptable-montpellier': typeof ExpertComptableMontpellierRoute
+  '/expert-comptable-pennylane': typeof ExpertComptablePennylaneRoute
   '/faq': typeof FaqRoute
   '/guide': typeof GuideRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -466,6 +486,8 @@ export interface FileRouteTypes {
     | '/comparatifs'
     | '/contact'
     | '/expert-comptable-juvignac'
+    | '/expert-comptable-montpellier'
+    | '/expert-comptable-pennylane'
     | '/faq'
     | '/guide'
     | '/mentions-legales'
@@ -515,6 +537,8 @@ export interface FileRouteTypes {
     | '/comparatifs'
     | '/contact'
     | '/expert-comptable-juvignac'
+    | '/expert-comptable-montpellier'
+    | '/expert-comptable-pennylane'
     | '/faq'
     | '/guide'
     | '/mentions-legales'
@@ -563,6 +587,8 @@ export interface FileRouteTypes {
     | '/comparatifs'
     | '/contact'
     | '/expert-comptable-juvignac'
+    | '/expert-comptable-montpellier'
+    | '/expert-comptable-pennylane'
     | '/faq'
     | '/guide'
     | '/mentions-legales'
@@ -613,6 +639,8 @@ export interface RootRouteChildren {
   ComparatifsRoute: typeof ComparatifsRoute
   ContactRoute: typeof ContactRoute
   ExpertComptableJuvignacRoute: typeof ExpertComptableJuvignacRoute
+  ExpertComptableMontpellierRoute: typeof ExpertComptableMontpellierRoute
+  ExpertComptablePennylaneRoute: typeof ExpertComptablePennylaneRoute
   FaqRoute: typeof FaqRoute
   GuideRoute: typeof GuideRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
@@ -693,6 +721,20 @@ declare module '@tanstack/react-router' {
       path: '/expert-comptable-juvignac'
       fullPath: '/expert-comptable-juvignac'
       preLoaderRoute: typeof ExpertComptableJuvignacRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expert-comptable-montpellier': {
+      id: '/expert-comptable-montpellier'
+      path: '/expert-comptable-montpellier'
+      fullPath: '/expert-comptable-montpellier'
+      preLoaderRoute: typeof ExpertComptableMontpellierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expert-comptable-pennylane': {
+      id: '/expert-comptable-pennylane'
+      path: '/expert-comptable-pennylane'
+      fullPath: '/expert-comptable-pennylane'
+      preLoaderRoute: typeof ExpertComptablePennylaneRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -1012,6 +1054,8 @@ const rootRouteChildren: RootRouteChildren = {
   ComparatifsRoute: ComparatifsRoute,
   ContactRoute: ContactRoute,
   ExpertComptableJuvignacRoute: ExpertComptableJuvignacRoute,
+  ExpertComptableMontpellierRoute: ExpertComptableMontpellierRoute,
+  ExpertComptablePennylaneRoute: ExpertComptablePennylaneRoute,
   FaqRoute: FaqRoute,
   GuideRoute: GuideRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,

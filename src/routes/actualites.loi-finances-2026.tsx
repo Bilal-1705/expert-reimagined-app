@@ -94,7 +94,7 @@ export const Route = createFileRoute("/actualites/loi-finances-2026")({
           title: "Fiscalité des dirigeants",
           bullets: [
             "Barème IR revalorisé pour tenir compte de l'inflation.",
-            "PFU (flat tax) maintenu à 30 % sur dividendes et plus-values mobilières.",
+            "PFU (flat tax) porté à 31,4 % sur dividendes (hausse de 1,4 point de CSG votée en LFSS 2026) et plus-values mobilières.",
             "Arbitrage rémunération vs dividendes à refaire pour chaque dirigeant EURL/SASU.",
           ],
         },

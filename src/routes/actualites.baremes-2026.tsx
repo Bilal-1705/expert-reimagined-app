@@ -61,8 +61,8 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
         {
           title: "Seuils micro-entreprise 2026",
           bullets: [
-            "Vente de marchandises, hébergement : 188 700 € de chiffre d'affaires annuel.",
-            "Prestations de services (BIC & BNC) : 77 700 €.",
+            "Vente de marchandises, hébergement : 203 100 € de chiffre d'affaires annuel.",
+            "Prestations de services (BIC & BNC) : 83 600 €.",
             "Tolérance en 2ᵉ année dépassement : voir les règles précises avec votre expert-comptable.",
           ],
         },
@@ -77,8 +77,8 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
         {
           title: "Plafond de la sécurité sociale (PASS) 2026",
           bullets: [
-            "Plafond mensuel : environ 3 925 € (indexé chaque année).",
-            "Plafond annuel : environ 47 100 €.",
+            "Plafond mensuel : 4 005 € (arrêté du 22 décembre 2025).",
+            "Plafond annuel : 48 060 €.",
             "Utile pour calculer les cotisations TNS, retraite complémentaire, prévoyance.",
           ],
         },

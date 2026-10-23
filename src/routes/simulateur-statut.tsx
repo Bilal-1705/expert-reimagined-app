@@ -47,8 +47,8 @@ function recommend(a: Answers): { statut: string; why: string[]; cta: string } |
     return {
       statut: "SASU",
       why: [
-        "Vous êtes en ARE Pôle emploi : la SASU permet une rémunération nulle (zéro cotisation) pour préserver l'allocation.",
-        "Vous pouvez vous verser des dividendes soumis uniquement à la flat tax 30 %.",
+        "Vous êtes en ARE (France Travail) : la SASU permet une rémunération nulle (zéro cotisation) pour préserver l'allocation.",
+        "Vous pouvez vous verser des dividendes soumis uniquement à la flat tax 31,4 %.",
         "Le régime assimilé salarié offre une meilleure couverture qu'une EURL.",
         "Transformation facile en SAS si un associé rejoint le projet.",
       ],
@@ -61,7 +61,7 @@ function recommend(a: Answers): { statut: string; why: string[]; cta: string } |
       statut: "SASU",
       why: [
         "Vous prévoyez de vous verser des dividendes : la SASU est le véhicule le plus favorable.",
-        "Dividendes = flat tax 30 % uniquement, aucune cotisation TNS.",
+        "Dividendes = flat tax 31,4 % uniquement, aucune cotisation TNS.",
         "Statut assimilé salarié : couverture santé et retraite du régime général.",
         "Adapté aux consultants et prestataires à forte marge.",
       ],

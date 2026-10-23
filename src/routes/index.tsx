@@ -70,7 +70,7 @@ const packs = [
 const domains = [
   { n: "01", t: "Comptable", d: "Tenue, révision, comptes annuels, situations intermédiaires et consolidation." },
   { n: "02", t: "Fiscal", d: "TVA, IS, IR, optimisation du statut du dirigeant, assistance en contrôle." },
-  { n: "03", t: "Social", d: "Paies, DSN, RSI, accords d'intéressement, contentieux prud'homal." },
+  { n: "03", t: "Social", d: "Paies, DSN, SSI, accords d'intéressement, contentieux prud'homal." },
   { n: "04", t: "Juridique", d: "Statuts, secrétariat juridique, transmission, opérations exceptionnelles." },
 ];
 

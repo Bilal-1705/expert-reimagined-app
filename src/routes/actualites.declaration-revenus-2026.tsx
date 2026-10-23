@@ -90,7 +90,7 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
             <li>Barème de l'impôt revalorisé : le taux de prélèvement à la source s'ajuste automatiquement.</li>
             <li>Indépendants : le chiffre d'affaires se reporte toujours sur la 2042-C-PRO.</li>
             <li>LMNP au réel : liasse 2031 avant report sur la déclaration personnelle.</li>
-            <li>Dividendes : arbitrer entre PFU à 30 % et barème progressif, chiffres à l'appui.</li>
+            <li>Dividendes : arbitrer entre PFU à 31,4 % et barème progressif, chiffres à l'appui.</li>
           </ul>
         </>
       }
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
           title: "Calendrier : ce qu'il faut retenir",
           bullets: [
             "Déclaration papier : échéance la plus précoce, fin mai.",
-            "Déclaration en ligne, zone 2 (Hérault) : début juin, date exacte publiée par la DGFiP.",
+            "Déclaration en ligne, zone 2 (dont l'Hérault) : fin mai, une semaine après la zone 1 (date exacte publiée chaque année par la DGFiP).",
             "Liasses professionnelles (2031, 2035, 2065) : dépôt au printemps, avant le report personnel.",
             "Correction possible en ligne à l'automne via le service de correction.",
           ],
