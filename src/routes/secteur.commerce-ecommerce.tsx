@@ -36,18 +36,7 @@ export const Route = createFileRoute("/secteur/commerce-ecommerce")({
           about: { "@id": `${SITE}/#cabinet` },
         }),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE}/` },
-            { "@type": "ListItem", position: 2, name: "Secteurs", item: `${SITE}/secteur/artisans-commercants` },
-            { "@type": "ListItem", position: 3, name: "Commerce & e-commerce", item: `${SITE}${PATH}` },
-          ],
-        }),
-      },
+      
     ],
   }),
   component: () => (

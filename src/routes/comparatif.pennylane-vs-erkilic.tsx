@@ -25,11 +25,11 @@ const faq = [
 export const Route = createFileRoute("/comparatif/pennylane-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Pennylane vs Cabinet Erkilic Expertise Comptable : la bonne combinaison" },
+      { title: "Pennylane ou expert-comptable ? Le comparatif honnête 2026" },
       {
         name: "description",
         content:
-          "Pennylane est un excellent outil, pas un cabinet. Comment Erkilic utilise Pennylane comme collaboratif pour vous offrir tech + conseil humain à Juvignac.",
+          "Pennylane est un logiciel, pas un expert-comptable. Ce qu'il fait seul, ce qu'un cabinet ajoute, et comment combiner les deux sans payer en double.",
       },
       { property: "og:title", content: "Pennylane vs Erkilic : logiciel + expert" },
       { property: "og:url", content: `${SITE}${PATH}` },

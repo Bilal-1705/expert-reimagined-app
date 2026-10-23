@@ -1,8 +1,9 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
+import { AUTHOR, AuthorBox, RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
 
 export type QA = { q: string; a: ReactNode };
 
@@ -55,6 +56,8 @@ export function ContentPage({
 }: ContentPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const crumbs = breadcrumbs.length > 0 ? breadcrumbs : [{ label: "Accueil", to: "/" }, { label: eyebrow }];
 
   const fmt = (iso?: string) => {
     if (!iso) return null;
@@ -78,12 +81,16 @@ export function ContentPage({
           className="pt-16 md:pt-24 pb-14 md:pb-20 px-6 border-b border-ink/5"
         >
           <div className="max-w-5xl mx-auto">
-            {breadcrumbs.length > 0 && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd(crumbs, path) }}
+            />
+            {crumbs.length > 0 && (
               <nav
                 aria-label="fil d'ariane"
                 className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-8 flex flex-wrap gap-2"
               >
-                {breadcrumbs.map((b, i) => (
+                {crumbs.map((b, i) => (
                   <span key={i} className="flex items-center gap-2">
                     {b.to ? (
                       <Link to={b.to} className="hover:text-ink transition-colors">
@@ -92,7 +99,7 @@ export function ContentPage({
                     ) : (
                       <span>{b.label}</span>
                     )}
-                    {i < breadcrumbs.length - 1 && <span>/</span>}
+                    {i < crumbs.length - 1 && <span>/</span>}
                   </span>
                 ))}
               </nav>
@@ -261,6 +268,10 @@ export function ContentPage({
           </section>
         )}
 
+        <AuthorBox dateModified={dateModified ?? datePublished} />
+
+        <RelatedLinks />
+
         {cta && (
           <section className="py-20 md:py-24 px-6 bg-ink text-paper">
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
@@ -314,11 +325,7 @@ export function articleJsonLd(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     ...(opts.image ? { image: opts.image } : {}),
-    author: { "@type": "Organization", name: "Cabinet Erkilic Expertise Comptable" },
-    publisher: {
-      "@type": "Organization",
-      name: "Cabinet Erkilic Expertise Comptable",
-      logo: { "@type": "ImageObject", url: "https://erkilic.fr/favicon.png" },
-    },
+    author: AUTHOR,
+    publisher: { "@id": "https://erkilic.fr/#cabinet" },
   });
 }

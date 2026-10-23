@@ -25,7 +25,7 @@ const faq = [
 export const Route = createFileRoute("/comparatif/keobiz-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Keobiz vs Erkilic : cabinet en ligne ou cabinet local ?" },
+      { title: "Keobiz avis : cabinet en ligne ou expert-comptable local ?" },
       {
         name: "description",
         content:

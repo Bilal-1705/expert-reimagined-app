@@ -12,8 +12,18 @@ const packLinks: LinkItem[] = [
   { to: "/pack/particulier", label: "Particulier" },
 ];
 
+const serviceLinks: LinkItem[] = [
+  { to: "/services", label: "Toutes les prestations" },
+  { to: "/services/comptabilite", label: "Comptabilité & bilan" },
+  { to: "/services/fiscalite-tva", label: "Fiscalité & TVA" },
+  { to: "/services/social-juridique", label: "Paie, social & juridique" },
+  { to: "/services/conseil-gestion", label: "Conseil & prévisionnel" },
+];
+
 const ressourcesLinks: LinkItem[] = [
-  { to: "/expert-comptable-juvignac", label: "Expert-comptable Juvignac" },
+  { to: "/expert-comptable-montpellier", label: "Expert-comptable Montpellier" },
+  { to: "/expert-comptable-juvignac", label: "Cabinet comptable Juvignac" },
+  { to: "/expert-comptable-pennylane", label: "Expert-comptable Pennylane" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
   { to: "/comparatifs", label: "Comparatifs" },
   { to: "/faq", label: "FAQ" },
@@ -140,13 +150,7 @@ export function Nav() {
           >
             Cabinet
           </Link>
-          <Link
-            to="/services"
-            className="relative py-1 hover:text-ink/60 transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-ink after:transition-all hover:after:w-full"
-            activeProps={{ className: "text-ink after:w-full" }}
-          >
-            Prestations
-          </Link>
+          <DesktopDropdown label="Prestations" items={serviceLinks} />
           <DesktopDropdown label="Nos packs" items={packLinks} />
           <DesktopDropdown label="Ressources" items={ressourcesLinks} />
           <Link
@@ -190,7 +194,6 @@ export function Nav() {
             {[
               { to: "/", label: "Accueil" },
               { to: "/cabinet", label: "Cabinet" },
-              { to: "/services", label: "Prestations" },
               { to: "/actualites", label: "Actualités" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
@@ -203,6 +206,19 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
+
+            <details className="py-2 border-b border-ink/5">
+              <summary className="py-1 list-none cursor-pointer flex justify-between items-center">
+                Prestations <span className="text-ink/60">+</span>
+              </summary>
+              <div className="mt-2 pl-3 flex flex-col gap-1 text-[11px] tracking-wider text-ink/70">
+                {serviceLinks.map((l) => (
+                  <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="py-2">
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
 
             <details className="py-2 border-b border-ink/5">
               <summary className="py-1 list-none cursor-pointer flex justify-between items-center">

@@ -35,18 +35,7 @@ export const Route = createFileRoute("/services/conseil-gestion")({
           url: `${SITE}${PATH}`,
         }),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE}/` },
-            { "@type": "ListItem", position: 2, name: "Prestations", item: `${SITE}/services` },
-            { "@type": "ListItem", position: 3, name: "Conseil de gestion", item: `${SITE}${PATH}` },
-          ],
-        }),
-      },
+      
     ],
   }),
   component: () => (

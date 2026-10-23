@@ -62,23 +62,7 @@ export const Route = createFileRoute("/actualites/facturation-electronique-septe
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.plain }))),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: SITE },
-            { "@type": "ListItem", position: 2, name: "Actualités", item: `${SITE}/actualites` },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: "Facture électronique — septembre 2026",
-              item: `${SITE}${PATH}`,
-            },
-          ],
-        }),
-      },
+      
     ],
   }),
   component: () => (

@@ -30,11 +30,11 @@ const faq = [
 export const Route = createFileRoute("/expert-comptable-juvignac")({
   head: () => ({
     meta: [
-      { title: "Expert-comptable à Juvignac | Erkilic Expertise Comptable" },
+      { title: "Cabinet comptable à Juvignac (34990) : adresse, accès, missions" },
       {
         name: "description",
         content:
-          "Cabinet d'expertise comptable à Juvignac (34990) : comptabilité, fiscalité, TVA, bilan, création d'entreprise et accompagnement des dirigeants.",
+          "Le cabinet comptable de Juvignac, 29 bis rue du Poumpidou : parking, horaires, missions (bilan, TVA, paie, création) et rendez-vous sous 48 h.",
       },
       { property: "og:title", content: "Expert-comptable à Juvignac — Erkilic Expertise Comptable" },
       {
@@ -60,17 +60,7 @@ export const Route = createFileRoute("/expert-comptable-juvignac")({
           isPartOf: { "@id": `${SITE}/#website` },
         }),
       },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE}/` },
-            { "@type": "ListItem", position: 2, name: "Expert-comptable à Juvignac", item: `${SITE}${PATH}` },
-          ],
-        }),
-      },
+      
       {
         type: "application/ld+json",
         children: faqJsonLd(faq.map((f) => ({ q: f.q, plainAnswer: f.a }))),

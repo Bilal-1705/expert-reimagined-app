@@ -30,11 +30,11 @@ const faq = [
 export const Route = createFileRoute("/comparatif/cabinet-vs-en-ligne")({
   head: () => ({
     meta: [
-      { title: "Cabinet vs comptable en ligne : lequel choisir ? | Erkilic" },
+      { title: "Cabinet comptable en ligne ou local : lequel choisir en 2026 ?" },
       {
         name: "description",
         content:
-          "Cabinet physique ou logiciel 100% en ligne (Indy, Pennylane, Keobiz) : comparatif honnête pour choisir selon votre profil et vos enjeux.",
+          "Cabinet d'expertise comptable en ligne ou de proximité : prix réels, réactivité, conseil. Le comparatif pour choisir selon votre profil.",
       },
       { property: "og:title", content: "Cabinet vs comptable en ligne" },
       { property: "og:description", content: "Comparatif honnête entre cabinet physique et logiciels de comptabilité en ligne." },

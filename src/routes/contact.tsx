@@ -12,7 +12,7 @@ const CABINET_EMAIL = "cabinet@erkilic.fr";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Devis Gratuit — Cabinet Erkilic Expertise Comptable à Juvignac (34990)" },
+      { title: "Contact et devis gratuit | Expert-comptable Juvignac, Erkilic" },
       {
         name: "description",
         content:

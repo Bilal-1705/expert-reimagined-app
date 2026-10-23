@@ -7,7 +7,7 @@ const PATH = "/zone/grabels";
 export const Route = createFileRoute("/zone/grabels")({
   head: () => ({
     meta: [
-      { title: "Expert-Comptable Grabels (34790) | Cabinet Erkilic Expertise Comptable" },
+      { title: "Expert-comptable à Grabels (34790) | Erkilic, à 5 min" },
       {
         name: "description",
         content:

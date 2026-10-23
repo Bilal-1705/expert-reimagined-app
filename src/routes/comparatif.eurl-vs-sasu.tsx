@@ -52,11 +52,11 @@ const faq = [
 export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
   head: () => ({
     meta: [
-      { title: "SASU ou EURL : comparatif 2026 pour choisir" },
+      { title: "SASU ou EURL : lequel choisir en 2026 ? Comparatif chiffré" },
       {
         name: "description",
         content:
-          "EURL ou SASU en 2026 : différences de charges, fiscalité, dividendes et retraite, tableau comparatif chiffré et simulateur gratuit pour trancher.",
+          "SASU ou EURL en 2026 : charges sociales, dividendes, retraite et chômage comparés sur 3 cas chiffrés par une experte-comptable. Tableau et simulateur.",
       },
       { property: "og:title", content: "SASU ou EURL : le comparatif 2026" },
       {
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
       {
         type: "application/ld+json",
         children: articleJsonLd({
-          headline: "SASU ou EURL : comparatif 2026 pour choisir son statut",
+          headline: "SASU ou EURL : lequel choisir en 2026 ? Comparatif chiffré son statut",
           description:
             "Comparatif chiffré EURL vs SASU 2026 : cotisations sociales, fiscalité, dividendes, retraite, chômage et cas concrets.",
           url: `${SITE}${PATH}`,

@@ -1,9 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
+import { RelatedLinks, breadcrumbJsonLd } from "@/components/site/Editorial";
 
 export interface PackSection {
   title: string;
@@ -35,6 +36,12 @@ export function PackPage({
 }: PackPageProps) {
   const heroRef = useReveal<HTMLDivElement>();
   const bodyRef = useReveal<HTMLDivElement>();
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const crumbs = [
+    { label: "Accueil", to: "/" },
+    { label: "Prestations", to: "/services" },
+    { label: eyebrow },
+  ];
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
@@ -44,6 +51,10 @@ export function PackPage({
         <section ref={heroRef} className="relative pt-14 pb-16 md:pb-24 px-6 border-b border-ink/5 overflow-hidden">
           <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-14 items-end reveal-stagger" data-reveal>
             <div className="md:col-span-7">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd(crumbs, path) }}
+              />
               <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-ink/40 mb-8">
                 <Link to="/" className="hover:text-ink transition-colors">Accueil</Link>
                 <span>/</span>
@@ -133,6 +144,8 @@ export function PackPage({
             ))}
           </div>
         </section>
+
+        <RelatedLinks />
 
         {/* Cross-link */}
         {next && (

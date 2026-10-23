@@ -30,7 +30,7 @@ const faq = [
 export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
   head: () => ({
     meta: [
-      { title: "SASU, EURL ou EI : quel statut choisir à Montpellier ?" },
+      { title: "Quel statut juridique choisir à Montpellier : EI, EURL ou SASU ?" },
       {
         name: "description",
         content:

@@ -13,7 +13,7 @@ const SITE = "https://erkilic.fr";
 export const Route = createFileRoute("/cabinet")({
   head: () => ({
     meta: [
-      { title: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac (34990)" },
+      { title: "Le cabinet Erkilic : expert-comptable de proximité à Juvignac" },
       {
         name: "description",
         content:

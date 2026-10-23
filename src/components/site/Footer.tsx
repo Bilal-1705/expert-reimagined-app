@@ -21,10 +21,14 @@ const comparatorLinks = [
   { to: "/comparatif/pennylane-vs-erkilic", label: "Pennylane vs Erkilic" },
   { to: "/comparatif/keobiz-vs-erkilic", label: "Keobiz vs Erkilic" },
   { to: "/comparatif/dougs-vs-erkilic", label: "Dougs vs Erkilic" },
+  { to: "/comparatif/cabinet-vs-en-ligne", label: "Cabinet en ligne ou local" },
+  { to: "/expert-comptable-pennylane", label: "Expert-comptable Pennylane" },
   { to: "/comparatifs", label: "Tous les comparatifs" },
 ] as const;
 
 const zoneLinks = [
+  { to: "/expert-comptable-montpellier", label: "Montpellier" },
+  { to: "/expert-comptable-juvignac", label: "Juvignac" },
   { to: "/zone/saint-georges-dorques", label: "Saint-Georges-d'Orques" },
   { to: "/zone/grabels", label: "Grabels" },
   { to: "/zone/celleneuve-mosson", label: "Celleneuve / La Mosson" },
@@ -34,15 +38,15 @@ const creationLinks = [
   { to: "/creation-entreprise/juvignac", label: "Créer son entreprise à Juvignac" },
   { to: "/creation-entreprise/aides-locales-montpellier", label: "Aides locales Montpellier" },
   { to: "/creation-entreprise/sasu-eurl-ei", label: "SASU, EURL, EI : quel statut ?" },
+  { to: "/comparatif/eurl-vs-sasu", label: "SASU ou EURL : comparatif 2026" },
+  { to: "/simulateur-statut", label: "Simulateur de statut" },
 ] as const;
 
 const editorialLinks = [
-  { to: "/expert-comptable-juvignac", label: "Expert-comptable Juvignac" },
   { to: "/a-propos", label: "À propos" },
   { to: "/guide", label: "Guide de l'expertise comptable" },
   { to: "/actualites", label: "Actualités" },
   { to: "/comparatifs", label: "Comparatifs" },
-  { to: "/simulateur-statut", label: "Simulateur : quel statut ?" },
   { to: "/faq", label: "FAQ" },
 ] as const;
 

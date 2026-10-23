@@ -25,7 +25,7 @@ const faq = [
 export const Route = createFileRoute("/comparatif/indy-vs-erkilic")({
   head: () => ({
     meta: [
-      { title: "Indy vs Cabinet Erkilic Expertise Comptable : logiciel ou expert-comptable ?" },
+      { title: "Indy ou expert-comptable : que choisir en 2026 ?" },
       {
         name: "description",
         content:
