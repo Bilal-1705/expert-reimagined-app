@@ -3,7 +3,7 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/facturation-electronique-2026";
-const PUBLISHED = "2026-01-20";
+const PUBLISHED = "2026-07-08";
 const UPDATED = "2026-07-08";
 
 const faq = [

@@ -37,8 +37,38 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+// Canonical host + permanent redirects, handled before SSR so Google only
+// ever sees one URL per page (www and trailing-slash variants were indexed).
+const CANONICAL_ORIGIN = "https://erkilic.fr";
+const PERMANENT_REDIRECTS: Record<string, string> = {
+  "/conseils": "/actualites",
+};
+
+function canonicalRedirect(request: Request): Response | null {
+  const url = new URL(request.url);
+  let path = url.pathname;
+  const isWww = url.hostname.startsWith("www.");
+  let changed = isWww;
+
+  if (path.length > 1 && path.endsWith("/")) {
+    path = path.replace(/\/+$/, "") || "/";
+    changed = true;
+  }
+  if (PERMANENT_REDIRECTS[path]) {
+    path = PERMANENT_REDIRECTS[path];
+    changed = true;
+  }
+  if (!changed) return null;
+  return new Response(null, {
+    status: 301,
+    headers: { location: `${isWww ? CANONICAL_ORIGIN : url.origin}${path}${url.search}` },
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const redirect = canonicalRedirect(request);
+    if (redirect) return redirect;
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

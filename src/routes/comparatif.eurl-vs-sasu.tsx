@@ -3,7 +3,7 @@ import { ContentPage, faqJsonLd, articleJsonLd } from "@/components/site/Content
 
 const SITE = "https://erkilic.fr";
 const PATH = "/comparatif/eurl-vs-sasu";
-const PUBLISHED = "2026-01-12";
+const PUBLISHED = "2026-07-08";
 const UPDATED = "2026-08-18";
 
 const faq = [
@@ -57,11 +57,6 @@ export const Route = createFileRoute("/comparatif/eurl-vs-sasu")({
         name: "description",
         content:
           "EURL ou SASU en 2026 : différences de charges, fiscalité, dividendes et retraite, tableau comparatif chiffré et simulateur gratuit pour trancher.",
-      },
-      {
-        name: "keywords",
-        content:
-          "sasu ou eurl, eurl ou sasu, comparatif sasu eurl, différence entre eurl et sasu, avantage sasu eurl, sas vs eurl, eurl vs sasu",
       },
       { property: "og:title", content: "SASU ou EURL : le comparatif 2026" },
       {

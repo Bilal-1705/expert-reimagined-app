@@ -3,8 +3,8 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/micro-entreprise-seuils-tva-2026";
-const PUBLISHED = "2026-06-15";
-const UPDATED = "2026-06-15";
+const PUBLISHED = "2026-08-15";
+const UPDATED = "2026-08-15";
 
 const faq = [
   {

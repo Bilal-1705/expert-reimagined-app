@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import logoUrl from "@/assets/erkilic-logo.png";
+import logoUrl from "@/assets/erkilic-logo.webp";
 
 type LinkItem = { to: string; label: string };
 

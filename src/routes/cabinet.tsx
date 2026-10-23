@@ -5,7 +5,8 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CabinetMap } from "@/components/site/CabinetMap";
 import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
-import heroOffice from "@/assets/hero-office.jpg";
+import cabinetImgWebp from "@/assets/cabinet.webp";
+import heroOfficeWebp from "@/assets/hero-office.webp";
 
 const SITE = "https://erkilic.fr";
 
@@ -18,7 +19,6 @@ export const Route = createFileRoute("/cabinet")({
         content:
           "Cabinet Erkilic Expertise Comptable à Juvignac (34990), inscrit à l'Ordre des Experts-Comptables de Montpellier. 23 ans d'expérience, accompagnement de proximité.",
       },
-      { name: "keywords", content: "cabinet expert-comptable Juvignac, Nazifé Erkilic, Ordre Experts-Comptables Montpellier, comptable Hérault" },
       { property: "og:title", content: "Le cabinet Erkilic Expertise Comptable — Expert-Comptable à Juvignac" },
       {
         property: "og:description",
@@ -97,7 +97,7 @@ function Cabinet() {
         <section ref={introRef} className="py-24 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
             <img
-              src={cabinetImg}
+              src={cabinetImgWebp}
               alt="Vue intérieure du cabinet Erkilic Expertise Comptable à Juvignac"
               className="w-full aspect-[4/5] object-cover grayscale outline outline-1 -outline-offset-1 outline-ink/5"
               loading="lazy"
@@ -245,7 +245,7 @@ function Cabinet() {
         {/* CTA */}
         <section className="relative py-32 px-6 overflow-hidden bg-ink text-paper">
           <img
-            src={heroOffice}
+            src={heroOfficeWebp}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-15"

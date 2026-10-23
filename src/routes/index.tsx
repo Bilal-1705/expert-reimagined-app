@@ -3,9 +3,10 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
-import cabinetImg from "@/assets/cabinet.jpg";
+import cabinetImgWebp from "@/assets/cabinet.webp";
 import heroOffice from "@/assets/hero-office.jpg";
-import handsLedger from "@/assets/hands-ledger.jpg";
+import heroOfficeWebp from "@/assets/hero-office.webp";
+import handsLedgerWebp from "@/assets/hands-ledger.webp";
 
 const SITE = "https://erkilic.fr";
 
@@ -17,11 +18,6 @@ export const Route = createFileRoute("/")({
         name: "description",
         content:
           "Cabinet comptable à Juvignac (Montpellier) : compta, fiscal, social, création d'entreprise. Premier rendez-vous gratuit, devis en 24h — 09 72 54 07 71.",
-      },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable Juvignac, cabinet comptable Montpellier, expertise comptable Hérault, comptable auto-entrepreneur Montpellier, comptable profession libérale Juvignac, comptable création entreprise Hérault, cabinet Erkilic Expertise Comptable",
       },
       { property: "og:title", content: "Expert-Comptable Juvignac Montpellier — Cabinet Erkilic Expertise Comptable" },
       {
@@ -102,8 +98,11 @@ function Home() {
         {/* Hero */}
         <section ref={heroRef} className="relative pt-10 md:pt-14 pb-20 md:pb-28 px-6 overflow-hidden border-b border-ink/5">
           <img
-            src={heroOffice}
+            src={heroOfficeWebp}
             alt="Bureau du cabinet d'expertise comptable Erkilic à Juvignac"
+            fetchPriority="high"
+            width={1536}
+            height={1024}
             className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-paper/60 via-paper/70 to-paper pointer-events-none" />
@@ -245,7 +244,7 @@ function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center reveal" data-reveal>
               <img
-                src={cabinetImg}
+                src={cabinetImgWebp}
                 alt="Cabinet d'expertise comptable Erkilic à Juvignac — intérieur"
                 className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"
                 loading="lazy"
@@ -334,7 +333,7 @@ function Home() {
         {/* Editorial band */}
         <section className="relative py-20 md:py-28 px-6 border-t border-ink/5 overflow-hidden">
           <img
-            src={handsLedger}
+            src={handsLedgerWebp}
             alt="Écriture comptable — cabinet Erkilic Expertise Comptable"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
             loading="lazy"

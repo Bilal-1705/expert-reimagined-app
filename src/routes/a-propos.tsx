@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
+import cabinetImgWebp from "@/assets/cabinet.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/a-propos";
@@ -16,11 +17,6 @@ export const Route = createFileRoute("/a-propos")({
         name: "description",
         content:
           "Découvrez Nazifé Erkilic et son cabinet d'expertise comptable à Juvignac (34990) : parcours, équipe, valeurs, engagement pour les entrepreneurs de l'Hérault.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Nazifé Erkilic expert-comptable, cabinet comptable Juvignac histoire, équipe expert-comptable Hérault, valeurs cabinet comptable Montpellier",
       },
       { property: "og:title", content: "À propos du Cabinet Erkilic Expertise Comptable à Juvignac" },
       {
@@ -93,7 +89,7 @@ function APropos() {
         <section ref={storyRef} className="py-20 md:py-24 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal" data-reveal>
             <img
-              src={cabinetImg}
+              src={cabinetImgWebp}
               alt="Cabinet Erkilic Expertise Comptable à Juvignac — expert-comptable dans l'Hérault"
               className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"
               loading="lazy"

@@ -14,11 +14,6 @@ export const Route = createFileRoute("/pack/pro")({
         content:
           "Cabinet comptable pour artisans, commerçants et PME à Juvignac : bilan, TVA, paie DSN, juridique, tableaux de bord.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable artisan Montpellier, comptable commerçant Juvignac, cabinet comptable PME Hérault, tenue comptabilité SARL SAS, comptable restaurateur BTP, DSN paie externalisée Montpellier, bilan société Occitanie",
-      },
       { property: "og:type", content: "article" },
       { property: "og:title", content: "Pack Artisans, Commerçants & PME — Cabinet Erkilic Expertise Comptable" },
       {

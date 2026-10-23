@@ -14,11 +14,6 @@ export const Route = createFileRoute("/pack/auto-entrepreneur")({
         content:
           "Comptable auto-entrepreneur à Juvignac / Montpellier : URSSAF, suivi CA, seuils TVA, passage en société. Devis gratuit.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable auto-entrepreneur Montpellier, comptable micro-entreprise Juvignac, déclaration URSSAF auto-entrepreneur, dépassement seuil auto-entrepreneur, passage EURL SASU, comptable freelance Hérault",
-      },
       { property: "og:type", content: "article" },
       { property: "og:title", content: "Pack Auto-Entrepreneur — Cabinet Erkilic Expertise Comptable" },
       {

@@ -3,6 +3,10 @@ import type {} from "@tanstack/react-start";
 
 const BASE_URL = "https://erkilic.fr";
 
+// Last real content change per page (YYYY-MM-DD). Update when a page changes.
+const DEFAULT_LASTMOD = "2026-08-24";
+const LASTMOD: Record<string, string> = {};
+
 const entries = [
   { path: "/", priority: "1.0", changefreq: "weekly" as const },
   { path: "/services", priority: "0.9", changefreq: "monthly" as const },
@@ -55,7 +59,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = entries
           .map(
             (e) =>
-              `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
+              `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <lastmod>${LASTMOD[e.path] ?? DEFAULT_LASTMOD}</lastmod>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`,
           )
           .join("\n");
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;

@@ -14,11 +14,6 @@ export const Route = createFileRoute("/pack/profession-liberale")({
         content:
           "Cabinet spécialisé BNC, 2035, AGA à Juvignac / Montpellier : médecins, kinés, avocats, architectes, consultants.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable profession libérale Montpellier, comptable BNC 2035 Juvignac, comptable médecin infirmier kiné Hérault, comptable avocat architecte, AGA association gestion agréée, comptable consultant Montpellier",
-      },
       { property: "og:type", content: "article" },
       { property: "og:title", content: "Pack Profession Libérale — Cabinet Erkilic Expertise Comptable" },
       {

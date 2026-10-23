@@ -9,67 +9,96 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
-import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as GuideRouteImport } from './routes/guide'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as ExpertComptableJuvignacRouteImport } from './routes/expert-comptable-juvignac'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ConseilsRouteImport } from './routes/conseils'
-import { Route as ComparatifsRouteImport } from './routes/comparatifs'
-import { Route as CabinetRouteImport } from './routes/cabinet'
-import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as CabinetRouteImport } from './routes/cabinet'
+import { Route as ComparatifsRouteImport } from './routes/comparatifs'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExpertComptableJuvignacRouteImport } from './routes/expert-comptable-juvignac'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GuideRouteImport } from './routes/guide'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
-import { Route as ZoneSaintGeorgesDorquesRouteImport } from './routes/zone.saint-georges-dorques'
-import { Route as ZoneGrabelsRouteImport } from './routes/zone.grabels'
-import { Route as ZoneCelleneuveMossonRouteImport } from './routes/zone.celleneuve-mosson'
-import { Route as ServicesSocialJuridiqueRouteImport } from './routes/services.social-juridique'
-import { Route as ServicesFiscaliteTvaRouteImport } from './routes/services.fiscalite-tva'
-import { Route as ServicesConseilGestionRouteImport } from './routes/services.conseil-gestion'
-import { Route as ServicesComptabiliteRouteImport } from './routes/services.comptabilite'
-import { Route as SecteurProfessionsLiberalesMedicalesRouteImport } from './routes/secteur.professions-liberales-medicales'
-import { Route as SecteurImmobilierLmnpSciRouteImport } from './routes/secteur.immobilier-lmnp-sci'
-import { Route as SecteurCommerceEcommerceRouteImport } from './routes/secteur.commerce-ecommerce'
-import { Route as SecteurArtisansCommercantsRouteImport } from './routes/secteur.artisans-commercants'
-import { Route as PackProfessionLiberaleRouteImport } from './routes/pack.profession-liberale'
-import { Route as PackProRouteImport } from './routes/pack.pro'
-import { Route as PackParticulierRouteImport } from './routes/pack.particulier'
-import { Route as PackCreateurRouteImport } from './routes/pack.createur'
-import { Route as PackAutoEntrepreneurRouteImport } from './routes/pack.auto-entrepreneur'
-import { Route as CreationEntrepriseSasuEurlEiRouteImport } from './routes/creation-entreprise.sasu-eurl-ei'
-import { Route as CreationEntrepriseJuvignacRouteImport } from './routes/creation-entreprise.juvignac'
-import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from './routes/creation-entreprise.aides-locales-montpellier'
-import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
-import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
-import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
-import { Route as ComparatifEurlVsSasuRouteImport } from './routes/comparatif.eurl-vs-sasu'
-import { Route as ComparatifDougsVsErkilicRouteImport } from './routes/comparatif.dougs-vs-erkilic'
-import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
-import { Route as ActualitesMicroEntrepriseSeuilsTva2026RouteImport } from './routes/actualites.micro-entreprise-seuils-tva-2026'
-import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
-import { Route as ActualitesFacturationElectroniqueSeptembre2026RouteImport } from './routes/actualites.facturation-electronique-septembre-2026'
-import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
-import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/actualites.declaration-revenus-2026'
 import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
+import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/actualites.declaration-revenus-2026'
+import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
+import { Route as ActualitesFacturationElectroniqueSeptembre2026RouteImport } from './routes/actualites.facturation-electronique-septembre-2026'
+import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
+import { Route as ActualitesMicroEntrepriseSeuilsTva2026RouteImport } from './routes/actualites.micro-entreprise-seuils-tva-2026'
+import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
+import { Route as ComparatifDougsVsErkilicRouteImport } from './routes/comparatif.dougs-vs-erkilic'
+import { Route as ComparatifEurlVsSasuRouteImport } from './routes/comparatif.eurl-vs-sasu'
+import { Route as ComparatifIndyVsErkilicRouteImport } from './routes/comparatif.indy-vs-erkilic'
+import { Route as ComparatifKeobizVsErkilicRouteImport } from './routes/comparatif.keobiz-vs-erkilic'
+import { Route as ComparatifPennylaneVsErkilicRouteImport } from './routes/comparatif.pennylane-vs-erkilic'
+import { Route as CreationEntrepriseAidesLocalesMontpellierRouteImport } from './routes/creation-entreprise.aides-locales-montpellier'
+import { Route as CreationEntrepriseJuvignacRouteImport } from './routes/creation-entreprise.juvignac'
+import { Route as CreationEntrepriseSasuEurlEiRouteImport } from './routes/creation-entreprise.sasu-eurl-ei'
+import { Route as PackAutoEntrepreneurRouteImport } from './routes/pack.auto-entrepreneur'
+import { Route as PackCreateurRouteImport } from './routes/pack.createur'
+import { Route as PackParticulierRouteImport } from './routes/pack.particulier'
+import { Route as PackProRouteImport } from './routes/pack.pro'
+import { Route as PackProfessionLiberaleRouteImport } from './routes/pack.profession-liberale'
+import { Route as SecteurArtisansCommercantsRouteImport } from './routes/secteur.artisans-commercants'
+import { Route as SecteurCommerceEcommerceRouteImport } from './routes/secteur.commerce-ecommerce'
+import { Route as SecteurImmobilierLmnpSciRouteImport } from './routes/secteur.immobilier-lmnp-sci'
+import { Route as SecteurProfessionsLiberalesMedicalesRouteImport } from './routes/secteur.professions-liberales-medicales'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesComptabiliteRouteImport } from './routes/services.comptabilite'
+import { Route as ServicesConseilGestionRouteImport } from './routes/services.conseil-gestion'
+import { Route as ServicesFiscaliteTvaRouteImport } from './routes/services.fiscalite-tva'
+import { Route as ServicesSocialJuridiqueRouteImport } from './routes/services.social-juridique'
+import { Route as ZoneCelleneuveMossonRouteImport } from './routes/zone.celleneuve-mosson'
+import { Route as ZoneGrabelsRouteImport } from './routes/zone.grabels'
+import { Route as ZoneSaintGeorgesDorquesRouteImport } from './routes/zone.saint-georges-dorques'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SimulateurStatutRoute = SimulateurStatutRouteImport.update({
-  id: '/simulateur-statut',
-  path: '/simulateur-statut',
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const CabinetRoute = CabinetRouteImport.update({
+  id: '/cabinet',
+  path: '/cabinet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparatifsRoute = ComparatifsRouteImport.update({
+  id: '/comparatifs',
+  path: '/comparatifs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertComptableJuvignacRoute = ExpertComptableJuvignacRouteImport.update({
+  id: '/expert-comptable-juvignac',
+  path: '/expert-comptable-juvignac',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuideRoute = GuideRouteImport.update({
+  id: '/guide',
+  path: '/guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PolitiqueConfidentialiteRoute =
@@ -78,218 +107,35 @@ const PolitiqueConfidentialiteRoute =
     path: '/politique-confidentialite',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
-  id: '/mentions-legales',
-  path: '/mentions-legales',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GuideRoute = GuideRouteImport.update({
-  id: '/guide',
-  path: '/guide',
+const SimulateurStatutRoute = SimulateurStatutRouteImport.update({
+  id: '/simulateur-statut',
+  path: '/simulateur-statut',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
-} as any)
-const ExpertComptableJuvignacRoute = ExpertComptableJuvignacRouteImport.update({
-  id: '/expert-comptable-juvignac',
-  path: '/expert-comptable-juvignac',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConseilsRoute = ConseilsRouteImport.update({
-  id: '/conseils',
-  path: '/conseils',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComparatifsRoute = ComparatifsRouteImport.update({
-  id: '/comparatifs',
-  path: '/comparatifs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CabinetRoute = CabinetRouteImport.update({
-  id: '/cabinet',
-  path: '/cabinet',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AProposRoute = AProposRouteImport.update({
-  id: '/a-propos',
-  path: '/a-propos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ServicesRoute,
 } as any)
 const ActualitesIndexRoute = ActualitesIndexRouteImport.update({
   id: '/actualites/',
   path: '/actualites/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ZoneSaintGeorgesDorquesRoute = ZoneSaintGeorgesDorquesRouteImport.update({
-  id: '/zone/saint-georges-dorques',
-  path: '/zone/saint-georges-dorques',
+const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
+  id: '/actualites/baremes-2026',
+  path: '/actualites/baremes-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ZoneGrabelsRoute = ZoneGrabelsRouteImport.update({
-  id: '/zone/grabels',
-  path: '/zone/grabels',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ZoneCelleneuveMossonRoute = ZoneCelleneuveMossonRouteImport.update({
-  id: '/zone/celleneuve-mosson',
-  path: '/zone/celleneuve-mosson',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesSocialJuridiqueRoute = ServicesSocialJuridiqueRouteImport.update({
-  id: '/social-juridique',
-  path: '/social-juridique',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesFiscaliteTvaRoute = ServicesFiscaliteTvaRouteImport.update({
-  id: '/fiscalite-tva',
-  path: '/fiscalite-tva',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesConseilGestionRoute = ServicesConseilGestionRouteImport.update({
-  id: '/conseil-gestion',
-  path: '/conseil-gestion',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesComptabiliteRoute = ServicesComptabiliteRouteImport.update({
-  id: '/comptabilite',
-  path: '/comptabilite',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const SecteurProfessionsLiberalesMedicalesRoute =
-  SecteurProfessionsLiberalesMedicalesRouteImport.update({
-    id: '/secteur/professions-liberales-medicales',
-    path: '/secteur/professions-liberales-medicales',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SecteurImmobilierLmnpSciRoute =
-  SecteurImmobilierLmnpSciRouteImport.update({
-    id: '/secteur/immobilier-lmnp-sci',
-    path: '/secteur/immobilier-lmnp-sci',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SecteurCommerceEcommerceRoute =
-  SecteurCommerceEcommerceRouteImport.update({
-    id: '/secteur/commerce-ecommerce',
-    path: '/secteur/commerce-ecommerce',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SecteurArtisansCommercantsRoute =
-  SecteurArtisansCommercantsRouteImport.update({
-    id: '/secteur/artisans-commercants',
-    path: '/secteur/artisans-commercants',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const PackProfessionLiberaleRoute = PackProfessionLiberaleRouteImport.update({
-  id: '/pack/profession-liberale',
-  path: '/pack/profession-liberale',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PackProRoute = PackProRouteImport.update({
-  id: '/pack/pro',
-  path: '/pack/pro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PackParticulierRoute = PackParticulierRouteImport.update({
-  id: '/pack/particulier',
-  path: '/pack/particulier',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PackCreateurRoute = PackCreateurRouteImport.update({
-  id: '/pack/createur',
-  path: '/pack/createur',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
-  id: '/pack/auto-entrepreneur',
-  path: '/pack/auto-entrepreneur',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreationEntrepriseSasuEurlEiRoute =
-  CreationEntrepriseSasuEurlEiRouteImport.update({
-    id: '/creation-entreprise/sasu-eurl-ei',
-    path: '/creation-entreprise/sasu-eurl-ei',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CreationEntrepriseJuvignacRoute =
-  CreationEntrepriseJuvignacRouteImport.update({
-    id: '/creation-entreprise/juvignac',
-    path: '/creation-entreprise/juvignac',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const CreationEntrepriseAidesLocalesMontpellierRoute =
-  CreationEntrepriseAidesLocalesMontpellierRouteImport.update({
-    id: '/creation-entreprise/aides-locales-montpellier',
-    path: '/creation-entreprise/aides-locales-montpellier',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComparatifPennylaneVsErkilicRoute =
-  ComparatifPennylaneVsErkilicRouteImport.update({
-    id: '/comparatif/pennylane-vs-erkilic',
-    path: '/comparatif/pennylane-vs-erkilic',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComparatifKeobizVsErkilicRoute =
-  ComparatifKeobizVsErkilicRouteImport.update({
-    id: '/comparatif/keobiz-vs-erkilic',
-    path: '/comparatif/keobiz-vs-erkilic',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
-  id: '/comparatif/indy-vs-erkilic',
-  path: '/comparatif/indy-vs-erkilic',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComparatifEurlVsSasuRoute = ComparatifEurlVsSasuRouteImport.update({
-  id: '/comparatif/eurl-vs-sasu',
-  path: '/comparatif/eurl-vs-sasu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComparatifDougsVsErkilicRoute =
-  ComparatifDougsVsErkilicRouteImport.update({
-    id: '/comparatif/dougs-vs-erkilic',
-    path: '/comparatif/dougs-vs-erkilic',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ComparatifCabinetVsEnLigneRoute =
-  ComparatifCabinetVsEnLigneRouteImport.update({
-    id: '/comparatif/cabinet-vs-en-ligne',
-    path: '/comparatif/cabinet-vs-en-ligne',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ActualitesMicroEntrepriseSeuilsTva2026Route =
-  ActualitesMicroEntrepriseSeuilsTva2026RouteImport.update({
-    id: '/actualites/micro-entreprise-seuils-tva-2026',
-    path: '/actualites/micro-entreprise-seuils-tva-2026',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ActualitesLoiFinances2026Route =
-  ActualitesLoiFinances2026RouteImport.update({
-    id: '/actualites/loi-finances-2026',
-    path: '/actualites/loi-finances-2026',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ActualitesFacturationElectroniqueSeptembre2026Route =
-  ActualitesFacturationElectroniqueSeptembre2026RouteImport.update({
-    id: '/actualites/facturation-electronique-septembre-2026',
-    path: '/actualites/facturation-electronique-septembre-2026',
+const ActualitesDeclarationRevenus2026Route =
+  ActualitesDeclarationRevenus2026RouteImport.update({
+    id: '/actualites/declaration-revenus-2026',
+    path: '/actualites/declaration-revenus-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ActualitesFacturationElectronique2026Route =
@@ -298,15 +144,163 @@ const ActualitesFacturationElectronique2026Route =
     path: '/actualites/facturation-electronique-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ActualitesDeclarationRevenus2026Route =
-  ActualitesDeclarationRevenus2026RouteImport.update({
-    id: '/actualites/declaration-revenus-2026',
-    path: '/actualites/declaration-revenus-2026',
+const ActualitesFacturationElectroniqueSeptembre2026Route =
+  ActualitesFacturationElectroniqueSeptembre2026RouteImport.update({
+    id: '/actualites/facturation-electronique-septembre-2026',
+    path: '/actualites/facturation-electronique-septembre-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
-  id: '/actualites/baremes-2026',
-  path: '/actualites/baremes-2026',
+const ActualitesLoiFinances2026Route =
+  ActualitesLoiFinances2026RouteImport.update({
+    id: '/actualites/loi-finances-2026',
+    path: '/actualites/loi-finances-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesMicroEntrepriseSeuilsTva2026Route =
+  ActualitesMicroEntrepriseSeuilsTva2026RouteImport.update({
+    id: '/actualites/micro-entreprise-seuils-tva-2026',
+    path: '/actualites/micro-entreprise-seuils-tva-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifCabinetVsEnLigneRoute =
+  ComparatifCabinetVsEnLigneRouteImport.update({
+    id: '/comparatif/cabinet-vs-en-ligne',
+    path: '/comparatif/cabinet-vs-en-ligne',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifDougsVsErkilicRoute =
+  ComparatifDougsVsErkilicRouteImport.update({
+    id: '/comparatif/dougs-vs-erkilic',
+    path: '/comparatif/dougs-vs-erkilic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifEurlVsSasuRoute = ComparatifEurlVsSasuRouteImport.update({
+  id: '/comparatif/eurl-vs-sasu',
+  path: '/comparatif/eurl-vs-sasu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparatifIndyVsErkilicRoute = ComparatifIndyVsErkilicRouteImport.update({
+  id: '/comparatif/indy-vs-erkilic',
+  path: '/comparatif/indy-vs-erkilic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparatifKeobizVsErkilicRoute =
+  ComparatifKeobizVsErkilicRouteImport.update({
+    id: '/comparatif/keobiz-vs-erkilic',
+    path: '/comparatif/keobiz-vs-erkilic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ComparatifPennylaneVsErkilicRoute =
+  ComparatifPennylaneVsErkilicRouteImport.update({
+    id: '/comparatif/pennylane-vs-erkilic',
+    path: '/comparatif/pennylane-vs-erkilic',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreationEntrepriseAidesLocalesMontpellierRoute =
+  CreationEntrepriseAidesLocalesMontpellierRouteImport.update({
+    id: '/creation-entreprise/aides-locales-montpellier',
+    path: '/creation-entreprise/aides-locales-montpellier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreationEntrepriseJuvignacRoute =
+  CreationEntrepriseJuvignacRouteImport.update({
+    id: '/creation-entreprise/juvignac',
+    path: '/creation-entreprise/juvignac',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CreationEntrepriseSasuEurlEiRoute =
+  CreationEntrepriseSasuEurlEiRouteImport.update({
+    id: '/creation-entreprise/sasu-eurl-ei',
+    path: '/creation-entreprise/sasu-eurl-ei',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PackAutoEntrepreneurRoute = PackAutoEntrepreneurRouteImport.update({
+  id: '/pack/auto-entrepreneur',
+  path: '/pack/auto-entrepreneur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackCreateurRoute = PackCreateurRouteImport.update({
+  id: '/pack/createur',
+  path: '/pack/createur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackParticulierRoute = PackParticulierRouteImport.update({
+  id: '/pack/particulier',
+  path: '/pack/particulier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackProRoute = PackProRouteImport.update({
+  id: '/pack/pro',
+  path: '/pack/pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackProfessionLiberaleRoute = PackProfessionLiberaleRouteImport.update({
+  id: '/pack/profession-liberale',
+  path: '/pack/profession-liberale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecteurArtisansCommercantsRoute =
+  SecteurArtisansCommercantsRouteImport.update({
+    id: '/secteur/artisans-commercants',
+    path: '/secteur/artisans-commercants',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SecteurCommerceEcommerceRoute =
+  SecteurCommerceEcommerceRouteImport.update({
+    id: '/secteur/commerce-ecommerce',
+    path: '/secteur/commerce-ecommerce',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SecteurImmobilierLmnpSciRoute =
+  SecteurImmobilierLmnpSciRouteImport.update({
+    id: '/secteur/immobilier-lmnp-sci',
+    path: '/secteur/immobilier-lmnp-sci',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SecteurProfessionsLiberalesMedicalesRoute =
+  SecteurProfessionsLiberalesMedicalesRouteImport.update({
+    id: '/secteur/professions-liberales-medicales',
+    path: '/secteur/professions-liberales-medicales',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesComptabiliteRoute = ServicesComptabiliteRouteImport.update({
+  id: '/comptabilite',
+  path: '/comptabilite',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesConseilGestionRoute = ServicesConseilGestionRouteImport.update({
+  id: '/conseil-gestion',
+  path: '/conseil-gestion',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesFiscaliteTvaRoute = ServicesFiscaliteTvaRouteImport.update({
+  id: '/fiscalite-tva',
+  path: '/fiscalite-tva',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSocialJuridiqueRoute = ServicesSocialJuridiqueRouteImport.update({
+  id: '/social-juridique',
+  path: '/social-juridique',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ZoneCelleneuveMossonRoute = ZoneCelleneuveMossonRouteImport.update({
+  id: '/zone/celleneuve-mosson',
+  path: '/zone/celleneuve-mosson',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZoneGrabelsRoute = ZoneGrabelsRouteImport.update({
+  id: '/zone/grabels',
+  path: '/zone/grabels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZoneSaintGeorgesDorquesRoute = ZoneSaintGeorgesDorquesRouteImport.update({
+  id: '/zone/saint-georges-dorques',
+  path: '/zone/saint-georges-dorques',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -315,7 +309,6 @@ export interface FileRoutesByFullPath {
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/comparatifs': typeof ComparatifsRoute
-  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
   '/faq': typeof FaqRoute
@@ -364,7 +357,6 @@ export interface FileRoutesByTo {
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/comparatifs': typeof ComparatifsRoute
-  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
   '/faq': typeof FaqRoute
@@ -413,7 +405,6 @@ export interface FileRoutesById {
   '/a-propos': typeof AProposRoute
   '/cabinet': typeof CabinetRoute
   '/comparatifs': typeof ComparatifsRoute
-  '/conseils': typeof ConseilsRoute
   '/contact': typeof ContactRoute
   '/expert-comptable-juvignac': typeof ExpertComptableJuvignacRoute
   '/faq': typeof FaqRoute
@@ -464,7 +455,6 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/cabinet'
     | '/comparatifs'
-    | '/conseils'
     | '/contact'
     | '/expert-comptable-juvignac'
     | '/faq'
@@ -513,7 +503,6 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/cabinet'
     | '/comparatifs'
-    | '/conseils'
     | '/contact'
     | '/expert-comptable-juvignac'
     | '/faq'
@@ -561,7 +550,6 @@ export interface FileRouteTypes {
     | '/a-propos'
     | '/cabinet'
     | '/comparatifs'
-    | '/conseils'
     | '/contact'
     | '/expert-comptable-juvignac'
     | '/faq'
@@ -611,7 +599,6 @@ export interface RootRouteChildren {
   AProposRoute: typeof AProposRoute
   CabinetRoute: typeof CabinetRoute
   ComparatifsRoute: typeof ComparatifsRoute
-  ConseilsRoute: typeof ConseilsRoute
   ContactRoute: typeof ContactRoute
   ExpertComptableJuvignacRoute: typeof ExpertComptableJuvignacRoute
   FaqRoute: typeof FaqRoute
@@ -653,88 +640,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/simulateur-statut': {
-      id: '/simulateur-statut'
-      path: '/simulateur-statut'
-      fullPath: '/simulateur-statut'
-      preLoaderRoute: typeof SimulateurStatutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politique-confidentialite': {
-      id: '/politique-confidentialite'
-      path: '/politique-confidentialite'
-      fullPath: '/politique-confidentialite'
-      preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mentions-legales': {
-      id: '/mentions-legales'
-      path: '/mentions-legales'
-      fullPath: '/mentions-legales'
-      preLoaderRoute: typeof MentionsLegalesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guide': {
-      id: '/guide'
-      path: '/guide'
-      fullPath: '/guide'
-      preLoaderRoute: typeof GuideRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/expert-comptable-juvignac': {
-      id: '/expert-comptable-juvignac'
-      path: '/expert-comptable-juvignac'
-      fullPath: '/expert-comptable-juvignac'
-      preLoaderRoute: typeof ExpertComptableJuvignacRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/conseils': {
-      id: '/conseils'
-      path: '/conseils'
-      fullPath: '/conseils'
-      preLoaderRoute: typeof ConseilsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatifs': {
-      id: '/comparatifs'
-      path: '/comparatifs'
-      fullPath: '/comparatifs'
-      preLoaderRoute: typeof ComparatifsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cabinet': {
-      id: '/cabinet'
-      path: '/cabinet'
-      fullPath: '/cabinet'
-      preLoaderRoute: typeof CabinetRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/a-propos': {
@@ -744,19 +654,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cabinet': {
+      id: '/cabinet'
+      path: '/cabinet'
+      fullPath: '/cabinet'
+      preLoaderRoute: typeof CabinetRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof ServicesRoute
+    '/comparatifs': {
+      id: '/comparatifs'
+      path: '/comparatifs'
+      fullPath: '/comparatifs'
+      preLoaderRoute: typeof ComparatifsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expert-comptable-juvignac': {
+      id: '/expert-comptable-juvignac'
+      path: '/expert-comptable-juvignac'
+      fullPath: '/expert-comptable-juvignac'
+      preLoaderRoute: typeof ExpertComptableJuvignacRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guide': {
+      id: '/guide'
+      path: '/guide'
+      fullPath: '/guide'
+      preLoaderRoute: typeof GuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-confidentialite': {
+      id: '/politique-confidentialite'
+      path: '/politique-confidentialite'
+      fullPath: '/politique-confidentialite'
+      preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulateur-statut': {
+      id: '/simulateur-statut'
+      path: '/simulateur-statut'
+      fullPath: '/simulateur-statut'
+      preLoaderRoute: typeof SimulateurStatutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/actualites/': {
       id: '/actualites/'
@@ -765,207 +738,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActualitesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/zone/saint-georges-dorques': {
-      id: '/zone/saint-georges-dorques'
-      path: '/zone/saint-georges-dorques'
-      fullPath: '/zone/saint-georges-dorques'
-      preLoaderRoute: typeof ZoneSaintGeorgesDorquesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/zone/grabels': {
-      id: '/zone/grabels'
-      path: '/zone/grabels'
-      fullPath: '/zone/grabels'
-      preLoaderRoute: typeof ZoneGrabelsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/zone/celleneuve-mosson': {
-      id: '/zone/celleneuve-mosson'
-      path: '/zone/celleneuve-mosson'
-      fullPath: '/zone/celleneuve-mosson'
-      preLoaderRoute: typeof ZoneCelleneuveMossonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/social-juridique': {
-      id: '/services/social-juridique'
-      path: '/social-juridique'
-      fullPath: '/services/social-juridique'
-      preLoaderRoute: typeof ServicesSocialJuridiqueRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/fiscalite-tva': {
-      id: '/services/fiscalite-tva'
-      path: '/fiscalite-tva'
-      fullPath: '/services/fiscalite-tva'
-      preLoaderRoute: typeof ServicesFiscaliteTvaRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/conseil-gestion': {
-      id: '/services/conseil-gestion'
-      path: '/conseil-gestion'
-      fullPath: '/services/conseil-gestion'
-      preLoaderRoute: typeof ServicesConseilGestionRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/comptabilite': {
-      id: '/services/comptabilite'
-      path: '/comptabilite'
-      fullPath: '/services/comptabilite'
-      preLoaderRoute: typeof ServicesComptabiliteRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/secteur/professions-liberales-medicales': {
-      id: '/secteur/professions-liberales-medicales'
-      path: '/secteur/professions-liberales-medicales'
-      fullPath: '/secteur/professions-liberales-medicales'
-      preLoaderRoute: typeof SecteurProfessionsLiberalesMedicalesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/secteur/immobilier-lmnp-sci': {
-      id: '/secteur/immobilier-lmnp-sci'
-      path: '/secteur/immobilier-lmnp-sci'
-      fullPath: '/secteur/immobilier-lmnp-sci'
-      preLoaderRoute: typeof SecteurImmobilierLmnpSciRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/secteur/commerce-ecommerce': {
-      id: '/secteur/commerce-ecommerce'
-      path: '/secteur/commerce-ecommerce'
-      fullPath: '/secteur/commerce-ecommerce'
-      preLoaderRoute: typeof SecteurCommerceEcommerceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/secteur/artisans-commercants': {
-      id: '/secteur/artisans-commercants'
-      path: '/secteur/artisans-commercants'
-      fullPath: '/secteur/artisans-commercants'
-      preLoaderRoute: typeof SecteurArtisansCommercantsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pack/profession-liberale': {
-      id: '/pack/profession-liberale'
-      path: '/pack/profession-liberale'
-      fullPath: '/pack/profession-liberale'
-      preLoaderRoute: typeof PackProfessionLiberaleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pack/pro': {
-      id: '/pack/pro'
-      path: '/pack/pro'
-      fullPath: '/pack/pro'
-      preLoaderRoute: typeof PackProRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pack/particulier': {
-      id: '/pack/particulier'
-      path: '/pack/particulier'
-      fullPath: '/pack/particulier'
-      preLoaderRoute: typeof PackParticulierRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pack/createur': {
-      id: '/pack/createur'
-      path: '/pack/createur'
-      fullPath: '/pack/createur'
-      preLoaderRoute: typeof PackCreateurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pack/auto-entrepreneur': {
-      id: '/pack/auto-entrepreneur'
-      path: '/pack/auto-entrepreneur'
-      fullPath: '/pack/auto-entrepreneur'
-      preLoaderRoute: typeof PackAutoEntrepreneurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creation-entreprise/sasu-eurl-ei': {
-      id: '/creation-entreprise/sasu-eurl-ei'
-      path: '/creation-entreprise/sasu-eurl-ei'
-      fullPath: '/creation-entreprise/sasu-eurl-ei'
-      preLoaderRoute: typeof CreationEntrepriseSasuEurlEiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creation-entreprise/juvignac': {
-      id: '/creation-entreprise/juvignac'
-      path: '/creation-entreprise/juvignac'
-      fullPath: '/creation-entreprise/juvignac'
-      preLoaderRoute: typeof CreationEntrepriseJuvignacRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creation-entreprise/aides-locales-montpellier': {
-      id: '/creation-entreprise/aides-locales-montpellier'
-      path: '/creation-entreprise/aides-locales-montpellier'
-      fullPath: '/creation-entreprise/aides-locales-montpellier'
-      preLoaderRoute: typeof CreationEntrepriseAidesLocalesMontpellierRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/pennylane-vs-erkilic': {
-      id: '/comparatif/pennylane-vs-erkilic'
-      path: '/comparatif/pennylane-vs-erkilic'
-      fullPath: '/comparatif/pennylane-vs-erkilic'
-      preLoaderRoute: typeof ComparatifPennylaneVsErkilicRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/keobiz-vs-erkilic': {
-      id: '/comparatif/keobiz-vs-erkilic'
-      path: '/comparatif/keobiz-vs-erkilic'
-      fullPath: '/comparatif/keobiz-vs-erkilic'
-      preLoaderRoute: typeof ComparatifKeobizVsErkilicRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/indy-vs-erkilic': {
-      id: '/comparatif/indy-vs-erkilic'
-      path: '/comparatif/indy-vs-erkilic'
-      fullPath: '/comparatif/indy-vs-erkilic'
-      preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/eurl-vs-sasu': {
-      id: '/comparatif/eurl-vs-sasu'
-      path: '/comparatif/eurl-vs-sasu'
-      fullPath: '/comparatif/eurl-vs-sasu'
-      preLoaderRoute: typeof ComparatifEurlVsSasuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/dougs-vs-erkilic': {
-      id: '/comparatif/dougs-vs-erkilic'
-      path: '/comparatif/dougs-vs-erkilic'
-      fullPath: '/comparatif/dougs-vs-erkilic'
-      preLoaderRoute: typeof ComparatifDougsVsErkilicRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/comparatif/cabinet-vs-en-ligne': {
-      id: '/comparatif/cabinet-vs-en-ligne'
-      path: '/comparatif/cabinet-vs-en-ligne'
-      fullPath: '/comparatif/cabinet-vs-en-ligne'
-      preLoaderRoute: typeof ComparatifCabinetVsEnLigneRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actualites/micro-entreprise-seuils-tva-2026': {
-      id: '/actualites/micro-entreprise-seuils-tva-2026'
-      path: '/actualites/micro-entreprise-seuils-tva-2026'
-      fullPath: '/actualites/micro-entreprise-seuils-tva-2026'
-      preLoaderRoute: typeof ActualitesMicroEntrepriseSeuilsTva2026RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actualites/loi-finances-2026': {
-      id: '/actualites/loi-finances-2026'
-      path: '/actualites/loi-finances-2026'
-      fullPath: '/actualites/loi-finances-2026'
-      preLoaderRoute: typeof ActualitesLoiFinances2026RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actualites/facturation-electronique-septembre-2026': {
-      id: '/actualites/facturation-electronique-septembre-2026'
-      path: '/actualites/facturation-electronique-septembre-2026'
-      fullPath: '/actualites/facturation-electronique-septembre-2026'
-      preLoaderRoute: typeof ActualitesFacturationElectroniqueSeptembre2026RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actualites/facturation-electronique-2026': {
-      id: '/actualites/facturation-electronique-2026'
-      path: '/actualites/facturation-electronique-2026'
-      fullPath: '/actualites/facturation-electronique-2026'
-      preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
+    '/actualites/baremes-2026': {
+      id: '/actualites/baremes-2026'
+      path: '/actualites/baremes-2026'
+      fullPath: '/actualites/baremes-2026'
+      preLoaderRoute: typeof ActualitesBaremes2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/actualites/declaration-revenus-2026': {
@@ -975,11 +752,214 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActualitesDeclarationRevenus2026RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/actualites/baremes-2026': {
-      id: '/actualites/baremes-2026'
-      path: '/actualites/baremes-2026'
-      fullPath: '/actualites/baremes-2026'
-      preLoaderRoute: typeof ActualitesBaremes2026RouteImport
+    '/actualites/facturation-electronique-2026': {
+      id: '/actualites/facturation-electronique-2026'
+      path: '/actualites/facturation-electronique-2026'
+      fullPath: '/actualites/facturation-electronique-2026'
+      preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/facturation-electronique-septembre-2026': {
+      id: '/actualites/facturation-electronique-septembre-2026'
+      path: '/actualites/facturation-electronique-septembre-2026'
+      fullPath: '/actualites/facturation-electronique-septembre-2026'
+      preLoaderRoute: typeof ActualitesFacturationElectroniqueSeptembre2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/loi-finances-2026': {
+      id: '/actualites/loi-finances-2026'
+      path: '/actualites/loi-finances-2026'
+      fullPath: '/actualites/loi-finances-2026'
+      preLoaderRoute: typeof ActualitesLoiFinances2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/micro-entreprise-seuils-tva-2026': {
+      id: '/actualites/micro-entreprise-seuils-tva-2026'
+      path: '/actualites/micro-entreprise-seuils-tva-2026'
+      fullPath: '/actualites/micro-entreprise-seuils-tva-2026'
+      preLoaderRoute: typeof ActualitesMicroEntrepriseSeuilsTva2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/cabinet-vs-en-ligne': {
+      id: '/comparatif/cabinet-vs-en-ligne'
+      path: '/comparatif/cabinet-vs-en-ligne'
+      fullPath: '/comparatif/cabinet-vs-en-ligne'
+      preLoaderRoute: typeof ComparatifCabinetVsEnLigneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/dougs-vs-erkilic': {
+      id: '/comparatif/dougs-vs-erkilic'
+      path: '/comparatif/dougs-vs-erkilic'
+      fullPath: '/comparatif/dougs-vs-erkilic'
+      preLoaderRoute: typeof ComparatifDougsVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/eurl-vs-sasu': {
+      id: '/comparatif/eurl-vs-sasu'
+      path: '/comparatif/eurl-vs-sasu'
+      fullPath: '/comparatif/eurl-vs-sasu'
+      preLoaderRoute: typeof ComparatifEurlVsSasuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/indy-vs-erkilic': {
+      id: '/comparatif/indy-vs-erkilic'
+      path: '/comparatif/indy-vs-erkilic'
+      fullPath: '/comparatif/indy-vs-erkilic'
+      preLoaderRoute: typeof ComparatifIndyVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/keobiz-vs-erkilic': {
+      id: '/comparatif/keobiz-vs-erkilic'
+      path: '/comparatif/keobiz-vs-erkilic'
+      fullPath: '/comparatif/keobiz-vs-erkilic'
+      preLoaderRoute: typeof ComparatifKeobizVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparatif/pennylane-vs-erkilic': {
+      id: '/comparatif/pennylane-vs-erkilic'
+      path: '/comparatif/pennylane-vs-erkilic'
+      fullPath: '/comparatif/pennylane-vs-erkilic'
+      preLoaderRoute: typeof ComparatifPennylaneVsErkilicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-entreprise/aides-locales-montpellier': {
+      id: '/creation-entreprise/aides-locales-montpellier'
+      path: '/creation-entreprise/aides-locales-montpellier'
+      fullPath: '/creation-entreprise/aides-locales-montpellier'
+      preLoaderRoute: typeof CreationEntrepriseAidesLocalesMontpellierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-entreprise/juvignac': {
+      id: '/creation-entreprise/juvignac'
+      path: '/creation-entreprise/juvignac'
+      fullPath: '/creation-entreprise/juvignac'
+      preLoaderRoute: typeof CreationEntrepriseJuvignacRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-entreprise/sasu-eurl-ei': {
+      id: '/creation-entreprise/sasu-eurl-ei'
+      path: '/creation-entreprise/sasu-eurl-ei'
+      fullPath: '/creation-entreprise/sasu-eurl-ei'
+      preLoaderRoute: typeof CreationEntrepriseSasuEurlEiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/auto-entrepreneur': {
+      id: '/pack/auto-entrepreneur'
+      path: '/pack/auto-entrepreneur'
+      fullPath: '/pack/auto-entrepreneur'
+      preLoaderRoute: typeof PackAutoEntrepreneurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/createur': {
+      id: '/pack/createur'
+      path: '/pack/createur'
+      fullPath: '/pack/createur'
+      preLoaderRoute: typeof PackCreateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/particulier': {
+      id: '/pack/particulier'
+      path: '/pack/particulier'
+      fullPath: '/pack/particulier'
+      preLoaderRoute: typeof PackParticulierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/pro': {
+      id: '/pack/pro'
+      path: '/pack/pro'
+      fullPath: '/pack/pro'
+      preLoaderRoute: typeof PackProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack/profession-liberale': {
+      id: '/pack/profession-liberale'
+      path: '/pack/profession-liberale'
+      fullPath: '/pack/profession-liberale'
+      preLoaderRoute: typeof PackProfessionLiberaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/artisans-commercants': {
+      id: '/secteur/artisans-commercants'
+      path: '/secteur/artisans-commercants'
+      fullPath: '/secteur/artisans-commercants'
+      preLoaderRoute: typeof SecteurArtisansCommercantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/commerce-ecommerce': {
+      id: '/secteur/commerce-ecommerce'
+      path: '/secteur/commerce-ecommerce'
+      fullPath: '/secteur/commerce-ecommerce'
+      preLoaderRoute: typeof SecteurCommerceEcommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/immobilier-lmnp-sci': {
+      id: '/secteur/immobilier-lmnp-sci'
+      path: '/secteur/immobilier-lmnp-sci'
+      fullPath: '/secteur/immobilier-lmnp-sci'
+      preLoaderRoute: typeof SecteurImmobilierLmnpSciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/secteur/professions-liberales-medicales': {
+      id: '/secteur/professions-liberales-medicales'
+      path: '/secteur/professions-liberales-medicales'
+      fullPath: '/secteur/professions-liberales-medicales'
+      preLoaderRoute: typeof SecteurProfessionsLiberalesMedicalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/comptabilite': {
+      id: '/services/comptabilite'
+      path: '/comptabilite'
+      fullPath: '/services/comptabilite'
+      preLoaderRoute: typeof ServicesComptabiliteRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/conseil-gestion': {
+      id: '/services/conseil-gestion'
+      path: '/conseil-gestion'
+      fullPath: '/services/conseil-gestion'
+      preLoaderRoute: typeof ServicesConseilGestionRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/fiscalite-tva': {
+      id: '/services/fiscalite-tva'
+      path: '/fiscalite-tva'
+      fullPath: '/services/fiscalite-tva'
+      preLoaderRoute: typeof ServicesFiscaliteTvaRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/social-juridique': {
+      id: '/services/social-juridique'
+      path: '/social-juridique'
+      fullPath: '/services/social-juridique'
+      preLoaderRoute: typeof ServicesSocialJuridiqueRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/zone/celleneuve-mosson': {
+      id: '/zone/celleneuve-mosson'
+      path: '/zone/celleneuve-mosson'
+      fullPath: '/zone/celleneuve-mosson'
+      preLoaderRoute: typeof ZoneCelleneuveMossonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zone/grabels': {
+      id: '/zone/grabels'
+      path: '/zone/grabels'
+      fullPath: '/zone/grabels'
+      preLoaderRoute: typeof ZoneGrabelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zone/saint-georges-dorques': {
+      id: '/zone/saint-georges-dorques'
+      path: '/zone/saint-georges-dorques'
+      fullPath: '/zone/saint-georges-dorques'
+      preLoaderRoute: typeof ZoneSaintGeorgesDorquesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -1010,7 +990,6 @@ const rootRouteChildren: RootRouteChildren = {
   AProposRoute: AProposRoute,
   CabinetRoute: CabinetRoute,
   ComparatifsRoute: ComparatifsRoute,
-  ConseilsRoute: ConseilsRoute,
   ContactRoute: ContactRoute,
   ExpertComptableJuvignacRoute: ExpertComptableJuvignacRoute,
   FaqRoute: FaqRoute,

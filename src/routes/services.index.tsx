@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import handsLedger from "@/assets/hands-ledger.jpg";
+import handsLedgerWebp from "@/assets/hands-ledger.webp";
 
 const SITE = "https://erkilic.fr";
 
@@ -15,11 +16,6 @@ export const Route = createFileRoute("/services/")({
         name: "description",
         content:
           "Comptabilité, fiscalité, social, juridique. Packs Créateur, Auto-entrepreneur, Profession libérale, Artisans & PME, Particulier à Juvignac.",
-      },
-      {
-        name: "keywords",
-        content:
-          "prestations expert-comptable, tenue comptabilité Montpellier, déclaration TVA Juvignac, paie DSN, statuts société, packs cabinet comptable Hérault",
       },
       { property: "og:title", content: "Prestations — Cabinet Erkilic Expertise Comptable" },
       {
@@ -181,7 +177,7 @@ function Services() {
             </div>
             <div className="md:col-span-4">
               <img
-                src={handsLedger}
+                src={handsLedgerWebp}
                 alt="Écriture comptable au stylo plume dans un grand livre — cabinet Erkilic Expertise Comptable"
                 width={1024}
                 height={1280}

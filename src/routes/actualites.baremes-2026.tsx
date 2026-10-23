@@ -3,7 +3,7 @@ import { ContentPage, articleJsonLd } from "@/components/site/ContentPage";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/baremes-2026";
-const PUBLISHED = "2026-01-08";
+const PUBLISHED = "2026-07-08";
 const UPDATED = "2026-07-08";
 
 export const Route = createFileRoute("/actualites/baremes-2026")({

@@ -14,11 +14,6 @@ export const Route = createFileRoute("/pack/createur")({
         content:
           "Création d'entreprise à Montpellier / Juvignac : prévisionnel, choix du statut (SASU, EURL, SARL), aides, 1ère année.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable création entreprise Montpellier, aide création SASU EURL, prévisionnel financier expert-comptable, choix statut juridique, business plan cabinet comptable Juvignac, ouvrir société Hérault",
-      },
       { property: "og:type", content: "article" },
       { property: "og:title", content: "Pack Créateur d'entreprise — Cabinet Erkilic Expertise Comptable" },
       {

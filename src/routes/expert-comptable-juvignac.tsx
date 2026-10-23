@@ -36,11 +36,6 @@ export const Route = createFileRoute("/expert-comptable-juvignac")({
         content:
           "Cabinet d'expertise comptable à Juvignac (34990) : comptabilité, fiscalité, TVA, bilan, création d'entreprise et accompagnement des dirigeants.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable Juvignac, cabinet comptable Juvignac 34990, comptable Montpellier ouest, bilan comptable Juvignac, déclaration TVA Hérault",
-      },
       { property: "og:title", content: "Expert-comptable à Juvignac — Erkilic Expertise Comptable" },
       {
         property: "og:description",

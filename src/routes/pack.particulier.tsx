@@ -14,11 +14,6 @@ export const Route = createFileRoute("/pack/particulier")({
         content:
           "Déclaration IR, IFI, revenus fonciers, LMNP et optimisation fiscale pour particuliers à Juvignac / Montpellier.",
       },
-      {
-        name: "keywords",
-        content:
-          "expert-comptable particulier Montpellier, déclaration impôts revenus Juvignac, comptable IFI Hérault, déclaration revenus fonciers LMNP, optimisation fiscale particulier, gestion patrimoniale Montpellier, loi Girardin conseil",
-      },
       { property: "og:type", content: "article" },
       { property: "og:title", content: "Pack Particulier — Cabinet Erkilic Expertise Comptable" },
       {

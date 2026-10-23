@@ -18,11 +18,6 @@ export const Route = createFileRoute("/contact")({
         content:
           "Cabinet Erkilic Expertise Comptable à Juvignac (34990) : 09 72 54 07 71. Devis gratuit sous 24h, prise de rendez-vous Calendly en ligne.",
       },
-      {
-        name: "keywords",
-        content:
-          "contact expert-comptable Juvignac, devis gratuit comptable Montpellier, cabinet Erkilic Expertise Comptable téléphone, prise de rendez-vous expert-comptable Hérault",
-      },
       { property: "og:title", content: "Contact — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",

@@ -3,8 +3,8 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/declaration-revenus-2026";
-const PUBLISHED = "2026-07-20";
-const UPDATED = "2026-07-20";
+const PUBLISHED = "2026-08-15";
+const UPDATED = "2026-08-15";
 
 const faq = [
   {

@@ -17,11 +17,6 @@ export const Route = createFileRoute("/guide")({
         content:
           "Guide complet : missions de l'expert-comptable, choix du statut juridique, TVA, obligations sociales, fiscalité à Juvignac / Montpellier.",
       },
-      {
-        name: "keywords",
-        content:
-          "guide expert-comptable Montpellier, missions expert-comptable, choix statut juridique SASU EURL SARL, obligations comptables entreprise, TVA franchise en base, fiscalité entreprise Hérault, expert-comptable Juvignac guide",
-      },
       { property: "og:title", content: "Guide de l'expertise comptable — Cabinet Erkilic Expertise Comptable" },
       {
         property: "og:description",
