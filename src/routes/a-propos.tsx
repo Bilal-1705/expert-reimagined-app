@@ -1,3 +1,4 @@
+import { AUTHOR } from "@/components/site/Editorial";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -38,10 +39,7 @@ export const Route = createFileRoute("/a-propos")({
           "@type": "AboutPage",
           name: "À propos — Cabinet Erkilic Expertise Comptable",
           mainEntity: {
-            "@type": "Person",
-            name: "Nazifé Erkilic",
-            jobTitle: "Expert-comptable inscrite à l'Ordre",
-            worksFor: { "@type": "AccountingService", name: "Erkilic Expertise Comptable" },
+            ...AUTHOR,
           },
         }),
       },

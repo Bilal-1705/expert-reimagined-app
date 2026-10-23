@@ -23,15 +23,15 @@ export const Route = createFileRoute("/zone/celleneuve-mosson")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "AccountingService",
-          name: "Erkilic Expertise Comptable",
-          areaServed: [
+          "@type": "WebPage",
+          about: { "@id": `${SITE}/#cabinet` },
+          name: "Comptable à Celleneuve et La Mosson",
+          spatialCoverage: [
             { "@type": "Place", name: "Celleneuve, Montpellier" },
             { "@type": "Place", name: "La Mosson, Montpellier" },
             { "@type": "Place", name: "La Paillade, Montpellier" },
             { "@type": "Place", name: "Hauts de Massane, Montpellier" },
           ],
-          address: { "@type": "PostalAddress", streetAddress: "29 bis rue du Poumpidou", addressLocality: "Juvignac", postalCode: "34990", addressCountry: "FR" },
           url: `${SITE}${PATH}`,
         }),
       },

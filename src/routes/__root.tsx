@@ -20,13 +20,10 @@ const localBusinessJsonLd = {
   "@type": "AccountingService",
   "@id": `${SITE}/#cabinet`,
   name: "Erkilic Expertise Comptable",
-  legalName: "Cabinet Erkilic Expertise Comptable",
+  legalName: "ERKILIC EXPERTISE COMPTABLE",
+  alternateName: ["Cabinet Erkilic", "EEC"],
   identifier: { "@type": "PropertyValue", propertyID: "SIREN", value: "814349841" },
-  founder: {
-    "@type": "Person",
-    name: "Nazifé Erkilic",
-    jobTitle: "Experte-comptable",
-  },
+  founder: { "@id": `${SITE}/a-propos#nazife-erkilic` },
   description:
     "Cabinet d'expert-comptable à Juvignac, près de Montpellier. Comptabilité, fiscalité, social et juridique pour créateurs, professions libérales, PME et particuliers.",
   url: SITE,
@@ -42,13 +39,15 @@ const localBusinessJsonLd = {
     addressRegion: "Hérault",
     addressCountry: "FR",
   },
-  geo: { "@type": "GeoCoordinates", latitude: 43.6191, longitude: 3.8022 },
+  geo: { "@type": "GeoCoordinates", latitude: 43.613175, longitude: 3.804126 },
   areaServed: [
     { "@type": "City", name: "Juvignac" },
     { "@type": "City", name: "Montpellier" },
     { "@type": "City", name: "Saint-Georges-d'Orques" },
     { "@type": "City", name: "Pignan" },
     { "@type": "City", name: "Montarnaud" },
+    { "@type": "City", name: "Grabels" },
+    { "@type": "AdministrativeArea", name: "Hérault" },
   ],
   openingHoursSpecification: [
     {
@@ -75,6 +74,12 @@ const localBusinessJsonLd = {
     "Paie et DSN",
   ],
   slogan: "Parce que vous comptez pour nous, nous comptons pour vous.",
+  image: `${SITE}/og-cabinet.jpg`,
+  sameAs: [
+    "https://annuaire-entreprises.data.gouv.fr/entreprise/814349841",
+    "https://www.facebook.com/www.erkilic.fr/",
+    "https://www.pagesjaunes.fr/pros/56173219",
+  ],
 };
 
 const websiteJsonLd = {

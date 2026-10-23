@@ -35,17 +35,7 @@ export const Route = createFileRoute("/pack/auto-entrepreneur")({
           "@type": "Service",
           serviceType: "Expertise comptable auto-entrepreneur",
           name: "Pack Auto-Entrepreneur",
-          provider: {
-            "@type": "AccountingService",
-            name: "Erkilic Expertise Comptable",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "29 bis rue du Poumpidou",
-              addressLocality: "Juvignac",
-              postalCode: "34990",
-              addressCountry: "FR",
-            },
-          },
+          provider: { "@id": `${SITE}/#cabinet` },
           areaServed: ["Juvignac", "Montpellier", "Hérault", "Occitanie"],
           audience: { "@type": "BusinessAudience", audienceType: "Auto-entrepreneurs, micro-entrepreneurs, freelances" },
           url: `${SITE}${PATH}`,

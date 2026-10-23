@@ -18,7 +18,7 @@ const news: Item[] = [
   {
     to: "/actualites/facturation-electronique-septembre-2026",
     tag: "Actualité",
-    date: "2026-08-12",
+    date: "2026-08-15",
     title: "Facturation électronique : ce qui change au 1er septembre 2026",
     excerpt:
       "Obligation de réception pour toutes les entreprises, choix de la plateforme agréée (PA), check-list de préparation pour une TPE de l'Hérault.",
@@ -26,7 +26,7 @@ const news: Item[] = [
   {
     to: "/actualites/declaration-revenus-2026",
     tag: "Actualité",
-    date: "2026-07-20",
+    date: "2026-08-15",
     title: "Déclaration de revenus 2026 : dates, nouveautés et erreurs fréquentes",
     excerpt:
       "Calendrier pour l'Hérault (zone 2), revalorisation du barème, cas des indépendants, LMNP et dividendes : le récapitulatif du cabinet.",
@@ -34,7 +34,7 @@ const news: Item[] = [
   {
     to: "/actualites/micro-entreprise-seuils-tva-2026",
     tag: "Actualité",
-    date: "2026-06-15",
+    date: "2026-08-15",
     title: "Micro-entreprise 2026 : nouveaux seuils de TVA et passage en société",
     excerpt:
       "Franchise en base, seuils de chiffre d'affaires, moment optimal pour basculer en EURL ou SASU — avec notre simulateur de statut.",
@@ -42,7 +42,7 @@ const news: Item[] = [
   {
     to: "/actualites/facturation-electronique-2026",
     tag: "Réforme",
-    date: "2026-01-15",
+    date: "2026-07-08",
     title: "Facture électronique 2026 : le calendrier complet de la réforme",
     excerpt:
       "Ce que la réforme impose à chaque entreprise, les échéances par taille et la manière dont le cabinet vous accompagne.",
@@ -50,7 +50,7 @@ const news: Item[] = [
   {
     to: "/actualites/loi-finances-2026",
     tag: "Fiscalité",
-    date: "2026-01-10",
+    date: "2026-07-08",
     title: "Loi de Finances 2026 : les mesures qui concernent les TPE",
     excerpt:
       "Barème de l'IR, IS, crédits d'impôt, dispositifs locaux : la lecture du cabinet pour les dirigeants de l'Hérault.",
@@ -58,7 +58,7 @@ const news: Item[] = [
   {
     to: "/actualites/baremes-2026",
     tag: "Chiffres",
-    date: "2026-01-08",
+    date: "2026-07-08",
     title: "Barèmes, plafonds & seuils 2026",
     excerpt:
       "Barème kilométrique, plafonds URSSAF, seuils micro-entreprise et TVA, SMIC : les chiffres officiels à jour.",
@@ -156,18 +156,7 @@ export const Route = createFileRoute("/actualites/")({
               url: `${SITE}${PATH}`,
               inLanguage: "fr-FR",
               about: "Fiscalité, comptabilité, création d'entreprise à Montpellier et Juvignac",
-              publisher: {
-                "@type": "AccountingService",
-                name: "Erkilic Expertise Comptable",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "29 bis rue du Poumpidou",
-                  postalCode: "34990",
-                  addressLocality: "Juvignac",
-                  addressCountry: "FR",
-                },
-                telephone: "+33972540771",
-              },
+              publisher: { "@id": `${SITE}/#cabinet` },
             },
             {
               "@type": "ItemList",

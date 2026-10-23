@@ -35,7 +35,7 @@ export const Route = createFileRoute("/pack/particulier")({
           "@type": "Service",
           serviceType: "Fiscalité personnelle, gestion patrimoniale",
           name: "Pack Particulier",
-          provider: { "@type": "AccountingService", name: "Erkilic Expertise Comptable" },
+          provider: { "@id": `${SITE}/#cabinet` },
           areaServed: ["Juvignac", "Montpellier", "Hérault", "Occitanie"],
           audience: { "@type": "PeopleAudience", audienceType: "Particuliers, foyers fiscaux, investisseurs immobiliers" },
           url: `${SITE}${PATH}`,

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/pack/pro")({
           "@type": "Service",
           serviceType: "Expertise comptable PME, artisans, commerçants",
           name: "Pack Artisans, Commerçants & PME",
-          provider: { "@type": "AccountingService", name: "Erkilic Expertise Comptable" },
+          provider: { "@id": `${SITE}/#cabinet` },
           areaServed: ["Juvignac", "Montpellier", "Hérault", "Occitanie"],
           audience: {
             "@type": "BusinessAudience",

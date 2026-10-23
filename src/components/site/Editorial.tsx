@@ -11,6 +11,7 @@ export const AUTHOR = {
   jobTitle: "Experte-comptable",
   url: `${SITE}/a-propos`,
   worksFor: { "@id": `${SITE}/#cabinet` },
+  sameAs: ["https://fr.linkedin.com/in/erkilicnazife"],
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     credentialCategory: "Diplôme d'expertise comptable",

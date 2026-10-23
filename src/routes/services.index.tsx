@@ -43,7 +43,7 @@ export const Route = createFileRoute("/services/")({
           ].map((n) => ({
             "@type": "Service",
             name: n,
-            provider: { "@type": "AccountingService", name: "Erkilic Expertise Comptable" },
+            provider: { "@id": `${SITE}/#cabinet` },
             areaServed: "Juvignac, Montpellier, Hérault",
           })),
         }),
