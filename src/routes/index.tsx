@@ -3,6 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
+import avatarWebp from "@/assets/nazife-erkilic-avatar.webp";
 import cabinetImgWebp from "@/assets/cabinet.webp";
 import heroOffice from "@/assets/hero-office.jpg";
 import heroOfficeWebp from "@/assets/hero-office.webp";
@@ -134,7 +135,6 @@ function Home() {
                   Expert-comptable à Juvignac,
                   <br />
                   <span className="text-ink/25 italic font-normal">près de Montpellier.</span>
-                  <span className="inline-block ml-1 w-[0.08em] h-[0.85em] align-[-0.1em] bg-ink animate-blink" />
                 </h1>
                 <p className="text-lg text-ink/70 max-w-2xl mb-8 leading-relaxed">
                   Comptabilité, fiscalité, social et juridique. Un accompagnement rigoureux pour
@@ -286,6 +286,22 @@ function Home() {
                   Ensemble, construisons une relation pérenne pour le pilotage de votre entreprise —
                   de la création au développement, jusqu'à la transmission.
                 </p>
+                <div className="flex items-center gap-4 mb-10">
+                  <img
+                    src={avatarWebp}
+                    alt="Nazifé Erkilic, experte-comptable"
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                    className="portrait-warm h-16 w-16 rounded-full object-cover ring-2 ring-gold/60 ring-offset-2 ring-offset-paper"
+                  />
+                  <p className="text-sm leading-snug text-ink/70">
+                    <span className="block font-sora font-bold text-base text-ink">
+                      Nazifé Erkilic
+                    </span>
+                    Experte-comptable, fondatrice du cabinet
+                  </p>
+                </div>
                 <div className="grid grid-cols-2 gap-x-6">
                   {["Compétence", "Indépendance", "Intégrité", "Secret professionnel"].map((v) => (
                     <div key={v} className="flex items-center gap-3 py-3 border-t border-ink/10">

@@ -6,7 +6,7 @@ import { Footer } from "@/components/site/Footer";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useReveal } from "@/hooks/use-reveal";
 import cabinetImg from "@/assets/cabinet.jpg";
-import cabinetImgWebp from "@/assets/cabinet.webp";
+import portraitWebp from "@/assets/nazife-erkilic.webp";
 
 const SITE = "https://erkilic.fr";
 const PATH = "/a-propos";
@@ -108,12 +108,20 @@ function APropos() {
             className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal"
             data-reveal
           >
-            <img
-              src={cabinetImgWebp}
-              alt="Cabinet Erkilic Expertise Comptable à Juvignac — expert-comptable dans l'Hérault"
-              className="w-full aspect-[4/5] object-cover outline outline-1 -outline-offset-1 outline-ink/10"
-              loading="lazy"
-            />
+            <figure>
+              <img
+                src={portraitWebp}
+                alt="Nazifé Erkilic, experte-comptable, fondatrice du cabinet Erkilic à Juvignac"
+                width={900}
+                height={955}
+                className="portrait-warm w-full aspect-[4/5] object-cover object-[60%_30%] outline outline-1 -outline-offset-1 outline-ink/10"
+                loading="lazy"
+              />
+              <figcaption className="mt-4 text-sm text-ink/70">
+                <span className="font-sora font-bold text-ink">Nazifé Erkilic</span>,
+                experte-comptable inscrite à l'Ordre, fondatrice du cabinet.
+              </figcaption>
+            </figure>
             <div>
               <SectionHeader index="01 / Notre histoire" title="D'un projet à un cabinet reconnu" />
               <div className="space-y-6 text-ink/70 leading-relaxed">

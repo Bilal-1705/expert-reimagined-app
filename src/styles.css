@@ -15,6 +15,7 @@
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -45,56 +46,82 @@
 :root {
   --radius: 0.5rem;
 
-  --paper: #f5f3ee;
-  --paper-dark: #e8e4dd;
-  --ink: #0d0d0d;
-  --ink-muted: #2d2d2d;
-  --gold: #c9a24a;
+  --paper: #f7f4ee;
+  --paper-dark: #ebe5da;
+  --ink: #2a2119;
+  --ink-muted: #3d3025;
+  --gold: #a9802f;
+  --gold-soft: #f3ead7;
 
-  --background: #f5f3ee;
-  --foreground: #0d0d0d;
-  --card: #f5f3ee;
-  --card-foreground: #0d0d0d;
-  --popover: #f5f3ee;
-  --popover-foreground: #0d0d0d;
-  --primary: #0d0d0d;
-  --primary-foreground: #f5f3ee;
-  --secondary: #e8e4dd;
-  --secondary-foreground: #0d0d0d;
-  --muted: #e8e4dd;
-  --muted-foreground: #2d2d2d;
-  --accent: #e8e4dd;
-  --accent-foreground: #0d0d0d;
+  --background: #f7f4ee;
+  --foreground: #2a2119;
+  --card: #f7f4ee;
+  --card-foreground: #2a2119;
+  --popover: #f7f4ee;
+  --popover-foreground: #2a2119;
+  --primary: #2a2119;
+  --primary-foreground: #f7f4ee;
+  --secondary: #ebe5da;
+  --secondary-foreground: #2a2119;
+  --muted: #ebe5da;
+  --muted-foreground: #3d3025;
+  --accent: #ebe5da;
+  --accent-foreground: #2a2119;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #f5f3ee;
-  --border: rgba(13, 13, 13, 0.1);
-  --input: rgba(13, 13, 13, 0.15);
-  --ring: rgba(13, 13, 13, 0.4);
+  --destructive-foreground: #f7f4ee;
+  --border: rgba(42, 33, 25, 0.1);
+  --input: rgba(42, 33, 25, 0.15);
+  --ring: rgba(42, 33, 25, 0.4);
 }
 
 @keyframes reveal-up {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes reveal-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes line-grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes blink {
-  0%, 60% { opacity: 1; }
-  61%, 100% { opacity: 0; }
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @utility animate-reveal {
@@ -119,7 +146,8 @@
     border-color: var(--color-border);
   }
 
-  html, body {
+  html,
+  body {
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-manrope);
@@ -151,28 +179,218 @@
     animation: reveal-up 0.65s var(--ease-out-expo) both;
     will-change: transform, opacity;
   }
-  .reveal-stagger.in-view > *:nth-child(1) { animation-delay: 0ms; }
-  .reveal-stagger.in-view > *:nth-child(2) { animation-delay: 70ms; }
-  .reveal-stagger.in-view > *:nth-child(3) { animation-delay: 140ms; }
-  .reveal-stagger.in-view > *:nth-child(4) { animation-delay: 210ms; }
-  .reveal-stagger.in-view > *:nth-child(5) { animation-delay: 280ms; }
-  .reveal-stagger.in-view > *:nth-child(6) { animation-delay: 350ms; }
-  .reveal-stagger.in-view > *:nth-child(7) { animation-delay: 420ms; }
-  .reveal-stagger.in-view > *:nth-child(8) { animation-delay: 490ms; }
+  .reveal-stagger.in-view > *:nth-child(1) {
+    animation-delay: 0ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(2) {
+    animation-delay: 70ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(3) {
+    animation-delay: 140ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(4) {
+    animation-delay: 210ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(5) {
+    animation-delay: 280ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(6) {
+    animation-delay: 350ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(7) {
+    animation-delay: 420ms;
+  }
+  .reveal-stagger.in-view > *:nth-child(8) {
+    animation-delay: 490ms;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal.in-view, .reveal-stagger.in-view > * {
+    .reveal.in-view,
+    .reveal-stagger.in-view > * {
       animation: none;
     }
   }
 
   /* Mobile: lighter animations for faster paint & smoother scroll */
   @media (max-width: 767px) {
-    .reveal.in-view, .reveal-stagger.in-view > * {
+    .reveal.in-view,
+    .reveal-stagger.in-view > * {
       animation: reveal-fade 0.35s ease-out both;
     }
-    .animate-float { animation: none; }
-    html { scroll-behavior: auto; }
+    .animate-float {
+      animation: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
+/*
+ * Visual refinements (direction "B1 · encre chaude, or"): the logo's gold
+ * marks what matters (actions, key figures, labels), greys are readable,
+ * and dark blocks use the logo's warm brown instead of pure black.
+ * Unlayered on purpose so it wins over utility classes.
+ */
+main a.bg-ink.rounded-full,
+nav a.bg-ink.rounded-full,
+main button.bg-ink[type="submit"] {
+  background-color: var(--gold);
+  color: #fff;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--gold) 30%, transparent);
+}
+main a.bg-ink.rounded-full:hover,
+nav a.bg-ink.rounded-full:hover,
+main button.bg-ink[type="submit"]:hover {
+  background-color: color-mix(in srgb, var(--gold) 82%, #000);
+}
+.text-ink\/25 {
+  color: color-mix(in srgb, var(--color-ink) 55%, transparent);
+}
+.text-ink\/30 {
+  color: color-mix(in srgb, var(--color-ink) 58%, transparent);
+}
+.text-ink\/60,
+.text-ink\/70 {
+  color: color-mix(in srgb, var(--color-ink) 80%, transparent);
+}
+main .opacity-40 {
+  opacity: 0.75;
+}
+.h-px.w-16.bg-ink {
+  background-color: var(--gold);
+  height: 3px;
+}
+main > section:nth-of-type(2) .font-sora.text-5xl {
+  color: var(--gold);
+}
+h2.uppercase {
+  text-transform: none;
+}
+main .tracking-\[0\.3em\] {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  color: var(--gold);
+  opacity: 1;
+}
+main .max-w-xs.uppercase {
+  text-transform: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Cards: a light sand background and a gold edge instead of a full inversion */
+main .hover\:bg-ink:hover {
+  background-color: var(--gold-soft);
+}
+main .hover\:bg-ink:hover * {
+  color: var(--color-ink);
+}
+main .group.hover\:bg-ink {
+  box-shadow: inset 0 3px 0 transparent;
+  transition:
+    box-shadow 0.25s,
+    background-color 0.25s;
+}
+main .group.hover\:bg-ink:hover {
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
+/* Grids appear quickly instead of leaving an empty band while staggering */
+.reveal-stagger.in-view > * {
+  animation-duration: 0.45s;
+}
+.reveal-stagger.in-view > *:nth-child(n) {
+  animation-delay: 0ms;
+}
+.reveal-stagger.in-view > *:nth-child(2) {
+  animation-delay: 40ms;
+}
+.reveal-stagger.in-view > *:nth-child(3) {
+  animation-delay: 80ms;
+}
+.reveal-stagger.in-view > *:nth-child(n + 4) {
+  animation-delay: 120ms;
+}
+
+/* Home hero: the office photo shows a little more, with a warm halo */
+main > section:first-child img.mix-blend-multiply {
+  opacity: 0.42;
+}
+main > section:first-child {
+  background: radial-gradient(
+    circle at 80% 25%,
+    color-mix(in srgb, var(--gold) 16%, transparent),
+    transparent 50%
+  );
+}
+
+/* Dark blocks in the logo's warm brown */
+section.bg-ink,
+footer.bg-ink {
+  background-color: #241b14;
+}
+footer h2 {
+  color: #f1e6cf;
+}
+
+/* Callback card */
+#rendez-vous .bg-paper-dark\/30 {
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  border-top: 3px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--color-ink) 7%, transparent);
+}
+#rendez-vous h2 {
+  color: var(--color-ink);
+}
+#rendez-vous .tracking-\[0\.3em\] {
+  color: var(--gold);
+}
+#rendez-vous a[href^="tel:"] {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+#rendez-vous button.text-left {
+  background: var(--color-paper);
+  border-color: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-radius: 8px;
+}
+#rendez-vous button.text-left .font-sora {
+  color: var(--color-ink);
+}
+#rendez-vous input,
+#rendez-vous textarea {
+  border-radius: 8px;
+  background: #fff;
+}
+#rendez-vous input:focus,
+#rendez-vous textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 20%, transparent);
+}
+#rendez-vous button.border {
+  border-radius: 8px;
+}
+#rendez-vous button.border:not([aria-pressed="true"]):hover,
+#rendez-vous button.text-left:hover {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+/* Selected callback slot: keeps a readable, solid state (also on hover) */
+#rendez-vous button[aria-pressed="true"],
+#rendez-vous button[aria-pressed="true"]:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+#rendez-vous button[type="submit"] {
+  border-radius: 999px;
+}
+
+/* Portrait of Nazifé Erkilic: warm monochrome to sit with the palette */
+.portrait-warm {
+  filter: grayscale(1) sepia(0.22) contrast(1.04) brightness(1.02);
+}

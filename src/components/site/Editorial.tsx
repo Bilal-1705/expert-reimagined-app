@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import ordreLogo from "@/assets/ordre-experts-comptables.png";
+import avatarWebp from "@/assets/nazife-erkilic-avatar.webp";
 import { relatedLinks } from "@/lib/site-links";
 
 const SITE = "https://erkilic.fr";
@@ -31,9 +32,14 @@ export function AuthorBox({ dateModified }: { dateModified?: string }) {
   return (
     <section className="px-6 py-12 border-t border-ink/5">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-6 sm:items-center border border-ink/10 p-6 md:p-8">
-        <div className="shrink-0 h-16 w-16 rounded-full bg-ink text-paper flex items-center justify-center font-sora text-xl font-extrabold">
-          NE
-        </div>
+        <img
+          src={avatarWebp}
+          alt="Nazifé Erkilic"
+          width={64}
+          height={64}
+          loading="lazy"
+          className="portrait-warm shrink-0 h-16 w-16 rounded-full object-cover ring-2 ring-gold/60 ring-offset-2 ring-offset-paper"
+        />
         <div className="flex-1">
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 block mb-2">
             Rédigé et vérifié par

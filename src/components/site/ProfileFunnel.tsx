@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { track } from "@/lib/analytics";
 import { sendCallbackRequest } from "@/lib/lead";
+import avatarWebp from "@/assets/nazife-erkilic-avatar.webp";
 
 export type ProfileId =
   "createur" | "auto-entrepreneur" | "liberal" | "pro" | "particulier" | "immobilier";
@@ -322,12 +323,22 @@ export function ProfileFunnel({
           </h2>
           <p className="mt-3 text-ink/70 max-w-2xl leading-relaxed">{intro}</p>
         </div>
-        <a
-          href="tel:+33972540771"
-          className="shrink-0 text-sm font-bold underline underline-offset-4"
-        >
-          ou appelez le 09 72 54 07 71
-        </a>
+        <div className="shrink-0 flex items-center gap-3">
+          <img
+            src={avatarWebp}
+            alt=""
+            width={48}
+            height={48}
+            loading="lazy"
+            className="portrait-warm h-12 w-12 rounded-full object-cover"
+          />
+          <p className="text-sm leading-snug text-ink/70">
+            <span className="block font-bold text-ink">Nazifé Erkilic vous rappelle</span>
+            <a href="tel:+33972540771" className="font-bold underline underline-offset-4">
+              ou appelez le 09 72 54 07 71
+            </a>
+          </p>
+        </div>
       </div>
 
       {!profile && (
