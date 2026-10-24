@@ -14,19 +14,17 @@ const PATH = "/a-propos";
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
     meta: [
-      { title: "À propos — Nazifé Erkilic, Expert-Comptable à Juvignac" },
+      { title: "Nazifé Erkilic, experte-comptable à Juvignac | Erkilic" },
       {
         name: "description",
         content:
-          "Découvrez Nazifé Erkilic et son cabinet d'expertise comptable à Juvignac (34990) : parcours, équipe, valeurs, engagement pour les entrepreneurs de l'Hérault.",
+          "Nazifé Erkilic, experte-comptable inscrite à l'Ordre, fondatrice du cabinet Erkilic à Juvignac : son parcours depuis 2002, sa façon de travailler et ses engagements.",
       },
-      {
-        property: "og:title",
-        content: "À propos du Cabinet Erkilic Expertise Comptable à Juvignac",
-      },
+      { property: "og:title", content: "Nazifé Erkilic, experte-comptable à Juvignac" },
       {
         property: "og:description",
-        content: "23 ans d'expérience au service des entrepreneurs et particuliers de l'Hérault.",
+        content:
+          "Le parcours et la façon de travailler de la fondatrice du cabinet Erkilic Expertise Comptable.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: `${SITE}${PATH}` },
@@ -37,20 +35,16 @@ export const Route = createFileRoute("/a-propos")({
     scripts: [
       {
         type: "application/ld+json",
-        children: breadcrumbJsonLd(
-          [{ label: "Accueil", to: "/" }, { label: "À propos" }],
-          "/a-propos",
-        ),
+        children: breadcrumbJsonLd([{ label: "Accueil", to: "/" }, { label: "À propos" }], PATH),
       },
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "AboutPage",
-          name: "À propos — Cabinet Erkilic Expertise Comptable",
-          mainEntity: {
-            ...AUTHOR,
-          },
+          "@type": "ProfilePage",
+          name: "Nazifé Erkilic, experte-comptable",
+          url: `${SITE}${PATH}`,
+          mainEntity: { ...AUTHOR },
         }),
       },
     ],
@@ -62,19 +56,30 @@ const milestones = [
   [
     "2002",
     "Début d'exercice",
-    "Premiers dossiers en cabinet — spécialisation PME et professions libérales.",
+    "Premiers dossiers en cabinet, auprès de PME et de professions libérales.",
   ],
   ["2010", "Ouverture du cabinet", "Installation à Juvignac, aux portes de Montpellier."],
+  ["2018", "Passage au numérique", "Dématérialisation, espace client en ligne, DSN."],
   [
-    "2018",
-    "Développement digital",
-    "Adoption d'outils cloud (dématérialisation, portail client, DSN).",
-  ],
-  [
-    "2025",
+    "Aujourd'hui",
     "Un cabinet de référence",
-    "Une clientèle diversifiée à Juvignac, Montpellier et dans tout l'Hérault.",
+    "Une clientèle variée à Juvignac, Montpellier et dans l'Hérault.",
   ],
+];
+
+const convictions = [
+  {
+    t: "Une seule interlocutrice",
+    d: "Chaque client a la même experte-comptable d'une année sur l'autre. Pas de plateforme anonyme ni de dossier qui change de main.",
+  },
+  {
+    t: "Expliquer, pas seulement déclarer",
+    d: "Le bilan est présenté et commenté en rendez-vous. Les choix fiscaux sont expliqués avant d'être faits.",
+  },
+  {
+    t: "La proximité",
+    d: "Un cabinet où l'on peut venir, à Juvignac, et une experte-comptable qui connaît le tissu économique de l'Ouest montpelliérain.",
+  },
 ];
 
 function APropos() {
@@ -87,70 +92,101 @@ function APropos() {
       <Nav />
       <main>
         <section ref={heroRef} className="pt-14 pb-16 md:pb-20 px-6 border-b border-ink/5">
-          <div className="max-w-7xl mx-auto reveal-stagger" data-reveal>
-            <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-6">
-              À propos
-            </span>
-            <h1 className="font-sora text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95] text-balance max-w-5xl">
-              Un cabinet à taille humaine,{" "}
-              <span className="text-ink/25 italic font-normal">ancré dans l'Hérault.</span>
-            </h1>
-            <p className="mt-8 max-w-3xl text-lg text-ink/70 leading-relaxed">
-              Fondé par Mme Nazifé Erkilic, le cabinet accompagne depuis plus de deux décennies les
-              entrepreneurs et les particuliers de la région de Montpellier. Une expertise complète,
-              une relation de confiance, un interlocuteur unique.
-            </p>
-          </div>
-        </section>
-
-        <section ref={storyRef} className="py-20 md:py-24 px-6">
           <div
-            className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 reveal"
+            className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center reveal-stagger"
             data-reveal
           >
-            <figure>
+            <div className="md:col-span-7">
+              <span className="block text-[11px] font-bold uppercase tracking-[0.3em] mb-6">
+                À propos
+              </span>
+              <h1 className="font-sora text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95] text-balance">
+                Nazifé Erkilic,{" "}
+                <span className="text-ink/25 italic font-normal">experte-comptable.</span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg text-ink/70 leading-relaxed">
+                Inscrite au tableau de l'Ordre des experts-comptables, Nazifé Erkilic exerce depuis
+                2002 et a fondé le cabinet Erkilic Expertise Comptable à Juvignac. Elle accompagne
+                elle-même les créateurs, indépendants, professions libérales, PME et particuliers de
+                la région de Montpellier.
+              </p>
+              <p className="mt-6 font-sora font-bold text-xl text-ink">
+                « Parce que vous comptez pour nous, nous comptons pour vous. »
+              </p>
+            </div>
+            <figure className="md:col-span-5">
               <img
                 src={portraitWebp}
                 alt="Nazifé Erkilic, experte-comptable, fondatrice du cabinet Erkilic à Juvignac"
                 width={900}
                 height={955}
+                fetchPriority="high"
                 className="portrait-warm w-full aspect-[4/5] object-cover object-[60%_30%] outline outline-1 -outline-offset-1 outline-ink/10"
-                loading="lazy"
               />
-              <figcaption className="mt-4 text-sm text-ink/70">
-                <span className="font-sora font-bold text-ink">Nazifé Erkilic</span>,
-                experte-comptable inscrite à l'Ordre, fondatrice du cabinet.
+              <figcaption className="mt-3 text-sm text-ink/70">
+                Nazifé Erkilic, fondatrice du cabinet, à Juvignac.
               </figcaption>
             </figure>
-            <div>
-              <SectionHeader index="01 / Notre histoire" title="D'un projet à un cabinet reconnu" />
-              <div className="space-y-6 text-ink/70 leading-relaxed">
-                <p>
-                  Nazifé Erkilic exerce l'expertise comptable depuis 2002. Après plusieurs années en
-                  cabinet, elle décide d'ouvrir sa propre structure à Juvignac afin de proposer un
-                  accompagnement de proximité aux entrepreneurs locaux.
-                </p>
-                <p>
-                  Le cabinet est inscrit à l'Ordre des Experts-Comptables de Montpellier. Nos
-                  missions couvrent l'ensemble des besoins comptables, fiscaux, sociaux et
-                  juridiques d'une entreprise — de la création à la transmission.
-                </p>
-                <p>
-                  Une équipe qualifiée et disponible, formée en continu aux évolutions
-                  réglementaires, met son savoir-faire au service de chaque client. Chaque dossier
-                  bénéficie d'un interlocuteur dédié.
-                </p>
-                <p className="font-sora font-bold text-ink text-xl pt-4">
-                  Parce que vous comptez pour nous, nous comptons pour vous.
-                </p>
-              </div>
+          </div>
+        </section>
+
+        <section ref={storyRef} className="py-20 md:py-24 px-6">
+          <div
+            className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 reveal"
+            data-reveal
+          >
+            <div className="md:col-span-5">
+              <SectionHeader
+                index="Son parcours"
+                title="De l'exercice en cabinet à son propre cabinet"
+              />
+            </div>
+            <div className="md:col-span-7 space-y-6 text-ink/70 leading-relaxed text-[17px]">
+              <p>
+                Nazifé Erkilic commence à exercer l'expertise comptable en 2002, en cabinet, auprès
+                de PME et de professions libérales. Ces années lui donnent une pratique complète du
+                métier : tenue et révision des comptes, fiscalité, social, juridique.
+              </p>
+              <p>
+                Elle décide ensuite d'ouvrir sa propre structure à Juvignac, avec une idée simple :
+                offrir aux entrepreneurs de l'Ouest montpelliérain un accompagnement de proximité,
+                où le client connaît la personne qui suit son dossier.
+              </p>
+              <p>
+                Inscrite au tableau de l'Ordre des experts-comptables, elle présente les comptes
+                annuels, engage sa responsabilité professionnelle sur chaque mission et respecte la
+                déontologie de la profession : compétence, indépendance, intégrité et secret
+                professionnel.
+              </p>
             </div>
           </div>
         </section>
 
-        <section ref={timelineRef} className="py-20 md:py-24 px-6 bg-paper-dark/40">
+        <section className="py-20 md:py-24 px-6 bg-paper-dark/40">
           <div className="max-w-7xl mx-auto">
-            <SectionHeader index="02 / Repères" title="Notre parcours" />
+            <SectionHeader index="Sa façon de travailler" title="Ce qu'elle défend" />
+            <div className="grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/5">
+              {convictions.map((c) => (
+                <div key={c.t} className="bg-paper p-8 flex flex-col gap-4">
+                  <h3 className="font-sora text-2xl font-extrabold tracking-tighter">{c.t}</h3>
+                  <p className="text-[15px] text-ink/70 leading-relaxed">{c.d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-ink/70">
+              Le détail de la méthode (premier échange, devis, lettre de mission, suivi) est sur la
+              page{" "}
+              <Link to="/cabinet" className="font-bold underline underline-offset-4">
+                le cabinet et sa méthode
+              </Link>
+              .
+            </p>
+          </div>
+        </section>
+
+        <section ref={timelineRef} className="py-20 md:py-24 px-6">
+          <div className="max-w-7xl mx-auto">
+            <SectionHeader index="Repères" title="Son parcours en quatre dates" />
             <div
               className="grid md:grid-cols-4 gap-px bg-ink/5 border border-ink/5 reveal-stagger"
               data-reveal
@@ -158,9 +194,7 @@ function APropos() {
               {milestones.map(([year, label, desc]) => (
                 <div key={year} className="bg-paper p-8 flex flex-col gap-4 min-h-56">
                   <span className="font-sora text-4xl font-extrabold tracking-tighter">{year}</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/50">
-                    {label}
-                  </span>
+                  <span className="font-bold text-ink">{label}</span>
                   <p className="text-sm text-ink/70 leading-relaxed">{desc}</p>
                 </div>
               ))}

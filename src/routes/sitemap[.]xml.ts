@@ -6,10 +6,10 @@ const BASE_URL = "https://erkilic.fr";
 // Last real content change per page (YYYY-MM-DD). Update when a page changes.
 const DEFAULT_LASTMOD = "2026-08-24";
 const LASTMOD: Record<string, string> = {
-  "/": "2026-10-23",
+  "/": "2026-10-24",
   "/services": "2026-10-23",
-  "/cabinet": "2026-10-23",
-  "/a-propos": "2026-10-23",
+  "/cabinet": "2026-10-24",
+  "/a-propos": "2026-10-24",
   "/guide": "2026-10-23",
   "/actualites": "2026-10-23",
   "/comparatifs": "2026-08-16",
