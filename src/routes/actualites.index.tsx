@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ProfileFunnel } from "@/components/site/ProfileFunnel";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useReveal } from "@/hooks/use-reveal";
@@ -67,62 +69,67 @@ const news: Item[] = [
 
 const analyses: Item[] = [
   {
+    to: "/comparatif/eurl-vs-sasu",
+    tag: "Création",
+    title: "EURL ou SASU en 2026 : le comparatif chiffré",
+    excerpt:
+      "Charges, dividendes, retraite et chômage comparés par une experte-comptable, avec les taux 2026.",
+  },
+  {
     to: "/creation-entreprise/sasu-eurl-ei",
     tag: "Création",
-    title: "SASU, EURL, EI : quel statut juridique choisir à Montpellier ?",
+    title: "Quel statut juridique choisir à Montpellier ?",
     excerpt:
-      "Comparatif chiffré des trois formes juridiques les plus courantes : régime social, fiscalité, dividendes, protection du patrimoine.",
+      "Micro, EI, EURL ou SASU : partir de votre projet, de votre rémunération et de vos droits au chômage.",
   },
   {
     to: "/creation-entreprise/aides-locales-montpellier",
     tag: "Création",
-    title: "Aides locales à la création d'entreprise à Montpellier & Juvignac",
+    title: "Aides à la création d'entreprise à Montpellier (2026)",
     excerpt:
-      "CCI Hérault, Région Occitanie, French Tech Montpellier, Bpifrance : les dispositifs d'aide et de financement en 2026.",
-  },
-  {
-    to: "/secteur/professions-liberales-medicales",
-    tag: "Secteur",
-    title: "Obligations comptables des professions libérales à Juvignac",
-    excerpt:
-      "BNC, déclaration 2035, URSSAF, CARMF, CARPIMKO, CIPAV : les obligations d'un médecin, kiné, infirmier ou avocat.",
-  },
-  {
-    to: "/secteur/immobilier-lmnp-sci",
-    tag: "Immobilier",
-    title: "LMNP ou SCI à l'IS : quel régime pour investir dans l'Hérault ?",
-    excerpt:
-      "Amortissement, déductibilité des charges, plus-value à la revente : le vrai comparatif pour un investissement locatif.",
-  },
-  {
-    to: "/secteur/artisans-commercants",
-    tag: "Secteur",
-    title: "Comptable pour artisans et commerçants à Juvignac",
-    excerpt:
-      "Stocks, TVA sur encaissement, contrats d'apprentissage : les spécificités comptables des métiers du commerce local.",
-  },
-  {
-    to: "/comparatifs",
-    tag: "Comparatifs",
-    title: "Erkilic Expertise Comptable vs Indy, Pennylane, Keobiz, Dougs",
-    excerpt:
-      "La page de comparaison générale entre un cabinet local et les solutions de comptabilité en ligne.",
+      "ACRE sur demande sous 60 jours, ARCE, prêts d'honneur, aides de la Région Occitanie : le point 2026.",
   },
   {
     to: "/simulateur-statut",
-    tag: "Outil",
-    title: "Simulateur : quel statut juridique choisir ?",
+    tag: "Outils",
+    title: "Simulateur de statut juridique",
     excerpt:
-      "Quelques questions pour orienter votre choix entre micro-entreprise, EI, EURL et SASU, puis un rendez-vous si besoin.",
+      "Comparez le revenu net en micro, EURL et SASU sur votre chiffre d'affaires, avec les taux 2026.",
+  },
+  {
+    to: "/secteur/commerce-ecommerce",
+    tag: "Secteurs",
+    title: "E-commerce : TVA OSS, marketplaces et stocks",
+    excerpt:
+      "Versements Amazon et Shopify, TVA des ventes en Europe, DAC7 : ce qu'il faut maîtriser.",
+  },
+  {
+    to: "/pack/profession-liberale",
+    tag: "Secteurs",
+    title: "Professions libérales : micro-BNC ou déclaration 2035 ?",
+    excerpt:
+      "Abattement de 34 % ou frais réels, caisses de retraite, passage en SELARL : comment choisir.",
+  },
+  {
+    to: "/secteur/immobilier-lmnp-sci",
+    tag: "Secteurs",
+    title: "LMNP ou SCI : quel régime pour investir dans l'Hérault ?",
+    excerpt:
+      "Amortissement, charges déductibles, plus-value à la revente : le comparatif pour un investissement locatif.",
   },
   {
     to: "/guide",
-    tag: "Guide",
-    title: "Guide de l'expertise comptable en France",
-    excerpt:
-      "Rôle de l'expert-comptable, cadre légal, obligations, tarifs, choix du cabinet : le guide complet.",
+    tag: "Outils",
+    title: "Guide : comment choisir son expert-comptable",
+    excerpt: "Rôle, obligations, tarifs et critères de choix d'un cabinet, expliqués simplement.",
   },
 ];
+
+const FILTERS = ["Tout", "Fiscalité", "Création", "Secteurs", "Outils"] as const;
+type Filter = (typeof FILTERS)[number];
+
+/** News items are dated and fiscal by nature; guides carry their own tag. */
+const all: Item[] = [...news.map((n) => ({ ...n, tag: "Fiscalité" })), ...analyses];
 
 export const Route = createFileRoute("/actualites/")({
   head: () => ({
@@ -182,35 +189,41 @@ export const Route = createFileRoute("/actualites/")({
   component: Actualites,
 });
 
-function Card({ item }: { item: Item }) {
+const fmtDate = (d: string) =>
+  new Date(d).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+
+function Card({ item, featured = false }: { item: Item; featured?: boolean }) {
   return (
     <Link
       to={item.to}
-      className="bg-paper p-8 md:p-10 group hover:bg-ink transition-colors duration-500 flex flex-col"
+      className={`group flex flex-col border border-ink/10 bg-paper p-6 md:p-8 transition-colors hover:border-ink ${
+        featured ? "md:col-span-2 lg:col-span-3 md:p-10 bg-paper-dark/40" : ""
+      }`}
     >
-      <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-6 group-hover:text-paper/60">
+      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/60 mb-4">
+        {featured && <span className="text-ink">À la une · </span>}
         {item.tag}
         {item.date && (
           <>
             {" · "}
-            <time dateTime={item.date}>
-              {new Date(item.date).toLocaleDateString("fr-FR", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </time>
+            <time dateTime={item.date}>{fmtDate(item.date)}</time>
           </>
         )}
       </span>
-      <h3 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight leading-tight mb-4 group-hover:text-paper">
+      <h3
+        className={`font-sora font-extrabold tracking-tight leading-snug mb-3 group-hover:underline underline-offset-4 decoration-1 ${
+          featured ? "text-2xl md:text-4xl max-w-3xl" : "text-lg md:text-xl"
+        }`}
+      >
         {item.title}
       </h3>
-      <p className="text-sm text-ink/75 leading-relaxed group-hover:text-paper/70 flex-1">
+      <p
+        className={`text-ink/70 leading-relaxed flex-1 ${featured ? "text-base max-w-2xl" : "text-sm"}`}
+      >
         {item.excerpt}
       </p>
-      <span className="mt-8 text-[10px] font-bold uppercase tracking-widest text-ink/60 group-hover:text-paper transition-transform group-hover:translate-x-1">
-        Lire l'article →
+      <span className="mt-6 text-[11px] font-bold uppercase tracking-widest text-ink/70 group-hover:text-ink">
+        Lire →
       </span>
     </Link>
   );
@@ -218,17 +231,19 @@ function Card({ item }: { item: Item }) {
 
 function Actualites() {
   const heroRef = useReveal<HTMLDivElement>();
-  const gridRef = useReveal<HTMLDivElement>();
+  const [filter, setFilter] = useState<Filter>("Tout");
+  const items = filter === "Tout" ? all : all.filter((i) => i.tag === filter);
+  const [first, ...rest] = items;
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
       <Nav />
       <main>
-        <section ref={heroRef} className="pt-16 md:pt-24 pb-14 md:pb-20 px-6 border-b border-ink/5">
-          <div className="max-w-5xl mx-auto">
+        <section ref={heroRef} className="pt-12 md:pt-16 pb-10 md:pb-12 px-6 border-b border-ink/5">
+          <div className="max-w-6xl mx-auto">
             <nav
               aria-label="fil d'ariane"
-              className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-8 flex flex-wrap gap-2"
+              className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-6 flex flex-wrap gap-2"
             >
               <Link to="/" className="hover:text-ink transition-colors">
                 Accueil
@@ -236,46 +251,52 @@ function Actualites() {
               <span>/</span>
               <span>Actualités</span>
             </nav>
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-ink/70 mb-6 block">
-              Actualités & analyses
-            </span>
-            <h1 className="font-sora text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-[0.95] mb-8 text-balance">
-              L'actualité fiscale 2026,{" "}
-              <span className="text-ink/25 italic font-normal">décryptée pour vous.</span>
+            <h1 className="font-sora text-4xl md:text-5xl font-extrabold tracking-tighter leading-[0.95] mb-5 text-balance">
+              Actualités et guides{" "}
+              <span className="text-ink/30 italic font-normal">comptables et fiscaux.</span>
             </h1>
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
-              Réformes, échéances, barèmes et analyses sectorielles : Erkilic Expertise Comptable,
-              cabinet d'expert-comptable à Juvignac près de Montpellier, publie ici ce qui change
-              réellement pour les dirigeants, indépendants et particuliers de l'Hérault.
+              Ce qui change pour les dirigeants, indépendants et particuliers de Montpellier et de
+              l'Hérault, expliqué par l'experte-comptable du cabinet Erkilic.
             </p>
           </div>
         </section>
 
-        <section ref={gridRef} className="py-16 md:py-20 px-6">
+        <section className="py-10 md:py-14 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tight mb-10">
-              Dernières actualités
-            </h2>
-            <div className="grid gap-px bg-ink/5 border border-ink/5 md:grid-cols-2">
-              {news.map((a) => (
+            <div
+              role="tablist"
+              aria-label="Filtrer par thème"
+              className="flex flex-wrap gap-2 mb-8"
+            >
+              {FILTERS.map((f) => (
+                <button
+                  key={f}
+                  type="button"
+                  role="tab"
+                  aria-selected={filter === f}
+                  onClick={() => setFilter(f)}
+                  className={`px-4 py-2 text-[12px] font-bold uppercase tracking-widest border transition-colors ${
+                    filter === f ? "bg-ink text-paper border-ink" : "border-ink/20 hover:border-ink"
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {first && <Card item={first} featured />}
+              {rest.map((a) => (
                 <Card key={a.to} item={a} />
               ))}
             </div>
           </div>
         </section>
 
-        <section className="pb-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold tracking-tight mb-10">
-              Guides & analyses
-            </h2>
-            <div className="grid gap-px bg-ink/5 border border-ink/5 md:grid-cols-2">
-              {analyses.map((a) => (
-                <Card key={a.to} item={a} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProfileFunnel
+          title="Une question sur votre situation ?"
+          intro="Deux ou trois clics pour préciser votre besoin, puis l'experte-comptable vous rappelle. Sans engagement."
+        />
       </main>
       <Footer />
     </div>

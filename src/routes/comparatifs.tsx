@@ -7,82 +7,118 @@ import { useReveal } from "@/hooks/use-reveal";
 const SITE = "https://erkilic.fr";
 const PATH = "/comparatifs";
 
-const comparatifs = [
+type Comparatif = { to: string; title: string; excerpt: string };
+
+const groups: { title: string; intro: string; items: Comparatif[] }[] = [
   {
-    to: "/comparatif/indy-vs-erkilic",
-    tag: "Logiciel",
-    title: "Indy vs Erkilic Expertise Comptable",
-    excerpt:
-      "Un logiciel de tenue pour BNC ne signe pas un bilan et n'engage aucune responsabilité en cas de contrôle fiscal.",
+    title: "Logiciel ou expert-comptable ?",
+    intro: "Ce qu'un logiciel de comptabilité fait seul, et ce qu'il laisse à votre charge.",
+    items: [
+      {
+        to: "/comparatif/indy-vs-erkilic",
+        title: "Indy ou expert-comptable",
+        excerpt:
+          "Une application efficace pour la tenue au quotidien, mais qui ne signe pas les comptes d'une société.",
+      },
+      {
+        to: "/comparatif/pennylane-vs-erkilic",
+        title: "Pennylane ou expert-comptable",
+        excerpt:
+          "Pennylane est un outil, pas un cabinet : comment le combiner avec un expert-comptable.",
+      },
+      {
+        to: "/expert-comptable-pennylane",
+        title: "Expert-comptable sur Pennylane",
+        excerpt: "Garder Pennylane et confier la révision, le bilan et le conseil au cabinet.",
+      },
+    ],
   },
   {
-    to: "/comparatif/pennylane-vs-erkilic",
-    tag: "Logiciel",
-    title: "Pennylane vs Erkilic Expertise Comptable",
-    excerpt:
-      "Pennylane est un excellent outil collaboratif — à utiliser avec votre expert-comptable, pas à sa place.",
+    title: "Cabinet en ligne ou cabinet local ?",
+    intro: "Deux façons de travailler avec un expert-comptable : à distance ou en proximité.",
+    items: [
+      {
+        to: "/comparatif/cabinet-vs-en-ligne",
+        title: "Cabinet en ligne ou local : la synthèse",
+        excerpt:
+          "Prix, réactivité, interlocuteur, conseil : les critères pour choisir selon votre profil.",
+      },
+      {
+        to: "/comparatif/dougs-vs-erkilic",
+        title: "Dougs ou cabinet local",
+        excerpt: "Un cabinet en ligne et un cabinet de proximité comparés point par point.",
+      },
+      {
+        to: "/comparatif/keobiz-vs-erkilic",
+        title: "Keobiz ou cabinet local",
+        excerpt:
+          "Un réseau national et un cabinet indépendant : ce qui change pour une TPE de l'Hérault.",
+      },
+    ],
   },
   {
-    to: "/comparatif/keobiz-vs-erkilic",
-    tag: "Plateforme",
-    title: "Keobiz vs Erkilic Expertise Comptable",
-    excerpt:
-      "Plateforme 100 % à distance : rotation des interlocuteurs, standard téléphonique, conseil déconnecté du terrain.",
-  },
-  {
-    to: "/comparatif/dougs-vs-erkilic",
-    tag: "Plateforme",
-    title: "Dougs vs Erkilic Expertise Comptable",
-    excerpt:
-      "Tarifs, contact humain, optimisation fiscale sur-mesure et ancrage local : le comparatif chiffré.",
-  },
-  {
-    to: "/comparatif/cabinet-vs-en-ligne",
-    tag: "Synthèse",
-    title: "Cabinet traditionnel vs comptabilité 100 % en ligne",
-    excerpt:
-      "Le vrai coût complet, la disponibilité réelle et le niveau de conseil : la comparaison de fond.",
-  },
-  {
-    to: "/comparatif/eurl-vs-sasu",
-    tag: "Statut",
-    title: "EURL vs SASU : quel statut juridique ?",
-    excerpt:
-      "Régime social du dirigeant, dividendes, cotisations, protection : le comparatif chiffré pour choisir.",
+    title: "Quel statut pour votre entreprise ?",
+    intro: "Les comparatifs pour choisir entre micro-entreprise, EI, EURL et SASU.",
+    items: [
+      {
+        to: "/comparatif/eurl-vs-sasu",
+        title: "EURL ou SASU en 2026",
+        excerpt: "Charges, dividendes, retraite et chômage comparés avec les taux 2026.",
+      },
+      {
+        to: "/creation-entreprise/sasu-eurl-ei",
+        title: "Quel statut choisir à Montpellier ?",
+        excerpt: "Micro, EI, EURL ou SASU : partir de votre projet et de votre situation.",
+      },
+      {
+        to: "/simulateur-statut",
+        title: "Simulateur de statut",
+        excerpt: "Le revenu net estimé en micro, EURL et SASU sur votre chiffre d'affaires.",
+      },
+    ],
   },
 ];
 
-const table: Array<[string, string, string]> = [
+const comparatifs = groups.flatMap((g) => g.items);
+
+const COLUMNS = ["Cabinet local (Erkilic)", "Cabinet en ligne", "Logiciel seul"] as const;
+
+const table: Array<[string, string, string, string]> = [
   [
-    "Signature et dépôt du bilan",
-    "Erkilic Expertise Comptable : incluse, expert-comptable inscrit à l'Ordre",
-    "Logiciels seuls : non — vous restez responsable",
+    "Comptes annuels présentés par un expert-comptable",
+    "Oui, par une experte-comptable inscrite à l'Ordre",
+    "Oui, par un expert-comptable inscrit à l'Ordre",
+    "Non : vous les établissez vous-même, ou via un cabinet partenaire en option",
   ],
   [
     "Responsabilité civile professionnelle",
-    "Engagée sur chaque mission",
-    "Limitée aux conditions générales de la plateforme",
+    "Oui, sur chaque mission",
+    "Oui, sur chaque mission",
+    "Non : conditions générales de l'éditeur",
   ],
   [
     "Interlocuteur",
-    "Le même expert-comptable, joignable directement",
-    "Support mutualisé, interlocuteur variable",
+    "La même personne, joignable directement, rendez-vous au cabinet",
+    "Un comptable ou une équipe, à distance, selon la formule",
+    "Support de l'éditeur",
   ],
   [
-    "Optimisation fiscale personnalisée",
-    "Étude annuelle rémunération / dividendes",
-    "Recommandations génériques automatisées",
+    "Conseil personnalisé",
+    "Inclus : rémunération, dividendes, prévisionnel",
+    "Selon la formule, parfois en option",
+    "Contenus et outils génériques",
   ],
-  ["Contrôle fiscal / URSSAF", "Assistance et représentation du dossier", "Non couvert"],
   [
-    "Ancrage local (Juvignac, Montpellier)",
-    "Rendez-vous au cabinet, connaissance du tissu local",
-    "Aucun",
+    "Contrôle fiscal ou URSSAF",
+    "Assistance du cabinet",
+    "Assistance selon la formule",
+    "Non couvert",
   ],
   [
     "Tarif",
-    "Forfait clair selon le pack, devis gratuit sous 24 h",
-    "Abonnement bas, options facturées en plus",
+    "Forfait sur devis, sous 24 h",
+    "Abonnement mensuel, options en plus",
+    "Abonnement le plus bas",
   ],
 ];
 
@@ -142,7 +178,6 @@ export const Route = createFileRoute("/comparatifs")({
 
 function Comparatifs() {
   const heroRef = useReveal<HTMLDivElement>();
-  const gridRef = useReveal<HTMLDivElement>();
 
   return (
     <div className="min-h-screen bg-paper text-ink font-manrope">
@@ -165,78 +200,105 @@ function Comparatifs() {
               <span className="text-ink/25 italic font-normal">ou solution en ligne&nbsp;?</span>
             </h1>
             <p className="text-lg text-ink/75 leading-relaxed max-w-3xl">
-              Indy, Pennylane, Keobiz, Dougs : ces outils font très bien une partie du travail. Mais
-              aucun ne signe un bilan, n'engage sa responsabilité ni ne défend votre dossier face à
-              l'administration. Voici, comparatif par comparatif, ce qui change concrètement pour
-              une TPE de Juvignac ou de Montpellier.
+              Logiciel de comptabilité, cabinet en ligne ou cabinet de proximité : trois façons de
+              gérer sa comptabilité, avec des niveaux d'accompagnement différents. Choisissez le
+              comparatif qui correspond à votre question.
             </p>
           </div>
         </section>
 
-        <section className="py-16 md:py-20 px-6 border-b border-ink/5">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight mb-8">
-              Tableau de synthèse
+        <section className="py-12 md:py-16 px-6">
+          <div className="max-w-6xl mx-auto space-y-14">
+            {groups.map((g) => (
+              <div key={g.title}>
+                <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight">
+                  {g.title}
+                </h2>
+                <p className="mt-2 mb-6 text-ink/70">{g.intro}</p>
+                <div className="grid gap-4 md:grid-cols-3">
+                  {g.items.map((c) => (
+                    <Link
+                      key={c.to}
+                      to={c.to}
+                      className="group flex flex-col border border-ink/10 p-6 md:p-7 transition-colors hover:border-ink"
+                    >
+                      <h3 className="font-sora text-lg md:text-xl font-extrabold leading-snug mb-3 group-hover:underline underline-offset-4 decoration-1">
+                        {c.title}
+                      </h3>
+                      <p className="text-sm text-ink/70 leading-relaxed flex-1">{c.excerpt}</p>
+                      <span className="mt-5 text-[11px] font-bold uppercase tracking-widest text-ink/70 group-hover:text-ink">
+                        Lire →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 px-6 border-t border-ink/5 bg-paper-dark/30">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight">
+              Les trois modèles en un coup d'œil
             </h2>
-            <div className="overflow-x-auto border border-ink/10">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-ink text-paper">
-                  <tr>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
+            <p className="mt-2 mb-8 text-ink/70 max-w-3xl">
+              Les cabinets en ligne et les logiciels ne sont pas la même chose : un cabinet, qu'il
+              soit en ligne ou local, engage la responsabilité d'un expert-comptable inscrit à
+              l'Ordre ; un logiciel non.
+            </p>
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full text-left text-sm border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-ink">
+                    <th
+                      scope="col"
+                      className="py-3 pr-4 text-[11px] font-bold uppercase tracking-widest w-1/4"
+                    >
                       Critère
                     </th>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
-                      Erkilic Expertise Comptable
-                    </th>
-                    <th scope="col" className="p-4 font-bold uppercase tracking-widest text-[10px]">
-                      Solutions 100 % en ligne
-                    </th>
+                    {COLUMNS.map((c) => (
+                      <th
+                        key={c}
+                        scope="col"
+                        className="py-3 pr-4 text-[11px] font-bold uppercase tracking-widest"
+                      >
+                        {c}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {table.map(([critere, nous, eux]) => (
-                    <tr key={critere} className="border-t border-ink/10 align-top">
-                      <th scope="row" className="p-4 font-semibold text-ink w-1/4">
+                  {table.map(([critere, ...cells]) => (
+                    <tr key={critere} className="border-b border-ink/10 align-top">
+                      <th scope="row" className="py-4 pr-4 font-semibold">
                         {critere}
                       </th>
-                      <td className="p-4 text-ink/80">{nous}</td>
-                      <td className="p-4 text-ink/70">{eux}</td>
+                      {cells.map((v, i) => (
+                        <td key={i} className="py-4 pr-4 text-ink/75 leading-relaxed">
+                          {v}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </div>
-        </section>
-
-        <section ref={gridRef} className="py-20 md:py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight mb-10">
-              Tous nos comparatifs
-            </h2>
-            <div
-              className="grid gap-px bg-ink/5 border border-ink/5 md:grid-cols-2 reveal-stagger"
-              data-reveal
-            >
-              {comparatifs.map((c) => (
-                <Link
-                  key={c.to}
-                  to={c.to}
-                  className="bg-paper p-8 md:p-10 group hover:bg-ink transition-colors duration-500 flex flex-col"
-                >
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-ink/60 mb-6 group-hover:text-paper/60">
-                    {c.tag}
-                  </span>
-                  <h3 className="font-sora text-2xl md:text-3xl font-extrabold tracking-tight leading-tight mb-4 group-hover:text-paper">
-                    {c.title}
-                  </h3>
-                  <p className="text-sm text-ink/70 leading-relaxed group-hover:text-paper/70 flex-1">
-                    {c.excerpt}
-                  </p>
-                  <span className="mt-8 text-[10px] font-bold uppercase tracking-widest text-ink/60 group-hover:text-paper transition-transform group-hover:translate-x-1">
-                    Lire le comparatif →
-                  </span>
-                </Link>
+            <div className="md:hidden space-y-4">
+              {table.map(([critere, ...cells]) => (
+                <div key={critere} className="border border-ink/10 bg-paper p-5">
+                  <p className="font-bold mb-3">{critere}</p>
+                  <dl className="space-y-2 text-sm">
+                    {cells.map((v, i) => (
+                      <div key={i}>
+                        <dt className="text-[11px] font-bold uppercase tracking-widest text-ink/60">
+                          {COLUMNS[i]}
+                        </dt>
+                        <dd className="text-ink/75">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               ))}
             </div>
           </div>
