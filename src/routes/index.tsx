@@ -278,8 +278,14 @@ function Home() {
                   L'expertise sans compromis.
                 </h2>
                 <p className="text-lg text-ink/70 leading-relaxed mb-6">
-                  Fondé par Mme <strong className="text-ink font-semibold">Nazifé Erkilic</strong>,
-                  le cabinet est inscrit à l'Ordre des Experts-Comptables de Montpellier. Nous
+                  Fondé par Mme{" "}
+                  <Link
+                    to="/a-propos"
+                    className="font-semibold text-ink underline underline-offset-4 decoration-gold hover:text-gold transition-colors"
+                  >
+                    Nazifé Erkilic
+                  </Link>
+                  , le cabinet est inscrit à l'Ordre des Experts-Comptables de Montpellier. Nous
                   proposons un accompagnement de proximité, personnalisé, à chaque demande.
                 </p>
                 <p className="text-lg text-ink/70 leading-relaxed mb-10">
@@ -296,9 +302,12 @@ function Home() {
                     className="portrait-warm h-16 w-16 rounded-full object-cover ring-2 ring-gold/60 ring-offset-2 ring-offset-paper"
                   />
                   <p className="text-sm leading-snug text-ink/70">
-                    <span className="block font-sora font-bold text-base text-ink">
+                    <Link
+                      to="/a-propos"
+                      className="block font-sora font-bold text-base text-ink hover:text-gold transition-colors"
+                    >
                       Nazifé Erkilic
-                    </span>
+                    </Link>
                     Experte-comptable, fondatrice du cabinet
                   </p>
                 </div>

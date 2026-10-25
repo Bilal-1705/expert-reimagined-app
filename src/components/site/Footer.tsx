@@ -210,7 +210,16 @@ export function Footer() {
         <div className="pt-8 mt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30 space-y-2">
             <p>© {new Date().getFullYear()} Erkilic Expertise Comptable — SIREN 814 349 841</p>
-            <p>Fondé par Mme Nazifé Erkilic — 23 ans d'expérience</p>
+            <p>
+              Fondé par Mme{" "}
+              <Link
+                to="/a-propos"
+                className="underline underline-offset-4 hover:text-gold transition-colors"
+              >
+                Nazifé Erkilic
+              </Link>{" "}
+              — 23 ans d'expérience
+            </p>
             <p className="flex gap-4">
               <Link to="/mentions-legales" className="hover:text-paper/60 transition-colors">
                 Mentions légales

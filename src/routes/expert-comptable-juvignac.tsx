@@ -105,8 +105,11 @@ export const Route = createFileRoute("/expert-comptable-juvignac")({
                 ligne 3 du tramway de Montpellier (station Juvignac) et par la ligne de bus 23.
               </p>
               <p>
-                Le cabinet est dirigé par <strong>Nazifé Erkilic</strong>, experte-comptable
-                inscrite au tableau de l'
+                Le cabinet est dirigé par{" "}
+                <Link to="/a-propos" className="font-bold underline underline-offset-4">
+                  Nazifé Erkilic
+                </Link>
+                , experte-comptable inscrite au tableau de l'
                 <strong>Ordre des Experts-Comptables de Montpellier</strong>, forte de 23 années
                 d'expérience. Cette inscription garantit le respect d'une déontologie stricte :
                 compétence, indépendance, intégrité et secret professionnel.

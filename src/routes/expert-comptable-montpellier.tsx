@@ -86,9 +86,12 @@ export const Route = createFileRoute("/expert-comptable-montpellier")({
             métropole.
           </p>
           <p className="mt-4">
-            Le cabinet est dirigé par Nazifé Erkilic, experte-comptable inscrite au tableau de
-            l'Ordre. Vous avez une seule interlocutrice, du premier rendez-vous à la signature du
-            bilan.
+            Le cabinet est dirigé par{" "}
+            <Link to="/a-propos" className="font-semibold underline underline-offset-4">
+              Nazifé Erkilic
+            </Link>
+            , experte-comptable inscrite au tableau de l'Ordre. Vous avez une seule interlocutrice,
+            du premier rendez-vous à la signature du bilan.
           </p>
         </>
       }

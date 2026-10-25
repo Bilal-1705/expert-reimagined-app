@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/site/ContentPage";
 
 const SITE = "https://erkilic.fr";
@@ -27,10 +27,9 @@ export const Route = createFileRoute("/mentions-legales")({
       h1="Mentions légales"
       intro={
         <p>
-          Conformément aux articles 6-III et 19 de la loi n° 2004-575 du 21
-          juin 2004 pour la confiance dans l'économie numérique, voici les
-          informations relatives à l'éditeur et à l'hébergeur du site
-          erkilic.fr.
+          Conformément aux articles 6-III et 19 de la loi n° 2004-575 du 21 juin 2004 pour la
+          confiance dans l'économie numérique, voici les informations relatives à l'éditeur et à
+          l'hébergeur du site erkilic.fr.
         </p>
       }
       sections={[
@@ -39,9 +38,12 @@ export const Route = createFileRoute("/mentions-legales")({
           body: (
             <p>
               Le site erkilic.fr est édité par le cabinet{" "}
-              <strong>Erkilic Expertise Comptable</strong>, cabinet d'expertise
-              comptable dirigé par Mme Nazifé Erkilic, experte-comptable
-              inscrite au tableau de l'Ordre des Experts-Comptables de
+              <strong>Erkilic Expertise Comptable</strong>, cabinet d'expertise comptable dirigé par
+              Mme{" "}
+              <Link to="/a-propos" className="underline underline-offset-4">
+                Nazifé Erkilic
+              </Link>
+              , experte-comptable inscrite au tableau de l'Ordre des Experts-Comptables de
               Montpellier.
               <br />
               <br />
@@ -57,14 +59,22 @@ export const Route = createFileRoute("/mentions-legales")({
         },
         {
           title: "Directeur de la publication",
-          body: <p>Mme Nazifé Erkilic, en qualité de dirigeante du cabinet.</p>,
+          body: (
+            <p>
+              Mme{" "}
+              <Link to="/a-propos" className="underline underline-offset-4">
+                Nazifé Erkilic
+              </Link>
+              , en qualité de dirigeante du cabinet.
+            </p>
+          ),
         },
         {
           title: "Hébergement",
           body: (
             <p>
-              Le site est hébergé par OVH SAS, 2 rue Kellermann, 59100
-              Roubaix, France — www.ovhcloud.com.
+              Le site est hébergé par OVH SAS, 2 rue Kellermann, 59100 Roubaix, France —
+              www.ovhcloud.com.
             </p>
           ),
         },
@@ -72,11 +82,10 @@ export const Route = createFileRoute("/mentions-legales")({
           title: "Propriété intellectuelle",
           body: (
             <p>
-              L'ensemble des contenus du site (textes, logo, éléments
-              graphiques, mise en page) est la propriété exclusive du cabinet
-              Erkilic Expertise Comptable, sauf mention contraire. Toute
-              reproduction ou réutilisation, totale ou partielle, sans
-              autorisation écrite préalable est interdite.
+              L'ensemble des contenus du site (textes, logo, éléments graphiques, mise en page) est
+              la propriété exclusive du cabinet Erkilic Expertise Comptable, sauf mention contraire.
+              Toute reproduction ou réutilisation, totale ou partielle, sans autorisation écrite
+              préalable est interdite.
             </p>
           ),
         },
@@ -84,10 +93,9 @@ export const Route = createFileRoute("/mentions-legales")({
           title: "Profession réglementée",
           body: (
             <p>
-              La profession d'expert-comptable est réglementée par l'ordonnance
-              n° 45-2138 du 19 septembre 1945. Le cabinet est soumis à la
-              déontologie de l'Ordre des Experts-Comptables (compétence,
-              indépendance, intégrité, secret professionnel) et à la
+              La profession d'expert-comptable est réglementée par l'ordonnance n° 45-2138 du 19
+              septembre 1945. Le cabinet est soumis à la déontologie de l'Ordre des
+              Experts-Comptables (compétence, indépendance, intégrité, secret professionnel) et à la
               réglementation LCB-FT de lutte contre le blanchiment.
             </p>
           ),
@@ -96,9 +104,8 @@ export const Route = createFileRoute("/mentions-legales")({
           title: "Données personnelles",
           body: (
             <p>
-              Le traitement des données personnelles collectées via ce site est
-              décrit dans notre politique de confidentialité, accessible depuis
-              le pied de page de chaque page.
+              Le traitement des données personnelles collectées via ce site est décrit dans notre
+              politique de confidentialité, accessible depuis le pied de page de chaque page.
             </p>
           ),
         },
