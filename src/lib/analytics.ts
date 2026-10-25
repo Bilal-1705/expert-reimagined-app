@@ -6,7 +6,7 @@
  * - Set GA_MEASUREMENT_ID to the GA4 property ID ("G-XXXXXXX") to enable it.
  *   While it is empty, events are only pushed to window.dataLayer.
  */
-export const GA_MEASUREMENT_ID = "";
+export const GA_MEASUREMENT_ID = "G-ECSJJEQPYJ";
 
 export const CONSENT_KEY = "erkilic-consent-v1";
 export type ConsentChoice = "granted" | "denied";
