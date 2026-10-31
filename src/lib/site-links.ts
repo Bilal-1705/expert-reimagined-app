@@ -161,6 +161,11 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Facture électronique : le cap de septembre 2026",
     desc: "Ce qui change pour votre entreprise.",
   },
+  "/actualites/cfe-montpellier": {
+    to: "/actualites/cfe-montpellier",
+    label: "CFE à Montpellier et Juvignac",
+    desc: "Calcul, exonérations, échéance du 15 décembre.",
+  },
   "/actualites/loi-finances-2026": {
     to: "/actualites/loi-finances-2026",
     label: "Loi de finances 2026",
@@ -193,6 +198,7 @@ const CLUSTERS: Record<string, string[]> = {
     "/creation-entreprise/juvignac",
     "/pack/auto-entrepreneur",
     "/actualites/micro-entreprise-seuils-tva-2026",
+    "/actualites/cfe-montpellier",
   ],
   local: [
     "/expert-comptable-montpellier",
@@ -225,6 +231,7 @@ const CLUSTERS: Record<string, string[]> = {
     "/comparatif/keobiz-vs-erkilic",
   ],
   actualites: [
+    "/actualites/cfe-montpellier",
     "/actualites/micro-entreprise-seuils-tva-2026",
     "/actualites/loi-finances-2026",
     "/actualites/baremes-2026",

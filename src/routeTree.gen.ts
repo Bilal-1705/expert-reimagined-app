@@ -27,6 +27,7 @@ import { Route as SimulateurStatutRouteImport } from './routes/simulateur-statut
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
 import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
+import { Route as ActualitesCfeMontpellierRouteImport } from './routes/actualites.cfe-montpellier'
 import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/actualites.declaration-revenus-2026'
 import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
 import { Route as ActualitesFacturationElectroniqueSeptembre2026RouteImport } from './routes/actualites.facturation-electronique-septembre-2026'
@@ -152,6 +153,12 @@ const ActualitesBaremes2026Route = ActualitesBaremes2026RouteImport.update({
   path: '/actualites/baremes-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActualitesCfeMontpellierRoute =
+  ActualitesCfeMontpellierRouteImport.update({
+    id: '/actualites/cfe-montpellier',
+    path: '/actualites/cfe-montpellier',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ActualitesDeclarationRevenus2026Route =
   ActualitesDeclarationRevenus2026RouteImport.update({
     id: '/actualites/declaration-revenus-2026',
@@ -342,6 +349,7 @@ export interface FileRoutesByFullPath {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
@@ -392,6 +400,7 @@ export interface FileRoutesByTo {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
@@ -444,6 +453,7 @@ export interface FileRoutesById {
   '/simulateur-statut': typeof SimulateurStatutRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
+  '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
   '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
   '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
@@ -497,6 +507,7 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/facturation-electronique-septembre-2026'
@@ -547,6 +558,7 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/facturation-electronique-septembre-2026'
@@ -598,6 +610,7 @@ export interface FileRouteTypes {
     | '/simulateur-statut'
     | '/sitemap.xml'
     | '/actualites/baremes-2026'
+    | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
     | '/actualites/facturation-electronique-2026'
     | '/actualites/facturation-electronique-septembre-2026'
@@ -650,6 +663,7 @@ export interface RootRouteChildren {
   SimulateurStatutRoute: typeof SimulateurStatutRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
+  ActualitesCfeMontpellierRoute: typeof ActualitesCfeMontpellierRoute
   ActualitesDeclarationRevenus2026Route: typeof ActualitesDeclarationRevenus2026Route
   ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
   ActualitesFacturationElectroniqueSeptembre2026Route: typeof ActualitesFacturationElectroniqueSeptembre2026Route
@@ -805,6 +819,13 @@ declare module '@tanstack/react-router' {
       path: '/actualites/baremes-2026'
       fullPath: '/actualites/baremes-2026'
       preLoaderRoute: typeof ActualitesBaremes2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/cfe-montpellier': {
+      id: '/actualites/cfe-montpellier'
+      path: '/actualites/cfe-montpellier'
+      fullPath: '/actualites/cfe-montpellier'
+      preLoaderRoute: typeof ActualitesCfeMontpellierRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/actualites/declaration-revenus-2026': {
@@ -1065,6 +1086,7 @@ const rootRouteChildren: RootRouteChildren = {
   SimulateurStatutRoute: SimulateurStatutRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ActualitesBaremes2026Route: ActualitesBaremes2026Route,
+  ActualitesCfeMontpellierRoute: ActualitesCfeMontpellierRoute,
   ActualitesDeclarationRevenus2026Route: ActualitesDeclarationRevenus2026Route,
   ActualitesFacturationElectronique2026Route:
     ActualitesFacturationElectronique2026Route,

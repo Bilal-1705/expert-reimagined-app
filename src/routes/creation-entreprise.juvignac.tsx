@@ -98,9 +98,17 @@ export const Route = createFileRoute("/creation-entreprise/juvignac")({
           body: (
             <p>
               Dès l'immatriculation, votre entreprise doit tenir une comptabilité, déclarer la TVA
-              le cas échéant, et respecter des échéances précises (bilan annuel, liasse fiscale, CFE
-              dès la première année). Le cabinet met en place vos outils, vos habitudes de collecte
-              de pièces et un calendrier d'échéances — pour ne jamais subir de majoration de retard.
+              le cas échéant, et respecter des échéances précises (bilan annuel, liasse fiscale,
+              déclaration de{" "}
+              <Link
+                to="/actualites/cfe-montpellier"
+                className="font-bold underline underline-offset-4"
+              >
+                CFE
+              </Link>{" "}
+              dès la première année, même si l'entreprise en est exonérée cette année-là). Le
+              cabinet met en place vos outils, vos habitudes de collecte de pièces et un calendrier
+              d'échéances — pour ne jamais subir de majoration de retard.
             </p>
           ),
         },

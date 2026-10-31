@@ -18,6 +18,14 @@ type Item = {
 
 const news: Item[] = [
   {
+    to: "/actualites/cfe-montpellier",
+    tag: "Actualité",
+    date: "2026-10-31",
+    title: "CFE à Montpellier et Juvignac : calcul, échéance et exonérations",
+    excerpt:
+      "Paiement avant le 15 décembre 2026, barème de la base minimum, exonération de création et déclaration 1447-C-SD : l'essentiel pour les entreprises de l'Hérault.",
+  },
+  {
     to: "/actualites/facturation-electronique-septembre-2026",
     tag: "Actualité",
     date: "2026-08-15",

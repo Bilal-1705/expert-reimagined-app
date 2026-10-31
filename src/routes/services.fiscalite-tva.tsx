@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ContentPage } from "@/components/site/ContentPage";
 
 const SITE = "https://erkilic.fr";
@@ -55,6 +55,11 @@ export const Route = createFileRoute("/services/fiscalite-tva")({
           TVA, impôt sur les sociétés, CFE, CVAE : la fiscalité d'entreprise est un empilement
           d'échéances et de régimes. Erkilic Expertise Comptable sécurise vos déclarations et
           recherche systématiquement les crédits et réductions d'impôt auxquels vous avez droit.
+          Pour la CFE, voyez notre guide{" "}
+          <Link to="/actualites/cfe-montpellier" className="font-bold underline underline-offset-4">
+            CFE à Montpellier et Juvignac
+          </Link>
+          .
         </p>
       }
       sections={[

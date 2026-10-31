@@ -11,7 +11,6 @@ const LASTMOD: Record<string, string> = {
   "/cabinet": "2026-10-24",
   "/a-propos": "2026-10-24",
   "/guide": "2026-10-23",
-  "/actualites": "2026-10-23",
   "/comparatifs": "2026-08-16",
   "/faq": "2026-10-23",
   "/contact": "2026-10-23",
@@ -27,9 +26,7 @@ const LASTMOD: Record<string, string> = {
   "/expert-comptable-juvignac": "2026-10-23",
   "/expert-comptable-montpellier": "2026-10-23",
   "/expert-comptable-pennylane": "2026-10-23",
-  "/creation-entreprise/juvignac": "2026-10-23",
   "/services/comptabilite": "2026-10-23",
-  "/services/fiscalite-tva": "2026-10-23",
   "/services/social-juridique": "2026-10-23",
   "/services/conseil-gestion": "2026-10-23",
   "/secteur/commerce-ecommerce": "2026-10-23",
@@ -50,6 +47,10 @@ const LASTMOD: Record<string, string> = {
   "/actualites/facturation-electronique-septembre-2026": "2026-10-23",
   "/actualites/declaration-revenus-2026": "2026-10-23",
   "/actualites/micro-entreprise-seuils-tva-2026": "2026-10-23",
+  "/actualites/cfe-montpellier": "2026-10-31",
+  "/services/fiscalite-tva": "2026-10-31",
+  "/creation-entreprise/juvignac": "2026-10-31",
+  "/actualites": "2026-10-31",
 };
 
 const entries = [
@@ -117,6 +118,7 @@ const entries = [
     priority: "0.9",
     changefreq: "monthly" as const,
   },
+  { path: "/actualites/cfe-montpellier", priority: "0.9", changefreq: "monthly" as const },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
