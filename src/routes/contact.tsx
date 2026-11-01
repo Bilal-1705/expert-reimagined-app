@@ -122,9 +122,8 @@ function Contact() {
                   Horaires
                 </span>
                 <p className="text-sm text-ink/70 leading-relaxed">
-                  Lundi — Vendredi
-                  <br />
-                  09h00 — 12h00 · 14h00 — 18h00
+                  Du lundi au vendredi
+                  <br />9 h-12 h · 14 h-18 h
                 </p>
               </div>
               <div>

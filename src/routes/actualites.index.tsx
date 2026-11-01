@@ -26,12 +26,12 @@ const news: Item[] = [
       "Paiement avant le 15 décembre 2026, barème de la base minimum, exonération de création et déclaration 1447-C-SD : l'essentiel pour les entreprises de l'Hérault.",
   },
   {
-    to: "/actualites/facturation-electronique-septembre-2026",
-    tag: "Actualité",
-    date: "2026-08-15",
-    title: "Facturation électronique : ce qui change au 1er septembre 2026",
+    to: "/actualites/facturation-electronique",
+    tag: "Réforme",
+    date: "2026-11-01",
+    title: "Facture électronique : calendrier et obligations",
     excerpt:
-      "Obligation de réception pour toutes les entreprises, choix de la plateforme agréée (PA), check-list de préparation pour une TPE de l'Hérault.",
+      "Réception obligatoire depuis septembre 2026, émission en septembre 2027 pour les PME, TPE et auto-entrepreneurs : plateforme agréée, e-reporting et check-list.",
   },
   {
     to: "/actualites/declaration-revenus-2026",
@@ -48,14 +48,6 @@ const news: Item[] = [
     title: "Micro-entreprise 2026 : nouveaux seuils de TVA et passage en société",
     excerpt:
       "Franchise en base, seuils de chiffre d'affaires, moment optimal pour basculer en EURL ou SASU — avec notre simulateur de statut.",
-  },
-  {
-    to: "/actualites/facturation-electronique-2026",
-    tag: "Réforme",
-    date: "2026-07-08",
-    title: "Facture électronique 2026 : le calendrier complet de la réforme",
-    excerpt:
-      "Ce que la réforme impose à chaque entreprise, les échéances par taille et la manière dont le cabinet vous accompagne.",
   },
   {
     to: "/actualites/loi-finances-2026",

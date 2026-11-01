@@ -45,6 +45,9 @@ const PERMANENT_REDIRECTS: Record<string, string> = {
   // Anciennes URL du site précédent, encore connues des moteurs (404 jusqu'ici).
   "/accueil/le-cabinet": "/cabinet",
   "/pack-pro": "/pack/pro",
+  // Fusion des deux articles sur la facture électronique (novembre 2026).
+  "/actualites/facturation-electronique-2026": "/actualites/facturation-electronique",
+  "/actualites/facturation-electronique-septembre-2026": "/actualites/facturation-electronique",
 };
 
 function canonicalRedirect(request: Request): Response | null {

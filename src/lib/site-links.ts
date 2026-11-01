@@ -156,10 +156,10 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Micro-entreprise : seuils de TVA 2026",
     desc: "Franchise en base et passage en société.",
   },
-  "/actualites/facturation-electronique-septembre-2026": {
-    to: "/actualites/facturation-electronique-septembre-2026",
-    label: "Facture électronique : le cap de septembre 2026",
-    desc: "Ce qui change pour votre entreprise.",
+  "/actualites/facturation-electronique": {
+    to: "/actualites/facturation-electronique",
+    label: "Facture électronique : calendrier et obligations",
+    desc: "Réception en 2026, émission en 2027.",
   },
   "/actualites/cfe-montpellier": {
     to: "/actualites/cfe-montpellier",
@@ -180,11 +180,6 @@ export const LINKS: Record<string, SiteLink> = {
     to: "/actualites/declaration-revenus-2026",
     label: "Déclaration de revenus 2026",
     desc: "Dates, nouveautés et pièges.",
-  },
-  "/actualites/facturation-electronique-2026": {
-    to: "/actualites/facturation-electronique-2026",
-    label: "Facturation électronique 2026-2027",
-    desc: "Le calendrier complet.",
   },
 };
 
@@ -235,7 +230,7 @@ const CLUSTERS: Record<string, string[]> = {
     "/actualites/micro-entreprise-seuils-tva-2026",
     "/actualites/loi-finances-2026",
     "/actualites/baremes-2026",
-    "/actualites/facturation-electronique-septembre-2026",
+    "/actualites/facturation-electronique",
     "/actualites/declaration-revenus-2026",
   ],
 };
@@ -280,7 +275,7 @@ const CURATED: Record<string, string[]> = {
     "/services/comptabilite",
     "/secteur/commerce-ecommerce",
     "/expert-comptable-montpellier",
-    "/actualites/facturation-electronique-septembre-2026",
+    "/actualites/facturation-electronique",
   ],
   "/comparatif/pennylane-vs-erkilic": [
     "/expert-comptable-pennylane",
@@ -294,7 +289,7 @@ const CURATED: Record<string, string[]> = {
     "/expert-comptable-pennylane",
     "/pack/pro",
     "/secteur/artisans-commercants",
-    "/actualites/facturation-electronique-septembre-2026",
+    "/actualites/facturation-electronique",
     "/expert-comptable-montpellier",
   ],
   "/pack/profession-liberale": [

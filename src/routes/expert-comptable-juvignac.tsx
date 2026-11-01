@@ -177,7 +177,7 @@ export const Route = createFileRoute("/expert-comptable-juvignac")({
                 Le premier échange est gratuit. Appelez le <strong>09 72 54 07 71</strong> (ou le 06
                 59 88 40 80), écrivez à <strong>cabinet@erkilic.fr</strong>, ou réservez directement
                 un créneau en ligne via notre page contact. Le cabinet vous reçoit au 29 bis rue du
-                Poumpidou, 34990 Juvignac, du lundi au vendredi de 9h à 18h.
+                Poumpidou, 34990 Juvignac, du lundi au vendredi, de 9 h à 12 h et de 14 h à 18 h.
               </p>
               <p className="flex flex-wrap gap-x-6 gap-y-2">
                 <Link to="/contact" className="font-bold underline underline-offset-4">

@@ -29,8 +29,7 @@ import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
 import { Route as ActualitesBaremes2026RouteImport } from './routes/actualites.baremes-2026'
 import { Route as ActualitesCfeMontpellierRouteImport } from './routes/actualites.cfe-montpellier'
 import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/actualites.declaration-revenus-2026'
-import { Route as ActualitesFacturationElectronique2026RouteImport } from './routes/actualites.facturation-electronique-2026'
-import { Route as ActualitesFacturationElectroniqueSeptembre2026RouteImport } from './routes/actualites.facturation-electronique-septembre-2026'
+import { Route as ActualitesFacturationElectroniqueRouteImport } from './routes/actualites.facturation-electronique'
 import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
 import { Route as ActualitesMicroEntrepriseSeuilsTva2026RouteImport } from './routes/actualites.micro-entreprise-seuils-tva-2026'
 import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
@@ -165,16 +164,10 @@ const ActualitesDeclarationRevenus2026Route =
     path: '/actualites/declaration-revenus-2026',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ActualitesFacturationElectronique2026Route =
-  ActualitesFacturationElectronique2026RouteImport.update({
-    id: '/actualites/facturation-electronique-2026',
-    path: '/actualites/facturation-electronique-2026',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ActualitesFacturationElectroniqueSeptembre2026Route =
-  ActualitesFacturationElectroniqueSeptembre2026RouteImport.update({
-    id: '/actualites/facturation-electronique-septembre-2026',
-    path: '/actualites/facturation-electronique-septembre-2026',
+const ActualitesFacturationElectroniqueRoute =
+  ActualitesFacturationElectroniqueRouteImport.update({
+    id: '/actualites/facturation-electronique',
+    path: '/actualites/facturation-electronique',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ActualitesLoiFinances2026Route =
@@ -351,8 +344,7 @@ export interface FileRoutesByFullPath {
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
-  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
-  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
+  '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
@@ -402,8 +394,7 @@ export interface FileRoutesByTo {
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
-  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
-  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
+  '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
@@ -455,8 +446,7 @@ export interface FileRoutesById {
   '/actualites/baremes-2026': typeof ActualitesBaremes2026Route
   '/actualites/cfe-montpellier': typeof ActualitesCfeMontpellierRoute
   '/actualites/declaration-revenus-2026': typeof ActualitesDeclarationRevenus2026Route
-  '/actualites/facturation-electronique-2026': typeof ActualitesFacturationElectronique2026Route
-  '/actualites/facturation-electronique-septembre-2026': typeof ActualitesFacturationElectroniqueSeptembre2026Route
+  '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
@@ -509,8 +499,7 @@ export interface FileRouteTypes {
     | '/actualites/baremes-2026'
     | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
-    | '/actualites/facturation-electronique-2026'
-    | '/actualites/facturation-electronique-septembre-2026'
+    | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
@@ -560,8 +549,7 @@ export interface FileRouteTypes {
     | '/actualites/baremes-2026'
     | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
-    | '/actualites/facturation-electronique-2026'
-    | '/actualites/facturation-electronique-septembre-2026'
+    | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
@@ -612,8 +600,7 @@ export interface FileRouteTypes {
     | '/actualites/baremes-2026'
     | '/actualites/cfe-montpellier'
     | '/actualites/declaration-revenus-2026'
-    | '/actualites/facturation-electronique-2026'
-    | '/actualites/facturation-electronique-septembre-2026'
+    | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
     | '/comparatif/cabinet-vs-en-ligne'
@@ -665,8 +652,7 @@ export interface RootRouteChildren {
   ActualitesBaremes2026Route: typeof ActualitesBaremes2026Route
   ActualitesCfeMontpellierRoute: typeof ActualitesCfeMontpellierRoute
   ActualitesDeclarationRevenus2026Route: typeof ActualitesDeclarationRevenus2026Route
-  ActualitesFacturationElectronique2026Route: typeof ActualitesFacturationElectronique2026Route
-  ActualitesFacturationElectroniqueSeptembre2026Route: typeof ActualitesFacturationElectroniqueSeptembre2026Route
+  ActualitesFacturationElectroniqueRoute: typeof ActualitesFacturationElectroniqueRoute
   ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
   ActualitesMicroEntrepriseSeuilsTva2026Route: typeof ActualitesMicroEntrepriseSeuilsTva2026Route
   ComparatifCabinetVsEnLigneRoute: typeof ComparatifCabinetVsEnLigneRoute
@@ -835,18 +821,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActualitesDeclarationRevenus2026RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/actualites/facturation-electronique-2026': {
-      id: '/actualites/facturation-electronique-2026'
-      path: '/actualites/facturation-electronique-2026'
-      fullPath: '/actualites/facturation-electronique-2026'
-      preLoaderRoute: typeof ActualitesFacturationElectronique2026RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/actualites/facturation-electronique-septembre-2026': {
-      id: '/actualites/facturation-electronique-septembre-2026'
-      path: '/actualites/facturation-electronique-septembre-2026'
-      fullPath: '/actualites/facturation-electronique-septembre-2026'
-      preLoaderRoute: typeof ActualitesFacturationElectroniqueSeptembre2026RouteImport
+    '/actualites/facturation-electronique': {
+      id: '/actualites/facturation-electronique'
+      path: '/actualites/facturation-electronique'
+      fullPath: '/actualites/facturation-electronique'
+      preLoaderRoute: typeof ActualitesFacturationElectroniqueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/actualites/loi-finances-2026': {
@@ -1088,10 +1067,8 @@ const rootRouteChildren: RootRouteChildren = {
   ActualitesBaremes2026Route: ActualitesBaremes2026Route,
   ActualitesCfeMontpellierRoute: ActualitesCfeMontpellierRoute,
   ActualitesDeclarationRevenus2026Route: ActualitesDeclarationRevenus2026Route,
-  ActualitesFacturationElectronique2026Route:
-    ActualitesFacturationElectronique2026Route,
-  ActualitesFacturationElectroniqueSeptembre2026Route:
-    ActualitesFacturationElectroniqueSeptembre2026Route,
+  ActualitesFacturationElectroniqueRoute:
+    ActualitesFacturationElectroniqueRoute,
   ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
   ActualitesMicroEntrepriseSeuilsTva2026Route:
     ActualitesMicroEntrepriseSeuilsTva2026Route,
