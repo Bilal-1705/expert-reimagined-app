@@ -4,13 +4,13 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/micro-entreprise-seuils-tva-2026";
 const PUBLISHED = "2026-08-15";
-const UPDATED = "2026-08-15";
+const UPDATED = "2026-11-01";
 
 const faq = [
   {
     q: "À partir de quel chiffre d'affaires un auto-entrepreneur doit-il facturer la TVA ?",
     plain:
-      "Dès que le chiffre d'affaires dépasse le seuil de franchise en base applicable à son activité, l'auto-entrepreneur devient redevable de la TVA, en principe dès le premier jour du mois de dépassement. Les seuils sont différents pour la vente de marchandises et pour les prestations de services.",
+      "Dès que le chiffre d'affaires dépasse le seuil de franchise en base applicable à son activité, l'auto-entrepreneur devient redevable de la TVA. Si le seuil majoré est dépassé en cours d'année, la TVA est due dès le jour du dépassement ; si seul le seuil de base est dépassé, elle s'applique au 1er janvier de l'année suivante. En 2026, le seuil de base est de 85 000 € (seuil majoré 93 500 €) pour la vente de marchandises et de 37 500 € (41 250 €) pour les prestations de services.",
   },
   {
     q: "Vaut-il mieux rester en micro-entreprise ou passer en société ?",

@@ -12,7 +12,7 @@ const packLinks = [
 const sectorLinks = [
   { to: "/secteur/artisans-commercants", label: "Artisans & commerçants" },
   { to: "/secteur/professions-liberales-medicales", label: "Professions libérales & médicales" },
-  { to: "/secteur/immobilier-lmnp-sci", label: "Immobilier — LMNP & SCI" },
+  { to: "/secteur/immobilier-lmnp-sci", label: "Immobilier : LMNP & SCI" },
   { to: "/secteur/commerce-ecommerce", label: "Commerce & e-commerce" },
 ] as const;
 
@@ -92,8 +92,8 @@ export function Footer() {
           <div className="flex flex-col justify-end items-start">
             <p className="text-paper/60 mb-8 max-w-sm leading-relaxed">
               Basé à Juvignac, le cabinet Erkilic Expertise Comptable intervient sur toute la région
-              de Montpellier — Saint-Georges-d'Orques, Grabels, Celleneuve, La Mosson, Pignan,
-              Montarnaud — et en distanciel partout en France.
+              de Montpellier (Saint-Georges-d'Orques, Grabels, Celleneuve, La Mosson, Pignan,
+              Montarnaud) et en distanciel partout en France.
             </p>
             <a
               href="/rendez-vous"
@@ -142,12 +142,12 @@ export function Footer() {
                 </li>
                 <li>
                   <Link to="/services/comptabilite" className="hover:text-paper transition-colors">
-                    — Comptabilité & bilan
+                    Comptabilité & bilan
                   </Link>
                 </li>
                 <li>
                   <Link to="/services/fiscalite-tva" className="hover:text-paper transition-colors">
-                    — Fiscalité & TVA
+                    Fiscalité & TVA
                   </Link>
                 </li>
                 <li>
@@ -155,7 +155,7 @@ export function Footer() {
                     to="/services/social-juridique"
                     className="hover:text-paper transition-colors"
                   >
-                    — Social & juridique
+                    Social & juridique
                   </Link>
                 </li>
                 <li>
@@ -163,7 +163,7 @@ export function Footer() {
                     to="/services/conseil-gestion"
                     className="hover:text-paper transition-colors"
                   >
-                    — Conseil & gestion
+                    Conseil & gestion
                   </Link>
                 </li>
                 <li>
@@ -202,14 +202,14 @@ export function Footer() {
           </div>
           <p className="text-xs text-paper/50 leading-relaxed md:text-right">
             Cabinet inscrit à l'Ordre des Experts-Comptables de Montpellier. Nous engageons notre
-            responsabilité civile professionnelle sur chaque mission — une garantie que les
-            logiciels de comptabilité en ligne ne peuvent pas offrir.
+            responsabilité civile professionnelle sur chaque mission, une garantie que les logiciels
+            de comptabilité en ligne ne peuvent pas offrir.
           </p>
         </div>
 
         <div className="pt-8 mt-8 border-t border-paper/5 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-paper/30 space-y-2">
-            <p>© {new Date().getFullYear()} Erkilic Expertise Comptable — SIREN 814 349 841</p>
+            <p>© {new Date().getFullYear()} Erkilic Expertise Comptable · SIREN 814 349 841</p>
             <p>
               Fondé par Mme{" "}
               <Link
@@ -218,7 +218,7 @@ export function Footer() {
               >
                 Nazifé Erkilic
               </Link>{" "}
-              — 23 ans d'expérience
+              · 23 ans d'expérience
             </p>
             <p className="flex gap-4">
               <Link to="/mentions-legales" className="hover:text-paper/60 transition-colors">
@@ -241,7 +241,7 @@ export function Footer() {
           >
             <img
               src={ordreLogo}
-              alt="Ordre des Experts-Comptables — cabinet inscrit"
+              alt="Ordre des Experts-Comptables, cabinet inscrit"
               width={120}
               height={44}
               className="h-11 w-auto object-contain"

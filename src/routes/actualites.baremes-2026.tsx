@@ -4,7 +4,7 @@ import { ContentPage, articleJsonLd } from "@/components/site/ContentPage";
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/baremes-2026";
 const PUBLISHED = "2026-07-08";
-const UPDATED = "2026-07-08";
+const UPDATED = "2026-11-01";
 
 export const Route = createFileRoute("/actualites/baremes-2026")({
   head: () => ({
@@ -76,7 +76,7 @@ export const Route = createFileRoute("/actualites/baremes-2026")({
           bullets: [
             "Vente de marchandises : 85 000 € (seuil de tolérance 93 500 €).",
             "Prestations de services : 37 500 € (seuil de tolérance 41 250 €).",
-            "Dès dépassement du seuil de tolérance : TVA due dès le 1er jour du mois de dépassement.",
+            "Dès dépassement du seuil de tolérance : TVA due dès le jour du dépassement (et non plus le 1er jour du mois).",
           ],
         },
         {

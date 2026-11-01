@@ -4,7 +4,7 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/facturation-electronique-septembre-2026";
 const PUBLISHED = "2026-08-15";
-const UPDATED = "2026-08-15";
+const UPDATED = "2026-11-01";
 
 const faq = [
   {
@@ -109,7 +109,7 @@ export const Route = createFileRoute("/actualites/facturation-electronique-septe
             "Être raccordé à une Plateforme Agréée pour recevoir les factures de vos fournisseurs.",
             "Disposer d'un annuaire à jour : SIREN, SIRET, numéro de TVA intracommunautaire, adresse de routage.",
             "Accepter les formats structurés (Factur-X, UBL, CII) plutôt que le PDF simple par e-mail.",
-            "Transmettre les données de e-reporting pour les opérations avec les particuliers et l'international.",
+            "Préparer le e-reporting (opérations avec les particuliers et l'international) : obligatoire au 1er septembre 2027 pour les PME, TPE et micro-entreprises.",
           ],
         },
         {

@@ -42,6 +42,9 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 const CANONICAL_ORIGIN = "https://erkilic.fr";
 const PERMANENT_REDIRECTS: Record<string, string> = {
   "/conseils": "/actualites",
+  // Anciennes URL du site précédent, encore connues des moteurs (404 jusqu'ici).
+  "/accueil/le-cabinet": "/cabinet",
+  "/pack-pro": "/pack/pro",
 };
 
 function canonicalRedirect(request: Request): Response | null {

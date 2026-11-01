@@ -99,9 +99,9 @@ function PackPro() {
               body: "Saisie de vos pièces (achats, ventes, banques) — souvent moins onéreux que d'embaucher un salarié dédié.",
             },
             {
-              label: "Déclarations fiscales : TVA, TVS…",
+              label: "Déclarations fiscales : TVA, taxes sur les véhicules…",
               optional: true,
-              body: "TVA, DEB, TVS, DAS2, CFE, CVAE, IS, déclaration des loyers, liasse fiscale.",
+              body: "TVA, état récapitulatif des échanges (ex-DEB), taxes sur les véhicules (ex-TVS), DAS2, CFE, CVAE, IS, déclaration des loyers, liasse fiscale.",
             },
             {
               label: "Situation comptable intermédiaire",

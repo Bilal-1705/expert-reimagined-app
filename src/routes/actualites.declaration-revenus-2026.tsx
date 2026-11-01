@@ -4,7 +4,7 @@ import { ContentPage, articleJsonLd, faqJsonLd } from "@/components/site/Content
 const SITE = "https://erkilic.fr";
 const PATH = "/actualites/declaration-revenus-2026";
 const PUBLISHED = "2026-08-15";
-const UPDATED = "2026-08-15";
+const UPDATED = "2026-11-01";
 
 const faq = [
   {
@@ -92,7 +92,8 @@ export const Route = createFileRoute("/actualites/declaration-revenus-2026")({
             <li>Indépendants : le chiffre d'affaires se reporte toujours sur la 2042-C-PRO.</li>
             <li>LMNP au réel : liasse 2031 avant report sur la déclaration personnelle.</li>
             <li>
-              Dividendes : arbitrer entre PFU à 31,4 % et barème progressif, chiffres à l'appui.
+              Dividendes perçus en 2025 : arbitrer entre PFU à 30 % et barème progressif, chiffres à
+              l'appui (31,4 % pour les dividendes perçus depuis le 1er janvier 2026).
             </li>
           </ul>
         </>

@@ -81,7 +81,7 @@ const domains = [
     lead: "Déclarations, optimisation, contrôles.",
     to: "/services/fiscalite-tva",
     items: [
-      "Déclarations courantes : TVA, DEB, TVS, DAS2, CFE, CVAE, IS.",
+      "Déclarations courantes : TVA, état récapitulatif des échanges (ex-DEB), taxes sur les véhicules (ex-TVS), DAS2, CFE, CVAE, IS.",
       "Télétransmission des liasses fiscales après clôture.",
       "Recherche systématique des crédits et réductions d'impôt applicables.",
       "Assistance en contrôle fiscal — présence physique et réponses écrites.",
