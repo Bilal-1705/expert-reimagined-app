@@ -32,6 +32,7 @@ import { Route as ActualitesDeclarationRevenus2026RouteImport } from './routes/a
 import { Route as ActualitesFacturationElectroniqueRouteImport } from './routes/actualites.facturation-electronique'
 import { Route as ActualitesLoiFinances2026RouteImport } from './routes/actualites.loi-finances-2026'
 import { Route as ActualitesMicroEntrepriseSeuilsTva2026RouteImport } from './routes/actualites.micro-entreprise-seuils-tva-2026'
+import { Route as ActualitesSalaireOuDividendesSasuRouteImport } from './routes/actualites.salaire-ou-dividendes-sasu'
 import { Route as ComparatifCabinetVsEnLigneRouteImport } from './routes/comparatif.cabinet-vs-en-ligne'
 import { Route as ComparatifDougsVsErkilicRouteImport } from './routes/comparatif.dougs-vs-erkilic'
 import { Route as ComparatifEurlVsSasuRouteImport } from './routes/comparatif.eurl-vs-sasu'
@@ -180,6 +181,12 @@ const ActualitesMicroEntrepriseSeuilsTva2026Route =
   ActualitesMicroEntrepriseSeuilsTva2026RouteImport.update({
     id: '/actualites/micro-entreprise-seuils-tva-2026',
     path: '/actualites/micro-entreprise-seuils-tva-2026',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ActualitesSalaireOuDividendesSasuRoute =
+  ActualitesSalaireOuDividendesSasuRouteImport.update({
+    id: '/actualites/salaire-ou-dividendes-sasu',
+    path: '/actualites/salaire-ou-dividendes-sasu',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ComparatifCabinetVsEnLigneRoute =
@@ -347,6 +354,7 @@ export interface FileRoutesByFullPath {
   '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
+  '/actualites/salaire-ou-dividendes-sasu': typeof ActualitesSalaireOuDividendesSasuRoute
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -397,6 +405,7 @@ export interface FileRoutesByTo {
   '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
+  '/actualites/salaire-ou-dividendes-sasu': typeof ActualitesSalaireOuDividendesSasuRoute
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -449,6 +458,7 @@ export interface FileRoutesById {
   '/actualites/facturation-electronique': typeof ActualitesFacturationElectroniqueRoute
   '/actualites/loi-finances-2026': typeof ActualitesLoiFinances2026Route
   '/actualites/micro-entreprise-seuils-tva-2026': typeof ActualitesMicroEntrepriseSeuilsTva2026Route
+  '/actualites/salaire-ou-dividendes-sasu': typeof ActualitesSalaireOuDividendesSasuRoute
   '/comparatif/cabinet-vs-en-ligne': typeof ComparatifCabinetVsEnLigneRoute
   '/comparatif/dougs-vs-erkilic': typeof ComparatifDougsVsErkilicRoute
   '/comparatif/eurl-vs-sasu': typeof ComparatifEurlVsSasuRoute
@@ -502,6 +512,7 @@ export interface FileRouteTypes {
     | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
+    | '/actualites/salaire-ou-dividendes-sasu'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -552,6 +563,7 @@ export interface FileRouteTypes {
     | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
+    | '/actualites/salaire-ou-dividendes-sasu'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -603,6 +615,7 @@ export interface FileRouteTypes {
     | '/actualites/facturation-electronique'
     | '/actualites/loi-finances-2026'
     | '/actualites/micro-entreprise-seuils-tva-2026'
+    | '/actualites/salaire-ou-dividendes-sasu'
     | '/comparatif/cabinet-vs-en-ligne'
     | '/comparatif/dougs-vs-erkilic'
     | '/comparatif/eurl-vs-sasu'
@@ -655,6 +668,7 @@ export interface RootRouteChildren {
   ActualitesFacturationElectroniqueRoute: typeof ActualitesFacturationElectroniqueRoute
   ActualitesLoiFinances2026Route: typeof ActualitesLoiFinances2026Route
   ActualitesMicroEntrepriseSeuilsTva2026Route: typeof ActualitesMicroEntrepriseSeuilsTva2026Route
+  ActualitesSalaireOuDividendesSasuRoute: typeof ActualitesSalaireOuDividendesSasuRoute
   ComparatifCabinetVsEnLigneRoute: typeof ComparatifCabinetVsEnLigneRoute
   ComparatifDougsVsErkilicRoute: typeof ComparatifDougsVsErkilicRoute
   ComparatifEurlVsSasuRoute: typeof ComparatifEurlVsSasuRoute
@@ -840,6 +854,13 @@ declare module '@tanstack/react-router' {
       path: '/actualites/micro-entreprise-seuils-tva-2026'
       fullPath: '/actualites/micro-entreprise-seuils-tva-2026'
       preLoaderRoute: typeof ActualitesMicroEntrepriseSeuilsTva2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/salaire-ou-dividendes-sasu': {
+      id: '/actualites/salaire-ou-dividendes-sasu'
+      path: '/actualites/salaire-ou-dividendes-sasu'
+      fullPath: '/actualites/salaire-ou-dividendes-sasu'
+      preLoaderRoute: typeof ActualitesSalaireOuDividendesSasuRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/comparatif/cabinet-vs-en-ligne': {
@@ -1072,6 +1093,8 @@ const rootRouteChildren: RootRouteChildren = {
   ActualitesLoiFinances2026Route: ActualitesLoiFinances2026Route,
   ActualitesMicroEntrepriseSeuilsTva2026Route:
     ActualitesMicroEntrepriseSeuilsTva2026Route,
+  ActualitesSalaireOuDividendesSasuRoute:
+    ActualitesSalaireOuDividendesSasuRoute,
   ComparatifCabinetVsEnLigneRoute: ComparatifCabinetVsEnLigneRoute,
   ComparatifDougsVsErkilicRoute: ComparatifDougsVsErkilicRoute,
   ComparatifEurlVsSasuRoute: ComparatifEurlVsSasuRoute,

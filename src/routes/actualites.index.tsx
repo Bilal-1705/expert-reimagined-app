@@ -18,6 +18,14 @@ type Item = {
 
 const news: Item[] = [
   {
+    to: "/actualites/salaire-ou-dividendes-sasu",
+    tag: "Actualité",
+    date: "2026-11-07",
+    title: "Salaire ou dividendes en SASU : que choisir en 2026 ?",
+    excerpt:
+      "PFU à 31,4 % sur les dividendes, cotisations du président, exemple chiffré et calendrier de fin d'année pour arbitrer sa rémunération.",
+  },
+  {
     to: "/actualites/cfe-montpellier",
     tag: "Actualité",
     date: "2026-10-31",

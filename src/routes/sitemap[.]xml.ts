@@ -47,6 +47,7 @@ const LASTMOD: Record<string, string> = {
   "/actualites/declaration-revenus-2026": "2026-11-01",
   "/actualites/micro-entreprise-seuils-tva-2026": "2026-11-01",
   "/actualites/cfe-montpellier": "2026-10-31",
+  "/actualites/salaire-ou-dividendes-sasu": "2026-11-07",
   "/services/fiscalite-tva": "2026-11-01",
   "/creation-entreprise/juvignac": "2026-10-31",
   "/actualites": "2026-10-31",

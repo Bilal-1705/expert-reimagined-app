@@ -115,7 +115,15 @@ export const Route = createFileRoute("/creation-entreprise/sasu-eurl-ei")({
             <p>
               SAS à associé unique, le président est assimilé-salarié (régime général) : meilleure
               protection sociale mais charges ~80 % sur salaire. Grande souplesse statutaire,
-              ouverture du capital facile, dividendes non soumis à cotisations sociales.
+              ouverture du capital facile, dividendes non soumis à cotisations sociales. Pour
+              arbitrer entre les deux, lisez notre guide{" "}
+              <Link
+                to="/actualites/salaire-ou-dividendes-sasu"
+                className="underline underline-offset-4"
+              >
+                salaire ou dividendes en SASU
+              </Link>
+              .
             </p>
           ),
           bullets: [

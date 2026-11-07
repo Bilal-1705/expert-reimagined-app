@@ -161,6 +161,11 @@ export const LINKS: Record<string, SiteLink> = {
     label: "Facture électronique : calendrier et obligations",
     desc: "Réception en 2026, émission en 2027.",
   },
+  "/actualites/salaire-ou-dividendes-sasu": {
+    to: "/actualites/salaire-ou-dividendes-sasu",
+    label: "Salaire ou dividendes en SASU",
+    desc: "PFU à 31,4 %, cotisations et exemple chiffré.",
+  },
   "/actualites/cfe-montpellier": {
     to: "/actualites/cfe-montpellier",
     label: "CFE à Montpellier et Juvignac",
@@ -194,6 +199,7 @@ const CLUSTERS: Record<string, string[]> = {
     "/pack/auto-entrepreneur",
     "/actualites/micro-entreprise-seuils-tva-2026",
     "/actualites/cfe-montpellier",
+    "/actualites/salaire-ou-dividendes-sasu",
   ],
   local: [
     "/expert-comptable-montpellier",
@@ -226,6 +232,7 @@ const CLUSTERS: Record<string, string[]> = {
     "/comparatif/keobiz-vs-erkilic",
   ],
   actualites: [
+    "/actualites/salaire-ou-dividendes-sasu",
     "/actualites/cfe-montpellier",
     "/actualites/micro-entreprise-seuils-tva-2026",
     "/actualites/loi-finances-2026",
