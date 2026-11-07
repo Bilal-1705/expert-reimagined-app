@@ -31,7 +31,7 @@ const faq = [
   },
   {
     q: "Le cabinet peut-il chiffrer l'arbitrage pour ma SASU ?",
-    a: "Oui. Le cabinet simule plusieurs scénarios (salaire seul, dividendes seuls, mixte) à partir de votre résultat, de votre situation familiale et de vos besoins de protection sociale, puis vous remet un comparatif net dans votre poche.",
+    a: "Oui. Le cabinet simule plusieurs scénarios (salaire seul, dividendes seuls, mixte) à partir de votre résultat, de votre situation familiale et de vos besoins de protection sociale, puis vous remet un comparatif net dans votre poche. Le premier rendez-vous est gratuit.",
   },
 ];
 
